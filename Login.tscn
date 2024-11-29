@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://ptmnjigr1hjd"]
+
+[ext_resource type="Texture2D" uid="uid://b1l4qoux4oaa" path="res://ASSETS/BACKGROUNDS/loginAndSignup2.png" id="1_i8pk4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -212.5
+offset_right = 150.0
+offset_bottom = 212.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i8pk4")
+patch_margin_right = 19
+patch_margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 21.0
+offset_right = -45.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Log in"
+horizontal_alignment = 1
+
+[node name="Username" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Username"
+
+[node name="Username2" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Password"
+
+[node name="Password2" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoginButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LoginButton"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 26.0
+text = "log in"
+horizontal_alignment = 2
+vertical_alignment = 2

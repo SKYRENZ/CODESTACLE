@@ -104,6 +104,10 @@ theme_override_constants/separation = 15
 [node name="Username Container" type="VBoxContainer" parent="Container/Login Container/User and Pass Container"]
 layout_mode = 2
 
+[node name="statelabel" type="Label" parent="Container/Login Container/User and Pass Container/Username Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Username" type="Label" parent="Container/Login Container/User and Pass Container/Username Container"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -111,7 +115,8 @@ theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 16
 text = "username:"
 
-[node name="UsernameEdit" type="LineEdit" parent="Container/Login Container/User and Pass Container/Username Container"]
+[node name="EmailEdit" type="LineEdit" parent="Container/Login Container/User and Pass Container/Username Container"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qs75m")
@@ -128,10 +133,12 @@ text = "password:
 "
 
 [node name="PasswordLine" type="LineEdit" parent="Container/Login Container/User and Pass Container/Password Container"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 25
+secret = true
 
 [node name="ForgotBtn" type="Button" parent="Container/Login Container/User and Pass Container/Password Container"]
 layout_mode = 2
@@ -166,10 +173,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -41.5
-offset_top = -45.0
-offset_right = 41.5
-offset_bottom = -22.0
+offset_left = -42.5
+offset_top = -67.5
+offset_right = 40.5
+offset_bottom = -44.5
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -203,4 +210,5 @@ theme_override_font_sizes/font_size = 25
 text = "Google Sign in"
 flat = true
 
+[connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]

@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 16
 text = "Email:"
 
 [node name="Email Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Email Container"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_psrf0")
 theme_override_font_sizes/font_size = 22
@@ -149,9 +150,11 @@ text = "password:
 "
 
 [node name="Password Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_psrf0")
 theme_override_font_sizes/font_size = 22
+secret = true
 
 [node name="Confirm Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
 layout_mode = 2
@@ -187,4 +190,5 @@ theme_override_font_sizes/font_size = 15
 text = "back to login"
 flat = true
 
+[connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Signup Button" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Back Button" to="." method="_on_back_button_pressed"]

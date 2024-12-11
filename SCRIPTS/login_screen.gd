@@ -20,9 +20,8 @@ func _on_login_button_pressed() -> void:
 
 func on_login_succeeded(auth):
 	print(auth)
-	%statelabel.text = "login Success!"
 
 func on_login_failed(error_code, message):
 	print(error_code)
 	print(message)
-	%statelabel.text = "login failed. error: %s" % message
+	%statelabel.text = "login failed."

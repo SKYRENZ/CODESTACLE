@@ -123,21 +123,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_psrf0")
 theme_override_font_sizes/font_size = 22
 
-[node name="Username Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
-layout_mode = 2
-
-[node name="Username" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Username Container"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("3_psrf0")
-theme_override_font_sizes/font_size = 16
-text = "username:"
-
-[node name="Username Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Username Container"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_psrf0")
-theme_override_font_sizes/font_size = 22
-
 [node name="Password Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
 layout_mode = 2
 theme_override_constants/separation = 0
@@ -155,21 +140,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_psrf0")
 theme_override_font_sizes/font_size = 22
 secret = true
-
-[node name="Confirm Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
-layout_mode = 2
-
-[node name="Confirm" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Confirm Container"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_psrf0")
-theme_override_font_sizes/font_size = 16
-text = "Confirm:
-"
-
-[node name="Confirm Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Confirm Container"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_psrf0")
-theme_override_font_sizes/font_size = 25
 
 [node name="Signup Button" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
 layout_mode = 2

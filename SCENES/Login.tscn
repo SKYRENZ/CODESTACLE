@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="4_d341r"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/CHARACTER/Robot.png" id="5_462wa"]
 
-[node name="authentication" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,5 +181,22 @@ theme_override_font_sizes/font_size = 15
 text = "Signup"
 flat = true
 
-[connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
+[node name="Google SSO" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -134.0
+offset_right = -103.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_font_sizes/font_size = 25
+text = "Google Sign in"
+flat = true
+
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]

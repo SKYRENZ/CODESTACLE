@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="4_d341r"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/CHARACTER/Robot.png" id="5_462wa"]
 
-[node name="Control" type="Control"]
+[node name="authentication" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,4 +181,5 @@ theme_override_font_sizes/font_size = 15
 text = "Signup"
 flat = true
 
+[connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]

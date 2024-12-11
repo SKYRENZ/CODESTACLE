@@ -22,6 +22,8 @@ func _on_signup_button_pressed() -> void:
 
 func on_signup_succeeded(auth):
 	print(auth)
+	get_tree().change_scene_to_file("res://SCENES/Login.tscn")
+	
 
 func on_signup_failed(error_code, message):
 	print(error_code)

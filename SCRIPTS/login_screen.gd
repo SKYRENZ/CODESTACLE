@@ -16,10 +16,14 @@ func _on_signup_button_pressed() -> void:
 func _on_login_button_pressed() -> void:
 	var email = %EmailEdit.text
 	var password = %PasswordLine.text
+	#perform login
 	Firebase.Auth.login_with_email_and_password(email, password)
 
+
 func on_login_succeeded(auth):
-	print(auth)
+	print("login succesful: ", auth)
+	get_tree().change_scene_to_file("res://SCENES/main_menu.tscn")
+	
 
 func on_login_failed(error_code, message):
 	print(error_code)

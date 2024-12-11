@@ -13,4 +13,4 @@ func _on_signup_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://SCENES/signup_screen.tscn")
 
 func _on_login_button_pressed() -> void:
-	pass # Replace with function body.
+	 # Replace with function body.

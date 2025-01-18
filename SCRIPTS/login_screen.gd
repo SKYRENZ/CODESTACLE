@@ -29,3 +29,8 @@ func on_login_failed(error_code, message):
 	print(error_code)
 	print(message)
 	%statelabel.text = "login failed."
+
+
+func _on_google_sso_pressed() -> void:
+	var provider: AuthProvider = Firebase.Auth.get_GoogleProvider()
+	Firebase.Auth.get_auth_localhost(provider)

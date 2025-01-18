@@ -214,3 +214,4 @@ flat = true
 
 [connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]
+[connection signal="pressed" from="Google SSO" to="." method="_on_google_sso_pressed"]

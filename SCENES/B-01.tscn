@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://droic32s0vhlp"]
+[gd_scene load_steps=4 format=3 uid="uid://dcho7ljw1pwto"]
 
-[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/CHARACTER/Robot.png" id="1_wus08"]
+[ext_resource type="Script" path="res://SCRIPTS/b_01.gd" id="1_cllyj"]
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="1_wus08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7iydx"]
-size = Vector2(89, 96)
+size = Vector2(63.5, 61)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cllyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-12.75, -8.5)
 shape = SubResource("RectangleShape2D_7iydx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.62549, 0.62549)
+position = Vector2(-12, -10)
+scale = Vector2(0.422549, 0.431373)
 texture = ExtResource("1_wus08")

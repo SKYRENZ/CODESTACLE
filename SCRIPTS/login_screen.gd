@@ -22,8 +22,10 @@ func _on_login_button_pressed() -> void:
 
 func on_login_succeeded(auth):
 	print("login succesful: ", auth)
-	get_tree().change_scene_to_file("res://SCENES/main_menu.tscn")
-	
+	if auth.email_verified:
+		get_tree().change_scene_to_file("res://SCENES/main_menu.tscn")
+	else:
+		%statelabel.text = "Please verify your email before logging in."
 
 func on_login_failed(error_code, message):
 	print(error_code)

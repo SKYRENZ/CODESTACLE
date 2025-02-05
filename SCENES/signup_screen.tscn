@@ -160,5 +160,12 @@ theme_override_font_sizes/font_size = 15
 text = "back to login"
 flat = true
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 428.0
+offset_right = 1128.0
+offset_bottom = 451.0
+
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Signup Button" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Back Button" to="." method="_on_back_button_pressed"]

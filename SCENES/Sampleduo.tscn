@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://di1nwuwc7vuw"]
+
+[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_gtw2m"]
+
+[node name="Node2D" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gtw2m")
+stretch_mode = 1

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]
 [ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="3_psrf0"]
-[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/CHARACTER/Robot.png" id="4_qnhdm"]
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="4_qnhdm"]
 
 [node name="SignupScreen" type="Control"]
 layout_mode = 3

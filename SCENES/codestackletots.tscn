@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="1_0eag6"]
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_75hbr"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="2_j744m"]
-[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/b-01.tscn" id="4_gsalt"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="4_gsalt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
 texture = ExtResource("1_0eag6")
@@ -331,8 +331,7 @@ position = Vector2(2, -13)
 [node name="Area2D" type="Area2D" parent="." groups=["ladder"]]
 position = Vector2(296, 247)
 disable_mode = 2
-collision_layer = 17
-collision_mask = 17
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["ladder"]]
 position = Vector2(2, -5)

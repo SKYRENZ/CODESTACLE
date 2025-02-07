@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwfe0pngaho82"]
+[gd_scene load_steps=8 format=3 uid="uid://c2ndrdoomn351"]
 
 [ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/tileset-Sheet.png" id="1_iyinx"]
 [ext_resource type="Script" path="res://SCRIPTS/inventory_ui.gd" id="1_pntaa"]
-[ext_resource type="PackedScene" uid="uid://dcho7ljw1pwto" path="res://SCENES/B-01.tscn" id="2_oggbv"]
-[ext_resource type="PackedScene" uid="uid://dw1ii5suvmp66" path="res://SCENES/Collectible.tscn" id="3_t56f2"]
-[ext_resource type="PackedScene" uid="uid://cby6f4xou0wmu" path="res://SCENES/inventory_ui.tscn" id="4_wb88s"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="2_oggbv"]
+[ext_resource type="PackedScene" uid="uid://cei3q78x10o42" path="res://SCENES/Collectible.tscn" id="3_t56f2"]
+[ext_resource type="PackedScene" uid="uid://d02dl5kmcucmd" path="res://SCENES/inventory_ui.tscn" id="4_wb88s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13tdu"]
 texture = ExtResource("1_iyinx")

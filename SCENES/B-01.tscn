@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dwg0tx5somvvx"]
 
 [ext_resource type="Script" path="res://SCRIPTS/b_01.gd" id="1_70g4a"]
-[ext_resource type="Texture2D" uid="uid://d3bc4vpwqq8v3" path="res://ASSETS/CHARACTER/Robot 4-Sheet.png" id="1_saea1"]
+[ext_resource type="Texture2D" uid="uid://d3bc4vpwqq8v3" path="res://ASSETS/Robot 4-Sheet.png" id="1_saea1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5gif"]
 atlas = ExtResource("1_saea1")
@@ -130,7 +130,7 @@ animations = [{
 size = Vector2(45, 54)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 16
+collision_mask = 17
 script = ExtResource("1_70g4a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

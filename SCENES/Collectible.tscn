@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw1ii5suvmp66"]
+[gd_scene load_steps=4 format=3 uid="uid://cei3q78x10o42"]
 
 [ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BUTTONS/minigooglesignin.png" id="1_ohvx8"]
 [ext_resource type="Script" path="res://SCRIPTS/collectible.gd" id="1_y2hd6"]

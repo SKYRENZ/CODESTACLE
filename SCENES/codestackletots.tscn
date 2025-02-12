@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="2_j744m"]
 [ext_resource type="Script" path="res://SCRIPTS/Rodtang.gd" id="2_tp11b"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="3_1j5x1"]
-[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/b-01.tscn" id="4_gsalt"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="4_gsalt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]
-size = Vector2(48, 58)
+size = Vector2(79, 58)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
 texture = ExtResource("1_0eag6")
@@ -296,20 +296,20 @@ sources/1 = SubResource("TileSetAtlasSource_b8nch")
 
 [node name="Tutorial" type="Node2D"]
 
-[node name="NPC" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="Rodtang" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("2_tp11b")
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+[node name="Sprite2D" type="Sprite2D" parent="Rodtang"]
 position = Vector2(-50, 171)
 scale = Vector2(0.339216, 0.382635)
 texture = ExtResource("3_1j5x1")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="NPC"]
+[node name="Area2D" type="Area2D" parent="Rodtang"]
 position = Vector2(-64, 179)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
-position = Vector2(14, -9)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rodtang/Area2D"]
+position = Vector2(-1.5, -9)
 shape = SubResource("RectangleShape2D_7k35s")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -320,11 +320,10 @@ offset_right = 960.0
 offset_bottom = 540.0
 texture = ExtResource("1_75hbr")
 
-[node name="B-01" parent="." groups=["player"] instance=ExtResource("4_gsalt")]
+[node name="B-01" parent="." instance=ExtResource("4_gsalt")]
 position = Vector2(-777, 181)
 disable_mode = 2
 collision_layer = 17
-collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="B-01"]
 position = Vector2(2, -13)
@@ -344,37 +343,35 @@ tile_set = SubResource("TileSet_308n2")
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -135.0
-offset_top = 88.0
-offset_right = 25.0
-offset_bottom = 128.0
+rotation = -0.00767141
 metadata/_edit_use_anchors_ = true
 
 [node name="InteractPrompt" type="Label" parent="UI"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 0.117647, 1, 1)
+light_mask = 2
+visibility_layer = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 5.0
-offset_right = 11.0
-offset_bottom = 5.0
+offset_left = -108.718
+offset_top = 93.1687
+offset_right = 49.2821
+offset_bottom = 116.169
 grow_horizontal = 2
 grow_vertical = 2
 text = "\"Press E to interact\" "
 
 [node name="DialogueBox" type="PanelContainer" parent="UI"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 0.34902, 1, 1)
 layout_mode = 0
-offset_right = 173.0
-offset_bottom = 40.0
+offset_left = -118.672
+offset_top = 87.0922
+offset_right = 54.3284
+offset_bottom = 127.092
 
 [node name="DialogueText" type="Label" parent="UI/DialogueBox"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2

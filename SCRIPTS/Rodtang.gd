@@ -1,44 +1,53 @@
 extends CharacterBody2D
 
 var player_in_range = false
-@onready var dialogue_box: PanelContainer = %DialogueBox
-@onready var interact_prompt: Label = %InteractPrompt
-@onready var dialogue_text: Label = %DialogueText
+var ui  # Stores reference to UI node
 
 func _ready():
-	print("InteractPrompt: ", interact_prompt)
-	print("DialogueBox: ", dialogue_box)
-	print("DialogueText: ", dialogue_text)
+	# Get the UI node from the scene
+	ui = get_tree().current_scene.get_node_or_null("UI")
+	if ui:
+		print("✅ UI found:", ui)
+	else:
+		print("❌ ERROR: UI NOT FOUND!")
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player_in_range = true
-		if interact_prompt:
-			interact_prompt.visible = true  # Show "Press E"
-		else:
-			print("ERROR: InteractPrompt not found!")
+		show_interact_prompt(true)  # Show "Press E"
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
-		if interact_prompt:
-			interact_prompt.visible = false  # Hide "Press E"
-		if dialogue_box:
-			dialogue_box.visible = false  # Hide dialogue on exit
+		show_interact_prompt(false)  # Hide "Press E"
+		show_dialogue_box(false)  # Hide dialogue
 
 func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		interact()
 
 func interact():
-	if interact_prompt:
-		interact_prompt.visible = false  # Hide "Press E"
-		print("InteractPrompt hidden")
-	
-	if dialogue_box and dialogue_text:
-		dialogue_text.text = "Hello, Player! Welcome to Codestackle!"  # Set dialogue text
-		dialogue_box.visible = true  # Show dialogue box
-		print("DialogueBox shown with text:", dialogue_text.text)
+	show_interact_prompt(false)  # Hide "Press E"
+	show_dialogue_box(true, "Hello, Player! Welcome to Codestackle!")  # Show dialogue
 
-	
-	dialogue_box.rect_position = Vector2(100, 100)
+# Function to show/hide "Press E" prompt
+func show_interact_prompt(is_visible):
+	if ui:
+		var interact_prompt = ui.get_node_or_null("InteractPrompt")
+		if interact_prompt:
+			interact_prompt.visible = is_visible
+			print("InteractPrompt visible:", is_visible)
+		else:
+			print("❌ ERROR: InteractPrompt NOT FOUND!")
+
+# Function to show/hide dialogue box
+func show_dialogue_box(is_visible, text=""):
+	if ui:
+		var dialogue_box = ui.get_node_or_null("DialogueBox")
+		var dialogue_text = ui.get_node_or_null("DialogueBox/DialogueText")  # Adjust if necessary
+		if dialogue_box and dialogue_text:
+			dialogue_text.text = text
+			dialogue_box.visible = is_visible
+			print("DialogueBox visible:", is_visible, "| Text:", text)
+		else:
+			print("❌ ERROR: DialogueBox or DialogueText NOT FOUND!")

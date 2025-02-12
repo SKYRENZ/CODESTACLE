@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://de2j3fopcwvbt"]
+
+[ext_resource type="Script" path="res://SCRIPTS/Rodtang.gd" id="1_ssscd"]
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="2_wmd0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]
+size = Vector2(79, 58)
+
+[node name="NPC" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_ssscd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-50, 171)
+scale = Vector2(0.339216, 0.382635)
+texture = ExtResource("2_wmd0k")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-64, 179)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -9)
+shape = SubResource("RectangleShape2D_7k35s")

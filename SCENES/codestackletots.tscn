@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c0jac1ki1vsog"]
+[gd_scene load_steps=27 format=4 uid="uid://c0jac1ki1vsog"]
 
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="1_0eag6"]
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_75hbr"]
@@ -336,21 +336,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2si6"]
 size = Vector2(42, 115)
 
-[sub_resource type="Animation" id="Animation_u80fm"]
-resource_name = "jumping"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label2:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.433333, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.493, 0.775, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_ugks5"]
 length = 0.001
 tracks/0/type = "value"
@@ -366,6 +351,21 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_u80fm"]
+resource_name = "jumping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.493, 0.775, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nj1h6"]
 _data = {
 "RESET": SubResource("Animation_ugks5"),
@@ -374,6 +374,54 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh06e"]
 size = Vector2(46.5, 83.5)
+
+[sub_resource type="Animation" id="Animation_nuqwv"]
+resource_name = "akyat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.366667, 0.533333, 0.733333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.38, 0.45, 0.718, 0.845, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ldi64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2y0"]
+_data = {
+"RESET": SubResource("Animation_ldi64"),
+"akyat": SubResource("Animation_nuqwv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmexi"]
+size = Vector2(42, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d75tq"]
+size = Vector2(26, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljria"]
+size = Vector2(20, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3rdq"]
+size = Vector2(19.5, 94)
 
 [node name="Tutorial" type="Node2D"]
 
@@ -440,9 +488,9 @@ libraries = {
 "": SubResource("AnimationLibrary_4h5kv")
 }
 
-[node name="Area2D" type="Area2D" parent="popup"]
+[node name="walking trigger" type="Area2D" parent="popup"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/walking trigger"]
 position = Vector2(-674, 155)
 shape = SubResource("RectangleShape2D_k2si6")
 
@@ -464,11 +512,65 @@ libraries = {
 "": SubResource("AnimationLibrary_nj1h6")
 }
 
-[node name="Area2D2" type="Area2D" parent="popup"]
+[node name="jumping trigger" type="Area2D" parent="popup"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/jumping trigger"]
 position = Vector2(-386.25, 234.75)
 shape = SubResource("RectangleShape2D_fh06e")
+
+[node name="Label3" type="Label" parent="popup"]
+offset_left = 129.0
+offset_top = 96.0
+offset_right = 363.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_6o6xn")
+text = "                CLIMBING
+    Press \"W\" or \"S\" to Climb"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="popup"]
+libraries = {
+"": SubResource("AnimationLibrary_pj2y0")
+}
+
+[node name="climb trigger" type="Area2D" parent="popup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/climb trigger"]
+position = Vector2(253, 276)
+shape = SubResource("RectangleShape2D_kmexi")
+
+[node name="exit area_walking" type="Area2D" parent="popup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/exit area_walking"]
+position = Vector2(-521, 222)
+shape = SubResource("RectangleShape2D_d75tq")
+
+[node name="Label2" type="Label" parent="popup/exit area_walking"]
+offset_left = -491.0
+offset_top = 133.0
+offset_right = -251.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_6o6xn")
+text = "                JUMPING
+    Press \"SPACE\" to Jump
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="exit area_jumping" type="Area2D" parent="popup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/exit area_jumping"]
+position = Vector2(-162, 143)
+shape = SubResource("RectangleShape2D_ljria")
+
+[node name="exit area_climbing" type="Area2D" parent="popup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="popup/exit area_climbing"]
+position = Vector2(352, 103)
+shape = SubResource("RectangleShape2D_e3rdq")
 
 [connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="Area2D" to="CharacterBody2D" method="_on_ladder_area_exited"]

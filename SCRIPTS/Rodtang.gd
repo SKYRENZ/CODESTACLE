@@ -14,6 +14,7 @@ func _ready():
 		print("❌ ERROR: UI NOT FOUND!")
 	if quiz_popup:
 		print("✅ QuizPopup found:", quiz_popup)
+		quiz_popup.get_node("Node2D").connect("quiz_completed", Callable(self, "_on_quiz_completed"))
 	else:
 		print("❌ ERROR: QuizPopup NOT FOUND!")
 
@@ -37,6 +38,11 @@ func interact():
 	show_dialogue_box(false)  # Hide dialogue
 	if quiz_popup:
 		quiz_popup.popup_centered()  # Show the quiz popup
+
+func _on_quiz_completed():
+	if quiz_popup:
+		quiz_popup.hide()  # Hide the quiz popup
+	show_dialogue_box(true, "Congrats, you can now continue on your journey")
 
 # Function to show/hide "Press E" prompt
 func show_interact_prompt(is_visible):

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="2_j744m"]
 [ext_resource type="Script" path="res://SCRIPTS/Rodtang.gd" id="2_tp11b"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="3_1j5x1"]
-[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/b-01.tscn" id="4_gsalt"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="4_gsalt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]
 size = Vector2(48, 58)
@@ -324,7 +324,6 @@ texture = ExtResource("1_75hbr")
 position = Vector2(-777, 181)
 disable_mode = 2
 collision_layer = 17
-collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="B-01"]
 position = Vector2(2, -13)

@@ -3,6 +3,7 @@ extends Control
 var firebase_api_key = "AIzaSyB02zOyEW28ep26AAlVWrzRD1X3Hwznp1A"
 var email = ""
 var password = ""
+var password_hidden = true  # Track password visibility state
 
 func _ready() -> void:
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
@@ -149,3 +150,13 @@ func _on_password_reset_response(result, response_code, headers, body):
 		print("❌ Failed to send password reset email.")
 		if state_label:
 			state_label.text = "Error: Unable to send reset email."
+
+# ✅ Show/Hide Password Functionality
+func _on_show_password_button_pressed() -> void:
+	var password_edit = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
+
+	if password_edit:
+		password_hidden = !password_hidden  # Toggle state
+		password_edit.secret = password_hidden  # Update visibility
+	else:
+		print("❌ Error: Could not find PasswordLine")

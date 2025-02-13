@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="2_qs75m"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="4_d341r"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="5_462wa"]
-[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BUTTONS/minigooglesignin.png" id="7_aeqcv"]
+[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BACKGROUNDS/BUTTONS/minigooglesignin.png" id="7_aeqcv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -191,6 +191,18 @@ theme_override_font_sizes/font_size = 15
 text = "Signup"
 flat = true
 
+[node name="Show Password Button" type="Button" parent="Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.576
+anchor_right = 0.105
+anchor_bottom = 0.601
+offset_left = -0.105001
+offset_top = 0.199982
+offset_right = -0.0749397
+offset_bottom = 0.574982
+
 [node name="Google SSO" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -215,6 +227,8 @@ flat = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[connection signal="pressed" from="Container/Login Container/User and Pass Container/Password Container/ForgotBtn" to="." method="_on_forgot_btn_pressed"]
 [connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]
+[connection signal="pressed" from="Container/Show Password Button" to="." method="_on_show_password_button_pressed"]
 [connection signal="pressed" from="Google SSO" to="." method="_on_google_sso_pressed"]

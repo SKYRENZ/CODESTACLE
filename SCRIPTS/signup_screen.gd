@@ -42,9 +42,6 @@ func _on_signup_success(auth_data: Dictionary) -> void:
 		_update_state_label("Verification email sent! Please check your inbox.")
 		await get_tree().create_timer(5.0).timeout
 		_on_back_button_pressed()  # Redirect back to login
-	else:
-		print("❌ Failed to send verification email.")
-		_update_state_label("Error: Could not send verification email.")
 
 # ❌ Handle failed signup
 func _on_signup_fail(error_code: int, message: String) -> void:

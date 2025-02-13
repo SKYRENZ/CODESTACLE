@@ -1,5 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://byjmm225d0qqh"]
-[gd_scene load_steps=27 format=4 uid="uid://c0jac1ki1vsog"]
+[gd_scene load_steps=27 format=4 uid="uid://3hebfol673ga"]
 
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="1_0eag6"]
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_75hbr"]
@@ -376,21 +375,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh06e"]
 size = Vector2(46.5, 83.5)
 
-[sub_resource type="Animation" id="Animation_nuqwv"]
-resource_name = "akyat"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label3:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.366667, 0.533333, 0.733333, 0.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.38, 0.45, 0.718, 0.845, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_ldi64"]
 length = 0.001
 tracks/0/type = "value"
@@ -404,6 +388,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nuqwv"]
+resource_name = "akyat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.366667, 0.533333, 0.733333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.38, 0.45, 0.718, 0.845, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2y0"]

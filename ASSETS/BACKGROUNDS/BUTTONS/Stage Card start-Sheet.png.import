@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtxdj23dexekg"
-path="res://.godot/imported/Stage Card start-Sheet.png-f8aecff60120cfc093de1ca466809c1d.ctex"
+path="res://.godot/imported/Stage Card start-Sheet.png-ab8cc16b1ed6a69168f2fd3e8e9b5ae9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BUTTONS/Stage Card start-Sheet.png"
-dest_files=["res://.godot/imported/Stage Card start-Sheet.png-f8aecff60120cfc093de1ca466809c1d.ctex"]
+source_file="res://ASSETS/BACKGROUNDS/BUTTONS/Stage Card start-Sheet.png"
+dest_files=["res://.godot/imported/Stage Card start-Sheet.png-ab8cc16b1ed6a69168f2fd3e8e9b5ae9.ctex"]
 
 [params]
 

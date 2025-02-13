@@ -90,3 +90,5 @@ theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
 theme_override_fonts/font = ExtResource("2_2ejvf")
 theme_override_font_sizes/font_size = 135
 text = "codestacle"
+
+[connection signal="pressed" from="Menu Buttons/Play Button" to="." method="_on_play_button_pressed"]

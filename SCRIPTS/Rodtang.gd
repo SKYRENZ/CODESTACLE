@@ -2,14 +2,21 @@ extends CharacterBody2D
 
 var player_in_range = false
 var ui  # Stores reference to UI node
+var quiz_popup  # Stores reference to the quiz popup
 
 func _ready():
 	# Get the UI node from the scene
 	ui = get_tree().current_scene.get_node_or_null("UI")
+	quiz_popup = get_tree().current_scene.get_node_or_null("QuizPopup")
 	if ui:
 		print("✅ UI found:", ui)
 	else:
 		print("❌ ERROR: UI NOT FOUND!")
+	if quiz_popup:
+		print("✅ QuizPopup found:", quiz_popup)
+		quiz_popup.get_node("Node2D").connect("quiz_completed", Callable(self, "_on_quiz_completed"))
+	else:
+		print("❌ ERROR: QuizPopup NOT FOUND!")
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
@@ -28,7 +35,14 @@ func _process(delta):
 
 func interact():
 	show_interact_prompt(false)  # Hide "Press E"
-	show_dialogue_box(true, "Hello, Player! Welcome to Codestackle!")  # Show dialogue
+	show_dialogue_box(false)  # Hide dialogue
+	if quiz_popup:
+		quiz_popup.popup_centered()  # Show the quiz popup
+
+func _on_quiz_completed():
+	if quiz_popup:
+		quiz_popup.hide()  # Hide the quiz popup
+	show_dialogue_box(true, "Congrats, you can now continue on your journey")
 
 # Function to show/hide "Press E" prompt
 func show_interact_prompt(is_visible):

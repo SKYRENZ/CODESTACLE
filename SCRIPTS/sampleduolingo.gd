@@ -1,5 +1,7 @@
 extends Node2D
 
+signal quiz_completed
+
 var questions = [
 	# Question 1
 	{
@@ -72,14 +74,14 @@ func _on_button_pressed(button_index):
 			2: $CanvasLayer/TextureRect/Control/VBoxContainer/Button3.modulate = Color.GREEN
 			3: $CanvasLayer/TextureRect/Control/VBoxContainer/Button4.modulate = Color.GREEN
 		# Move to next question after a short delay
-		await get_tree().create_timer(1.0).timeout  # Wait 1 second
+		await get_tree().create_timer(1.0).timeout
 		current_question_index += 1
 		if current_question_index < questions.size():
 			load_question(current_question_index)
 		else:
-			print("Game Over! You answered all questions.")
+			emit_signal("quiz_completed")
 	else:
-		print("Incorrect! Try again.")
+		print("Incorrect!")
 		# Turn incorrect button red
 		match button_index:
 			0: $CanvasLayer/TextureRect/Control/VBoxContainer/Button.modulate = Color.RED

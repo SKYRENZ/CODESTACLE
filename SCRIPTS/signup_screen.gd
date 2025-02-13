@@ -14,8 +14,8 @@ func _on_back_button_pressed() -> void:
 
 # ✅ Handle signup button press
 func _on_signup_button_pressed() -> void:
-	var email_edit = get_node_or_null("Container/User and Pass Container/Email Container/Email Edit")
-	var password_edit = get_node_or_null("Container/User and Pass Container/Password Container/Password Edit")
+	var email_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Email Container/Email Edit")
+	var password_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Password Edit")
 
 	if not email_edit or not password_edit:
 		print("❌ Error: Required input fields missing!")

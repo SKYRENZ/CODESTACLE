@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://4t2mnlu4vt3o"]
+[gd_scene load_steps=12 format=4 uid="uid://cnkwn8qebbokn"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Rodtang.gd" id="1_l8e3f"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="2_d8m1n"]

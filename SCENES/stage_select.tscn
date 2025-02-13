@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0x17fk1nvani"]
+[gd_scene load_steps=4 format=3 uid="uid://c6s3f1i0188j"]
 
 [ext_resource type="Script" path="res://SCRIPTS/stage_select.gd" id="1_iqmca"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_b15py"]
-[ext_resource type="Theme" uid="uid://cnlqyk1r1u237" path="res://ASSETS/BACKGROUNDS/BUTTONS/Button.tres" id="3_hfcu7"]
+[ext_resource type="Theme" uid="uid://cqfco4qxcljl4" path="res://ASSETS/BACKGROUNDS/BUTTONS/Button.tres" id="3_5p10r"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -29,6 +29,6 @@ offset_top = 167.0
 offset_right = 444.0
 offset_bottom = 358.0
 focus_mode = 0
-theme = ExtResource("3_hfcu7")
+theme = ExtResource("3_5p10r")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

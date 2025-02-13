@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c0jac1ki1vsog"]
+[gd_scene load_steps=28 format=4 uid="uid://c0jac1ki1vsog"]
 
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="1_0eag6"]
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_75hbr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="4_gsalt"]
 [ext_resource type="Script" path="res://SCENES/popup.gd" id="5_cyvto"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_r4wmi"]
+[ext_resource type="AudioStream" uid="uid://bcqevwutxkkfv" path="res://Stage 1.mp3" id="7_ki1eh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
 texture = ExtResource("1_0eag6")
@@ -375,21 +376,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh06e"]
 size = Vector2(46.5, 83.5)
 
-[sub_resource type="Animation" id="Animation_nuqwv"]
-resource_name = "akyat"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label3:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.366667, 0.533333, 0.733333, 0.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.38, 0.45, 0.718, 0.845, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_ldi64"]
 length = 0.001
 tracks/0/type = "value"
@@ -403,6 +389,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nuqwv"]
+resource_name = "akyat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.366667, 0.533333, 0.733333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.38, 0.45, 0.718, 0.845, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2y0"]
@@ -571,6 +572,10 @@ shape = SubResource("RectangleShape2D_ljria")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="popup/exit area_climbing"]
 position = Vector2(352, 103)
 shape = SubResource("RectangleShape2D_e3rdq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ki1eh")
+autoplay = true
 
 [connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="Area2D" to="CharacterBody2D" method="_on_ladder_area_exited"]

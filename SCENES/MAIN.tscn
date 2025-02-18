@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8xy62w7xk10m"]
+[gd_scene load_steps=7 format=3 uid="uid://c8xy62w7xk10m"]
 
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_5pwe2"]
 [ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_q1ps4"]
-[ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="2_4d2x4"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="3_xwjfk"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="4_mr1b2"]
 [ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://Menu.mp3" id="5_8r1d1"]
+[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BACKGROUNDS/BUTTONS/StartBtn.tres" id="5_q4btq"]
 
 [node name="Node" type="Control"]
 layout_mode = 3
@@ -49,18 +50,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -498.5
-offset_top = -58.5
-offset_right = 498.5
-offset_bottom = 58.5
+offset_left = -561.0
+offset_top = -91.0
+offset_right = 561.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
-theme_override_colors/font_shadow_color = Color(0.107136, 0.200437, 0.14565, 1)
-theme_override_fonts/font = ExtResource("2_4d2x4")
-theme_override_font_sizes/font_size = 130
-text = "codestacle
-"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mr1b2")
+theme_override_font_sizes/font_size = 135
+text = "CODESTACLE"
 
 [node name="Start Button" type="Button" parent="NinePatchRect"]
 layout_mode = 1
@@ -69,20 +69,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = 183.5
-offset_right = 124.0
-offset_bottom = 248.5
+offset_left = -91.5
+offset_top = 140.5
+offset_right = 91.5
+offset_bottom = 243.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_hover_color = Color(0.313726, 0.635294, 0.862745, 1)
-theme_override_colors/font_pressed_color = Color(0.180857, 0.472819, 0.669654, 1)
-theme_override_colors/font_color = Color(0.788203, 0.89446, 0.979016, 1)
-theme_override_fonts/font = ExtResource("2_4d2x4")
+theme = ExtResource("5_q4btq")
+theme_override_fonts/font = ExtResource("4_mr1b2")
 theme_override_font_sizes/font_size = 65
-text = "Start"
-flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8r1d1")

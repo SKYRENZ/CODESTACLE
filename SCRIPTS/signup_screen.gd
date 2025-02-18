@@ -4,7 +4,7 @@ var password_hidden := true  # Track password visibility state
 
 func _ready() -> void:
 	Firebase.Auth.signup_succeeded.connect(_on_signup_success)
-	Firebase.Auth.signup_failed.connect(_on_signup_fail)
+	Firebase.Auth.signup_failed.connect(_on_signup_fail) #changed here "_on_signup_fail removed"
 	print("✅ Signup screen loaded.")
 
 # ✅ Navigate back to login screen
@@ -17,7 +17,7 @@ func _on_signup_button_pressed() -> void:
 	var email_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Email Container/Email Edit")
 	var password_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Password Edit")
 
-	if not email_edit or not password_edit:
+	if not email_edit or not password_edit: #changed here "not email or not password edit"
 		print("❌ Error: Required input fields missing!")
 		return
 
@@ -30,7 +30,7 @@ func _on_signup_button_pressed() -> void:
 		return
 
 	print("🔍 Attempting signup with email:", email)
-	Firebase.Auth.signup_with_email_and_password(email, password)
+	Firebase.Auth.signup_with_email_and_password(email, password) #changed here "Auth Removed"
 
 # ✅ Handle successful signup
 func _on_signup_success(auth_data: Dictionary) -> void:
@@ -40,7 +40,7 @@ func _on_signup_success(auth_data: Dictionary) -> void:
 	if result:
 		print("📩 Verification email sent successfully.")
 		_update_state_label("Verification email sent! Please check your inbox.")
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(5.0).timeout #changed "await Removed"
 		_on_back_button_pressed()  # Redirect back to login
 
 # ❌ Handle failed signup
@@ -53,7 +53,7 @@ func _on_show_password_button_pressed() -> void:
 	var password_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Password Edit")
 
 	if password_edit:
-		password_hidden = !password_hidden  # Toggle state
+		password_hidden = !password_hidden  # Toggle state #changed here "! removed"
 		password_edit.secret = password_hidden  # Update visibility
 	else:
 		print("❌ Error: Could not find PasswordLine")

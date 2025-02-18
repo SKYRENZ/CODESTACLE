@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b42a8d1fkoovg"
-path="res://.godot/imported/Enter Button.png-5a7ced7ce88dbb7874c704ae056dfde0.ctex"
+uid="uid://lqeuusfejvet"
+path="res://.godot/imported/Start Button-Sheet.svg-4cccfd4eb678f3d56ddfe7363c0f848b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/Enter Button.png"
-dest_files=["res://.godot/imported/Enter Button.png-5a7ced7ce88dbb7874c704ae056dfde0.ctex"]
+source_file="res://ASSETS/LETTERS/Start Button-Sheet.svg"
+dest_files=["res://.godot/imported/Start Button-Sheet.svg-4cccfd4eb678f3d56ddfe7363c0f848b.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -1,10 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8xy62w7xk10m"]
+[gd_scene load_steps=20 format=3 uid="uid://c8xy62w7xk10m"]
 
-[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_5pwe2"]
 [ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_q1ps4"]
-[ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="2_4d2x4"]
-[ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="3_xwjfk"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_7klu6"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_bramr"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_jriox"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="4_mr1b2"]
+[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_q4nif"]
 [ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://Menu.mp3" id="5_8r1d1"]
+[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BUTTONS/StartBtn.tres" id="5_q4btq"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_ysl8q"]
+[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="6_h3boa"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="7_00q6x"]
+[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="8_187qh"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="9_g0coc"]
+[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="10_htgj0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ud42o"]
+shader = ExtResource("2_bramr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eo1qu"]
+shader = ExtResource("3_jriox")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mi2n"]
+shader = ExtResource("5_ysl8q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwf1j"]
+shader = ExtResource("7_00q6x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a08w4"]
+shader = ExtResource("9_g0coc")
 
 [node name="Node" type="Control"]
 layout_mode = 3
@@ -23,24 +47,74 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="NinePatchRect"]
-texture_filter = 1
+[node name="Sky" type="TextureRect" parent="NinePatchRect"]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_ud42o")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5pwe2")
+texture = ExtResource("2_7klu6")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Road" type="TextureRect" parent="NinePatchRect"]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-texture = ExtResource("3_xwjfk")
-expand_mode = 1
+[node name="Cloud 3" type="TextureRect" parent="NinePatchRect"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_eo1qu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q4nif")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 4" type="TextureRect" parent="NinePatchRect"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_0mi2n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_h3boa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Mountain" type="TextureRect" parent="NinePatchRect"]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_dwf1j")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_187qh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Trees" type="TextureRect" parent="NinePatchRect"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a08w4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 80.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_htgj0")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="NinePatchRect"]
 layout_mode = 1
@@ -49,18 +123,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -498.5
-offset_top = -58.5
-offset_right = 498.5
-offset_bottom = 58.5
+offset_left = -561.0
+offset_top = -91.0
+offset_right = 561.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
-theme_override_colors/font_shadow_color = Color(0.107136, 0.200437, 0.14565, 1)
-theme_override_fonts/font = ExtResource("2_4d2x4")
-theme_override_font_sizes/font_size = 130
-text = "codestacle
-"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mr1b2")
+theme_override_font_sizes/font_size = 135
+text = "CODESTACLE"
 
 [node name="Start Button" type="Button" parent="NinePatchRect"]
 layout_mode = 1
@@ -69,20 +142,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = 183.5
-offset_right = 124.0
-offset_bottom = 248.5
+offset_left = -91.5
+offset_top = 140.5
+offset_right = 91.5
+offset_bottom = 243.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_hover_color = Color(0.313726, 0.635294, 0.862745, 1)
-theme_override_colors/font_pressed_color = Color(0.180857, 0.472819, 0.669654, 1)
-theme_override_colors/font_color = Color(0.788203, 0.89446, 0.979016, 1)
-theme_override_fonts/font = ExtResource("2_4d2x4")
+theme = ExtResource("5_q4btq")
+theme_override_fonts/font = ExtResource("4_mr1b2")
 theme_override_font_sizes/font_size = 65
-text = "Start"
-flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8r1d1")

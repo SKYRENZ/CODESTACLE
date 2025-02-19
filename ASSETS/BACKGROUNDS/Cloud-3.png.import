@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtxdj23dexekg"
-path="res://.godot/imported/Stage Card start-Sheet.png-ab8cc16b1ed6a69168f2fd3e8e9b5ae9.ctex"
+uid="uid://cmxoi2lqsnqmg"
+path="res://.godot/imported/Cloud-3.png-38382927ad61d7e332d3a041f7c4a977.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/BUTTONS/Stage Card start-Sheet.png"
-dest_files=["res://.godot/imported/Stage Card start-Sheet.png-ab8cc16b1ed6a69168f2fd3e8e9b5ae9.ctex"]
+source_file="res://ASSETS/BACKGROUNDS/Cloud-3.png"
+dest_files=["res://.godot/imported/Cloud-3.png-38382927ad61d7e332d3a041f7c4a977.ctex"]
 
 [params]
 

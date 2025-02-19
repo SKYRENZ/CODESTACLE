@@ -1,12 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://ptmnjigr1hjd"]
+[gd_scene load_steps=24 format=3 uid="uid://ptmnjigr1hjd"]
 
-[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_4ttom"]
 [ext_resource type="Script" path="res://SCRIPTS/login_screen.gd" id="1_52kbi"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="1_u5d1f"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08mmc"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="2_dm5yx"]
+[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="2_nbdds"]
 [ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="2_qs75m"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_utb3t"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="3_0o543"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_otjxv"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="4_d341r"]
-[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="5_462wa"]
-[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BACKGROUNDS/BUTTONS/minigooglesignin.png" id="7_aeqcv"]
+[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_eunir"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_3tod8"]
+[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="6_ixqya"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="7_ytadx"]
+[ext_resource type="Theme" uid="uid://4c37h253qaf8" path="res://ASSETS/BUTTONS/ShowPass.tres" id="8_hpoaj"]
+[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="8_relrn"]
+[ext_resource type="Theme" uid="uid://ce5jr0uu56yoa" path="res://ASSETS/BUTTONS/GoogleSSO.tres" id="9_c1v1o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vej0"]
+shader = ExtResource("2_08mmc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrj5"]
+shader = ExtResource("3_otjxv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3mlb"]
+shader = ExtResource("5_3tod8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w1xr"]
+shader = ExtResource("2_dm5yx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjgfe"]
+shader = ExtResource("3_0o543")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7yn0"]
+shader = ExtResource("3_0o543")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,22 +45,82 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_52kbi")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Sky" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_0vej0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_right = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_4ttom")
+texture = ExtResource("2_utb3t")
 expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 3" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fjrj5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_eunir")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 4" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a3mlb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ixqya")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Mountain" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_1w1xr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nbdds")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Trees" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tjgfe")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 80.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_relrn")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Road" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k7yn0")
 layout_mode = 0
+offset_top = 27.0
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 747.0
 texture = ExtResource("4_d341r")
 expand_mode = 1
 
@@ -52,11 +140,6 @@ theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 90
 text = "codestacle"
 
-[node name="Robot" type="Sprite2D" parent="."]
-position = Vector2(90, 614)
-scale = Vector2(0.805882, 0.805882)
-texture = ExtResource("5_462wa")
-
 [node name="Container" type="NinePatchRect" parent="."]
 clip_contents = true
 layout_mode = 1
@@ -66,9 +149,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -383.0
-offset_top = -212.5
+offset_top = -212.0
 offset_right = -68.0
-offset_bottom = 212.5
+offset_bottom = 255.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("1_u5d1f")
@@ -80,10 +163,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -113.0
-offset_top = 50.0
-offset_right = 113.0
-offset_bottom = 243.0
+offset_left = -116.5
+offset_top = 47.0
+offset_right = 110.5
+offset_bottom = 327.0
 grow_horizontal = 2
 theme_override_constants/separation = 37
 alignment = 1
@@ -94,9 +177,9 @@ layout_mode = 2
 [node name="LoginText" type="Label" parent="Container/Login Container/LoginLetters"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_fonts/font = ExtResource("7_ytadx")
 theme_override_font_sizes/font_size = 45
-text = "Login"
+text = "LOGIN"
 
 [node name="User and Pass Container" type="VBoxContainer" parent="Container/Login Container"]
 layout_mode = 2
@@ -105,16 +188,10 @@ theme_override_constants/separation = 15
 [node name="Username Container" type="VBoxContainer" parent="Container/Login Container/User and Pass Container"]
 layout_mode = 2
 
-[node name="statelabel" type="Label" parent="Container/Login Container/User and Pass Container/Username Container"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qs75m")
-theme_override_font_sizes/font_size = 20
-
 [node name="Username" type="Label" parent="Container/Login Container/User and Pass Container/Username Container"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_fonts/font = ExtResource("7_ytadx")
 theme_override_font_sizes/font_size = 16
 text = "EMAIL:"
 
@@ -122,25 +199,41 @@ text = "EMAIL:"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qs75m")
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("7_ytadx")
+theme_override_font_sizes/font_size = 20
 
 [node name="Password Container" type="VBoxContainer" parent="Container/Login Container/User and Pass Container"]
 layout_mode = 2
 
-[node name="Password" type="Label" parent="Container/Login Container/User and Pass Container/Password Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/Login Container/User and Pass Container/Password Container"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="Container/Login Container/User and Pass Container/Password Container/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 16
 text = "password:
 "
 
+[node name="Label" type="Label" parent="Container/Login Container/User and Pass Container/Password Container/HBoxContainer"]
+layout_mode = 2
+text = "                 "
+
+[node name="Show Password Button" type="Button" parent="Container/Login Container/User and Pass Container/Password Container/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 8
+focus_mode = 0
+theme = ExtResource("8_hpoaj")
+toggle_mode = true
+
 [node name="PasswordLine" type="LineEdit" parent="Container/Login Container/User and Pass Container/Password Container"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qs75m")
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("7_ytadx")
+theme_override_font_sizes/font_size = 20
 secret = true
 
 [node name="ForgotBtn" type="Button" parent="Container/Login Container/User and Pass Container/Password Container"]
@@ -148,26 +241,23 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 focus_mode = 0
-theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_fonts/font = ExtResource("7_ytadx")
 theme_override_font_sizes/font_size = 10
-text = "forgot password"
+text = "Forgot Password"
 flat = true
 
-[node name="Login Button" type="Button" parent="Container/Login Container/User and Pass Container"]
+[node name="Login Button" type="Button" parent="Container"]
 layout_mode = 2
+offset_left = 41.0
+offset_top = 327.0
+offset_right = 275.0
+offset_bottom = 383.0
 focus_mode = 0
 theme_override_colors/font_pressed_color = Color(0.601223, 0.601223, 0.601223, 1)
-theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_fonts/font = ExtResource("7_ytadx")
 theme_override_font_sizes/font_size = 35
 text = "LOGIN"
 flat = true
-
-[node name="Label" type="Label" parent="Container/Login Container"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_qs75m")
-theme_override_font_sizes/font_size = 15
-text = "Don't have an account?"
 
 [node name="Signup Button" type="Button" parent="Container"]
 layout_mode = 1
@@ -176,59 +266,45 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -42.5
-offset_top = -67.5
-offset_right = 40.5
-offset_bottom = -44.5
+offset_left = -38.5
+offset_top = -55.0
+offset_right = 48.5
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0.337255, 0.941176, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.0784314, 0.760784, 1)
 theme_override_colors/font_color = Color(0, 0.337255, 0.941176, 1)
-theme_override_fonts/font = ExtResource("2_qs75m")
+theme_override_fonts/font = ExtResource("7_ytadx")
 theme_override_font_sizes/font_size = 15
 text = "Signup"
 flat = true
 
-[node name="Show Password Button" type="Button" parent="Container"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.067
-anchor_top = 0.576
-anchor_right = 0.105
-anchor_bottom = 0.601
-offset_left = -0.105001
-offset_top = 0.199982
-offset_right = -0.0749397
-offset_bottom = 0.574982
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+offset_left = 23.0
+offset_top = 383.0
+offset_right = 300.0
+offset_bottom = 412.0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("7_ytadx")
+theme_override_font_sizes/font_size = 15
+text = "Don't have an account?"
 
 [node name="Google SSO" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -298.0
-offset_top = -161.0
-offset_right = -162.0
-offset_bottom = -25.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 0
+offset_left = 961.0
+offset_top = 644.0
+offset_right = 1143.0
+offset_bottom = 691.0
 focus_mode = 0
-theme_override_colors/font_hover_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.505882, 0.556863, 1)
-theme_override_colors/font_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_fonts/font = ExtResource("2_qs75m")
-theme_override_font_sizes/font_size = 25
-icon = ExtResource("7_aeqcv")
-flat = true
+theme = ExtResource("9_c1v1o")
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[connection signal="pressed" from="Container/Login Container/User and Pass Container/Password Container/HBoxContainer/Show Password Button" to="." method="_on_show_password_button_pressed"]
 [connection signal="pressed" from="Container/Login Container/User and Pass Container/Password Container/ForgotBtn" to="." method="_on_forgot_btn_pressed"]
-[connection signal="pressed" from="Container/Login Container/User and Pass Container/Login Button" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="Container/Login Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Container/Signup Button" to="." method="_on_signup_button_pressed"]
-[connection signal="pressed" from="Container/Show Password Button" to="." method="_on_show_password_button_pressed"]
 [connection signal="pressed" from="Google SSO" to="." method="_on_google_sso_pressed"]

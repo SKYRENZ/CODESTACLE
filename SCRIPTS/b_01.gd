@@ -1,5 +1,7 @@
 extends CharacterBody2D
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ladder_ray_cast: RayCast2D = $LadderRayCast
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -11,41 +13,49 @@ func _ready():
 	print("Player script is running")
 
 func _physics_process(delta: float) -> void:
-	# Animations
-	if velocity.x > 1 || velocity.x < -1:
-		animated_sprite_2d.play("walking")
-	else:
-		animated_sprite_2d.play("default")
+	# Check for ladder collision using RayCast2D
+	var ladderCollider = ladder_ray_cast.get_collider()
+	is_on_ladder = ladderCollider != null
 
-	# Handle ladder climbing
+	# Handle movement and animations
 	if is_on_ladder:
-		var climb_direction := Input.get_axis("up", "down")
-		if climb_direction:
-			velocity.y = climb_direction * CLIMB_SPEED
-		else:
-			velocity.y = 0
+		_ladder_climb()
 	else:
-		# Add gravity if not on a ladder
-		if not is_on_floor():
-			velocity += get_gravity() * delta
+		_movement(delta)
 
-	# Handle jump if not on a ladder
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_ladder:
+	# Apply gravity only if not on a ladder
+	if not is_on_floor() and not is_on_ladder:
+		velocity += get_gravity() * delta
+
+	move_and_slide()
+
+	# Flip sprite based on movement direction
+	animated_sprite_2d.flip_h = velocity.x < 0
+
+func _movement(delta):
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle horizontal movement/deceleration.
+	# Handle horizontal movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite_2d.play("walking")
 	else:
 		velocity.x = move_toward(velocity.x, 0, 12)
+		animated_sprite_2d.play("default")
 
-	move_and_slide()
-	
-	var isleft = velocity.x < 0
-	animated_sprite_2d.flip_h = isleft
+func _ladder_climb():
+	var climb_direction := Input.get_axis("up", "down")
+	var move_direction := Input.get_axis("left", "right")
 
-# Detect when the player enters or exits the ladder area
+	velocity.x = move_direction * SPEED / 2  # Allow slight horizontal movement
+	velocity.y = climb_direction * CLIMB_SPEED if climb_direction else 0
+
+	animated_sprite_2d.play("climbing" if climb_direction else "default")
+
+# Detect when the player enters or exits a ladder area
 func _on_ladder_area_entered(area: Area2D):
 	if area.is_in_group("ladder"):
 		print("Entered ladder area")

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=10 format=4 uid="uid://ce5jr0uu56yoa"]
 
-[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BACKGROUNDS/BUTTONS/minigooglesignin.png" id="1_umcfh"]
+[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BUTTONS/minigooglesignin.png" id="1_umcfh"]
 
 [sub_resource type="Image" id="Image_1lkb3"]
 data = {

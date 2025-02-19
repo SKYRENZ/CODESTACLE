@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://SCRIPTS/stage_select.gd" id="1_iqmca"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_b15py"]
-[ext_resource type="Theme" uid="uid://cqfco4qxcljl4" path="res://ASSETS/BACKGROUNDS/BUTTONS/Button.tres" id="3_5p10r"]
+[ext_resource type="Theme" uid="uid://cqfco4qxcljl4" path="res://ASSETS/BUTTONS/Button.tres" id="3_5p10r"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3

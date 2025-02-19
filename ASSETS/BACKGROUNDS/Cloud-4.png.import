@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm00ktumfu2op"
-path="res://.godot/imported/show-pass.png-19239f42b4f7bf86c46f93481fd0e820.ctex"
+uid="uid://ca7naa5pdlmx5"
+path="res://.godot/imported/Cloud-4.png-8279001418deafd327b8fa1a553facb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/BUTTONS/show-pass.png"
-dest_files=["res://.godot/imported/show-pass.png-19239f42b4f7bf86c46f93481fd0e820.ctex"]
+source_file="res://ASSETS/BACKGROUNDS/Cloud-4.png"
+dest_files=["res://.godot/imported/Cloud-4.png-8279001418deafd327b8fa1a553facb2.ctex"]
 
 [params]
 

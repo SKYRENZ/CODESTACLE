@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=10 format=4 uid="uid://df3gll1n7is6v"]
 
-[ext_resource type="Texture2D" uid="uid://b0wfpaoiodyoy" path="res://ASSETS/BACKGROUNDS/BUTTONS/Start Button-Sheet3.png" id="1_j2me6"]
+[ext_resource type="Texture2D" uid="uid://b0wfpaoiodyoy" path="res://ASSETS/BUTTONS/Start Button-Sheet3.png" id="1_j2me6"]
 
 [sub_resource type="Image" id="Image_sj03n"]
 data = {

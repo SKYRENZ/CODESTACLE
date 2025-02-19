@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c864hlgnvnr25"
-path="res://.godot/imported/button_sana.png-2a506ba9b813092d5cb26b85c78b586a.ctex"
+uid="uid://b0wfpaoiodyoy"
+path="res://.godot/imported/Start Button-Sheet3.png-ea38ee05f1fd7f36f4fc650ec9e99af7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/button_sana.png"
-dest_files=["res://.godot/imported/button_sana.png-2a506ba9b813092d5cb26b85c78b586a.ctex"]
+source_file="res://ASSETS/BUTTONS/Start Button-Sheet3.png"
+dest_files=["res://.godot/imported/Start Button-Sheet3.png-ea38ee05f1fd7f36f4fc650ec9e99af7.ctex"]
 
 [params]
 

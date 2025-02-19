@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1l4qoux4oaa"
-path="res://.godot/imported/loginAndSignup2.png-1eb24e95d4f005c65fa6ca661ec53ea5.ctex"
+uid="uid://6j2uiqdax5n1"
+path="res://.godot/imported/minigooglesignin.png-3290eef1846afd4355b4156db4627e58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/loginAndSignup2.png"
-dest_files=["res://.godot/imported/loginAndSignup2.png-1eb24e95d4f005c65fa6ca661ec53ea5.ctex"]
+source_file="res://ASSETS/BUTTONS/minigooglesignin.png"
+dest_files=["res://.godot/imported/minigooglesignin.png-3290eef1846afd4355b4156db4627e58.ctex"]
 
 [params]
 

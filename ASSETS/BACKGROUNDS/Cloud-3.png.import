@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0wfpaoiodyoy"
-path="res://.godot/imported/Start Button-Sheet3.png-2b6a29759f91483ca12e8c4798d23f16.ctex"
+uid="uid://cmxoi2lqsnqmg"
+path="res://.godot/imported/Cloud-3.png-38382927ad61d7e332d3a041f7c4a977.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BACKGROUNDS/BUTTONS/Start Button-Sheet3.png"
-dest_files=["res://.godot/imported/Start Button-Sheet3.png-2b6a29759f91483ca12e8c4798d23f16.ctex"]
+source_file="res://ASSETS/BACKGROUNDS/Cloud-3.png"
+dest_files=["res://.godot/imported/Cloud-3.png-38382927ad61d7e332d3a041f7c4a977.ctex"]
 
 [params]
 

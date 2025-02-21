@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_jfqcg"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="3_146tx"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_hblp2"]
-[ext_resource type="Script" path="res://SCRIPTS/popup.gd" id="5_cxpot"]
+[ext_resource type="Script" path="res://SCRIPTS/Popquiz/popup.gd" id="5_l1vbt"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_xe202"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
@@ -468,7 +468,7 @@ position = Vector2(2, -5)
 shape = SubResource("RectangleShape2D_r8vbo")
 
 [node name="popup" type="Node2D" parent="."]
-script = ExtResource("5_cxpot")
+script = ExtResource("5_l1vbt")
 
 [node name="Label" type="Label" parent="popup"]
 offset_left = -774.0

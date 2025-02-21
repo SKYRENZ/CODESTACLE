@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 # goes to the login scene
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://SCENES/Login.tscn")
+	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")

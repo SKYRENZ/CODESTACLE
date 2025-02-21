@@ -473,12 +473,12 @@ tile_set = SubResource("TileSet_308n2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_hblp2")]
+[node name="b-01" parent="." instance=ExtResource("4_hblp2")]
 position = Vector2(-777, 181)
 disable_mode = 2
 collision_layer = 17
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="b-01"]
 position = Vector2(2, -13)
 
 [node name="popup" type="Node2D" parent="."]

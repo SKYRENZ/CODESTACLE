@@ -36,6 +36,8 @@ func _movement(delta):
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animated_sprite_2d.play("jumping")
+		print("Jumping animation triggered")
 
 	# Handle horizontal movement
 	var direction := Input.get_axis("left", "right")

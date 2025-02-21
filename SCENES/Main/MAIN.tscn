@@ -1,34 +1,34 @@
 [gd_scene load_steps=20 format=3 uid="uid://c8xy62w7xk10m"]
 
-[ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_q1ps4"]
-[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_7klu6"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_bramr"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_jriox"]
-[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="4_mr1b2"]
-[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_q4nif"]
-[ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://Menu.mp3" id="5_8r1d1"]
-[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BUTTONS/StartBtn.tres" id="5_q4btq"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_ysl8q"]
-[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="6_h3boa"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="7_00q6x"]
-[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="8_187qh"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="9_g0coc"]
-[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="10_htgj0"]
+[ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_nk1j4"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08spj"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="3_3a3ct"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="4_3gisk"]
+[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="5_5sanu"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="6_xryie"]
+[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="7_ivfro"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="8_vrmsf"]
+[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="9_nfk7k"]
+[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="10_6ahec"]
+[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="11_ywx8l"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="12_od22p"]
+[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BUTTONS/StartBtn.tres" id="13_0m0io"]
+[ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://BGM/Menu.mp3" id="14_md7qh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ud42o"]
-shader = ExtResource("2_bramr")
+shader = ExtResource("2_08spj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eo1qu"]
-shader = ExtResource("3_jriox")
+shader = ExtResource("4_3gisk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0mi2n"]
-shader = ExtResource("5_ysl8q")
+shader = ExtResource("6_xryie")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dwf1j"]
-shader = ExtResource("7_00q6x")
+shader = ExtResource("8_vrmsf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a08w4"]
-shader = ExtResource("9_g0coc")
+shader = ExtResource("10_6ahec")
 
 [node name="Node" type="Control"]
 layout_mode = 3
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q1ps4")
+script = ExtResource("1_nk1j4")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7klu6")
+texture = ExtResource("3_3a3ct")
 expand_mode = 3
 stretch_mode = 5
 
@@ -69,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_q4nif")
+texture = ExtResource("5_5sanu")
 expand_mode = 3
 stretch_mode = 5
 
@@ -82,7 +82,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_h3boa")
+texture = ExtResource("7_ivfro")
 expand_mode = 3
 stretch_mode = 5
 
@@ -95,7 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_187qh")
+texture = ExtResource("9_nfk7k")
 expand_mode = 3
 stretch_mode = 5
 
@@ -112,7 +112,7 @@ offset_right = 80.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_htgj0")
+texture = ExtResource("11_ywx8l")
 expand_mode = 3
 stretch_mode = 5
 
@@ -131,7 +131,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_mr1b2")
+theme_override_fonts/font = ExtResource("12_od22p")
 theme_override_font_sizes/font_size = 135
 text = "CODESTACLE"
 
@@ -149,12 +149,12 @@ offset_bottom = 243.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme = ExtResource("5_q4btq")
-theme_override_fonts/font = ExtResource("4_mr1b2")
+theme = ExtResource("13_0m0io")
+theme_override_fonts/font = ExtResource("12_od22p")
 theme_override_font_sizes/font_size = 65
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8r1d1")
+stream = ExtResource("14_md7qh")
 autoplay = true
 
 [connection signal="pressed" from="NinePatchRect/Start Button" to="." method="_on_start_button_pressed"]

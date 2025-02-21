@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://c8xy62w7xk10m"]
 
-[ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_nk1j4"]
+[ext_resource type="Script" path="res://SCRIPTS/Main/main_screen.gd" id="1_nk1j4"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08spj"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="3_3a3ct"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="4_3gisk"]

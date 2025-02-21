@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://clhgf55e4p6tw"]
 
-[ext_resource type="Script" path="res://SCRIPTS/signup_screen.gd" id="1_qrye3"]
+[ext_resource type="Script" path="res://SCRIPTS/Main/signup_screen.gd" id="1_qrye3"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_1ryr0"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://ptmnjigr1hjd"]
 
-[ext_resource type="Script" path="res://SCRIPTS/login_screen.gd" id="1_52kbi"]
+[ext_resource type="Script" path="res://SCRIPTS/Main/login_screen.gd" id="1_52kbi"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="1_u5d1f"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08mmc"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="2_dm5yx"]

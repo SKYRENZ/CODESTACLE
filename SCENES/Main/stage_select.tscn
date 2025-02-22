@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6s3f1i0188j"]
 
-[ext_resource type="Script" path="res://SCRIPTS/stage_select.gd" id="1_iqmca"]
-[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_b15py"]
-[ext_resource type="Theme" uid="uid://cqfco4qxcljl4" path="res://ASSETS/BUTTONS/Button.tres" id="3_5p10r"]
+[ext_resource type="Script" path="res://SCRIPTS/Main/stage_select.gd" id="1_yefgu"]
+[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_dm1kx"]
+[ext_resource type="Theme" uid="uid://cqfco4qxcljl4" path="res://ASSETS/BUTTONS/Button.tres" id="3_4he7b"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iqmca")
+script = ExtResource("1_yefgu")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_b15py")
+texture = ExtResource("2_dm1kx")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -29,6 +29,6 @@ offset_top = 167.0
 offset_right = 444.0
 offset_bottom = 358.0
 focus_mode = 0
-theme = ExtResource("3_5p10r")
+theme = ExtResource("3_4he7b")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

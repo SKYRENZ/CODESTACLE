@@ -10,6 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://SCENES/stage_select.tscn")
+# goes to the login scene
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")

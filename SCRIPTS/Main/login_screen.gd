@@ -63,7 +63,7 @@ func _on_verification_response(result, response_code, headers, body):
 
 		if is_verified:
 			print("✅ Email is verified! Redirecting to main menu...")
-			get_tree().change_scene_to_file("res://SCENES/main_menu.tscn")
+			get_tree().change_scene_to_file("res://SCENES/Main/main_menu.tscn")
 		else:
 			print("❌ Email not verified. Please verify your email.")
 			var state_label = get_node_or_null("statelabel")
@@ -100,7 +100,7 @@ func _on_refresh_token_response(result, response_code, headers, body):
 # ✅ Handles signup button click
 func _on_signup_button_pressed() -> void:
 	print("🔄 Navigating to signup screen...")
-	get_tree().change_scene_to_file("res://SCENES/signup_screen.tscn")
+	get_tree().change_scene_to_file("res://SCENES/Main/signup_screen.tscn")
 
 # ✅ Handles Google SSO login
 func _on_google_sso_pressed() -> void:

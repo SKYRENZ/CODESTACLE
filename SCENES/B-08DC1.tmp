@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://dwg0tx5somvvx"]
+
+[ext_resource type="Script" path="res://SCRIPTS/b_01.gd" id="1_70g4a"]
+[ext_resource type="Texture2D" uid="uid://d3bc4vpwqq8v3" path="res://ASSETS/Robot 4-Sheet.png" id="1_saea1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5gif"]
+atlas = ExtResource("1_saea1")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh1eu"]
+atlas = ExtResource("1_saea1")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pog8m"]
+atlas = ExtResource("1_saea1")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5sw6"]
+atlas = ExtResource("1_saea1")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h52yl"]
+atlas = ExtResource("1_saea1")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hi5s"]
+atlas = ExtResource("1_saea1")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_815dm"]
+atlas = ExtResource("1_saea1")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w77mb"]
+atlas = ExtResource("1_saea1")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2ci2"]
+atlas = ExtResource("1_saea1")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7443e"]
+atlas = ExtResource("1_saea1")
+region = Rect2(1600, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2wxd"]
+atlas = ExtResource("1_saea1")
+region = Rect2(2000, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8dky"]
+atlas = ExtResource("1_saea1")
+region = Rect2(2400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hlo7"]
+atlas = ExtResource("1_saea1")
+region = Rect2(2800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32wsv"]
+atlas = ExtResource("1_saea1")
+region = Rect2(3200, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2mao"]
+atlas = ExtResource("1_saea1")
+region = Rect2(3600, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb85v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5gif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh1eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pog8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5sw6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h52yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hi5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_815dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w77mb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2ci2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7443e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2wxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8dky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hlo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32wsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2mao")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qflb4"]
+radius = 14.5
+height = 48.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+collision_mask = 17
+script = ExtResource("1_70g4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 3)
+scale = Vector2(0.17, 0.17)
+sprite_frames = SubResource("SpriteFrames_wb85v")
+animation = &"walking"
+autoplay = "default"
+frame_progress = 0.436724
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_qflb4")

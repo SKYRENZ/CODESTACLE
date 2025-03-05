@@ -15,7 +15,7 @@ func _on_body_exited(body: Node2D):
 		player_nearby = false
 
 func _process(_delta):
-	if player_nearby and Input.is_action_just_pressed("Interact"):
+	if player_nearby and Input.is_action_just_pressed("interact"):
 		pickup()
 
 func pickup():

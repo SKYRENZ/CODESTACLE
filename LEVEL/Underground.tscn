@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://bsywucvxai48"]
+[gd_scene load_steps=13 format=4 uid="uid://bsywucvxai48"]
 
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="1_08rrp"]
 [ext_resource type="Script" path="res://underground.gd" id="1_gbf5k"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="2_4lfjh"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_a1dml"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="4_luyb1"]
+[ext_resource type="PackedScene" uid="uid://dkpi4dki5uf7h" path="res://SCENES/collectible.tscn" id="6_75as1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpwmu"]
 texture = ExtResource("4_luyb1")
@@ -366,3 +367,12 @@ position = Vector2(-691, 655)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoidArea"]
 position = Vector2(626.5, -23)
 shape = SubResource("RectangleShape2D_xvj6p")
+
+[node name="collectible" parent="." instance=ExtResource("6_75as1")]
+position = Vector2(-334, 4)
+
+[node name="collectible2" parent="." instance=ExtResource("6_75as1")]
+position = Vector2(591, -246)
+
+[node name="collectible3" parent="." instance=ExtResource("6_75as1")]
+position = Vector2(-468, 360)

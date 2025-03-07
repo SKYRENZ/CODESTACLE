@@ -3,40 +3,54 @@ extends Node2D
 func _ready():
 	var player = get_node("CharacterBody2D")
 	if player:
-		var spawn_point = get_node("Marker2D")
+		# ✅ Set default spawn point
+		var spawn_point = get_node("Marker2D")  
 		if spawn_point:
 			player.spawn_point = spawn_point
-			print("Spawn point set!")
+			print("✅ Initial spawn point set at:", spawn_point.global_position)
 		else:
-			print("Error: Marker2D (SpawnPoint) not found in Underground!")
+			print("❌ Error: Default spawn Marker2D not found in Underground!")
 
+		# ✅ Connect Void Area if exists
 		var void_area = get_node("VoidArea")
 		if void_area:
-			void_area.connect("body_entered", _on_void_area_body_entered)  # Connect ONLY here
-			print("Void area signal connected!")
+			void_area.connect("body_entered", _on_void_area_body_entered)
+			print("✅ Void area signal connected!")
 		else:
-			print("Error: VoidArea not found in Underground!")
-	else:
-		print("Error: CharacterBody2D (Player) not found in Underground!")
+			print("❌ Error: VoidArea not found in Underground!")
 
+		# ✅ Connect all checkpoints in the scene
+		var checkpoints = get_tree().get_nodes_in_group("checkpoint")
+		print("🟢 Found checkpoints:", checkpoints.size())
+
+		for checkpoint in checkpoints:
+			if checkpoint is Area2D:
+				checkpoint.connect("body_entered", _on_checkpoint_reached)
+				print("🔹 Checkpoint connected:", checkpoint.name)
+	else:
+		print("❌ Error: CharacterBody2D (Player) not found in Underground!")
+
+# 🚨 Handle when player falls into void
 func _on_void_area_body_entered(body):
-	print("Body entered VoidArea: ", body)  # Print the entering body
-	print("Body's class: ", body.get_class()) # Print the entering body's class
-
 	if body.is_in_group("player"):
-		print("Body IS in 'player' group!")
+		print("🚨 Player fell into void! Respawning...")
+		body._on_player_died()
 	else:
-		print("Body is NOT in 'player' group.")
+		print("❌ Warning: Non-player object entered VoidArea!")
 
-	if body is Node:
-		print("Body IS a Node!")
-		if body.get_script():  # Check if the body has a script
-			print("Body has a script!")
-			if body.has_method("_on_player_died"):  # Ensure the method exists
-				body._on_player_died()
-			else:
-				print("Body does NOT have the '_on_player_died' method!")
+# 🏁 Handle checkpoint reach
+func _on_checkpoint_reached(body):
+	if body.is_in_group("player"):
+		var checkpoint = body.get_parent()  # Get the checkpoint node
+
+		# ✅ Debug: Print checkpoint children
+		print("🔍 Checkpoint Children:", checkpoint.get_children())
+
+		# ✅ Use find_child to find the marker properly
+		var spawn_marker = checkpoint.find_child("Spawnpoint", true, false)
+
+		if spawn_marker:
+			body.spawn_point = spawn_marker  # ✅ Set spawn point
+			print("✅ Checkpoint reached! New spawn point:", spawn_marker.global_position)
 		else:
-			print("Body does NOT have a script!")
-	else:
-		print("Body is NOT a Node!")
+			print("❌ ERROR: 'Spawnpoint' is missing inside the Checkpoint!")

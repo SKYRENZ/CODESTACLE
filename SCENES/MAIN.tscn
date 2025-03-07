@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8xy62w7xk10m"]
+[gd_scene load_steps=20 format=3 uid="uid://bysk8u8tqa12w"]
 
 [ext_resource type="Script" path="res://SCRIPTS/main_screen.gd" id="1_q1ps4"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_7klu6"]

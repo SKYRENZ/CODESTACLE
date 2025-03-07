@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bh5bxaaga4fpm"
+path="res://.godot/imported/burat.dialogue-eb35522a50a3d6d2bd45f3d32ae99560.tres"
+
+[deps]
+
+source_file="res://burat.dialogue"
+dest_files=["res://.godot/imported/burat.dialogue-eb35522a50a3d6d2bd45f3d32ae99560.tres"]
+
+[params]
+
+defaults=true

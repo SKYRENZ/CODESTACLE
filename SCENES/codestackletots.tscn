@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_75hbr"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="2_j744m"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/B-01.tscn" id="4_gsalt"]
-[ext_resource type="Script" path="res://SCRIPTS/popup.gd" id="5_cyvto"]
+[ext_resource type="Script" uid="uid://bxxlrj4be63gr" path="res://SCRIPTS/popup.gd" id="5_cyvto"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_r4wmi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
@@ -352,8 +352,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4h5kv"]
 _data = {
-"RESET": SubResource("Animation_cjwin"),
-"nalabas": SubResource("Animation_7buu4")
+&"RESET": SubResource("Animation_cjwin"),
+&"nalabas": SubResource("Animation_7buu4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2si6"]
@@ -391,8 +391,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nj1h6"]
 _data = {
-"RESET": SubResource("Animation_ugks5"),
-"jumping": SubResource("Animation_u80fm")
+&"RESET": SubResource("Animation_ugks5"),
+&"jumping": SubResource("Animation_u80fm")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh06e"]
@@ -430,8 +430,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2y0"]
 _data = {
-"RESET": SubResource("Animation_ldi64"),
-"akyat": SubResource("Animation_nuqwv")
+&"RESET": SubResource("Animation_ldi64"),
+&"akyat": SubResource("Animation_nuqwv")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmexi"]
@@ -499,7 +499,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_4h5kv")
+&"": SubResource("AnimationLibrary_4h5kv")
 }
 
 [node name="walking trigger" type="Area2D" parent="popup"]
@@ -523,7 +523,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_nj1h6")
+&"": SubResource("AnimationLibrary_nj1h6")
 }
 
 [node name="jumping trigger" type="Area2D" parent="popup"]
@@ -546,7 +546,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_pj2y0")
+&"": SubResource("AnimationLibrary_pj2y0")
 }
 
 [node name="climb trigger" type="Area2D" parent="popup"]

@@ -65,3 +65,10 @@ func _on_ladder_area_exited(area: Area2D):
 	if area.is_in_group("ladder"):
 		print("Exited ladder area")
 		is_on_ladder = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Prevent dialogue if the player is moving or jumping
+	if is_on_floor() and velocity.x == 0 and velocity.y == 0:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"), "start")
+			return

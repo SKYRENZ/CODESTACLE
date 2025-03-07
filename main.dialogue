@@ -1,0 +1,20 @@
+~ start
+"Hey! Imagine you’re controlling an elevator that needs to stop at different floors. 
+Instead of manually pressing the button for each floor, wouldn't it be great if you could automate it? 
+That's where loops come in!"
+"In coding, a loop is like a helper that repeats tasks for you. 
+Let's use a simple example with a for loop."
+Picture this: The elevator needs to stop at floors 1 through 5. 
+Instead of pressing the button for each floor, a loop can handle it for you.
+[metadata]
+image = "res://ASSETS/jsss.png"
+
+
+"Here's how it looks in JavaScript:
+
+[code]
+for (let floor = 1; floor <= 5; floor++) {
+    console.log(`Stopping at floor ${floor}`);
+}
+[/code]"
+=> END

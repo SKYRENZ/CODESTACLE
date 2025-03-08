@@ -1,15 +1,14 @@
 [gd_scene load_steps=12 format=4 uid="uid://xjrt06deqhyl"]
 
-[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/tileset-Sheet.png" id="1_4vmff"]
-[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_jgauc"]
-[ext_resource type="Texture2D" uid="uid://dr8t84d3yr8di" path="res://ASSETS/TILESETS/RockBG.png" id="3_lxnu5"]
-[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="4_by4un"]
+[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="1_xqa2q"]
+[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_bicrm"]
+[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="3_act0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gri3"]
-texture = ExtResource("1_4vmff")
+texture = ExtResource("1_xqa2q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7g4v"]
-texture = ExtResource("2_jgauc")
+texture = ExtResource("2_bicrm")
 0:0/0 = 0
 1:0/0 = 0
 7:0/0 = 0
@@ -96,8 +95,11 @@ texture = ExtResource("2_jgauc")
 11:8/0 = 0
 8:9/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epwt2"]
+load_path = "res://.godot/imported/RockBG.png-9b937f83af206ec93b561b9679f2b135.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wxhb"]
-texture = ExtResource("3_lxnu5")
+texture = SubResource("CompressedTexture2D_epwt2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -250,7 +252,7 @@ texture = ExtResource("3_lxnu5")
 14:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pksj4"]
-texture = ExtResource("4_by4un")
+texture = ExtResource("3_act0d")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -295,7 +297,7 @@ sources/2 = SubResource("TileSetAtlasSource_7wxhb")
 sources/3 = SubResource("TileSetAtlasSource_pksj4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wahqy"]
-texture = ExtResource("4_by4un")
+texture = ExtResource("3_act0d")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0

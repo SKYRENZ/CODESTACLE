@@ -1,14 +1,14 @@
 [gd_scene load_steps=26 format=4 uid="uid://3hebfol673ga"]
 
-[ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_pka70"]
-[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_jfqcg"]
-[ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_146tx"]
-[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_hblp2"]
-[ext_resource type="Script" path="res://SCRIPTS/Popquiz/popup.gd" id="5_l1vbt"]
-[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_xe202"]
+[ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_m5e11"]
+[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_yvwxb"]
+[ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
+[ext_resource type="Script" path="res://SCRIPTS/Popquiz/popup.gd" id="5_hhn16"]
+[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_kynt8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
-texture = ExtResource("2_jfqcg")
+texture = ExtResource("2_yvwxb")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -163,7 +163,7 @@ texture = ExtResource("2_jfqcg")
 11:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8nch"]
-texture = ExtResource("3_146tx")
+texture = ExtResource("3_owoh4")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -318,7 +318,7 @@ sources/0 = SubResource("TileSetAtlasSource_ejwnv")
 sources/1 = SubResource("TileSetAtlasSource_b8nch")
 
 [sub_resource type="FontVariation" id="FontVariation_6o6xn"]
-base_font = ExtResource("6_xe202")
+base_font = ExtResource("6_kynt8")
 
 [sub_resource type="Animation" id="Animation_cjwin"]
 length = 0.001
@@ -459,7 +459,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_pka70")
+texture = ExtResource("1_m5e11")
 
 [node name="Tots" type="TileMapLayer" parent="."]
 position = Vector2(-520, 280)
@@ -473,7 +473,7 @@ tile_set = SubResource("TileSet_308n2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="b-01" parent="." instance=ExtResource("4_hblp2")]
+[node name="b-01" parent="." instance=ExtResource("4_f1omh")]
 position = Vector2(-777, 181)
 disable_mode = 2
 collision_layer = 17
@@ -482,7 +482,7 @@ collision_layer = 17
 position = Vector2(2, -13)
 
 [node name="popup" type="Node2D" parent="."]
-script = ExtResource("5_l1vbt")
+script = ExtResource("5_hhn16")
 
 [node name="Label" type="Label" parent="popup"]
 offset_left = -774.0

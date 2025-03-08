@@ -167,7 +167,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7e5"]
-size = Vector2(35, 40)
+size = Vector2(31, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_mask = 17
@@ -179,10 +179,10 @@ scale = Vector2(1.4025, 1.4025)
 sprite_frames = SubResource("SpriteFrames_23urm")
 animation = &"jumping"
 autoplay = "default"
-frame_progress = 0.344388
+frame_progress = 0.315373
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 8)
+position = Vector2(2.5, 8)
 shape = SubResource("RectangleShape2D_qm7e5")
 
 [node name="LadderRayCast" type="RayCast2D" parent="."]

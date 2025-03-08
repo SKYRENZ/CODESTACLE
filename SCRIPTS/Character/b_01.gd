@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var ladder_ray_cast: RayCast2D = $LadderRayCast
 @onready var spawn_point: Marker2D = null  # This will be set dynamically
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const CLIMB_SPEED = 200.0
 

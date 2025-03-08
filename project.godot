@@ -22,6 +22,7 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
@@ -76,3 +77,4 @@ down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

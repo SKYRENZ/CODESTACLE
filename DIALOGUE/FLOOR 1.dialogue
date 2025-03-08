@@ -1,0 +1,30 @@
+~ Runistart
+runi:  [#happy, #surprised] "Greetings, B-01! Welcome to the first step of your coding journey. Today, we'll explore the basics of JavaScript!"
+runi: "JavaScript is a powerful programming language that adds interactivity to websites. It makes web pages dynamic, responsive, and engaging."
+- B-01: "Beep boop! JavaScript? Interactive websites? Tell me more!"
+runi: "Think of it this way HTML builds the structure of a webpage, CSS styles its appearance, and JavaScript brings it to life! It's like giving your website a brain!"
+=> END
+
+~ signage1
+"JavaScript is used everywhere! From simple animations to complex web applications, it's the backbone of the modern web."
+=> END
+
+~ signage2
+"JavaScript is used everywhere! From simple animations to complex web applications, it's the backbone of the modern web."
+=> END
+
+~ signage3
+"Why learn JavaScript? Because it opens doors to endless possibilities! You can create games, interactive maps, data visualizations, and much more."
+=> END
+
+~ signage4
+ "JavaScript is the most popular programming language in the world. A skill for the future!"
+=> END
+
+~ Runiquiz
+"Congratulations, B-01! You've made it to the end of the first stage. Now, it's time to test your knowledge with a quick quiz!"
+=> END
+
+~ Runiend
+Runi: "Excellent work, B-01! You've successfully completed your first lesson in JavaScript! Keep practicing, and you'll become a coding master in no time! Now, let's proceed to the next lesson!"
+=> END

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1c3xq2skqnso"]
+
+[ext_resource type="Texture2D" uid="uid://bxb3modnbf7pu" path="res://ASSETS/Character/Runi the all knowing-Sheet.png" id="1_kr4la"]
+[ext_resource type="Script" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h78op"]
+atlas = ExtResource("1_kr4la")
+region = Rect2(0, 0, 42, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkoyg"]
+atlas = ExtResource("1_kr4la")
+region = Rect2(42, 0, 42, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xioe"]
+atlas = ExtResource("1_kr4la")
+region = Rect2(84, 0, 42, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhb4h"]
+atlas = ExtResource("1_kr4la")
+region = Rect2(126, 0, 42, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bteqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h78op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkoyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xioe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhb4h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Runi" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_v3dvr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -3.64286)
+scale = Vector2(1.14286, 1.14286)
+sprite_frames = SubResource("SpriteFrames_bteqn")
+animation = &"idle"
+flip_h = true

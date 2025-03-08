@@ -794,7 +794,7 @@ color = Color(0, 0.133333, 0.133333, 0.917647)
 
 [node name="CharacterBody2D" parent="TextureRect/ColorRect" instance=ExtResource("1_o5alc")]
 visibility_layer = 8
-position = Vector2(1623, 419)
+position = Vector2(51, 760)
 
 [node name="SlumssSign1" type="Sprite2D" parent="TextureRect/ColorRect"]
 position = Vector2(334, 648)

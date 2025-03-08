@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://du36cdb5nyrdr"]
+
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="1_jtxos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvj2c"]
+size = Vector2(136.715, 137.332)
+
+[node name="Robot" type="Sprite2D"]
+position = Vector2(277, 770)
+scale = Vector2(0.373039, 0.40049)
+texture = ExtResource("1_jtxos")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.34045, 6.24255)
+shape = SubResource("RectangleShape2D_qvj2c")

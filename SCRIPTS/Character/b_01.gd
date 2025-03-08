@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ladder_ray_cast: RayCast2D = $LadderRayCast
+@onready var spawn_point: Marker2D = null  # This will be set dynamically
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -11,6 +12,7 @@ var is_on_ladder = false
 
 func _ready():
 	print("Player script is running")
+	# Spawn point will be set dynamically by the level script (Underground.gd)
 
 func _physics_process(delta: float) -> void:
 	# Check for ladder collision using RayCast2D
@@ -34,7 +36,7 @@ func _physics_process(delta: float) -> void:
 
 func _movement(delta):
 	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_ladder:
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.play("jumping")
 		print("Jumping animation triggered")
@@ -67,3 +69,27 @@ func _on_ladder_area_exited(area: Area2D):
 	if area.is_in_group("ladder"):
 		print("Exited ladder area")
 		is_on_ladder = false
+
+# Handles when the player enters a void area (falls off)
+func _on_void_area_entered(body):
+	if body.is_in_group("player"):  # Check if the body is in the player group
+		_on_player_died()
+
+# Handles respawning when the player dies
+func _on_player_died():
+	velocity = Vector2.ZERO
+	is_on_ladder = false
+
+	if spawn_point:  # Ensure spawn_point is set
+		global_position = spawn_point.global_position
+		print("Player Respawned at:", spawn_point.global_position)
+	else:
+		print("Error: SpawnPoint not set! Check Underground script.")
+
+# Called when the player enters a checkpoint
+func _on_checkpoint_reached(checkpoint: Area2D):
+	if checkpoint.has_node("Spawnpoint"):
+		spawn_point = checkpoint.get_node("Spawnpoint")
+		print("Checkpoint reached! New spawn point set at:", spawn_point.global_position)
+	else:
+		print("Error: Checkpoint missing 'Point' (Marker2D)!")

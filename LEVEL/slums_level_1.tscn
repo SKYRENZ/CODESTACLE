@@ -1,12 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhkkmbpr3eocn"]
+[gd_scene load_steps=8 format=4 uid="uid://dhkkmbpr3eocn"]
 
-[ext_resource type="Texture2D" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="1_s68ga"]
-[ext_resource type="Texture2D" path="res://ASSETS/TILESETS/slumsbackground().png" id="2_t8pmc"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="3_ff51u"]
-[ext_resource type="Texture2D" path="res://ASSETS/TILESETS/slumshouse and poster.png" id="4_hg73t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0njo"]
-texture = ExtResource("1_s68ga")
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -120,7 +116,6 @@ texture = ExtResource("1_s68ga")
 sources/0 = SubResource("TileSetAtlasSource_f0njo")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xovoy"]
-texture = ExtResource("2_t8pmc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -8611,7 +8606,6 @@ texture = ExtResource("3_ff51u")
 8:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs65c"]
-texture = ExtResource("4_hg73t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

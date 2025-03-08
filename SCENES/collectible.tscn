@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkpi4dki5uf7h"]
+
+[ext_resource type="Script" path="res://SCRIPTS/collectible.gd" id="1_cfl8l"]
+[ext_resource type="Texture2D" uid="uid://080bo8keiuru" path="res://ASSETS/LETTERS/password.png" id="1_jv7fe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbpo5"]
+size = Vector2(31, 14)
+
+[node name="collectible" type="Area2D"]
+script = ExtResource("1_cfl8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -3)
+scale = Vector2(0.0410714, 0.22449)
+texture = ExtResource("1_jv7fe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_fbpo5")

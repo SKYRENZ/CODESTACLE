@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="3_x3csx"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_k54yg"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="5_3ldyp"]
-[ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/TILESETS/tots1-export.png" id="6_fbsfs"]
+[ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="6_fbsfs"]
 [ext_resource type="PackedScene" uid="uid://b6ec7wnygc7xd" path="res://SCENES/Mechanics/PopUPQUIZ.tscn" id="7_n31dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]
@@ -325,9 +325,6 @@ texture = ExtResource("3_x3csx")
 position = Vector2(-777, 181)
 disable_mode = 2
 collision_layer = 17
-
-[node name="Camera2D" type="Camera2D" parent="B-01"]
-position = Vector2(2, -13)
 
 [node name="map" type="Node" parent="."]
 

@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=4 uid="uid://xjrt06deqhyl"]
 
-[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/tileset-Sheet.png" id="1_d3gmo"]
-[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_fyp0a"]
-[ext_resource type="Texture2D" uid="uid://dr8t84d3yr8di" path="res://ASSETS/TILESETS/RockBG.png" id="3_5s8ek"]
-[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="4_x8d42"]
+[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/tileset-Sheet.png" id="1_4vmff"]
+[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_jgauc"]
+[ext_resource type="Texture2D" uid="uid://dr8t84d3yr8di" path="res://ASSETS/TILESETS/RockBG.png" id="3_lxnu5"]
+[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="4_by4un"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gri3"]
-texture = ExtResource("1_d3gmo")
+texture = ExtResource("1_4vmff")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7g4v"]
-texture = ExtResource("2_fyp0a")
+texture = ExtResource("2_jgauc")
 0:0/0 = 0
 1:0/0 = 0
 7:0/0 = 0
@@ -97,7 +97,7 @@ texture = ExtResource("2_fyp0a")
 8:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wxhb"]
-texture = ExtResource("3_5s8ek")
+texture = ExtResource("3_lxnu5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -250,7 +250,7 @@ texture = ExtResource("3_5s8ek")
 14:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pksj4"]
-texture = ExtResource("4_x8d42")
+texture = ExtResource("4_by4un")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -295,7 +295,7 @@ sources/2 = SubResource("TileSetAtlasSource_7wxhb")
 sources/3 = SubResource("TileSetAtlasSource_pksj4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wahqy"]
-texture = ExtResource("4_x8d42")
+texture = ExtResource("4_by4un")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0

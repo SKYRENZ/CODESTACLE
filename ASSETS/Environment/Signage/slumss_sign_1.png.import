@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbcluva7tpti"
-path="res://.godot/imported/door-Sheet.png-217ad2c8277a4c89fbf55620ba895efa.ctex"
+uid="uid://woxqoqx5nak7"
+path="res://.godot/imported/slumss_sign_1.png-c391e8e4de07043c676c2d9325fbafcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/DOORS/door-Sheet.png"
-dest_files=["res://.godot/imported/door-Sheet.png-217ad2c8277a4c89fbf55620ba895efa.ctex"]
+source_file="res://ASSETS/Environment/Signage/slumss_sign_1.png"
+dest_files=["res://.godot/imported/slumss_sign_1.png-c391e8e4de07043c676c2d9325fbafcf.ctex"]
 
 [params]
 

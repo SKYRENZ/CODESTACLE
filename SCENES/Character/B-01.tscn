@@ -166,9 +166,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qflb4"]
-radius = 14.5
-height = 48.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7e5"]
+size = Vector2(35, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_mask = 17
@@ -183,8 +182,8 @@ autoplay = "default"
 frame_progress = 0.344388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 6)
-shape = SubResource("CapsuleShape2D_qflb4")
+position = Vector2(0.5, 8)
+shape = SubResource("RectangleShape2D_qm7e5")
 
 [node name="LadderRayCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, -60)

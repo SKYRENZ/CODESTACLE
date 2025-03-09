@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://oi17asljkpsr"]
+[gd_scene load_steps=22 format=4 uid="uid://oi17asljkpsr"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_u5old"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_xcvbj"]
@@ -9,8 +9,9 @@
 [ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_h8j2s"]
 [ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_6ogsm"]
 [ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_gwb4x"]
-[ext_resource type="Script" path="res://SCENES/FLOOR/Slums/runi_quiz.gd" id="10_up4vp"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="10_up4vp"]
 [ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_w15lx"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/try.tscn" id="11_wf8r8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -810,7 +811,7 @@ color = Color(0, 0.133333, 0.133333, 0.917647)
 [node name="B-01" parent="TextureRect/ColorRect" instance=ExtResource("1_u5old")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(34, 771)
+position = Vector2(26, 768)
 
 [node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("4_cyq4j")]
 position = Vector2(277, 777)
@@ -881,10 +882,13 @@ shape = SubResource("RectangleShape2D_mab7b")
 collision_layer = 32
 script = ExtResource("10_up4vp")
 dialogue_resource = ExtResource("6_8ufnl")
+quiz_scene = ExtResource("11_wf8r8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Dialogues/RuniQuiz"]
 position = Vector2(1653, 604)
 shape = SubResource("RectangleShape2D_mab7b")
+
+[node name="Button" type="Button" parent="TextureRect/ColorRect/Dialogues/RuniQuiz"]
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 

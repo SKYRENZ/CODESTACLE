@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc2ngrbblqd4i"]
+
+[ext_resource type="Texture2D" uid="uid://v46be5cmuo0n" path="res://ASSETS/Character/Runi the all knowing.png" id="1_aspwo"]
+[ext_resource type="Script" path="res://SCENES/Mechanics/quiz.gd" id="1_dggmo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 2.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dggmo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.627451, 0.321569, 0.176471, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ColorRect2"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 22.5
+offset_right = -19.0
+offset_bottom = -19.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.961286, 0.758169, 0.670115, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect2/ColorRect"]
+clip_children = 1
+layout_mode = 1
+offset_left = 313.0
+offset_top = 340.0
+offset_right = 1028.0
+offset_bottom = 552.0
+
+[node name="A" type="Button" parent="CanvasLayer/ColorRect2/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="B" type="Button" parent="CanvasLayer/ColorRect2/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="C" type="Button" parent="CanvasLayer/ColorRect2/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="D" type="Button" parent="CanvasLayer/ColorRect2/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RuniTheAllKnowing" type="Sprite2D" parent="CanvasLayer/ColorRect2/ColorRect"]
+position = Vector2(106, 512.5)
+scale = Vector2(0.610714, 0.610714)
+texture = ExtResource("1_aspwo")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ColorRect2/ColorRect"]
+modulate = Color(0, 1, 0, 1)
+self_modulate = Color(1, 0, 1, 1)
+layout_mode = 0
+offset_left = 169.0
+offset_top = 33.5
+offset_right = 1182.0
+offset_bottom = 313.5
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2/ColorRect/Panel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 26.0
+offset_right = 992.0
+offset_bottom = 254.0

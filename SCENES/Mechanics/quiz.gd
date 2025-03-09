@@ -79,9 +79,25 @@ func _ready() -> void:
 	# Resize the quiz to not take up the full screen
 	resize_quiz()
 	
+	var player = get_tree().get_nodes_in_group("player")
+	if player.size() > 0:
+		# Lock player movement
+		disable_player_movement(player[0])
 	# Display the first question
 	display_question()
+# Disables player movement
+func disable_player_movement(player_node) -> void:
+	# This is a custom method to disable the player's movement
+	# You can modify this to fit your player controller
+	if player_node.has_method("set_movement_locked"):
+		player_node.set_movement_locked(true)
 
+# Enables player movement
+func enable_player_movement(player_node) -> void:
+	# This is a custom method to enable the player's movement
+	if player_node.has_method("set_movement_locked"):
+		player_node.set_movement_locked(false)
+		
 # Resize the quiz to be smaller than the full screen
 func resize_quiz() -> void:
 	# Get screen size
@@ -196,5 +212,11 @@ func show_final_score() -> void:
 
 # Handle continue button press - close the screen
 func _on_continue_pressed() -> void:
-	# Close the quiz screen
+	# Find the player node
+	var player = get_tree().get_nodes_in_group("player")
+	if player.size() > 0:
+		# Re-enable player movement
+		enable_player_movement(player[0])
+	
+	# Close the quiz
 	queue_free()

@@ -9,12 +9,24 @@ const JUMP_VELOCITY = -400.0
 const CLIMB_SPEED = 200.0
 
 var is_on_ladder = false
+var movement_locked = false  # New variable to control movement lock
 
 func _ready():
 	print("Player script is running")
+	# Add to player group if not already in it
+	if not is_in_group("player"):
+		add_to_group("player")
 	# Spawn point will be set dynamically by the level script (Underground.gd)
 
 func _physics_process(delta: float) -> void:
+	# If movement is locked, prevent any player control
+	if movement_locked:
+		# Still apply gravity if not on floor
+		if not is_on_floor() and not is_on_ladder:
+			velocity += get_gravity() * delta
+			move_and_slide()
+		return
+	
 	# Check for ladder collision using RayCast2D
 	var ladderCollider = ladder_ray_cast.get_collider()
 	is_on_ladder = ladderCollider != null
@@ -33,6 +45,16 @@ func _physics_process(delta: float) -> void:
 
 	# Flip sprite based on movement direction
 	animated_sprite_2d.flip_h = velocity.x < 0
+
+
+# Method to lock/unlock player movement (called from quiz and dialogue)
+func set_movement_locked(locked: bool) -> void:
+	movement_locked = locked
+	if locked:
+		# Stop all current movement
+		velocity = Vector2.ZERO
+		# Set idle animation
+		animated_sprite_2d.play("default")
 
 func _movement(delta):
 	# Handle jump

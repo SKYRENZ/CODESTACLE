@@ -8,7 +8,7 @@ var is_open = false  # Track if validation UI is open
 @onready var inventory_panel = $Panel  
 
 func _process(_delta):
-	if Input.is_action_just_pressed("toggle_validation"):
+	if Input.is_action_just_pressed("toggle_validation"):  # Press 'F' to open/close
 		toggle_validation()
 
 # ✅ Open/Close Validation UI
@@ -25,14 +25,15 @@ func add_item(item_name, item_texture) -> bool:
 			collected_items.append(item_name)
 			next_expected_index += 1  # Move to next item in order
 			display_item(item_texture)
+			show_feedback(true)  # ✅ Flash creamy green if correct
 			print("✅ Correct! Added:", item_name)
 			return true  # ✅ Accepted
 		else:
-			show_wrong_feedback()  
+			show_feedback(false)  # ❌ Flash creamy red if wrong order
 			print("❌ Incorrect order! Expected:", expected_item, "but got:", item_name)
 			return false  # ❌ Wrong order → Respawn item
 	else:
-		show_wrong_feedback()  
+		show_feedback(false)  # ❌ Flash creamy red if invalid
 		print("❌ Item rejected:", item_name)
 		return false  # ❌ Invalid item → Respawn item
 
@@ -52,14 +53,12 @@ func display_item(item_texture):
 	else:
 		print("❌ Error: VBoxContainer not found!")
 
-# ❌ Show "wrong" effect (red flash)
-func show_wrong_feedback():
-	inventory_panel.modulate = Color(1, 0, 0)  
-	await get_tree().create_timer(0.3).timeout
-	inventory_panel.modulate = Color(1, 1, 1)
+# ✅ Show color feedback (green if correct, red if wrong)
+func show_feedback(is_correct: bool):
+	if is_correct:
+		inventory_panel.modulate = Color(0.75, 1.0, 0.75)  # ✅ Creamy Green
+	else:
+		inventory_panel.modulate = Color(1.0, 0.75, 0.75)  # ❌ Creamy Red
 
-# 🔄 Reset validation (optional: call this to restart the order check)
-func reset_validation():
-	collected_items.clear()
-	next_expected_index = 0
-	print("🔄 Validation reset! Start over.")
+	await get_tree().create_timer(0.3).timeout
+	inventory_panel.modulate = Color(1, 1, 1)  # Reset to normal

@@ -811,7 +811,7 @@ color = Color(0, 0.133333, 0.133333, 0.917647)
 [node name="B-01" parent="TextureRect/ColorRect" instance=ExtResource("1_u5old")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(26, 768)
+position = Vector2(1607, 621)
 
 [node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("4_cyq4j")]
 position = Vector2(277, 777)

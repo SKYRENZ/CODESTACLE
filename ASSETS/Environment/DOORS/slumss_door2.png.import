@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpoqf3bbh61f"
-path="res://.godot/imported/slumss_door2.png-7718274827f4e03db9178aabbce19818.ctex"
+path="res://.godot/imported/slumss_door2.png-6a8c8bf64141e31f10866cc21789a6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SCENES/FLOOR/Slums/slumss_door2.png"
-dest_files=["res://.godot/imported/slumss_door2.png-7718274827f4e03db9178aabbce19818.ctex"]
+source_file="res://ASSETS/Environment/DOORS/slumss_door2.png"
+dest_files=["res://.godot/imported/slumss_door2.png-6a8c8bf64141e31f10866cc21789a6fb.ctex"]
 
 [params]
 

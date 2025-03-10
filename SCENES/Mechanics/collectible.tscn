@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkpi4dki5uf7h"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
+[ext_resource type="Script" uid="uid://dvv2706xfhygk" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
 [ext_resource type="Texture2D" uid="uid://c5e26ix4nur3t" path="res://new_compressed_texture_2d.tres" id="2_k53bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbpo5"]

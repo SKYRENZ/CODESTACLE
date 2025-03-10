@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_yvwxb"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
-[ext_resource type="Script" path="res://SCRIPTS/Popquiz/popup.gd" id="5_hhn16"]
+[ext_resource type="Script" uid="uid://cpexo5pnvw814" path="res://SCRIPTS/Popquiz/popup.gd" id="5_hhn16"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_kynt8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
@@ -352,8 +352,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4h5kv"]
 _data = {
-"RESET": SubResource("Animation_cjwin"),
-"nalabas": SubResource("Animation_7buu4")
+&"RESET": SubResource("Animation_cjwin"),
+&"nalabas": SubResource("Animation_7buu4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2si6"]
@@ -391,8 +391,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nj1h6"]
 _data = {
-"RESET": SubResource("Animation_ugks5"),
-"jumping": SubResource("Animation_u80fm")
+&"RESET": SubResource("Animation_ugks5"),
+&"jumping": SubResource("Animation_u80fm")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh06e"]
@@ -430,8 +430,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2y0"]
 _data = {
-"RESET": SubResource("Animation_ldi64"),
-"akyat": SubResource("Animation_nuqwv")
+&"RESET": SubResource("Animation_ldi64"),
+&"akyat": SubResource("Animation_nuqwv")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmexi"]

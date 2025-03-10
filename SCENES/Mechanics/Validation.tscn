@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://obwfbarruhv7"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/validation.gd" id="1_k2y11"]
+[ext_resource type="Script" uid="uid://c6ysi88lpmjk1" path="res://SCRIPTS/Mechanics/validation.gd" id="1_k2y11"]
 
 [node name="Validation" type="Control"]
 layout_mode = 3

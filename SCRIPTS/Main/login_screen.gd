@@ -9,6 +9,8 @@ func _ready() -> void:
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
 	print("✅ Login screen loaded.")
+	AudioPlayer.play_music_main()
+	
 
 # ✅ Handles login button press
 func _on_login_button_pressed() -> void:

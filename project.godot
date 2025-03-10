@@ -17,6 +17,14 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+<<<<<<< Updated upstream
+=======
+AudioPlayer="*res://BGM/audio_player.gd"
+
+[dialogue_manager]
+
+general/wrap_lines=true
+>>>>>>> Stashed changes
 
 [display]
 

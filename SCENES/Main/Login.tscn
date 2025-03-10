@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://ptmnjigr1hjd"]
+[gd_scene load_steps=23 format=3 uid="uid://ptmnjigr1hjd"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Main/login_screen.gd" id="1_52kbi"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="1_u5d1f"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08mmc"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="2_dm5yx"]
 [ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="2_nbdds"]
-[ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="2_qs75m"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_utb3t"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="3_0o543"]
 [ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_otjxv"]
@@ -136,7 +135,6 @@ offset_bottom = -73.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
 theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
-theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 90
 text = "codestacle"
 
@@ -210,7 +208,6 @@ layout_mode = 2
 
 [node name="Password" type="Label" parent="Container/Login Container/User and Pass Container/Password Container/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qs75m")
 theme_override_font_sizes/font_size = 16
 text = "password:
 "

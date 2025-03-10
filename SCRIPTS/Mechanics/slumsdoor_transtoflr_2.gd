@@ -14,7 +14,7 @@ func _ready():
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 
-func _on_body_entered(body):
+func _on_body_entered(body):              
 	if body.is_in_group("player"):
 		player_in_area = true
 		print("Checkpoint activated. Changing scene...")

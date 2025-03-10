@@ -17,19 +17,20 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
-<<<<<<< Updated upstream
-=======
-AudioPlayer="*res://BGM/audio_player.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+QuizDataManager="*res://SCRIPTS/Mechanics/QuizDataManager.gd"
+AudioPlayer="*res://BGM/audio_player.tscn"
 
 [dialogue_manager]
 
 general/wrap_lines=true
->>>>>>> Stashed changes
+editor/wrap_long_lines=true
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
@@ -79,8 +80,13 @@ down={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

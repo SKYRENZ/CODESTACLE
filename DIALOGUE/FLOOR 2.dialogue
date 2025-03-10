@@ -1,0 +1,26 @@
+~ Runistart
+runi:  "Welcome back, B-01! Now that you know what JavaScript is, let's learn where to put it! This floor is all about placement!"
+runi: "JavaScript code can be included in an HTML document in two main ways internally, using the <script> tag, or externally, by linking a .js file."
+- B-01: "Beep boop! <script> tags? External files? What's the difference?"
+Runi: "Great question! Internal JavaScript is placed directly within the HTML file, typically in the <head> or <body> section. External JavaScript lives in a separate file and is linked to the HTML."
+=> END
+
+~ signage1
+"Internal JavaScript is useful for small scripts specific to a single page. Use <script> tags to enclose the Javascript."
+=> END
+
+~ signage2
+"External JavaScript is best for larger projects or when you want to reuse the same code across multiple pages. It keeps your HTML cleaner and easier to maintain. Use src to link the file"
+=> END
+
+~ signage3
+"Remember to close your <script> tags with </script>!"
+=> END
+
+~ Runiquiz
+Runi: "Excellent! You've reached the end of Floor 2. Time for another quiz to see if you understand where JavaScript goes!"
+=> END
+
+~ Runiend
+Runi: "Fantastic, B-01! You've mastered the art of JavaScript placement. Onward to the next lesson!"
+=> END

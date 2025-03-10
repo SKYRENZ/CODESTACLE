@@ -96,7 +96,6 @@ texture = ExtResource("2_bicrm")
 8:9/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epwt2"]
-load_path = "res://.godot/imported/RockBG.png-9b937f83af206ec93b561b9679f2b135.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wxhb"]
 texture = SubResource("CompressedTexture2D_epwt2")

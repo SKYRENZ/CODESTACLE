@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="10_up4vp"]
 [ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_w15lx"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/QUIZ.tscn" id="11_wf8r8"]
-[ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="13_8vyxs"]
+[ext_resource type="PackedScene" uid="uid://convdqxhs5j5m" path="res://SCRIPTS/slumsdoor_transtoflr_2.tscn" id="12_bbdky"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -812,7 +812,7 @@ color = Color(0, 0.133333, 0.133333, 0.917647)
 [node name="B-01" parent="TextureRect/ColorRect" instance=ExtResource("1_u5old")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(1608, 624)
+position = Vector2(25, 764)
 
 [node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("4_cyq4j")]
 position = Vector2(277, 777)
@@ -907,7 +907,5 @@ texture = ExtResource("2_xcvbj")
 position = Vector2(1348, 713)
 texture = ExtResource("2_xcvbj")
 
-[node name="SlumssDoor2" type="Sprite2D" parent="."]
-position = Vector2(1844, 599)
-scale = Vector2(1.9375, 1.9375)
-texture = ExtResource("13_8vyxs")
+[node name="slumsdoor_transtoflr2" parent="TextureRect/ColorRect" instance=ExtResource("12_bbdky")]
+position = Vector2(1762, 561)

@@ -785,7 +785,7 @@ size = Vector2(48, 60.5)
 [node name="Floor1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -811,7 +811,7 @@ z_index = 10
 position = Vector2(40, 770)
 
 [node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("2_4fvln")]
-position = Vector2(335, 777)
+position = Vector2(332, 773)
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 
@@ -849,7 +849,7 @@ script = ExtResource("5_x21s1")
 dialogue_resource = ExtResource("6_vi21l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/RuniStart"]
-position = Vector2(331, 771.25)
+position = Vector2(335, 767)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage1" type="Area2D" parent="TextureRect/ColorRect"]

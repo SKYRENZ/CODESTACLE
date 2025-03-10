@@ -1,0 +1,30 @@
+ ~ Runistart
+Runi: "Welcome, B-01, to the world of JavaScript output! It's time to learn how to make our code talk back to us!"
+=> END
+
+~ signage1
+"JavaScript provides several ways to display output - console.log(), document.write(), innerHTML, and alert()."
+- B-01: "Beep boop! Output? So, how do these methods differ?"
+Runi: "Excellent question! console.log() is primarily for debugging and displays messages in the browser's console. document.write() writes directly to the HTML document, but it's generally avoided for modern web development. innerHTML modifies the content of an HTML element, and alert() displays a pop-up message."
+=> END
+
+~ signage2
+"console.log('Hello, world!'); will display 'Hello, world!' in your browser's developer console."
+=> END
+
+~ signage3
+"document.getElementById('myElement').innerHTML = 'New text!'; will change the text inside the HTML element with the ID 'myElement'."
+=> END
+
+~ signage4
+"alert('This is an alert message!'); will display a pop-up box with the message 'This is an alert message!'."
+As B-01 reaches the end of the level:
+=> END
+
+~ Runiquiz
+"Great job, B-01! You've reached the end of Floor 3. Time for a quiz to test your output knowledge!""
+=> END
+
+~ Runiend
+Runi: "Fantastic, B-01! You've mastered the different methods of JavaScript output. Onward to the next lesson!"
+=> END

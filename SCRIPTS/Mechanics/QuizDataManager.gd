@@ -79,6 +79,48 @@ var floor_quiz_data = {
 		],
 		"correct_answer": 1  # 0-based index (second option)
 	}
+],
+3: [
+	{
+		"question": "Which method is best suited for debugging and displaying messages in the browser's console?",
+		"options": [
+			"document.write()",
+			"alert()",
+			"innerHTML",
+			"console.log()"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "Which method is used to change the content of an HTML element?",
+		"options": [
+			"console.log()",
+			"alert()",
+			"innerHTML",
+			"document.write()"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which method displays a pop-up message in the browser?",
+		"options": [
+			"document.write()",
+			"innerHTML",
+			"console.log()",
+			"alert()"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "Which method is generally avoided in modern web development for writing directly to the HTML document?",
+		"options": [
+			"innerHTML",
+			"console.log()",
+			"document.write()",
+			"alert()"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	}
 ]
 	# Add more floors as needed
 }

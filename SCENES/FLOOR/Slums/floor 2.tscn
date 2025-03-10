@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dmju10nxwgyr5"]
+[gd_scene load_steps=20 format=4 uid="uid://dmju10nxwgyr5"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_ljcqr"]
 [ext_resource type="Script" uid="uid://ds1rfvno60hlg" path="res://SCRIPTS/Floor/Slums/floor 2/F2runiD1.gd" id="5_x21s1"]
 [ext_resource type="Resource" uid="uid://c1bktnx0kxfmv" path="res://DIALOGUE/FLOOR 2.dialogue" id="6_vi21l"]
+[ext_resource type="Script" uid="uid://d1pgbrwn8w1w3" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_1.gd" id="7_6jk65"]
 [ext_resource type="Script" uid="uid://ba7j3saycr4fc" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_2.gd" id="7_vi21l"]
 [ext_resource type="Script" uid="uid://b0vjq3mipljpj" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_3.gd" id="8_w8cty"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/QUIZ.tscn" id="9_03f5i"]
@@ -854,7 +855,7 @@ shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage1" type="Area2D" parent="TextureRect/ColorRect"]
 collision_layer = 32
-script = ExtResource("5_x21s1")
+script = ExtResource("7_6jk65")
 dialogue_resource = ExtResource("6_vi21l")
 dialogue_start = "signage1"
 

@@ -10,7 +10,7 @@ func _ready() -> void:
 # ✅ Navigate back to login screen
 func _on_back_button_pressed() -> void:
 	print("🔙 Returning to login screen...")
-	get_tree().change_scene_to_file("res://SCENES/Login.tscn")
+	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")
 
 # ✅ Handle signup button press
 func _on_signup_button_pressed() -> void:

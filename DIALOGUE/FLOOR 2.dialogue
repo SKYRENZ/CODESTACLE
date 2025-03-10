@@ -1,4 +1,4 @@
-~ Runistart
+ ~ Runistart
 runi:  "Welcome back, B-01! Now that you know what JavaScript is, let's learn where to put it! This floor is all about placement!"
 runi: "JavaScript code can be included in an HTML document in two main ways internally, using the <script> tag, or externally, by linking a .js file."
 - B-01: "Beep boop! <script> tags? External files? What's the difference?"

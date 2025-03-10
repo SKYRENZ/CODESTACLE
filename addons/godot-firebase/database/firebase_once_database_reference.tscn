@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1u1bxp2fd60e"]
 
-[ext_resource type="Script" path="res://addons/godot-firebase/database/once_reference.gd" id="1_hq5s2"]
+[ext_resource type="Script" uid="uid://bhsqkbcixw857" path="res://addons/godot-firebase/database/once_reference.gd" id="1_hq5s2"]
 [ext_resource type="PackedScene" uid="uid://ctb4l7plg8kqg" path="res://addons/godot-firebase/queues/queueable_http_request.tscn" id="2_t2f32"]
 
 [node name="FirebaseOnceDatabaseReference" type="Node"]

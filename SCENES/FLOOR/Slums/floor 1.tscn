@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_xcvbj"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_d2w3h"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="4_cyq4j"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="5_dt07w"]
+[ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="5_dt07w"]
 [ext_resource type="Resource" uid="uid://ceat0mu86avrh" path="res://DIALOGUE/FLOOR 1.dialogue" id="6_8ufnl"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_h8j2s"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_6ogsm"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_gwb4x"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="10_up4vp"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_w15lx"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/try.tscn" id="11_wf8r8"]
+[ext_resource type="Script" uid="uid://cwcdgqq4kc468" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_h8j2s"]
+[ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_6ogsm"]
+[ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_gwb4x"]
+[ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="10_up4vp"]
+[ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_w15lx"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/QUIZ.tscn" id="11_wf8r8"]
 [ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="13_8vyxs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
@@ -888,8 +888,6 @@ quiz_scene = ExtResource("11_wf8r8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Dialogues/RuniQuiz"]
 position = Vector2(1653, 604)
 shape = SubResource("RectangleShape2D_mab7b")
-
-[node name="Button" type="Button" parent="TextureRect/ColorRect/Dialogues/RuniQuiz"]
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 

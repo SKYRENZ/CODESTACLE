@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0lnlunk78q1m"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Character/Rodtang.gd" id="1_2bupx"]
+[ext_resource type="Script" uid="uid://cwgxg6us1lm3u" path="res://SCRIPTS/Character/Rodtang.gd" id="1_2bupx"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="2_1yc4g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]

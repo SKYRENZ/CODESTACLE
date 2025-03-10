@@ -1,8 +1,9 @@
 extends Area2D
 
 @export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "Runiend"
+@export var dialogue_start: String = "Runiquiz"
 @export var quiz_scene: PackedScene  # Reference to your quiz scene
+@export var floor_number: int = 1     # Which floor's quiz to show
 
 var dialogue_active = false
 var input_blocked = true  # Prevents input from affecting dialogue at start
@@ -81,6 +82,11 @@ func show_quiz():
 	# Show the quiz
 	if quiz_scene != null:
 		var quiz_instance = quiz_scene.instantiate()
+		
+		# Set the floor number for this quiz
+		if quiz_instance.has_method("set_floor"):
+			quiz_instance.set_floor(floor_number)
+			
 		# Add to the game's UI layer or canvas layer
 		get_tree().root.add_child(quiz_instance)
 	else:

@@ -1,17 +1,16 @@
 [gd_scene load_steps=23 format=3 uid="uid://clhgf55e4p6tw"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Main/signup_screen.gd" id="1_qrye3"]
+[ext_resource type="Script" uid="uid://bepwjxh6bklt3" path="res://SCRIPTS/Main/signup_screen.gd" id="1_qrye3"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_1ryr0"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]
-[ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="3_psrf0"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_ua0e6"]
+[ext_resource type="Shader" uid="uid://bp4bk3el6wiby" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_ua0e6"]
 [ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_vlkih"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_pj77x"]
+[ext_resource type="Shader" uid="uid://cf1g4u7i8nrso" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_pj77x"]
 [ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="6_75gmr"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="7_vomjd"]
+[ext_resource type="Shader" uid="uid://da7vmnhpe1bff" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="7_vomjd"]
 [ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="8_bii8g"]
-[ext_resource type="Shader" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="9_lehmf"]
+[ext_resource type="Shader" uid="uid://dy72txl40dunx" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="9_lehmf"]
 [ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="10_kok2o"]
 [ext_resource type="Theme" uid="uid://4c37h253qaf8" path="res://ASSETS/BUTTONS/ShowPass.tres" id="14_5s161"]
 [ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="14_tb5js"]
@@ -33,6 +32,9 @@ shader = ExtResource("9_lehmf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ow2u"]
 shader = ExtResource("9_lehmf")
+
+[sub_resource type="Resource" id="Resource_pxah3"]
+metadata/__load_path__ = "res://ASSETS/LETTERS/Fontnilolo-Regular.ttf"
 
 [sub_resource type="GDScript" id="GDScript_aulma"]
 script/source = "extends NinePatchRect
@@ -148,7 +150,7 @@ offset_bottom = -73.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
 theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
-theme_override_fonts/font = ExtResource("3_psrf0")
+theme_override_fonts/font = SubResource("Resource_pxah3")
 theme_override_font_sizes/font_size = 90
 text = "codestacle"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkpi4dki5uf7h"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
+[ext_resource type="Script" uid="uid://devijurgvho8o" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
 [ext_resource type="Texture2D" uid="uid://080bo8keiuru" path="res://ASSETS/LETTERS/password.png" id="1_jv7fe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbpo5"]

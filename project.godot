@@ -12,16 +12,17 @@ config_version=5
 
 config/name="Codestacle"
 run/main_scene="res://SCENES/Main/MAIN.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+QuizDataManager="*res://SCRIPTS/Mechanics/QuizDataManager.gd"
 
 [dialogue_manager]
 
-general/wrap_lines=true
+editor/wrap_long_lines=true
 
 [display]
 

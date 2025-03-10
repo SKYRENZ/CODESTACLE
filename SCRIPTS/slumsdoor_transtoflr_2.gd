@@ -17,19 +17,15 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player_in_area = true
-		print("Press E to enter")
+		print("Checkpoint activated. Changing scene...")
+		call_deferred("_change_scene")  # Use deferred call to avoid physics callback issue
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_area = false
 
-func _process(_delta):
-	if player_in_area and Input.is_action_just_pressed("interact"):
-		print("E Pressed! Playing animation now.")
-		await get_tree().process_frame  # Force update
-		await get_tree().create_timer(2.0).timeout  # Wait before changing scene
-
-		if ResourceLoader.exists(target_scene):
-			get_tree().change_scene_to_file(target_scene)  
-		else:
-			print("Error: Scene path is incorrect:", target_scene)
+func _change_scene():
+	if ResourceLoader.exists(target_scene):
+		get_tree().change_scene_to_file(target_scene)  # Change scene after physics step
+	else:
+		print("Error: Scene path is incorrect:", target_scene)

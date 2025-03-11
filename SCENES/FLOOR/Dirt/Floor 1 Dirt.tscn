@@ -11,12 +11,23 @@
 [ext_resource type="Texture2D" uid="uid://080bo8keiuru" path="res://ASSETS/LETTERS/password.png" id="10_14m86"]
 [ext_resource type="PackedScene" uid="uid://obwfbarruhv7" path="res://SCENES/Mechanics/Validation.tscn" id="10_0315w"]
 [ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="11_0xrxv"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/Floor 1 Dirt.gd" id="1_emdyd"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ou2o0"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="3_ygc1j"]
+[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="4_23xn5"]
+[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="5_ctcxy"]
+[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="6_safdm"]
+[ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_rjx8m"]
+[ext_resource type="Texture2D" uid="uid://080bo8keiuru" path="res://ASSETS/LETTERS/password.png" id="8_4bakk"]
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="9_ugo0c"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/door.tscn" id="10_qv7md"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/Validation.tscn" id="11_pjnv8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xedq1"]
-texture = ExtResource("3_i8rgq")
+texture = ExtResource("4_23xn5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1urn"]
-texture = ExtResource("4_luyb1")
+texture = ExtResource("5_ctcxy")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -300,7 +311,7 @@ texture = ExtResource("4_luyb1")
 14:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twvsl"]
-texture = ExtResource("5_m3214")
+texture = ExtResource("6_safdm")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -346,7 +357,7 @@ sources/2 = SubResource("TileSetAtlasSource_71o1h")
 sources/3 = SubResource("TileSetAtlasSource_twvsl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thkoi"]
-texture = ExtResource("5_m3214")
+texture = ExtResource("6_safdm")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -398,9 +409,9 @@ size = Vector2(29, 68)
 
 [node name="Underground" type="Node2D"]
 position = Vector2(-424, -200)
-script = ExtResource("1_gbf5k")
+script = ExtResource("1_emdyd")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_3pte4")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ou2o0")]
 position = Vector2(-1421, -144)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -412,7 +423,7 @@ offset_bottom = -450.0
 [node name="Cloud-static" type="Sprite2D" parent="ColorRect"]
 position = Vector2(1817, 269.5)
 scale = Vector2(14.25, 4.21094)
-texture = ExtResource("2_a1dml")
+texture = ExtResource("3_ygc1j")
 
 [node name="stagetiles" type="TileMapLayer" parent="."]
 z_index = 2
@@ -434,20 +445,20 @@ position = Vector2(-691, 655)
 position = Vector2(626.5, -23)
 shape = SubResource("RectangleShape2D_xvj6p")
 
-[node name="collectible" parent="." instance=ExtResource("6_75as1")]
+[node name="collectible" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-969, -170)
 item_name = "notdefault"
 item_texture = SubResource("CompressedTexture2D_ppedk")
 
-[node name="collectible2" parent="." instance=ExtResource("6_75as1")]
+[node name="collectible2" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-513, -168)
 item_name = "magic_key"
-item_texture = ExtResource("10_14m86")
+item_texture = ExtResource("8_4bakk")
 
-[node name="collectible3" parent="." instance=ExtResource("6_75as1")]
+[node name="collectible3" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-762, -171)
 item_name = "gold_coin"
-item_texture = ExtResource("11_0xrxv")
+item_texture = ExtResource("9_ugo0c")
 
 [node name="Checkpoint" type="Area2D" parent="." groups=["checkpoint"]]
 position = Vector2(-854, 163)
@@ -459,9 +470,9 @@ shape = SubResource("RectangleShape2D_nc7cx")
 [node name="Spawnpoint" type="Marker2D" parent="Checkpoint"]
 position = Vector2(-1, -14)
 
-[node name="Door" parent="." instance=ExtResource("9_1k5ar")]
+[node name="Door" parent="." instance=ExtResource("10_qv7md")]
 position = Vector2(4151, -160)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("10_0315w")]
+[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("11_pjnv8")]

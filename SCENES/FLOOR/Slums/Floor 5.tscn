@@ -1,18 +1,21 @@
-[gd_scene load_steps=22 format=4 uid="uid://dy5u8dloyrlk"]
+[gd_scene load_steps=26 format=4 uid="uid://dy5u8dloyrlk"]
 
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_0mwgu"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_406v7"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_3cvs3"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_41gl5"]
-[ext_resource type="Script" uid="uid://xofnrbeo12y4" path="res://SCRIPTS/Floor/Slums/floor 4/F4runiD1.gd" id="5_x5w0k"]
-[ext_resource type="Resource" uid="uid://bog1f8kdn1ei8" path="res://DIALOGUE/FLOOR 4.dialogue" id="6_1flur"]
-[ext_resource type="Script" uid="uid://bbabggy4tdx40" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_1.gd" id="7_hcpt1"]
-[ext_resource type="Script" uid="uid://da0byns02giwr" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_2.gd" id="8_b0yta"]
-[ext_resource type="Script" uid="uid://d4c7hxsb3c244" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_3.gd" id="9_7ow8d"]
-[ext_resource type="Script" uid="uid://clr0mh2cebbit" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_4.gd" id="10_7enwf"]
-[ext_resource type="Script" uid="uid://bqhlk7e36som8" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_5.gd" id="11_lfm4f"]
-[ext_resource type="Script" uid="uid://dtqoy5k3i62jj" path="res://SCRIPTS/Floor/Slums/floor 4/F4runi_quiz.gd" id="12_t5ei8"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/QUIZ.tscn" id="13_4gso0"]
+[ext_resource type="Script" uid="uid://c5i2mqin4nk0a" path="res://SCRIPTS/Floor/Slums/floor 5/F5runiD1.gd" id="6_5o5bh"]
+[ext_resource type="Resource" uid="uid://drwoa0bvlwwsd" path="res://DIALOGUE/FLOOR 5.dialogue" id="7_0mwgu"]
+[ext_resource type="Script" uid="uid://cegq76x4nglu4" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_1.gd" id="8_0mwgu"]
+[ext_resource type="Script" uid="uid://dpix2vkel4u1f" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_2.gd" id="9_0mwgu"]
+[ext_resource type="Script" uid="uid://cks530ufhn87m" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_3.gd" id="10_0mwgu"]
+[ext_resource type="Script" uid="uid://ogpvccxe6wc6" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_4.gd" id="11_0mwgu"]
+[ext_resource type="Script" uid="uid://dmxlcqmv41fv3" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_5.gd" id="12_x5w0k"]
+[ext_resource type="Script" uid="uid://m3agidkegvbt" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_6.gd" id="13_1flur"]
+[ext_resource type="Script" uid="uid://c4dhnfcwf8l5a" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_7.gd" id="14_1flur"]
+[ext_resource type="PackedScene" uid="uid://c0lnlunk78q1m" path="res://SCENES/Character/Rodtang.tscn" id="14_x5w0k"]
+[ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/floor 5/F5rodtang_quiz.gd" id="15_1flur"]
+[ext_resource type="PackedScene" uid="uid://cw7etbpp7mbhp" path="res://SCENES/Mechanics/RodtangQUIZ.tscn" id="16_hcpt1"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -785,6 +788,9 @@ sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nia05"]
 size = Vector2(48, 55.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o5bh"]
+size = Vector2(183.5, 163)
+
 [node name="Floor1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -812,7 +818,10 @@ position = Vector2(311, 775)
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_406v7")]
 visibility_layer = 8
-position = Vector2(42, 767)
+position = Vector2(1295, 438)
+
+[node name="Rodtang" parent="TextureRect/ColorRect/Characters" instance=ExtResource("14_x5w0k")]
+position = Vector2(1259, 232)
 
 [node name="map tile" type="Node" parent="TextureRect/ColorRect"]
 
@@ -852,11 +861,11 @@ position = Vector2(979, 777)
 texture = ExtResource("2_3cvs3")
 
 [node name="SlumssSign6" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(1152, 489)
+position = Vector2(1088, 554)
 texture = ExtResource("2_3cvs3")
 
 [node name="SlumssSign7" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(1485, 441)
+position = Vector2(1247, 442)
 texture = ExtResource("2_3cvs3")
 
 [node name="dialogue" type="Node" parent="TextureRect/ColorRect"]
@@ -864,8 +873,8 @@ texture = ExtResource("2_3cvs3")
 [node name="RuniStart" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("5_x5w0k")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("6_5o5bh")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/RuniStart"]
 position = Vector2(313, 767.625)
@@ -874,60 +883,79 @@ shape = SubResource("RectangleShape2D_nia05")
 [node name="signage1" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("7_hcpt1")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("8_0mwgu")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage1"]
-position = Vector2(515, 770)
+position = Vector2(522, 770)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage2" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("8_b0yta")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("9_0mwgu")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage2"]
-position = Vector2(903, 610)
+position = Vector2(172, 610)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage3" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("9_7ow8d")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("10_0mwgu")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage3"]
-position = Vector2(1500, 674)
+position = Vector2(622, 433)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage4" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("10_7enwf")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("11_0mwgu")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage4"]
-position = Vector2(2092, 593)
+position = Vector2(865, 642)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage5" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("11_lfm4f")
-dialogue_resource = ExtResource("6_1flur")
+script = ExtResource("12_x5w0k")
+dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage5"]
-position = Vector2(2075, 385)
+position = Vector2(977, 770)
 shape = SubResource("RectangleShape2D_nia05")
 
-[node name="Runiquiz" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
+[node name="signage6" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
 position = Vector2(2, 4)
 collision_layer = 32
-script = ExtResource("12_t5ei8")
-dialogue_resource = ExtResource("6_1flur")
-quiz_scene = ExtResource("13_4gso0")
+script = ExtResource("13_1flur")
+dialogue_resource = ExtResource("7_0mwgu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/Runiquiz"]
-position = Vector2(1914, 321)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage6"]
+position = Vector2(1085, 546)
 shape = SubResource("RectangleShape2D_nia05")
+
+[node name="signage7" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
+position = Vector2(2, 4)
+collision_layer = 32
+script = ExtResource("14_1flur")
+dialogue_resource = ExtResource("7_0mwgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage7"]
+position = Vector2(1245, 435)
+shape = SubResource("RectangleShape2D_nia05")
+
+[node name="Rodtangquiz" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
+script = ExtResource("15_1flur")
+dialogue_resource = ExtResource("7_0mwgu")
+quiz_scene = ExtResource("16_hcpt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/Rodtangquiz"]
+light_mask = 32
+position = Vector2(1460, 383)
+shape = SubResource("RectangleShape2D_5o5bh")

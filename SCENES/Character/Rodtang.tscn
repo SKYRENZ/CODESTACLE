@@ -1,24 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0lnlunk78q1m"]
+[gd_scene load_steps=9 format=3 uid="uid://c0lnlunk78q1m"]
 
-[ext_resource type="Script" uid="uid://cwgxg6us1lm3u" path="res://SCRIPTS/Character/Rodtang.gd" id="1_2bupx"]
-[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="2_1yc4g"]
+[ext_resource type="Script" uid="uid://d3dawmryqawog" path="res://SCRIPTS/Character/rodtang.gd" id="1_pw6xr"]
+[ext_resource type="Texture2D" uid="uid://dfx8s4tlb7kkt" path="res://ASSETS/Character/emcinspired-Sheet.png" id="1_wmjri"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k35s"]
-size = Vector2(79, 58)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw6xr"]
+atlas = ExtResource("1_wmjri")
+region = Rect2(1, 0, 2999, 3000)
 
-[node name="NPC" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_2bupx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nnun"]
+atlas = ExtResource("1_wmjri")
+region = Rect2(3000, 0, 2999, 3000)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-50, 171)
-scale = Vector2(0.339216, 0.382635)
-texture = ExtResource("2_1yc4g")
-flip_h = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_38s1n"]
+atlas = ExtResource("1_wmjri")
+region = Rect2(5999, 0, 2999, 3000)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-64, 179)
-collision_mask = 5
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vaca"]
+atlas = ExtResource("1_wmjri")
+region = Rect2(8998, 0, 2999, 3000)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.5, -9)
-shape = SubResource("RectangleShape2D_7k35s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvudy"]
+atlas = ExtResource("1_wmjri")
+region = Rect2(11997, 0, 2999, 3000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqabn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw6xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nnun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38s1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vaca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvudy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Rodtang" type="CharacterBody2D"]
+script = ExtResource("1_pw6xr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(204, 204.068)
+scale = Vector2(0.108703, 0.108703)
+sprite_frames = SubResource("SpriteFrames_xqabn")
+animation = &"idle"
+frame_progress = 0.675148

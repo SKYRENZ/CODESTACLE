@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://d4c7hxsb3c244" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_3.gd" id="9_28nnc"]
 [ext_resource type="Script" uid="uid://clr0mh2cebbit" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_4.gd" id="10_28nnc"]
 [ext_resource type="Script" uid="uid://bqhlk7e36som8" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_5.gd" id="11_7toq3"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/QUIZ.tscn" id="11_f0url"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="11_f0url"]
 [ext_resource type="Script" uid="uid://dtqoy5k3i62jj" path="res://SCRIPTS/Floor/Slums/floor 4/F4runi_quiz.gd" id="12_3xx7d"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]

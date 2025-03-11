@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc2ngrbblqd4i"]
 
-[ext_resource type="Texture2D" uid="uid://v46be5cmuo0n" path="res://ASSETS/Character/Runi the all knowing.png" id="1_aspwo"]
-[ext_resource type="Script" uid="uid://dk2exlt2may2q" path="res://SCRIPTS/Mechanics/quiz.gd" id="1_dggmo"]
+[ext_resource type="Script" uid="uid://dk2exlt2may2q" path="res://SCRIPTS/Mechanics/Runiquiz.gd" id="1_hiu5x"]
+[ext_resource type="Texture2D" uid="uid://v46be5cmuo0n" path="res://ASSETS/Character/Runi the all knowing.png" id="2_ih6tl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ offset_right = 2.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dggmo")
+script = ExtResource("1_hiu5x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -78,7 +78,7 @@ size_flags_vertical = 3
 [node name="RuniTheAllKnowing" type="Sprite2D" parent="CanvasLayer/ColorRect2/ColorRect"]
 position = Vector2(106, 512.5)
 scale = Vector2(0.610714, 0.610714)
-texture = ExtResource("1_aspwo")
+texture = ExtResource("2_ih6tl")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/ColorRect2/ColorRect"]
 modulate = Color(0, 1, 0, 1)

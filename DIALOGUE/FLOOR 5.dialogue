@@ -1,0 +1,41 @@
+ ~ Runistart
+Runi: "Welcome, B-01, to the world of JavaScript Syntax! Every language has rules, and JavaScript is no exception. Let's learn how to write code the right way!"
+=> END
+
+~ signage1
+"JavaScript syntax is the set of rules that determine how JavaScript programs are constructed. It defines how variables are declared, how operators are used, and how expressions are formed."
+- B-01: "Beep boop! Syntax? Rules? I'm ready!"
+Runi: "First, remember that JavaScript is case-sensitive. myVariable is different from myvariable."
+=> END
+
+~ signage2
+"Variables are used to store data. You declare them using var, let, or const. Example (let age = 30;) "
+=> END
+
+~ signage3
+"Operators perform operations on values. Arithmetic operators include ( +, -, *, / ) Assignment uses ( = ) Comparison operators check equality or inequality ( ==, !=, >, < )"
+=> END
+
+~ signage4
+ "Expressions are combinations of values, variables, and operators that evaluate to a single value. Example ( let area = width * height; )"
+=> END
+
+~ signage5
+"Keywords are reserved words with special meanings in JavaScript. Examples include if, else, for, while, function, return."
+=> END
+
+~ signage6
+"Comments are used to explain code and are ignored by the interpreter. Use // for single-line comments and /* ... */ for multi-line comments."
+=> END
+
+~ signage7
+"Pay attention to semicolons! While JavaScript can sometimes automatically insert them, it's best practice to include them explicitly at the end of each statement."
+=> END
+
+~ Rodtangquiz
+Rodtang: "Alright, B-01! Runi has taught you well, I hope! Now it's time to see what you've learned from all those floors. Get ready for a 10-question syntax challenge!"
+=> END
+
+~ Rodtangend
+Rodtang: "Alright, B-01! You've shown that you know your JavaScript basics. Now, keep practicing, and you might just become a coding champion!"
+=> END

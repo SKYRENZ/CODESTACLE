@@ -1,7 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp41a65qwa720"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
-[ext_resource type="Texture2D" uid="uid://kcut45agpodl" path="res://new_compressed_texture_2d.tres" id="2_k53bc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wlcxt"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Enter Button.png-5a7ced7ce88dbb7874c704ae056dfde0.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbpo5"]
 size = Vector2(31, 14)
@@ -12,7 +15,7 @@ script = ExtResource("1_8tco8")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.499998, -0.59184)
 scale = Vector2(0.546875, 0.299745)
-texture = ExtResource("2_k53bc")
+texture = SubResource("CompressedTexture2D_wlcxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -2)

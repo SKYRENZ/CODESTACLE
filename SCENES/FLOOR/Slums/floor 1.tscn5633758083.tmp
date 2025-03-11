@@ -792,8 +792,8 @@ size = Vector2(49, 65)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mab7b"]
 size = Vector2(30, 41)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydj8t"]
-size = Vector2(15.686, 25.7078)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47281"]
+size = Vector2(15.2195, 23.7966)
 
 [node name="Floor1" type="Node2D"]
 script = ExtResource("1_7k0cc")
@@ -929,15 +929,15 @@ texture = ExtResource("13_gsvhv")
 position = Vector2(126, 769)
 texture = ExtResource("15_ttjng")
 
-[node name="slumsdoor" type="Sprite2D" parent="."]
-position = Vector2(1760.25, 600.75)
-scale = Vector2(1.59374, 1.71154)
+[node name="SLUMSDOOR" type="Sprite2D" parent="TextureRect"]
+position = Vector2(1780.5, 592.5)
+scale = Vector2(2.5625, 2.26923)
 texture = ExtResource("15_ydj8t")
+
+[node name="Area2D" type="Area2D" parent="TextureRect/SLUMSDOOR"]
 script = ExtResource("16_ydj8t")
 
-[node name="Area2D" type="Area2D" parent="slumsdoor"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="slumsdoor/Area2D"]
-position = Vector2(0.157104, 0.146057)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/SLUMSDOOR/Area2D"]
+position = Vector2(-0.390198, -0.220306)
 scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_ydj8t")
+shape = SubResource("RectangleShape2D_47281")

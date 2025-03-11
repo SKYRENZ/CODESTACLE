@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b5btesvhc6epn"]
+[gd_scene load_steps=24 format=4 uid="uid://b5btesvhc6epn"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="10_ics1b"]
 [ext_resource type="Script" uid="uid://bh8gwv7aatqjc" path="res://SCRIPTS/Floor/Slums/floor 3/F3signage_4.gd" id="10_tpv1e"]
 [ext_resource type="Script" uid="uid://bk2wxawvnjo14" path="res://SCRIPTS/Floor/Slums/floor 3/F3runi_quiz.gd" id="11_4cj71"]
-[ext_resource type="PackedScene" uid="uid://bkeppwy8ds4hx" path="res://SCENES/Mechanics/slumsdoor_transtoflr_4.tscn" id="13_tpv1e"]
+[ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="13_gcja0"]
+[ext_resource type="Script" uid="uid://clbpt6l4u8eqc" path="res://SCRIPTS/Floor/Slums/floor 3/drflr3.gd" id="14_rnrk6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -785,6 +786,9 @@ sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atb3i"]
 size = Vector2(48, 60.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dim4"]
+size = Vector2(15.686, 25.7078)
+
 [node name="Floor1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -915,5 +919,15 @@ quiz_scene = ExtResource("10_ics1b")
 position = Vector2(1686, 799)
 shape = SubResource("RectangleShape2D_atb3i")
 
-[node name="slumsdoor_flr3toflr4" parent="." instance=ExtResource("13_tpv1e")]
-position = Vector2(1783, 767)
+[node name="slumsdoor" type="Sprite2D" parent="."]
+position = Vector2(1808, 803.5)
+scale = Vector2(2.25, 2.26923)
+texture = ExtResource("13_gcja0")
+script = ExtResource("14_rnrk6")
+
+[node name="Area2D" type="Area2D" parent="slumsdoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slumsdoor/Area2D"]
+position = Vector2(-1.71661e-05, 0.220351)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6dim4")

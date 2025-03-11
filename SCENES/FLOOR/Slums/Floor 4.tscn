@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bih145y8qhm3y"]
+[gd_scene load_steps=23 format=4 uid="uid://bwqmpaix1a5uo"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_5vnfl"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_3xx7d"]

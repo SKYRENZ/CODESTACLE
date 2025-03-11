@@ -818,7 +818,7 @@ position = Vector2(311, 775)
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_406v7")]
 visibility_layer = 8
-position = Vector2(1295, 438)
+position = Vector2(21, 769)
 
 [node name="Rodtang" parent="TextureRect/ColorRect/Characters" instance=ExtResource("14_x5w0k")]
 position = Vector2(1259, 232)

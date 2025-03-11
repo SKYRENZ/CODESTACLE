@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=4 uid="uid://xjrt06deqhyl"]
 
-[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="1_xqa2q"]
-[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_bicrm"]
-[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="3_act0d"]
+[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="1_sw3tu"]
+[ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_73em0"]
+[ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="3_2wnbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gri3"]
-texture = ExtResource("1_xqa2q")
+texture = ExtResource("1_sw3tu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7g4v"]
-texture = ExtResource("2_bicrm")
+texture = ExtResource("2_73em0")
 0:0/0 = 0
 1:0/0 = 0
 7:0/0 = 0
@@ -252,7 +252,7 @@ texture = SubResource("CompressedTexture2D_epwt2")
 14:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pksj4"]
-texture = ExtResource("3_act0d")
+texture = ExtResource("3_2wnbg")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -297,7 +297,7 @@ sources/2 = SubResource("TileSetAtlasSource_7wxhb")
 sources/3 = SubResource("TileSetAtlasSource_pksj4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wahqy"]
-texture = ExtResource("3_act0d")
+texture = ExtResource("3_2wnbg")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0

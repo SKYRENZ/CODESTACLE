@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b5btesvhc6epn"]
+[gd_scene load_steps=22 format=4 uid="uid://b5btesvhc6epn"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="10_ics1b"]
 [ext_resource type="Script" uid="uid://bh8gwv7aatqjc" path="res://SCRIPTS/Floor/Slums/floor 3/F3signage_4.gd" id="10_tpv1e"]
 [ext_resource type="Script" uid="uid://bk2wxawvnjo14" path="res://SCRIPTS/Floor/Slums/floor 3/F3runi_quiz.gd" id="11_4cj71"]
+[ext_resource type="PackedScene" uid="uid://bkeppwy8ds4hx" path="res://SCENES/Mechanics/slumsdoor_transtoflr_4.tscn" id="13_tpv1e"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -913,3 +914,6 @@ quiz_scene = ExtResource("10_ics1b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/Runiquiz"]
 position = Vector2(1686, 799)
 shape = SubResource("RectangleShape2D_atb3i")
+
+[node name="slumsdoor_flr3toflr4" parent="." instance=ExtResource("13_tpv1e")]
+position = Vector2(1783, 767)

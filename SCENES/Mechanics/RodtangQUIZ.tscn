@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw7etbpp7mbhp"]
 
-[ext_resource type="Script" uid="uid://r6b2v5hvo0k" path="res://SCRIPTS/Mechanics/Rodtangquiz.gd" id="1_8ooca"]
+[ext_resource type="Script" uid="uid://r6b2v5hvo0k" path="res://SCRIPTS/Mechanics/quiz/Rodtangquiz.gd" id="1_8ooca"]
 [ext_resource type="Texture2D" uid="uid://dxo0wy0aiivt2" path="res://ASSETS/Character/emcinspired.png" id="2_8ooca"]
 
 [node name="Control" type="Control"]

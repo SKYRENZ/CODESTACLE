@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc2ngrbblqd4i"]
 
-[ext_resource type="Script" uid="uid://dk2exlt2may2q" path="res://SCRIPTS/Mechanics/Runiquiz.gd" id="1_hiu5x"]
+[ext_resource type="Script" uid="uid://dk2exlt2may2q" path="res://SCRIPTS/Mechanics/quiz/Runiquiz.gd" id="1_hiu5x"]
 [ext_resource type="Texture2D" uid="uid://v46be5cmuo0n" path="res://ASSETS/Character/Runi the all knowing.png" id="2_ih6tl"]
 
 [node name="Control" type="Control"]

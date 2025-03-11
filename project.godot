@@ -18,7 +18,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-QuizDataManager="*res://SCRIPTS/Mechanics/QuizDataManager.gd"
+QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 
 [dialogue_manager]

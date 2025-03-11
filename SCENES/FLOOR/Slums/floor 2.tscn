@@ -804,16 +804,18 @@ offset_left = 1.0
 offset_top = 4.0
 offset_right = 1923.0
 offset_bottom = 1090.0
-color = Color(0, 0.133333, 0.133333, 0.917647)
+color = Color(0, 0.133333, 0.133333, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CharacterBody2D" parent="TextureRect/ColorRect" instance=ExtResource("1_bhxfh")]
+[node name="Characters" type="Node" parent="TextureRect/ColorRect"]
+
+[node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_bhxfh")]
 visibility_layer = 8
 z_index = 10
-position = Vector2(40, 770)
+position = Vector2(42, 774)
 
-[node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("2_4fvln")]
-position = Vector2(332, 773)
+[node name="Runi" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_4fvln")]
+position = Vector2(334, 777)
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 

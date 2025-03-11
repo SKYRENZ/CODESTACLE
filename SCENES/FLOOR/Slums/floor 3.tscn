@@ -807,13 +807,15 @@ offset_right = 1912.0
 offset_bottom = 1022.0
 color = Color(0, 0.133333, 0.133333, 1)
 
-[node name="CharacterBody2D" parent="TextureRect/ColorRect" instance=ExtResource("1_xsifm")]
+[node name="Characters" type="Node" parent="TextureRect/ColorRect"]
+
+[node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_xsifm")]
 visibility_layer = 8
 z_index = 10
-position = Vector2(40, 770)
+position = Vector2(31, 772)
 
-[node name="Runi" parent="TextureRect/ColorRect" instance=ExtResource("2_4cj71")]
-position = Vector2(332, 773)
+[node name="Runi" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_4cj71")]
+position = Vector2(323, 775)
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 

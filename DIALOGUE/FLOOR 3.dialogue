@@ -18,11 +18,10 @@ Runi: "Excellent question! console.log() is primarily for debugging and displ
 
 ~ signage4
 "alert('This is an alert message!'); will display a pop-up box with the message 'This is an alert message!'."
-As B-01 reaches the end of the level:
 => END
 
 ~ Runiquiz
-"Great job, B-01! You've reached the end of Floor 3. Time for a quiz to test your output knowledge!""
+"Great job, B-01! You've reached the end of Floor 3. Time for a quiz to test your output knowledge!"
 => END
 
 ~ Runiend

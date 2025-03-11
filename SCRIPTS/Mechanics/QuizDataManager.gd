@@ -121,6 +121,150 @@ var floor_quiz_data = {
 		],
 		"correct_answer": 2  # 0-based index (third option)
 	}
+],
+4: [
+	{
+		"question": "What is a JavaScript statement?",
+		"options": [
+			"A comment in the code",
+			"A command that the JavaScript interpreter executes",
+			"A variable declaration",
+			"A type of loop"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "What character is commonly used to end a JavaScript statement?",
+		"options": [
+			"Colon (:)",
+			"Comma (,)",
+			"Semicolon (;)",
+			"Period (.)"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What are curly braces {} used for in JavaScript?",
+		"options": [
+			"To define string literals",
+			"To group statements into code blocks",
+			"To declare variables",
+			"To write comments"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which of the following is the best practice for writing JavaScript statements?",
+		"options": [
+			"Putting as many statements as possible on one line",
+			"Always skipping the semicolon (;) at the end",
+			"Writing each statement on a new line for readability",
+			"Using comments instead of statements"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	}
+],
+5: [
+	{
+		"question": "Which of the following is the correct way to declare a variable in JavaScript?",
+		"options": [
+			"variable age = 25;",
+			"let age = 25;",
+			"Age := 25;",
+			"25 = age;"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "What is the purpose of the `console.log()` method?",
+		"options": [
+			"To display an alert box to the user",
+			"To write directly to the HTML document",
+			"To display messages in the browser's console for debugging",
+			"To change the content of an HTML element"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which character is used to end most JavaScript statements?",
+		"options": [
+			":",
+			",",
+			".",
+			";"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "What is the difference between `==` and `===` in JavaScript?",
+		"options": [
+			"`==` assigns a value, while `===` compares values",
+			"`==` compares values with type conversion, while `===` compares values without type conversion",
+			"`===` assigns a value, while `==` compares values",
+			"There is no difference"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "How do you write a single-line comment in JavaScript?",
+		"options": [
+			"`<!-- This is a comment -->`",
+			"`// This is a comment`",
+			"`/* This is a comment */`",
+			"`** This is a comment **`"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "When linking an external JavaScript file, which HTML attribute is used in the `<script>` tag?",
+		"options": [
+			"`href`",
+			"`link`",
+			"`src`",
+			"`url`"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What do curly braces `{}` signify in JavaScript?",
+		"options": [
+			"String literals",
+			"Comments",
+			"Code blocks",
+			"Arrays"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which keyword is used to declare a variable whose value cannot be changed after it's assigned?",
+		"options": [
+			"`var`",
+			"`let`",
+			"`const`",
+			"`static`"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which of the following is NOT a JavaScript operator?",
+		"options": [
+			"`+`",
+			"`=`",
+			"`#`",
+			"`==`"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "JavaScript is case-sensitive. True or False?",
+		"options": [
+			"True",
+			"False",
+			"Sometimes",
+			"Only in strict mode"
+		],
+		"correct_answer": 0  # 0-based index (first option)
+	}
 ]
 	# Add more floors as needed
 }

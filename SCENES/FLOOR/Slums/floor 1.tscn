@@ -819,12 +819,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.133333, 0.133333, 1)
 
-[node name="B-01" parent="TextureRect" instance=ExtResource("2_ttjng")]
+[node name="Characters" type="Node" parent="TextureRect"]
+
+[node name="B-01" parent="TextureRect/Characters" instance=ExtResource("2_ttjng")]
 visibility_layer = 8
 z_index = 5
 position = Vector2(25, 764)
 
-[node name="Runi" parent="TextureRect" instance=ExtResource("3_ydj8t")]
+[node name="Runi" parent="TextureRect/Characters" instance=ExtResource("3_ydj8t")]
 position = Vector2(277, 777)
 
 [node name="Tile map" type="Node" parent="TextureRect"]

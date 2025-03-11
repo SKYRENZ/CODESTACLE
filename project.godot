@@ -20,6 +20,7 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
+PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
 
 [dialogue_manager]
 

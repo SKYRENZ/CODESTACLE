@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccdye2d02ld6m"]
+
+[ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCENES/Mechanics/resultpanel/results_panel.gd" id="1_xkbqg"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_xkbqg")

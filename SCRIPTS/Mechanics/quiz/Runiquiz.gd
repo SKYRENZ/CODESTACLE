@@ -184,12 +184,29 @@ func reset_button_colors() -> void:
 		button.modulate = Color(1, 1, 1)  # Reset to default color
 
 # Show the final score when quiz is complete
+# Add this function after show_final_score() in both quiz scripts
+
+# Save the quiz results to PlayerData for use by the results panel
+func save_quiz_results() -> void:
+	var player_data = get_node_or_null("/root/PlayerData")
+	
+	if player_data and player_data.has_method("set_quiz_score"):
+		player_data.set_quiz_score(current_floor, score, quiz_data.size())
+	else:
+		print("PlayerData singleton not found, quiz score not saved")
+
+# Then modify the show_final_score() function to call this:
 func show_final_score() -> void:
 	quiz_completed = true
+	
+	# Save quiz results to PlayerData singleton
+	save_quiz_results()
 	
 	# Hide options
 	for button in option_buttons:
 		button.visible = false
+	
+	# Rest of the function remains the same...
 	
 	# Show final score
 	question_label.text = "Quiz Completed!\n\nYour Score: " + str(score) + "/" + str(quiz_data.size())
@@ -207,6 +224,7 @@ func show_final_score() -> void:
 	continue_button.connect("pressed", Callable(self, "_on_continue_pressed"))
 	content_rect.add_child(continue_button)
 	continue_button.position = Vector2(button_pos_x, button_pos_y)
+
 
 # Handle continue button press - close the screen
 func _on_continue_pressed() -> void:

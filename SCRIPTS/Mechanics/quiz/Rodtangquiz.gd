@@ -182,10 +182,21 @@ func _on_option_pressed(option_index: int) -> void:
 func reset_button_colors() -> void:
 	for button in option_buttons:
 		button.modulate = Color(1, 1, 1)  # Reset to default color
+# Add this function to save quiz results to PlayerData
+func save_quiz_results() -> void:
+	var player_data = get_node_or_null("/root/PlayerData")
+	
+	if player_data and player_data.has_method("set_quiz_score"):
+		player_data.set_quiz_score(current_floor, score, quiz_data.size())
+	else:
+		print("PlayerData singleton not found, quiz score not saved")
 
-# Show the final score when quiz is complete
+# Modify the show_final_score() function to call save_quiz_results()
 func show_final_score() -> void:
 	quiz_completed = true
+	
+	# Save quiz results to PlayerData singleton
+	save_quiz_results()
 	
 	# Hide options
 	for button in option_buttons:

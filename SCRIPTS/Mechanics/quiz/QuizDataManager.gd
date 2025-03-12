@@ -2,7 +2,7 @@ extends Node
 
 # Dictionary mapping floor numbers to quiz data arrays
 var floor_quiz_data = {
-	1: [
+1: [
 		{
 			"question": "What is the primary purpose of JavaScript?",
 			"options": [
@@ -43,11 +43,7 @@ var floor_quiz_data = {
 			],
 			"correct_answer": 2
 		}
-	],
-
-	# Questions for Floor 2 about JavaScript placement
-# Add this to your QuizDataManager.gd in the floor_quiz_data dictionary
-
+],
 2: [
 	{
 		"question": "What are the two main ways to include JavaScript in an HTML document?",
@@ -265,7 +261,367 @@ var floor_quiz_data = {
 		],
 		"correct_answer": 0  # 0-based index (first option)
 	}
-]
+],
+6: [
+	{
+		"question": "What is the purpose of comments in JavaScript code?",
+		"options": [
+			"To be executed by the JavaScript interpreter",
+			"To make the code run faster",
+			"To explain the code and make it more readable",
+			"To define variables"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "How do you start a single-line comment in JavaScript?",
+		"options": [
+			"/*",
+			"*/",
+			"//",
+			"--"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "How do you start a multi-line comment in JavaScript?",
+		"options": [
+			"//",
+			"/*",
+			"<!--",
+			"**"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which of the following is a good use of comments?",
+		"options": [
+			"To write the same code in multiple languages",
+			"To explain the *what* instead of the *why* of the code",
+			"To explain complex logic and provide helpful information for debugging",
+			"To impress other programmers"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What is 'commenting out' code?",
+		"options": [
+			"Deleting code permanently",
+			"Temporarily disabling code for testing or debugging",
+			"Turning code into a string",
+			"Encrypting code"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	}
+],
+7: [
+	{
+		"question": "What is a variable in JavaScript?",
+		"options": [
+			"A comment in the code",
+			"A named storage location that can hold a value",
+			"A type of loop",
+			"A reserved keyword"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which keyword is used to declare a variable (in older JavaScript code)?",
+		"options": [
+			"let",
+			"const",
+			"var",
+			"variable"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which of the following is a valid variable name?",
+		"options": [
+			"123name",
+			"my-variable",
+			"myVariable",
+			"my Variable"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What is the assignment operator used for?",
+		"options": [
+			"To compare two values",
+			"To declare a variable",
+			"To assign a value to a variable",
+			"To perform arithmetic operations"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What is camelCase used for?",
+		"options": [
+			"To write comments",
+			"To name functions",
+			"To name multi-word variables in a readable way",
+			"To define strings"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	}
+],
+8: [
+	{
+		"question": "What kind of scope does the let keyword have in JavaScript?",
+		"options": [
+			"Global scope",
+			"Function scope",
+			"Block scope",
+			"No scope"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What happens if you try to redeclare a variable using let in the same scope?",
+		"options": [
+			"The value gets updated",
+			"An error occurs",
+			"The second declaration is ignored",
+			"The variable becomes undefined"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which of the following correctly declares a variable with let?",
+		"options": [
+			"let myVar = 5;",
+			"variable myVar = 5;",
+			"let: myVar = 5;",
+			"var myVar = 5;"
+		],
+		"correct_answer": 0  # 0-based index (first option)
+	},
+	{
+		"question": "What is a 'block' in JavaScript?",
+		"options": [
+			"A line of code",
+			"A sequence of code enclosed in curly braces {}",
+			"A comment",
+			"A reserved keyword"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which statement about let vs. var is true?",
+		"options": [
+			"var has block scope, while let has function scope",
+			"let has block scope, while var has function scope",
+			"Both let and var have block scope",
+			"Both let and var have global scope"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	}
+],
+9: [
+	{
+		"question": "What is the main purpose of the const keyword?",
+		"options": [
+			"To declare variables that can be reassigned",
+			"To declare variables that cannot be reassigned",
+			"To declare variables with global scope",
+			"To declare variables with function scope"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "When must you assign a value to a const variable?",
+		"options": [
+			"Before the program starts",
+			"Anytime before it's used",
+			"When you declare it",
+			"When the block ends"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What happens if you try to reassign a value to a const variable?",
+		"options": [
+			"The value is updated",
+			"An error occurs",
+			"The variable is deleted",
+			"The value is assigned a new type"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "What is the scope of a const variable?",
+		"options": [
+			"Global scope",
+			"Function scope",
+			"Block scope",
+			"No scope"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "If a const variable holds an object, can you modify the properties of that object?",
+		"options": [
+			"No, the object is completely immutable",
+			"Yes, you can modify the properties, but you can't reassign the variable to a different object",
+			"Yes, you can reassign and modify",
+			"Only if the object is not frozen"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	}
+],
+10: [
+	{
+		"question": "How do you write a single-line comment in JavaScript?",
+		"options": [
+			"<!-- Comment -->",
+			"// Comment",
+			"/* Comment */",
+			"** Comment **"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which keyword is used to declare a variable that cannot be reassigned?",
+		"options": [
+			"var",
+			"let",
+			"const",
+			"dynamic"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "What is the scope of a variable declared with let?",
+		"options": [
+			"Global",
+			"Function",
+			"Block",
+			"File"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which of the following is NOT a valid variable name?",
+		"options": [
+			"myVar",
+			"_myVar",
+			"1myVar",
+			"$myVar"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which of the following is a valid multi-line comment?",
+		"options": [
+			"// This is a comment //",
+			"/* This is a comment */",
+			"<!-- This is a comment -->",
+			"** This is a comment **"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which data type represents textual data?",
+		"options": [
+			"Number",
+			"Boolean",
+			"String",
+			"Object"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which data type represents a logical value (true or false)?",
+		"options": [
+			"Number",
+			"String",
+			"Boolean",
+			"Undefined"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "How would you declare a constant variable named MAX_VALUE with a value of 100?",
+		"options": [
+			"let MAX_VALUE = 100;",
+			"const MAX_VALUE = 100;",
+			"var MAX_VALUE = 100;",
+			"MAX_VALUE = 100;"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which data type represents an ordered collection of values?",
+		"options": [
+			"Object",
+			"String",
+			"Number",
+			"Array"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "Which data type represents a variable that has been declared but not assigned a value?",
+		"options": [
+			"Null",
+			"String",
+			"Undefined",
+			"Boolean"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	},
+	{
+		"question": "Which is the best practice way to name a JS variable?",
+		"options": [
+			"The quick brown fox",
+			"the_quick_brown_fox",
+			"TheQuickBrownFox",
+			"theQuickBrownFox"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "How can you ensure that a JS variable remain unchangeable for the duration of the code?",
+		"options": [
+			"let",
+			"const",
+			"var",
+			"cant be done"
+		],
+		"correct_answer": 1  # 0-based index (second option)
+	},
+	{
+		"question": "Which is the best type of output for debugging?",
+		"options": [
+			"alert()",
+			"document.write()",
+			"innerHTML",
+			"console.log()"
+		],
+		"correct_answer": 3  # 0-based index (fourth option)
+	},
+	{
+		"question": "What do you called value that can be \"true\" or \"false?\"",
+		"options": [
+			"null",
+			"bolean",
+			"object",
+			"string"
+		],
+		"correct_answer": 1  # 0-based index (second option - although it should probably be "Boolean" with capital B)
+	},
+	{
+		"question": "what does // do?",
+		"options": [
+			"declares array",
+			"nothing",
+			"singe-line comment",
+			"makes the site crash"
+		],
+		"correct_answer": 2  # 0-based index (third option)
+	}
+],
 	# Add more floors as needed
 }
 

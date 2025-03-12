@@ -14,3 +14,23 @@ Press F at the terminal to store them, executing system changes in real-time. So
 ~ signage3
 "In coding, saving progress is crucial. Here, it's no different. Checkpoints act like version control. Activate them, and they’ll serve as your last stable commit—if you mess up, you’ll respawn at the latest checkpoint, avoiding a full reset. Stay sharp, think like a programmer, and don’t let logic errors hold you back."
 => END
+
+~ signage4
+“JavaScript gives us arithmetic operators to perform calculations"
+=> END
+
+~ signage5
+•	Addition (+) → Adds numbers together.
+•	Subtraction (-) → Takes one number away from another.
+•	Multiplication (*) → Multiplies two numbers.
+•	Division (/) → Divides one number by another.
+•	Modulus (%) → Finds the remainder after division.
+=> END
+
+~ signage6
+"example:
+console.log(10 + 5); // 15
+console.log(9 % 2);  // 1 (because 9 divided by 2 leaves a remainder of 1)"
+"
+=> END
+

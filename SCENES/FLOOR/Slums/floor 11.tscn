@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bffin63viwkxk"]
+[gd_scene load_steps=29 format=4 uid="uid://cduftnap6m3hx"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_g1ndq"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ptthj"]

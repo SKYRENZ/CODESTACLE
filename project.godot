@@ -21,7 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
-general/wrap_lines=true
+editor/wrap_long_lines=true
 
 [display]
 
@@ -84,7 +84,7 @@ toggle_validation={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 11.dialogue")
 
 [rendering]
 

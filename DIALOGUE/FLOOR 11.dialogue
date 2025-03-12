@@ -1,0 +1,12 @@
+
+~ signage1
+ "Welcome to Dirt Floor 1! Your mission is to reach the exit gate. Collect energy fragments to stabilize malfunctioning systems."
+=> END
+
+~ signage2
+"Requires 3 Energy Fragments to deactivate the force field. If you have them, interact with the terminal to proceed."
+=> END
+
+~ signage3
+"Checkpoints are marked along the way. Activate them to save your progress. Remember, you need 3 energy fragments to unlock the exit gate."
+=> END

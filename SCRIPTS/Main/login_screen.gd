@@ -4,6 +4,7 @@ var firebase_api_key = "AIzaSyB02zOyEW28ep26AAlVWrzRD1X3Hwznp1A"
 var email = ""
 var password = ""
 var password_hidden = true  # Track password visibility state
+@onready var transition_fx = preload("res://BGM/button.mp3")
 
 func _ready() -> void:
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
@@ -12,6 +13,7 @@ func _ready() -> void:
 
 # ✅ Handles login button press
 func _on_login_button_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	var email_edit = get_node_or_null("Container/Login Container/User and Pass Container/Username Container/EmailEdit")
 	var password_line = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
 
@@ -99,17 +101,20 @@ func _on_refresh_token_response(result, response_code, headers, body):
 
 # ✅ Handles signup button click
 func _on_signup_button_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	print("🔄 Navigating to signup screen...")
 	get_tree().change_scene_to_file("res://SCENES/Main/signup_screen.tscn")
 
 # ✅ Handles Google SSO login
 func _on_google_sso_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	print("🌐 Google SSO button pressed. Starting login...")
 	var provider: AuthProvider = Firebase.Auth.get_GoogleProvider()
 	Firebase.Auth.get_auth_localhost(provider)
 
 # ✅ Forgot Password Functionality
 func _on_forgot_btn_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	var email_edit = get_node_or_null("Container/Login Container/User and Pass Container/Username Container/EmailEdit")
 	
 	if not email_edit:
@@ -153,6 +158,7 @@ func _on_password_reset_response(result, response_code, headers, body):
 
 # ✅ Show/Hide Password Functionality
 func _on_show_password_button_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	var password_edit = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
 
 	if password_edit:

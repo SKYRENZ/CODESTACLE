@@ -5,7 +5,6 @@ extends Control
 @onready var vbox_container = $Panel/VBoxContainer
 @onready var validation_panel = $Panel  
 
-# 🎨 UI Assets
 @export var font_resource: Font  
 @export var background_image: Texture  
 
@@ -15,11 +14,9 @@ var collected_items = []
 var next_expected_index = 0  
 
 func _ready():
-	# ✅ Set Background Image (if provided)
 	if background_image and background_texture:
 		background_texture.texture = background_image  
 
-	# ✅ Apply font styling
 	if font_resource:
 		sentence_label.add_theme_font_override("font", font_resource)
 		sentence_label.add_theme_color_override("font_color", Color(1, 1, 1))  
@@ -29,21 +26,21 @@ func _ready():
 	update_sentence_display()
 
 func _process(_delta):
-	# ✅ Toggle validation panel with "F"
 	if Input.is_action_just_pressed("toggle_validation"):
 		validation_panel.visible = !validation_panel.visible  
 
+func open_validation():
+	validation_panel.visible = true
+
 func update_sentence_display():
-	# Clear existing children in VBoxContainer
 	for child in vbox_container.get_children():
 		vbox_container.remove_child(child)
 		child.queue_free()  
 
-	var collected_index = 0  # Track the position of collected items
+	var collected_index = 0  
 
 	for line_index in range(sentence_template.size()):
 		var hbox = HBoxContainer.new()
-
 		var parts = sentence_template[line_index].split("_")
 
 		for i in range(parts.size()):
@@ -55,7 +52,6 @@ func update_sentence_display():
 			text_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
 			hbox.add_child(text_label)
 
-			# If there's a collected item available, insert its texture in the blank
 			if i < parts.size() - 1 and collected_index < collected_items.size():
 				var texture_rect = TextureRect.new()
 				texture_rect.texture = collected_items[collected_index]  
@@ -64,14 +60,12 @@ func update_sentence_display():
 				texture_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 				texture_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 				hbox.add_child(texture_rect)
-				collected_index += 1  # Move to the next collected item
+				collected_index += 1  
 
 		vbox_container.add_child(hbox)
 
 func add_item(item_name, item_texture) -> bool:
-	# ✅ Always open validation panel when collecting an item
-	if not validation_panel.visible:
-		validation_panel.visible = true  
+	open_validation()  
 
 	if item_name in valid_items:
 		var expected_item = valid_items[next_expected_index]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp41a65qwa720"]
 
-[ext_resource type="Script" uid="uid://devijurgvho8o" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_qqrpe"]
 [ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="3_t084q"]
 

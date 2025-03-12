@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://g5ur05jrsv1c"]
+
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/validation.gd" id="1_k2y11"]
+
+[node name="Validation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k2y11")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 538.0
+offset_bottom = 276.0
+
+[node name="Label" type="RichTextLabel" parent="Panel"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 536.0
+offset_bottom = 272.0
+text = "Let _ = 12;
+Let y = _ ;
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 536.0
+offset_bottom = 205.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 2

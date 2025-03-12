@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bsywucvxai48"]
+[gd_scene load_steps=22 format=4 uid="uid://bsywucvxai48"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/Floor 1 Dirt.gd" id="1_emdyd"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ou2o0"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="5_ctcxy"]
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="6_safdm"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_rjx8m"]
-[ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BUTTONS/minigooglesignin.png" id="9_iv4jv"]
-[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="9_ugo0c"]
 [ext_resource type="PackedScene" path="res://SCENES/Mechanics/door.tscn" id="10_qv7md"]
 [ext_resource type="PackedScene" uid="uid://g5ur05jrsv1c" path="res://SCENES/Mechanics/Validation.tscn" id="11_pjnv8"]
 
@@ -400,6 +398,12 @@ sources/0 = SubResource("TileSetAtlasSource_thkoi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvj6p"]
 size = Vector2(5843, 7)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pw0m2"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_8ost7"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_vj5ei"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nc7cx"]
 size = Vector2(29, 68)
 
@@ -448,17 +452,17 @@ shape = SubResource("RectangleShape2D_xvj6p")
 [node name="collectible" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-1033, -162)
 item_name = "12"
-item_texture = ExtResource("9_iv4jv")
+item_texture = SubResource("CompressedTexture2D_pw0m2")
 
 [node name="collectible2" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-154, -166)
 item_name = "14"
-item_texture = ExtResource("9_ugo0c")
+item_texture = SubResource("ImageTexture_8ost7")
 
 [node name="collectible3" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-758, -163)
 item_name = "13"
-item_texture = ExtResource("9_iv4jv")
+item_texture = SubResource("ImageTexture_vj5ei")
 
 [node name="Checkpoint" type="Area2D" parent="." groups=["checkpoint"]]
 position = Vector2(1634, 423)

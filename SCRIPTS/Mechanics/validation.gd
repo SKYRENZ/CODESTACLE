@@ -2,14 +2,14 @@ extends Control
 
 @onready var background_texture = $Background  
 @onready var sentence_label = $Panel/Label
-@onready var hbox_container = $Panel/VBoxContainer/HBoxContainer
+@onready var vbox_container = $Panel/VBoxContainer
 @onready var validation_panel = $Panel  
 
 # 🎨 UI Assets
 @export var font_resource: Font  
 @export var background_image: Texture  
 
-var sentence_template = "Let [_] = 12; Let y = [_];"  
+var sentence_template = ["Let [_] = 12;", "Let y = [_];"]  
 var valid_items = ["12", "13"]  
 var collected_items = []  
 var next_expected_index = 0  
@@ -34,32 +34,39 @@ func _process(_delta):
 		validation_panel.visible = !validation_panel.visible  
 
 func update_sentence_display():
-	# Clear existing children in HBoxContainer
-	for child in hbox_container.get_children():
-		hbox_container.remove_child(child)
+	# Clear existing children in VBoxContainer
+	for child in vbox_container.get_children():
+		vbox_container.remove_child(child)
 		child.queue_free()  
 
-	# Split sentence where blanks (_) exist
-	var parts = sentence_template.split("_")
+	var collected_index = 0  # Track the position of collected items
 
-	for i in range(parts.size()):
-		var text_label = Label.new()
-		text_label.text = parts[i]
-		text_label.add_theme_font_override("font", font_resource)  
-		text_label.add_theme_color_override("font_color", Color(0.9, 0.9, 0.9))  
-		text_label.add_theme_font_size_override("font_size", 32)  
-		text_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
-		hbox_container.add_child(text_label)
+	for line_index in range(sentence_template.size()):
+		var hbox = HBoxContainer.new()
 
-		# If there's a collected item, insert its texture in the blank
-		if i < collected_items.size():
-			var texture_rect = TextureRect.new()
-			texture_rect.texture = collected_items[i]  
-			texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  # Keeps aspect ratio centered
-			texture_rect.custom_minimum_size = Vector2(48, 48)  # Ensures it doesn't exceed size
-			texture_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-			texture_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-			hbox_container.add_child(texture_rect)
+		var parts = sentence_template[line_index].split("_")
+
+		for i in range(parts.size()):
+			var text_label = Label.new()
+			text_label.text = parts[i]
+			text_label.add_theme_font_override("font", font_resource)  
+			text_label.add_theme_color_override("font_color", Color(0.9, 0.9, 0.9))  
+			text_label.add_theme_font_size_override("font_size", 32)  
+			text_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
+			hbox.add_child(text_label)
+
+			# If there's a collected item available, insert its texture in the blank
+			if i < parts.size() - 1 and collected_index < collected_items.size():
+				var texture_rect = TextureRect.new()
+				texture_rect.texture = collected_items[collected_index]  
+				texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  
+				texture_rect.custom_minimum_size = Vector2(48, 48)  
+				texture_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+				texture_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+				hbox.add_child(texture_rect)
+				collected_index += 1  # Move to the next collected item
+
+		vbox_container.add_child(hbox)
 
 func add_item(item_name, item_texture) -> bool:
 	# ✅ Always open validation panel when collecting an item

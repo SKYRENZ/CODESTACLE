@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=25 format=4 uid="uid://oi17asljkpsr"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_j1d7a"]
 [ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_g35fq"]
 [ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_e7jeu"]
-[ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="13_gsvhv"]
-[ext_resource type="PackedScene" uid="uid://convdqxhs5j5m" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="14_tpvb0"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="14_tpvb0"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]

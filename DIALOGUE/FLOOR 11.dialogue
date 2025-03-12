@@ -1,0 +1,16 @@
+
+~ signage1
+"Welcome to Dirt Floor 1—where only the most logical minds and adaptive coders make it through. Your mission? Reach the exit door. But this isn’t just a simple run-and-jump task. Systems here are bugged and unstable. You'll need to acquire key collectibles to debug critical paths. 
+
+Press E to collect them—think of it as fetching essential dependencies for your program to run."
+=> END
+
+~ signage2
+"Some pathways are locked behind logic errors—and no, brute force won’t work here. To fix them, you’ll need to commit your collected resources. 
+
+Press F at the terminal to store them, executing system changes in real-time. Some doors may open, while other scripts may activate. Adapt, debug, and code your way forward."
+=> END
+
+~ signage3
+"In coding, saving progress is crucial. Here, it's no different. Checkpoints act like version control. Activate them, and they’ll serve as your last stable commit—if you mess up, you’ll respawn at the latest checkpoint, avoiding a full reset. Stay sharp, think like a programmer, and don’t let logic errors hold you back."
+=> END

@@ -45,6 +45,9 @@ func _physics_process(delta: float) -> void:
 
 	# Flip sprite based on movement direction
 	animated_sprite_2d.flip_h = velocity.x < 0
+func apply_gravity():
+	print("Gravity reapplied to player!")  # Debugging message
+	velocity.y = 400  # Ensure the player is pushed downward
 
 
 # Method to lock/unlock player movement (called from quiz and dialogue)

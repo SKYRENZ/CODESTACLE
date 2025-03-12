@@ -27,6 +27,7 @@ SlumMusic="*res://BGM/slum_music.gd"
 
 [dialogue_manager]
 
+runtime/balloon_path="res://dialogue/balloon.tscn"
 editor/wrap_long_lines=true
 
 [display]
@@ -92,6 +93,10 @@ toggle_validation={
 
 locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue", "res://DIALOGUE/FLOOR 3.dialogue", "res://DIALOGUE/FLOOR 4.dialogue", "res://DIALOGUE/FLOOR 5.dialogue", "res://DIALOGUE/FLOOR 11.dialogue")
 <<<<<<<HEADlocale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue", "res://DIALOGUE/FLOOR 3.dialogue", "res://DIALOGUE/FLOOR 4.dialogue", "res://DIALOGUE/FLOOR 5.dialogue")
+
+[layer_names]
+
+2d_physics/layer_5="Actionables"
 
 [rendering]
 

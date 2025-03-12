@@ -1,16 +1,16 @@
 [gd_scene load_steps=28 format=4 uid="uid://kgetvwqx48vl"]
 
-[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="3_ydj8t"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_47281"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="5_b4bnl"]
 [ext_resource type="Resource" uid="uid://ceat0mu86avrh" path="res://DIALOGUE/FLOOR 1.dialogue" id="6_uou1l"]
-[ext_resource type="Script" uid="uid://cwcdgqq4kc468" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_7acq8"]
-[ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_j1d7a"]
-[ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_g35fq"]
-[ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_e7jeu"]
-[ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
+[ext_resource type="Script" uid="uid://dqfkkmvbgstne" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_7acq8"]
+[ext_resource type="Script" uid="uid://b6wemmfv3otil" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_j1d7a"]
+[ext_resource type="Script" uid="uid://chu7pnvhwc2ug" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_g35fq"]
+[ext_resource type="Script" uid="uid://soospjrghsnf" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_e7jeu"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="13_gsvhv"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
@@ -20,7 +20,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d0fv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttjng"]
 texture = ExtResource("4_47281")
 0:2/0 = 0
 0:2/0/z_index = 3
@@ -240,9 +240,9 @@ texture = ExtResource("4_47281")
 10:15/0/z_index = 3
 
 [sub_resource type="TileSet" id="TileSet_sklqe"]
-sources/0 = SubResource("TileSetAtlasSource_7d0fv")
+sources/0 = SubResource("TileSetAtlasSource_ttjng")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnj27"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ydj8t"]
 texture = ExtResource("4_47281")
 0:2/0 = 0
 0:2/0/z_index = 2
@@ -563,9 +563,9 @@ texture = ExtResource("4_47281")
 
 [sub_resource type="TileSet" id="TileSet_xworu"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_nnj27")
+sources/0 = SubResource("TileSetAtlasSource_ydj8t")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2ib0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47281"]
 texture = ExtResource("4_47281")
 0:2/0 = 0
 0:2/0/z_index = 1
@@ -785,7 +785,7 @@ texture = ExtResource("4_47281")
 14:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_71bnu"]
-sources/0 = SubResource("TileSetAtlasSource_r2ib0")
+sources/0 = SubResource("TileSetAtlasSource_47281")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3jsy4"]
 size = Vector2(49, 65)
@@ -824,6 +824,7 @@ offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.133333, 0.133333, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Characters" type="Node" parent="TextureRect"]
 

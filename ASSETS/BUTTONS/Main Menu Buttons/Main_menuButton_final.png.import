@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtxdj23dexekg"
-path="res://.godot/imported/Stage Card start-Sheet.png-f8aecff60120cfc093de1ca466809c1d.ctex"
+uid="uid://k1xyqxit32fi"
+path="res://.godot/imported/Main_menuButton_final.png-29717c03de7ddc62965e18619069aae4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/BUTTONS/Stage Card start-Sheet.png"
-dest_files=["res://.godot/imported/Stage Card start-Sheet.png-f8aecff60120cfc093de1ca466809c1d.ctex"]
+source_file="res://ASSETS/BUTTONS/Main Menu Buttons/Main_menuButton_final.png"
+dest_files=["res://.godot/imported/Main_menuButton_final.png-29717c03de7ddc62965e18619069aae4.ctex"]
 
 [params]
 

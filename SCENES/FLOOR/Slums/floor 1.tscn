@@ -871,7 +871,6 @@ shape = SubResource("RectangleShape2D_3jsy4")
 [node name="signage 1" type="Area2D" parent="TextureRect/Dialogues"]
 collision_layer = 32
 script = ExtResource("7_7acq8")
-dialogue_resource = ExtResource("6_uou1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Dialogues/signage 1"]
 position = Vector2(330, 779)

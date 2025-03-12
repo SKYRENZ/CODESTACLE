@@ -14,6 +14,7 @@ extends Node2D
 @onready var exit_area_climbing = $"exit area_climbing"
 
 func _ready():
+	MenuMusic.stop_music()	
 	print("Animations available (AnimationPlayer):", anim.get_animation_list())  
 	print("Animations available (AnimationPlayer2):", anim2.get_animation_list())  
 	print("Animations available (AnimationPlayer3):", anim3.get_animation_list())  
@@ -29,6 +30,7 @@ func _ready():
 	exit_area_walking.body_entered.connect(_on_exit_walking)  
 	exit_area_jumping.body_entered.connect(_on_exit_jumping)
 	exit_area_climbing.body_entered.connect(_on_exit_climbing)
+
 
 # Walking animation trigger
 func _on_body_entered(_body):
@@ -67,4 +69,4 @@ func _on_exit_jumping(_body):
 func _on_exit_climbing(_body):
 	print("Exited through climbing area!")  
 	label.visible = false  
-	anim3.stop()  
+	anim3.stop()

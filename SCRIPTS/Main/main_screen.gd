@@ -3,7 +3,7 @@ extends Control
 @onready var transition_fx = preload("res://BGM/button.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioPlayer.play_music_main()
+	MenuMusic.play_menu_music()
 	pass # Replace with function body.
 
 

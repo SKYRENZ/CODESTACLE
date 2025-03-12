@@ -2,6 +2,7 @@ extends Area2D
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "signage1"
+@export var dia_start: AudioStream = preload("res://BGM/dialouge.mp3")
 
 var dialogue_active = false
 var input_blocked = true  # Prevents input from affecting dialogue at start
@@ -19,10 +20,13 @@ func _on_body_entered(body):
 			dialogue_active = true
 		else:
 			print("Error: dialogue_resource is not assigned!")
+		
+		AudioPlayer.play_DIA(dia_start, -12.0)
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		dialogue_active = false  # Reset when player leaves area
+		AudioPlayer.stop_DIA()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):  # Space by default

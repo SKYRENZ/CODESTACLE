@@ -1,17 +1,25 @@
 extends AudioStreamPlayer
 
-const main_music = preload("res://BGM/Menu.mp3")
+
+var music_player: AudioStreamPlayer = null
+var dia_player: AudioStreamPlayer = null
+
+func _ready():
+	# Initialize music player
+	
+	# Initialize dialogue player
+	dia_player = AudioStreamPlayer.new()
+	dia_player.stream = null
+	add_child(dia_player)
 
 func _play_music(music: AudioStream, volume = 0.0):
-	if stream == music:
+	if music_player.stream == music:
 		return
-		
-	stream = music
-	volume_db = volume
-	play()
+
+	music_player.stream = music
+	music_player.volume_db = volume
+	music_player.play()
 	
-func play_music_main():
-	_play_music(main_music)
 
 func play_FX(stream: AudioStream, volume=0.0):
 	var fx_player = AudioStreamPlayer.new()
@@ -25,3 +33,11 @@ func play_FX(stream: AudioStream, volume=0.0):
 	
 	fx_player.queue_free()
 	
+func play_DIA(stream: AudioStream, volume=0.0):
+	dia_player.stream = stream
+	dia_player.volume_db = volume
+	dia_player.play()
+
+func stop_DIA():
+	if dia_player:
+		dia_player.stop()

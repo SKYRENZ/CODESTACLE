@@ -21,6 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
+MenuMusic="*res://BGM/Menu_Music.gd"
 
 [dialogue_manager]
 

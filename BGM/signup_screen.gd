@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_back_button_pressed() -> void:
 	AudioPlayer.play_FX(transition_fx, -12.0)
 	print("🔙 Returning to login screen...")
-	get_tree().change_scene_to_file("res://SCENES/Login.tscn")
+	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")
 
 # ✅ Handle signup button press
 func _on_signup_button_pressed() -> void:

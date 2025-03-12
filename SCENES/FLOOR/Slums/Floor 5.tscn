@@ -818,7 +818,7 @@ position = Vector2(311, 775)
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_406v7")]
 visibility_layer = 8
-position = Vector2(21, 769)
+position = Vector2(1157, 482)
 
 [node name="Rodtang" parent="TextureRect/ColorRect/Characters" instance=ExtResource("14_x5w0k")]
 position = Vector2(1259, 232)
@@ -857,11 +857,11 @@ position = Vector2(867, 649)
 texture = ExtResource("2_3cvs3")
 
 [node name="SlumssSign5" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(979, 777)
+position = Vector2(833, 776)
 texture = ExtResource("2_3cvs3")
 
 [node name="SlumssSign6" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(1088, 554)
+position = Vector2(1043, 776)
 texture = ExtResource("2_3cvs3")
 
 [node name="SlumssSign7" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
@@ -927,7 +927,7 @@ script = ExtResource("12_x5w0k")
 dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage5"]
-position = Vector2(977, 770)
+position = Vector2(831, 775)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage6" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
@@ -937,7 +937,7 @@ script = ExtResource("13_1flur")
 dialogue_resource = ExtResource("7_0mwgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage6"]
-position = Vector2(1085, 546)
+position = Vector2(1040, 770)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage7" type="Area2D" parent="TextureRect/ColorRect/dialogue"]

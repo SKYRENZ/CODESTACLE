@@ -957,7 +957,9 @@ results_panel_scene = ExtResource("17_q6027")
 position = Vector2(1908.75, 642)
 shape = SubResource("RectangleShape2D_6c31h")
 
-[node name="SlumshouseAndPoster" type="Sprite2D" parent="TextureRect"]
+[node name="door" type="Node" parent="TextureRect"]
+
+[node name="SlumshouseAndPoster" type="Sprite2D" parent="TextureRect/door"]
 z_index = 5
 position = Vector2(1173, 659)
 texture = ExtResource("15_v2ri5")

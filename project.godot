@@ -22,6 +22,7 @@ QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
+SlumMusic="*res://BGM/slum_music.gd"
 
 [dialogue_manager]
 

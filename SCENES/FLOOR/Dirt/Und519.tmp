@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://bsywucvxai48"]
+[gd_scene load_steps=22 format=4 uid="uid://bsywucvxai48"]
 
-[ext_resource type="Script" uid="uid://c0frn0vt5t6hs" path="res://SCRIPTS/Floor/Dirt/underground.gd" id="1_gbf5k"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/underground.gd" id="1_gbf5k"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_3pte4"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_a1dml"]
 [ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="3_i8rgq"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="5_m3214"]
 [ext_resource type="PackedScene" uid="uid://dkpi4dki5uf7h" path="res://SCENES/Mechanics/collectible.tscn" id="6_75as1"]
 [ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/door.tscn" id="9_1k5ar"]
+[ext_resource type="Texture2D" uid="uid://080bo8keiuru" path="res://ASSETS/LETTERS/password.png" id="10_14m86"]
+[ext_resource type="PackedScene" uid="uid://obwfbarruhv7" path="res://SCENES/Mechanics/Validation.tscn" id="10_0315w"]
+[ext_resource type="Texture2D" uid="uid://cjohx5257esu4" path="res://ASSETS/Robot.png" id="11_0xrxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xedq1"]
 texture = ExtResource("3_i8rgq")
@@ -353,6 +356,9 @@ sources/0 = SubResource("TileSetAtlasSource_thkoi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvj6p"]
 size = Vector2(4747, 8)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ppedk"]
+load_path = "res://.godot/imported/Enter Button.png-5a7ced7ce88dbb7874c704ae056dfde0.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nc7cx"]
 size = Vector2(29, 68)
 
@@ -396,12 +402,18 @@ shape = SubResource("RectangleShape2D_xvj6p")
 
 [node name="collectible" parent="." instance=ExtResource("6_75as1")]
 position = Vector2(-969, -170)
+item_name = "notdefault"
+item_texture = SubResource("CompressedTexture2D_ppedk")
 
 [node name="collectible2" parent="." instance=ExtResource("6_75as1")]
 position = Vector2(-513, -168)
+item_name = "magic_key"
+item_texture = ExtResource("10_14m86")
 
 [node name="collectible3" parent="." instance=ExtResource("6_75as1")]
 position = Vector2(-762, -171)
+item_name = "gold_coin"
+item_texture = ExtResource("11_0xrxv")
 
 [node name="Checkpoint" type="Area2D" parent="." groups=["checkpoint"]]
 position = Vector2(-854, 163)
@@ -415,3 +427,7 @@ position = Vector2(-1, -14)
 
 [node name="Door" parent="." instance=ExtResource("9_1k5ar")]
 position = Vector2(4151, -160)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("10_0315w")]

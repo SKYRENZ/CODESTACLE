@@ -1,9 +1,11 @@
 extends Node2D
 
+@onready var inventory = $UI/Validation  # Reference to Inventory UI
+
 func _ready():
 	var player = get_node("CharacterBody2D")
 	if player:
-		# ✅ Set default spawn point
+		# ✅ Set default spawn pointd
 		var spawn_point = get_node("Marker2D")  
 		if spawn_point:
 			player.spawn_point = spawn_point
@@ -54,3 +56,15 @@ func _on_checkpoint_reached(body):
 			print("✅ Checkpoint reached! New spawn point:", spawn_marker.global_position)
 		else:
 			print("❌ ERROR: 'Spawnpoint' is missing inside the Checkpoint!")
+
+# 🎯 Handle item collection
+func _on_item_collected(item):
+	if inventory:
+		if inventory.validate_item(item.name):
+			inventory.add_item(item.name, item.get_texture())  # ✅ Store in inventory
+			item.queue_free()  # Remove from scene
+			print("✅ Correct! Item stored:", item.name)
+		else:
+			inventory.show_wrong_feedback()  # ❌ Shake and red effect
+			item.return_to_scene()  # Return item to original position
+			print("❌ Incorrect! Item rejected:", item.name)

@@ -56,12 +56,24 @@ func _process(delta):
 
 # 🎯 Store item in validation UI
 func _on_item_collected(item):
-	if inventory:
-		if inventory.validate_item(item.name):
-			inventory.add_item(item.name, item.get_texture())  # ✅ Store in inventory
+	if not inventory:
+		print("❌ Error: Inventory UI not found!")
+		return
+	
+	if item and inventory.validate_item(item.name):
+		# Debugging: Ensure texture is correctly accessed
+		var item_texture = item.get_node("Sprite2D").texture if item.has_node("Sprite2D") else null
+		
+		if item_texture:
+			inventory.add_item(item.name, item_texture)  # ✅ Store in inventory
 			item.queue_free()  # Remove from scene
 			print("✅ Item stored:", item.name)
 		else:
+			print("❌ Error: Item texture not found for", item.name)
+	else:
+		if item:
 			inventory.show_wrong_feedback()  # ❌ Shake and red effect
 			item.return_to_scene()  # Return to original position
 			print("❌ Item rejected:", item.name)
+		else:
+			print("❌ Error: No interactable item found!")

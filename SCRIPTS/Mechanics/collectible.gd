@@ -27,20 +27,31 @@ func _process(_delta):
 
 func validate_item():
 	var validation = get_tree().get_first_node_in_group("Validation")  
-	if validation:
-		# Get the stored texture and name
-		var stored_texture = item_texture if item_texture else sprite.texture
-		var stored_name = item_name
+	if not validation:
+		print("❌ Error: Validation UI not found!")
+		return  
 
-		# Open validation panel safely
-		if validation.has_method("open_validation"):
-			validation.open_validation()
+	# Get texture from either the exported value or the sprite
+	var stored_texture = item_texture if item_texture else sprite.texture
+	if not stored_texture:
+		print("❌ Error: No valid texture found for", item_name)
+		return  
 
-		# Check if the item can be added
-		if validation.has_method("add_item") and validation.add_item(stored_name, stored_texture):  
-			queue_free()  # Remove if accepted
-		else:
-			respawn_item()  # Respawn if rejected
+	# Open validation panel
+	if validation.has_method("open_validation"):
+		validation.open_validation()
+
+	# Try to add the item
+	var added = false
+	if validation.has_method("add_item"):
+		added = validation.add_item(item_name, stored_texture)  
+	
+	if added:
+		print("✅ Item added to validation:", item_name)
+		queue_free()  # Remove item from the scene
+	else:
+		print("❌ Item rejected:", item_name)
+		respawn_item()  # Respawn the item if incorrect
 
 func respawn_item():
 	await get_tree().create_timer(1.0).timeout  # Add delay

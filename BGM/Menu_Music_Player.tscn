@@ -1,3 +1,0 @@
-[gd_scene format=3 uid="uid://bsle5gkpsr22u"]
-
-[node name="MenuMusicPlayer" type="AudioStreamPlayer"]

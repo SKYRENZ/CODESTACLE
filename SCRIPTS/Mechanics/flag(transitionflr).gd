@@ -26,6 +26,7 @@ func _on_body_exited(body):
 		player_in_area = false
 
 func _change_scene():
+	MenuMusic.play_slum_music()	
 	if ResourceLoader.exists(target_scene):
 		get_tree().change_scene_to_file(target_scene)  # Change scene after physics step
 	else:

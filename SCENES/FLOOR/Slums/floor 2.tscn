@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://dmju10nxwgyr5"]
+[gd_scene load_steps=22 format=4 uid="uid://dmju10nxwgyr5"]
 
-[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_36jqm"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
-[ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
+[ext_resource type="PackedScene" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_nxnlc"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_ljcqr"]
 [ext_resource type="Script" uid="uid://ds1rfvno60hlg" path="res://SCRIPTS/Floor/Slums/floor 2/F2runiD1.gd" id="5_x21s1"]
@@ -10,12 +9,10 @@
 [ext_resource type="Script" uid="uid://d1pgbrwn8w1w3" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_1.gd" id="7_6jk65"]
 [ext_resource type="Script" uid="uid://ba7j3saycr4fc" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_2.gd" id="7_vi21l"]
 [ext_resource type="Script" uid="uid://b0vjq3mipljpj" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_3.gd" id="8_w8cty"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="9_03f5i"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cu8ptd5rar217" path="res://SCRIPTS/Floor/Slums/floor 2/F2runi_quiz.gd" id="9_1373n"]
-[ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
-[ext_resource type="PackedScene" uid="uid://b5btesvhc6epn" path="res://SCENES/FLOOR/Slums/floor 3.tscn" id="13_36jqm"]
-[ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="14_x28vg"]
-[ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="15_in7sh"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/slumsdoor_transtoflr_3.tscn" id="12_0edr3"]
+[ext_resource type="AudioStream" uid="uid://bfrqwc3pidad2" path="res://BGM/slum.mp3" id="13_4dfna"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -788,12 +785,7 @@ sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atb3i"]
 size = Vector2(48, 60.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_asmv6"]
-size = Vector2(20, 29.0909)
-
-[node name="Floor2" type="Node2D"]
-script = ExtResource("1_36jqm")
-floor_number = 2
+[node name="Floor1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -924,19 +916,8 @@ quiz_scene = ExtResource("9_03f5i")
 position = Vector2(1705, 700)
 shape = SubResource("RectangleShape2D_atb3i")
 
-[node name="Area2D" type="Area2D" parent="TextureRect/ColorRect"]
-position = Vector2(1844, 705)
-scale = Vector2(2.0625, 2.0625)
-script = ExtResource("12_mtqkf")
-next_floor = ExtResource("13_36jqm")
-floor_number = 2
-results_panel_scene = ExtResource("14_x28vg")
+[node name="slumsdoor_flr2toflr3" parent="." instance=ExtResource("12_0edr3")]
+position = Vector2(1798, 669)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Area2D"]
-position = Vector2(0, -0.969757)
-shape = SubResource("RectangleShape2D_asmv6")
-
-[node name="SlumssDoor2" type="Sprite2D" parent="TextureRect/ColorRect"]
-position = Vector2(1844, 706)
-scale = Vector2(2.0625, 2.0625)
-texture = ExtResource("15_in7sh")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4dfna")

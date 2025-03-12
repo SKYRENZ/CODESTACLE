@@ -1,0 +1,282 @@
+[gd_scene load_steps=23 format=3 uid="uid://d4aq5m6uhf7hu"]
+
+[ext_resource type="Script" path="res://SCRIPTS/signup_screen.gd" id="1_qrye3"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_1ryr0"]
+[ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
+[ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]
+[ext_resource type="FontFile" uid="uid://b7jiy0elrq2kf" path="res://ASSETS/LETTERS/Fontnilolo-Regular.ttf" id="3_psrf0"]
+[ext_resource type="Shader" uid="uid://bp4bk3el6wiby" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_ua0e6"]
+[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_vlkih"]
+[ext_resource type="Shader" uid="uid://cf1g4u7i8nrso" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_pj77x"]
+[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="6_75gmr"]
+[ext_resource type="Shader" uid="uid://da7vmnhpe1bff" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="7_vomjd"]
+[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="8_bii8g"]
+[ext_resource type="Shader" uid="uid://dy72txl40dunx" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="9_lehmf"]
+[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="10_kok2o"]
+[ext_resource type="Theme" uid="uid://4c37h253qaf8" path="res://ASSETS/BUTTONS/ShowPass.tres" id="14_5s161"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="14_tb5js"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gyfo0"]
+shader = ExtResource("5_pj77x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0iu7"]
+shader = ExtResource("3_ua0e6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsf1g"]
+shader = ExtResource("5_pj77x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwteg"]
+shader = ExtResource("7_vomjd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ri8li"]
+shader = ExtResource("9_lehmf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ow2u"]
+shader = ExtResource("9_lehmf")
+
+[sub_resource type="GDScript" id="GDScript_aulma"]
+script/source = "extends NinePatchRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="SignupScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qrye3")
+
+[node name="Sky" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_gyfo0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ryr0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 3" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_d0iu7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vlkih")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 4" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lsf1g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_75gmr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Mountain" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_kwteg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bii8g")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Trees" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ri8li")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 80.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_kok2o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Road" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3ow2u")
+layout_mode = 0
+offset_top = 27.0
+offset_right = 1280.0
+offset_bottom = 747.0
+texture = ExtResource("2_4qxy3")
+expand_mode = 1
+
+[node name="Codestacle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = -165.0
+offset_right = 798.0
+offset_bottom = -73.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
+theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
+theme_override_fonts/font = ExtResource("3_psrf0")
+theme_override_font_sizes/font_size = 90
+text = "codestacle"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="NinePatchRect" parent="NinePatchRect"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -212.5
+offset_right = -68.0
+offset_bottom = 212.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_jmqb2")
+region_rect = Rect2(19, 21, 772, 1020)
+patch_margin_right = 6
+script = SubResource("GDScript_aulma")
+
+[node name="Signup Container" type="VBoxContainer" parent="NinePatchRect/Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 50.0
+offset_right = 113.0
+offset_bottom = 243.0
+grow_horizontal = 2
+theme_override_constants/separation = 23
+alignment = 1
+
+[node name="Signup Letters" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container"]
+layout_mode = 2
+
+[node name="Signup Text" type="Label" parent="NinePatchRect/Container/Signup Container/Signup Letters"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 42
+text = "SIGNUP:"
+
+[node name="User and Pass Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Email Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
+layout_mode = 2
+
+[node name="Email" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Email Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 16
+text = "EMAIL:"
+
+[node name="Email Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Email Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 22
+
+[node name="Password Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 16
+text = "PASSWORD:"
+
+[node name="Label" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer"]
+layout_mode = 2
+text = "                 "
+
+[node name="Show Password Button" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme = ExtResource("14_5s161")
+toggle_mode = true
+
+[node name="Password Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 22
+secret = true
+
+[node name="Signup Button" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.601223, 0.601223, 0.601223, 1)
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 35
+text = "signup"
+flat = true
+
+[node name="Back Button" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 15
+text = "back to login"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 428.0
+offset_right = 1128.0
+offset_bottom = 451.0
+
+[connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer/Show Password Button" to="." method="_on_show_password_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Signup Button" to="." method="_on_signup_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Back Button" to="." method="_on_back_button_pressed"]

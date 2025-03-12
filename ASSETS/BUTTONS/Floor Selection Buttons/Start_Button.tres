@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=10 format=4 uid="uid://df3gll1n7is6v"]
 
-[ext_resource type="Texture2D" uid="uid://b0wfpaoiodyoy" path="res://ASSETS/BUTTONS/Start Button-Sheet3.png" id="1_j2me6"]
+[ext_resource type="Texture2D" uid="uid://bfruyesvikyg7" path="res://ASSETS/BUTTONS/Start Button Final.png" id="1_t7pys"]
 
 [sub_resource type="Image" id="Image_sj03n"]
 data = {
@@ -1319,16 +1319,16 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_514qs"]
-texture = ExtResource("1_j2me6")
+texture = ExtResource("1_t7pys")
 region_rect = Rect2(78, 14, 36, 23)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytmoh"]
-texture = ExtResource("1_j2me6")
-region_rect = Rect2(14, 16, 36, 21)
+texture = ExtResource("1_t7pys")
+region_rect = Rect2(1, 1, 38, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_paimf"]
-texture = ExtResource("1_j2me6")
-region_rect = Rect2(142, 15, 36, 22)
+texture = ExtResource("1_t7pys")
+region_rect = Rect2(81, 1, 38, 12)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)

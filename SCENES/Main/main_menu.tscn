@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://byxh1j83u68vv"]
+[gd_scene load_steps=7 format=3 uid="uid://4t0k034llkia"]
 
 [ext_resource type="Script" uid="uid://d1dtt2rv70sdq" path="res://SCRIPTS/Main/main_menu.gd" id="1_25day"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_34ebn"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="3_f5aum"]
+[ext_resource type="Theme" uid="uid://36p0jcgejxvu" path="res://ASSETS/BUTTONS/Main Menu Buttons/Play_button.tres" id="4_lpvqe"]
+[ext_resource type="Theme" uid="uid://4ys534v78vtd" path="res://ASSETS/BUTTONS/Main Menu Buttons/Options_button.tres" id="5_5e1ex"]
+[ext_resource type="Theme" uid="uid://3qiugl1iaq0w" path="res://ASSETS/BUTTONS/Main Menu Buttons/Quit_button.tres" id="6_5e1ex"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,51 +27,6 @@ texture = ExtResource("1_34ebn")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Menu Buttons" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = 52.5
-offset_right = 194.0
-offset_bottom = 219.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Play Button" type="Button" parent="Menu Buttons"]
-layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_color = Color(5.87195e-06, 0.629455, 0.693611, 1)
-theme_override_colors/font_pressed_color = Color(1.63645e-06, 0.506404, 0.557725, 1)
-theme_override_font_sizes/font_size = 50
-text = "play"
-flat = true
-
-[node name="Settings Button" type="Button" parent="Menu Buttons"]
-layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.505882, 0.556863, 1)
-theme_override_font_sizes/font_size = 50
-text = "settings"
-flat = true
-
-[node name="Quit Button" type="Button" parent="Menu Buttons"]
-layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_color = Color(0, 0.631373, 0.694118, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.505882, 0.556863, 1)
-theme_override_font_sizes/font_size = 50
-text = "quit"
-flat = true
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -75,15 +34,67 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -516.0
-offset_top = -95.0
-offset_right = 516.0
-offset_bottom = 39.0
+offset_left = -561.0
+offset_top = -106.0
+offset_right = 561.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
 theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
+theme_override_fonts/font = ExtResource("3_f5aum")
 theme_override_font_sizes/font_size = 135
 text = "codestacle"
 
-[connection signal="pressed" from="Menu Buttons/Play Button" to="." method="_on_play_button_pressed"]
+[node name="Play Button" type="Button" parent="."]
+custom_minimum_size = Vector2(33, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = 73.0
+offset_right = 107.5
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("4_lpvqe")
+
+[node name="Settings Button" type="Button" parent="."]
+custom_minimum_size = Vector2(52, 12)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -199.0
+offset_right = 169.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = ExtResource("5_5e1ex")
+
+[node name="Quit Button" type="Button" parent="."]
+custom_minimum_size = Vector2(33, 12)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.5
+offset_top = -110.0
+offset_right = 107.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = ExtResource("6_5e1ex")
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]

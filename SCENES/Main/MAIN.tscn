@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bysk8u8tqa12w"]
+[gd_scene load_steps=20 format=3 uid="uid://b5ykuqgeuw6h"]
 
 [ext_resource type="Script" uid="uid://dl7hx0tvilc2a" path="res://SCRIPTS/Main/main_screen.gd" id="1_nk1j4"]
 [ext_resource type="Shader" uid="uid://krgfal645rv6" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_08spj"]
@@ -12,7 +12,8 @@
 [ext_resource type="Shader" uid="uid://dy72txl40dunx" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="10_6ahec"]
 [ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="11_ywx8l"]
 [ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="12_od22p"]
-[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BUTTONS/StartBtn.tres" id="13_0m0io"]
+[ext_resource type="Theme" uid="uid://df3gll1n7is6v" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Start_Button.tres" id="13_0m0io"]
+[ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://BGM/Menu.mp3" id="14_md7qh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ud42o"]
 shader = ExtResource("2_08spj")
@@ -123,9 +124,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -561.0
-offset_top = -91.0
+offset_top = -109.0
 offset_right = 561.0
-offset_bottom = 91.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
@@ -135,21 +136,26 @@ theme_override_font_sizes/font_size = 135
 text = "CODESTACLE"
 
 [node name="Start Button" type="Button" parent="NinePatchRect"]
+custom_minimum_size = Vector2(38, 12)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = 140.5
-offset_right = 91.5
-offset_bottom = 243.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -219.0
+offset_right = 158.0
+offset_bottom = -119.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 focus_mode = 0
 theme = ExtResource("13_0m0io")
 theme_override_fonts/font = ExtResource("12_od22p")
 theme_override_font_sizes/font_size = 65
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_md7qh")
+autoplay = true
 
 [connection signal="pressed" from="NinePatchRect/Start Button" to="." method="_on_start_button_pressed"]

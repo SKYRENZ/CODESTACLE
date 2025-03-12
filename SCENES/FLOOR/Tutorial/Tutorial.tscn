@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_yvwxb"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
-[ext_resource type="Script" uid="uid://xyxtyj4miot8" path="res://SCRIPTS/Mechanics/popup.gd" id="5_hhn16"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/popup.gd" id="5_hhn16"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_kynt8"]
 [ext_resource type="PackedScene" uid="uid://cthpycglwhycd" path="res://SCENES/Mechanics/flag(transitionflr).tscn" id="7_yny8n"]
 

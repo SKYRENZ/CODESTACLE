@@ -1,22 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp41a65qwa720"]
+[gd_scene load_steps=5 format=3 uid="uid://dp41a65qwa720"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Mechanics/collectible.gd" id="1_8tco8"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wlcxt"]
-resource_local_to_scene = true
-load_path = "res://.godot/imported/Enter Button.png-5a7ced7ce88dbb7874c704ae056dfde0.ctex"
+[ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_qqrpe"]
+[ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="3_t084q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbpo5"]
-size = Vector2(31, 14)
+size = Vector2(49, 26)
 
 [node name="collectible" type="Area2D"]
 script = ExtResource("1_8tco8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.499998, -0.59184)
-scale = Vector2(0.546875, 0.299745)
-texture = SubResource("CompressedTexture2D_wlcxt")
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(0.0657568, 0.0264901)
+texture = ExtResource("2_qqrpe")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -410.604
+offset_top = -1170.25
+offset_right = 414.396
+offset_bottom = 1169.75
+theme_override_fonts/font = ExtResource("3_t084q")
+theme_override_font_sizes/font_size = 165
+text = "Pineapple"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_fbpo5")

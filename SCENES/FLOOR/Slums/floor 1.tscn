@@ -950,7 +950,6 @@ z_index = 1
 position = Vector2(1830, 598)
 scale = Vector2(2.0625, 2.0625)
 script = ExtResource("15_b4bnl")
-next_floor = null
 results_panel_scene = ExtResource("17_7acq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

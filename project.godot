@@ -22,6 +22,7 @@ QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
+PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
 SlumMusic="*res://BGM/slum_music.gd"
 
 [dialogue_manager]
@@ -81,10 +82,16 @@ down={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+toggle_validation={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue", "res://DIALOGUE/FLOOR 3.dialogue", "res://DIALOGUE/FLOOR 4.dialogue", "res://DIALOGUE/FLOOR 5.dialogue")
+locale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue", "res://DIALOGUE/FLOOR 3.dialogue", "res://DIALOGUE/FLOOR 4.dialogue", "res://DIALOGUE/FLOOR 5.dialogue", "res://DIALOGUE/FLOOR 11.dialogue")
+<<<<<<<HEADlocale/translations_pot_files=PackedStringArray("res://DIALOGUE/FLOOR 1.dialogue", "res://DIALOGUE/FLOOR 2.dialogue", "res://DIALOGUE/FLOOR 3.dialogue", "res://DIALOGUE/FLOOR 4.dialogue", "res://DIALOGUE/FLOOR 5.dialogue")
 
 [rendering]
 

@@ -785,7 +785,7 @@ sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atb3i"]
 size = Vector2(48, 60.5)
 
-[node name="Floor1" type="Node2D"]
+[node name="Floor3" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

@@ -12,11 +12,9 @@ func set_quiz_score(floor_number: int, score: int, total_questions: int) -> void
 	quiz_scores[floor_number] = percentage
 	print("Set quiz score for floor ", floor_number, ": ", percentage, "%")
 
-# Get a quiz score
-func get_quiz_score(floor_number: int) -> int:
-	if quiz_scores.has(floor_number):
-		return quiz_scores[floor_number]
-	return 0
+
+func get_quiz_score(floor_num: int) -> int:
+	return quiz_scores.get(floor_num, 0)
 
 # Clear all stored scores
 func reset_scores() -> void:

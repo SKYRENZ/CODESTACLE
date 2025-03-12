@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://dmju10nxwgyr5"]
+[gd_scene load_steps=26 format=4 uid="uid://dmju10nxwgyr5"]
 
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_36jqm"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_nxnlc"]
@@ -790,7 +791,9 @@ size = Vector2(48, 60.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asmv6"]
 size = Vector2(20, 29.0909)
 
-[node name="Floor1" type="Node2D"]
+[node name="Floor2" type="Node2D"]
+script = ExtResource("1_36jqm")
+floor_number = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -931,7 +934,6 @@ results_panel_scene = ExtResource("14_x28vg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Area2D"]
 position = Vector2(0, -0.969757)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_asmv6")
 
 [node name="SlumssDoor2" type="Sprite2D" parent="TextureRect/ColorRect"]

@@ -7,12 +7,16 @@ signal results_closed
 var timer_manager = null
 var quiz_data_manager = null
 
+# Add this debug function
+func _enter_tree():
+	print("ResultsPanel instance created")
+
 # References to UI elements (now using @onready to reference nodes in the scene)
-@onready var panel: Panel = $ColorRect/Panel
+@onready var panel: Panel = $"ColorRect/Panel"
 @onready var title_label: Label = $"ColorRect/Floor complete label"
 @onready var score_label: Label = $"ColorRect/quiz score/quiz percentage"
 @onready var time_label: Label = $"ColorRect/floor time/floor time timestamp"
-@onready var continue_button: Button = $ColorRect/Button
+@onready var continue_button: Button = $"ColorRect/Button"
 
 func _ready():
 	# Get references to managers
@@ -72,19 +76,14 @@ func calculate_quiz_score(floor_number: int) -> int:
 
 # Handle continue button press
 func _on_continue_pressed():
-	# Hide the panel
-	panel.visible = false
+	print("Continue button pressed")
+	# Add immediate visual feedback
+	continue_button.disabled = true  
 	
-	# Unpause the game
-	get_tree().paused = false
-	
-	# Re-enable player movement
-	var player = get_tree().get_nodes_in_group("player")
-	if player.size() > 0 and player[0].has_method("set_movement_locked"):
-		player[0].set_movement_locked(false)
-	
-	# Signal that the player can now proceed
+	# Signal emission verification
+	print("Emitting results_closed signal...")
 	emit_signal("results_closed")
 	
-	# Clean up - remove the panel from the scene
+	await get_tree().process_frame
+	print("Cleaning up panel")
 	queue_free()

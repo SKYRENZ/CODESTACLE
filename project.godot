@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Codestacle"
 run/main_scene="res://SCENES/Main/MAIN.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
@@ -23,7 +23,6 @@ FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
 PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
-SlumMusic="*res://BGM/slum_music.gd"
 
 [dialogue_manager]
 

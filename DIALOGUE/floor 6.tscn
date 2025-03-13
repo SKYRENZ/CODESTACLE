@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://duo0k8f3hl34k"]
+[gd_scene load_steps=63 format=4 uid="uid://duo0k8f3hl34k"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_jclt3"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="2_07epy"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://ds6bydvpduwbc" path="res://SCRIPTS/Floor/Slums/floor 6/F6signage_3.gd" id="17_45chf"]
 [ext_resource type="Script" uid="uid://kfqgy7rbauvk" path="res://SCRIPTS/Floor/Slums/floor 6/F6signage_4.gd" id="18_3rbgc"]
 [ext_resource type="Script" uid="uid://gamchjayu6su" path="res://SCRIPTS/Floor/Slums/floor 6/F6signage_5.gd" id="19_6dbf5"]
+[ext_resource type="Script" uid="uid://clj1m3bdl0mvw" path="res://SCRIPTS/Floor/Slums/floor 6/F6runi_quiz.gd" id="20_8ej5d"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="22_ixjod"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 
@@ -606,6 +608,9 @@ size = Vector2(1138, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ed7xq"]
 size = Vector2(48, 55.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pqss"]
+size = Vector2(55, 55.5)
+
 [node name="Floor6" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -639,7 +644,7 @@ color = Color(0, 0.133333, 0.133333, 1)
 [node name="B-01" parent="TextureRect/Characters" instance=ExtResource("1_jclt3")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(-26, 962)
+position = Vector2(1782, 618)
 
 [node name="Runi" parent="TextureRect/Characters" instance=ExtResource("2_8ej5d")]
 position = Vector2(104, 982)
@@ -966,3 +971,13 @@ texture = ExtResource("10_bx7d7")
 position = Vector2(1586, 736)
 scale = Vector2(1.14856, 0.72449)
 texture = ExtResource("10_bx7d7")
+
+[node name="RuniQuiz" type="Area2D" parent="."]
+collision_layer = 32
+script = ExtResource("20_8ej5d")
+dialogue_resource = ExtResource("14_6dbf5")
+quiz_scene = ExtResource("22_ixjod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuniQuiz"]
+position = Vector2(1856, 628.75)
+shape = SubResource("RectangleShape2D_2pqss")

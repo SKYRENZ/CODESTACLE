@@ -500,7 +500,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_4h5kv")
+&"": SubResource("AnimationLibrary_4h5kv")
 }
 
 [node name="walking trigger" type="Area2D" parent="popup"]
@@ -524,7 +524,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_nj1h6")
+&"": SubResource("AnimationLibrary_nj1h6")
 }
 
 [node name="jumping trigger" type="Area2D" parent="popup"]
@@ -547,7 +547,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="popup"]
 libraries = {
-"": SubResource("AnimationLibrary_pj2y0")
+&"": SubResource("AnimationLibrary_pj2y0")
 }
 
 [node name="climb trigger" type="Area2D" parent="popup"]

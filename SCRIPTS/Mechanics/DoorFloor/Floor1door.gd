@@ -42,8 +42,7 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_area = false
 
-func _change_scene():
-	MenuMusic.stop_slum_music()	
+func _change_scene():	
 	if ResourceLoader.exists(target_scene):
 		get_tree().change_scene_to_file(target_scene)  # Change scene after physics step
 	else:

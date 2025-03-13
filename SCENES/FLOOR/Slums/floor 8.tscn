@@ -1,7 +1,7 @@
-[gd_scene load_steps=48 format=4 uid="uid://1h5vq30pmrvq"]
+[gd_scene load_steps=52 format=4 uid="uid://1h5vq30pmrvq"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/Floor1Door.tscn" id="2_l3kwt"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/Floor1Door.tscn" id="2_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_biyl2"]
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="4_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="5_gfbai"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
+[ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCENES/FLOOR/Slums/toxiic.gd" id="10_qyilj"]
+[ext_resource type="Script" uid="uid://ci4fjitviqam1" path="res://SCENES/FLOOR/Slums/anothertoxic.gd" id="11_01es4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 
@@ -590,6 +592,12 @@ _data = {
 &"baba": SubResource("Animation_ache6")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01es4"]
+size = Vector2(1125, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
+size = Vector2(744, 20)
+
 [node name="Floor6" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -623,7 +631,7 @@ color = Color(0, 0.133333, 0.133333, 1)
 [node name="B-01" parent="TextureRect/Characters" instance=ExtResource("1_wxlvv")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(69, 968)
+position = Vector2(91, 969)
 
 [node name="slumsdoor_transtoflr2" parent="TextureRect" instance=ExtResource("2_l3kwt")]
 position = Vector2(1762, 561)
@@ -838,3 +846,27 @@ texture = ExtResource("5_gfbai")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fake"]
 position = Vector2(1486, 536)
 shape = SubResource("RectangleShape2D_gmbq7")
+
+[node name="toxic" type="Area2D" parent="."]
+script = ExtResource("10_qyilj")
+
+[node name="Sprite2D" type="Sprite2D" parent="toxic"]
+position = Vector2(602, 1154)
+scale = Vector2(1.79233, 1)
+texture = ExtResource("9_tdjog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toxic"]
+position = Vector2(595.5, 1151.5)
+shape = SubResource("RectangleShape2D_01es4")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("11_01es4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1576, 719)
+shape = SubResource("RectangleShape2D_6nwro")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1581, 735)
+scale = Vector2(1.14058, 1)
+texture = ExtResource("9_tdjog")

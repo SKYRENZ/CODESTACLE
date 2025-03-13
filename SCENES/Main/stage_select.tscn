@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://w21o7vfe6web"]
 
-[ext_resource type="Script" uid="uid://cr48jv30spnw0" path="res://SCRIPTS/Main/stage_select.gd" id="1_yefgu"]
+[ext_resource type="Script" uid="uid://cnhfct8i3og4i" path="res://SCRIPTS/Main/stage_select.gd" id="1_yefgu"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_dm1kx"]
 [ext_resource type="Theme" uid="uid://bi586t5kohlxb" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Tutorial_btn.tres" id="3_2yat0"]
 [ext_resource type="Texture2D" uid="uid://bchvyfbrhs11i" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floors Slums Final.png" id="3_pdkfa"]

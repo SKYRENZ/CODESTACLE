@@ -1,6 +1,5 @@
 [gd_scene load_steps=23 format=3 uid="uid://d4aq5m6uhf7hu"]
 
-[ext_resource type="Script" path="res://SCRIPTS/signup_screen.gd" id="1_qrye3"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_1ryr0"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]
@@ -15,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="10_kok2o"]
 [ext_resource type="Theme" uid="uid://4c37h253qaf8" path="res://ASSETS/BUTTONS/ShowPass.tres" id="14_5s161"]
 [ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="14_tb5js"]
+
+[sub_resource type="Resource" id="Resource_a626x"]
+metadata/__load_path__ = "res://SCRIPTS/signup_screen.gd"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gyfo0"]
 shader = ExtResource("5_pj77x")
@@ -55,7 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qrye3")
+script = SubResource("Resource_a626x")
 
 [node name="Sky" type="TextureRect" parent="."]
 texture_repeat = 3

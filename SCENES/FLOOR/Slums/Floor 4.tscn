@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bih145y8qhm3y"]
+[gd_scene load_steps=28 format=4 uid="uid://c1romwxj8vae6"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_ymiih"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_t7pdr"]

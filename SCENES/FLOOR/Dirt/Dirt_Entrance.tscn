@@ -1,16 +1,16 @@
 [gd_scene load_steps=29 format=4 uid="uid://cc1rup7hlwire"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/dirt_entrance.gd" id="1_4elvs"]
+[ext_resource type="Script" uid="uid://bfttcyqj178t0" path="res://SCRIPTS/Floor/Dirt/dirt_entrance.gd" id="1_4elvs"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_48kuv"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_paeh3"]
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="3_y3glp"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_vgoss"]
-[ext_resource type="PackedScene" path="res://SCENES/Mechanics/door.tscn" id="5_ofvt8"]
+[ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/door.tscn" id="5_ofvt8"]
 [ext_resource type="Texture2D" uid="uid://dhbcluva7tpti" path="res://ASSETS/Environment/DOORS/door-Sheet.png" id="6_nopcf"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_r7m2h"]
 [ext_resource type="PackedScene" uid="uid://g5ur05jrsv1c" path="res://SCENES/Mechanics/Validation.tscn" id="8_fqhsw"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="10_glyw7"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/signage_2.gd" id="11_glyw7"]
+[ext_resource type="Script" uid="uid://bvyxp7s4eeyfj" path="res://SCRIPTS/Floor/Dirt/signage_2.gd" id="11_glyw7"]
 
 [sub_resource type="PlaceholderTexture2DArray" id="PlaceholderTexture2DArray_ct4nl"]
 

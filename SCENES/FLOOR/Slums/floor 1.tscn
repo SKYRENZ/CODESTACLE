@@ -1,22 +1,23 @@
-[gd_scene load_steps=28 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=29 format=4 uid="uid://kgetvwqx48vl"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="3_ydj8t"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_47281"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="5_b4bnl"]
 [ext_resource type="Resource" uid="uid://ceat0mu86avrh" path="res://DIALOGUE/FLOOR 1.dialogue" id="6_uou1l"]
-[ext_resource type="Script" uid="uid://dqfkkmvbgstne" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_7acq8"]
-[ext_resource type="Script" uid="uid://b6wemmfv3otil" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_j1d7a"]
-[ext_resource type="Script" uid="uid://chu7pnvhwc2ug" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_g35fq"]
-[ext_resource type="Script" uid="uid://soospjrghsnf" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_e7jeu"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
+[ext_resource type="Script" uid="uid://cwcdgqq4kc468" path="res://SCRIPTS/Floor/Slums/floor 1/signage_1.gd" id="7_7acq8"]
+[ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="8_j1d7a"]
+[ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="9_g35fq"]
+[ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_e7jeu"]
+[ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="13_gsvhv"]
+[ext_resource type="PackedScene" uid="uid://convdqxhs5j5m" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="14_tpvb0"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
+[ext_resource type="PackedScene" uid="uid://dmju10nxwgyr5" path="res://SCENES/FLOOR/Slums/floor 2.tscn" id="16_b4bnl"]
 [ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="17_7acq8"]
-[ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="18_j1d7a"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -831,7 +832,7 @@ metadata/_edit_use_anchors_ = true
 [node name="B-01" parent="TextureRect/Characters" instance=ExtResource("2_ttjng")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(1616, 625)
+position = Vector2(1604, 622)
 
 [node name="Runi" parent="TextureRect/Characters" instance=ExtResource("3_ydj8t")]
 position = Vector2(277, 777)
@@ -943,21 +944,20 @@ texture = ExtResource("13_gsvhv")
 
 [node name="SlumshouseAndPoster" type="Sprite2D" parent="TextureRect"]
 z_index = 5
-position = Vector2(289, 746)
+position = Vector2(127, 768)
 texture = ExtResource("15_ttjng")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="show result" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(1830, 598)
 scale = Vector2(2.0625, 2.0625)
 script = ExtResource("15_b4bnl")
+next_floor = ExtResource("16_b4bnl")
 results_panel_scene = ExtResource("17_7acq8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.727295)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="show result"]
+position = Vector2(-54.7879, -1.93939)
 shape = SubResource("RectangleShape2D_g35fq")
 
-[node name="SlumssDoor2" type="Sprite2D" parent="."]
-position = Vector2(1830, 598)
-scale = Vector2(2.0625, 2.0625)
-texture = ExtResource("18_j1d7a")
+[node name="slumsdoor_transtoflr2" parent="." instance=ExtResource("14_tpvb0")]
+position = Vector2(1820, 557)

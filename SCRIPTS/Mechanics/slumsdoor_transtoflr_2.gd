@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var target_scene: String = "res://SCENES/FLOOR/Slums/Floor 5.tscn"  
+@export var target_scene: String = "res://SCENES/FLOOR/Slums/Floor 2.tscn"  
 @export var target_floor_number: int = 5  # The floor number player is going to
 @onready var sprite = $SlumssDoor2
 @onready var area = $Area2D

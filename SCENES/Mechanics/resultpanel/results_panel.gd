@@ -65,6 +65,9 @@ func show_results(floor_number: int, quiz_score: int = -1):
 	var player = get_tree().get_nodes_in_group("player")
 	if player.size() > 0 and player[0].has_method("set_movement_locked"):
 		player[0].set_movement_locked(true)
+	
+	# Start a coroutine to close the panel after 5 seconds
+	call_deferred("close_after_delay")  # Call the function later
 
 # Calculate quiz score from available data
 func calculate_quiz_score(floor_number: int) -> int:
@@ -73,17 +76,22 @@ func calculate_quiz_score(floor_number: int) -> int:
 	
 	# For demonstration, let's use a random score (replace with your implementation)
 	return randi_range(50, 100)
-
-# Handle continue button press
-func _on_continue_pressed():
-	print("Continue button pressed")
-	# Add immediate visual feedback
-	continue_button.disabled = true  
+func close_after_delay():
+	await get_tree().create_timer(5.0).timeout  # Wait for 5 seconds
+	close_panel()
+func close_panel():
+	print("Closing results panel...")
 	
-	# Signal emission verification
-	print("Emitting results_closed signal...")
-	emit_signal("results_closed")
+	# Unpause the game
+	get_tree().paused = false
 	
-	await get_tree().process_frame
-	print("Cleaning up panel")
+	# Hide the panel
+	panel.visible = false
+	
+	# Re-enable player movement (if applicable)
+	var player = get_tree().get_nodes_in_group("player")
+	if player.size() > 0 and player[0].has_method("set_movement_locked"):
+		player[0].set_movement_locked(false)
+	
+	# Free this instance if it's no longer needed
 	queue_free()

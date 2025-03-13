@@ -36,8 +36,10 @@ func show_results_panel():
 	var results_instance = results_panel_scene.instantiate()
 	get_tree().root.add_child(results_instance)
 	
-	# Critical signal connection check
-	if results_instance.connect("results_closed", Callable(self, "_on_results_closed")) != OK:
+	# Connect signal and verify connection status
+	var connection_status = results_instance.connect("results_closed", Callable(self, "_on_results_closed"))
+	print("Signal connection status: ", connection_status)
+	if connection_status != OK:
 		printerr("FAILED to connect results_closed signal!")
 	
 	if results_instance.has_method("show_results"):
@@ -46,19 +48,19 @@ func show_results_panel():
 		results_instance.show_results(floor_number, score)
 	else:
 		printerr("Results panel missing show_results method!")
-
 func get_player_score() -> int:
 	var player_data = get_node_or_null("/root/PlayerData")
 	if player_data:
 		return player_data.get_quiz_score(floor_number)
 	print("PlayerData not found!")
 	return 0
-
+	
 func _on_results_closed():
 	print("RESULTS CLOSED SIGNAL RECEIVED")
+	get_tree().paused = false  # Unpause game before transitioning
+	
 	if next_floor:
 		print("Transitioning to: ", next_floor.resource_path)
-		# Ensure scene exists in project files
 		if ResourceLoader.exists(next_floor.resource_path):
 			get_tree().change_scene_to_packed(next_floor)
 		else:

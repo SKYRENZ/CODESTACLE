@@ -27,8 +27,8 @@ SlumMusic="*res://BGM/slum_music.gd"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://dialogue/balloon.tscn"
 editor/wrap_long_lines=true
+runtime/balloon_path="res://dialogue/balloon.tscn"
 
 [display]
 

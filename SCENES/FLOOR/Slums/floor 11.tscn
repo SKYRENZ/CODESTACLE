@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cduftnap6m3hx"]
+[gd_scene load_steps=28 format=4 uid="uid://cduftnap6m3hx"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_g1ndq"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ptthj"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="14_ptthj"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_qver0"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_v2ri5"]
-[ext_resource type="PackedScene" uid="uid://dmju10nxwgyr5" path="res://SCENES/FLOOR/Slums/floor 2.tscn" id="16_6c31h"]
 [ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="17_q6027"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
@@ -950,7 +949,6 @@ texture = ExtResource("14_ptthj")
 [node name="Area2D" type="Area2D" parent="TextureRect"]
 position = Vector2(-79, -46)
 script = ExtResource("15_qver0")
-next_floor = ExtResource("16_6c31h")
 results_panel_scene = ExtResource("17_q6027")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]

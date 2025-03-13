@@ -1,14 +1,24 @@
-[gd_scene load_steps=38 format=4 uid="uid://w21o7vfe6web"]
+[gd_scene load_steps=48 format=4 uid="uid://w21o7vfe6web"]
 
 [ext_resource type="Script" uid="uid://cr48jv30spnw0" path="res://SCRIPTS/Main/stage_select.gd" id="1_yefgu"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="2_dm1kx"]
 [ext_resource type="Theme" uid="uid://bi586t5kohlxb" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Tutorial_btn.tres" id="3_2yat0"]
 [ext_resource type="Texture2D" uid="uid://bchvyfbrhs11i" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floors Slums Final.png" id="3_pdkfa"]
 [ext_resource type="Theme" uid="uid://bnnwp8eievdrc" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floor_2_btn.tres" id="4_abgr6"]
+[ext_resource type="Script" uid="uid://dpd0m5jrcsrvx" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_1.gd" id="5_cwhax"]
 [ext_resource type="Theme" uid="uid://h7bc1qq184ii" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floor_3_btn.tres" id="5_cy4o4"]
 [ext_resource type="Theme" uid="uid://c4xmi5iohpvbw" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floor_4_btn.tres" id="6_g64b3"]
+[ext_resource type="Script" uid="uid://bektssvn6cp20" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_2.gd" id="7_7dmih"]
 [ext_resource type="Theme" uid="uid://bywruserbsr4g" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floor_5_btn.tres" id="7_trxqi"]
 [ext_resource type="Theme" uid="uid://cuc5x6533beam" path="res://ASSETS/BUTTONS/Floor Selection Buttons/Slums/Floor_6_btn.tres" id="8_2yat0"]
+[ext_resource type="Script" uid="uid://b16ngimjx4u1d" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_3.gd" id="9_gbx45"]
+[ext_resource type="Script" uid="uid://dddr17ow3bdu1" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_4.gd" id="11_778bc"]
+[ext_resource type="Script" uid="uid://dy0p44t4p48jl" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_5.gd" id="13_v15io"]
+[ext_resource type="Script" uid="uid://2ldl4xixw3gl" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_6.gd" id="15_7aoui"]
+[ext_resource type="Script" uid="uid://n0mlpjcjrmeb" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_7.gd" id="16_8ie72"]
+[ext_resource type="Script" uid="uid://dypxny6qo1qq6" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_8.gd" id="17_1k0dj"]
+[ext_resource type="Script" uid="uid://cpk1i44oje0gc" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_9.gd" id="18_boij7"]
+[ext_resource type="Script" uid="uid://bt62s4mppm70j" path="res://SCRIPTS/Main/Stage Buttons/stage_select_floor_10.gd" id="19_0roht"]
 
 [sub_resource type="Image" id="Image_grvq5"]
 data = {
@@ -1975,6 +1985,7 @@ offset_right = 550.0
 offset_bottom = 233.0
 focus_mode = 0
 theme = SubResource("Theme_2yat0")
+script = ExtResource("5_cwhax")
 
 [node name="Floor 2" type="Button" parent="."]
 layout_mode = 0
@@ -1984,6 +1995,7 @@ offset_right = 767.0
 offset_bottom = 229.0
 focus_mode = 0
 theme = ExtResource("4_abgr6")
+script = ExtResource("7_7dmih")
 
 [node name="Floor 3" type="Button" parent="."]
 layout_mode = 0
@@ -1993,6 +2005,7 @@ offset_right = 961.0
 offset_bottom = 232.0
 focus_mode = 0
 theme = ExtResource("5_cy4o4")
+script = ExtResource("9_gbx45")
 
 [node name="Floor 4" type="Button" parent="."]
 layout_mode = 0
@@ -2002,6 +2015,7 @@ offset_right = 1154.0
 offset_bottom = 229.0
 focus_mode = 0
 theme = ExtResource("6_g64b3")
+script = ExtResource("11_778bc")
 
 [node name="Floor 5" type="Button" parent="."]
 layout_mode = 0
@@ -2011,6 +2025,7 @@ offset_right = 557.0
 offset_bottom = 445.0
 focus_mode = 0
 theme = ExtResource("7_trxqi")
+script = ExtResource("13_v15io")
 
 [node name="Floor 6" type="Button" parent="."]
 layout_mode = 0
@@ -2020,6 +2035,7 @@ offset_right = 768.0
 offset_bottom = 452.0
 focus_mode = 0
 theme = ExtResource("8_2yat0")
+script = ExtResource("15_7aoui")
 
 [node name="Floor 7" type="Button" parent="."]
 layout_mode = 0
@@ -2029,6 +2045,7 @@ offset_right = 968.0
 offset_bottom = 454.0
 focus_mode = 0
 theme = SubResource("Theme_gbx45")
+script = ExtResource("16_8ie72")
 
 [node name="Floor 8" type="Button" parent="."]
 layout_mode = 0
@@ -2038,6 +2055,7 @@ offset_right = 1156.0
 offset_bottom = 455.0
 focus_mode = 0
 theme = SubResource("Theme_7aoui")
+script = ExtResource("17_1k0dj")
 
 [node name="Floor 9" type="Button" parent="."]
 layout_mode = 0
@@ -2047,6 +2065,7 @@ offset_right = 975.0
 offset_bottom = 664.0
 focus_mode = 0
 theme = SubResource("Theme_boij7")
+script = ExtResource("18_boij7")
 
 [node name="Floor 10" type="Button" parent="."]
 layout_mode = 0
@@ -2056,5 +2075,16 @@ offset_right = 769.0
 offset_bottom = 662.0
 focus_mode = 0
 theme = SubResource("Theme_eq8co")
+script = ExtResource("19_0roht")
 
 [connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Floor 1" to="Floor 1" method="_on_pressed"]
+[connection signal="pressed" from="Floor 2" to="Floor 2" method="_on_pressed"]
+[connection signal="pressed" from="Floor 3" to="Floor 3" method="_on_pressed"]
+[connection signal="pressed" from="Floor 4" to="Floor 4" method="_on_pressed"]
+[connection signal="pressed" from="Floor 5" to="Floor 5" method="_on_pressed"]
+[connection signal="pressed" from="Floor 6" to="Floor 6" method="_on_pressed"]
+[connection signal="pressed" from="Floor 7" to="Floor 7" method="_on_pressed"]
+[connection signal="pressed" from="Floor 8" to="Floor 8" method="_on_pressed"]
+[connection signal="pressed" from="Floor 9" to="Floor 9" method="_on_pressed"]
+[connection signal="pressed" from="Floor 10" to="Floor 10" method="_on_pressed"]

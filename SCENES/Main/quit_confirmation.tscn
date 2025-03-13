@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://cveuoaaxy7uu3"]
+
+[ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_fa8rb"]
+[ext_resource type="Theme" uid="uid://c4q63lu5mxi8a" path="res://ASSETS/BUTTONS/quit_confirmation_yes.tres" id="2_x3mao"]
+[ext_resource type="Script" uid="uid://d0pss0aj6qer2" path="res://SCRIPTS/Main/quit_confirmation_yes.gd" id="3_0x43r"]
+[ext_resource type="Theme" uid="uid://ds324jywu26yr" path="res://ASSETS/BUTTONS/quit_confirmation_no.tres" id="3_x3mao"]
+[ext_resource type="Texture2D" uid="uid://cdj4uoo7s2wwt" path="res://ASSETS/BUTTONS/Are_You_Sure.png" id="4_8e0ky"]
+[ext_resource type="Script" uid="uid://dc23i6o1keewr" path="res://SCRIPTS/Main/quit_confirmation_no.gd" id="5_pwup7"]
+
+[node name="QuitConfirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fa8rb")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Yes" type="Button" parent="."]
+custom_minimum_size = Vector2(29, 12)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -200.0
+offset_right = 10.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = ExtResource("2_x3mao")
+script = ExtResource("3_0x43r")
+
+[node name="No" type="Button" parent="."]
+custom_minimum_size = Vector2(23, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 160.0
+offset_right = 251.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("3_x3mao")
+script = ExtResource("5_pwup7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(46, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -195.5
+offset_right = 408.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_8e0ky")
+
+[connection signal="pressed" from="Yes" to="Yes" method="_on_pressed"]
+[connection signal="pressed" from="No" to="Yes" method="_on_no_pressed"]
+[connection signal="pressed" from="No" to="No" method="_on_pressed"]

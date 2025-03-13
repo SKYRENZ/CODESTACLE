@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cthpycglwhycd"]
+[gd_scene load_steps=4 format=3 uid="uid://c5er4em2ye5jm"]
 
-[ext_resource type="Script" uid="uid://dbdyq4dw212b" path="res://SCRIPTS/Mechanics/flag(transitionflr).gd" id="1_wohtm"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/flag(transitionflr).gd" id="1_wohtm"]
 [ext_resource type="Texture2D" uid="uid://ohtylibbladv" path="res://ASSETS/Environment/FLAG/flag.png" id="2_31yu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hs"]

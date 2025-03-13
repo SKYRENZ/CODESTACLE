@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bwqmpaix1a5uo"]
+[gd_scene load_steps=23 format=4 uid="uid://bih145y8qhm3y"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_5vnfl"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="2_3xx7d"]
@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://bqhlk7e36som8" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_5.gd" id="11_7toq3"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="11_f0url"]
 [ext_resource type="Script" uid="uid://dtqoy5k3i62jj" path="res://SCRIPTS/Floor/Slums/floor 4/F4runi_quiz.gd" id="12_3xx7d"]
-[ext_resource type="PackedScene" uid="uid://dgmguclsbabf6" path="res://SCENES/Mechanics/slumsdoor_transtoflr_5.tscn" id="14_osfug"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/slumsdoor_transtoflr_5.tscn" id="14_osfug"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 

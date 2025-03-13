@@ -1,13 +1,13 @@
 [gd_scene load_steps=48 format=4 uid="uid://c5yjxc3h4u773"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
-[ext_resource type="PackedScene" uid="uid://convdqxhs5j5m" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="2_l3kwt"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="2_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_biyl2"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="4_l3kwt"]
+[ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="4_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="5_gfbai"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="6_biyl2"]
+[ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="6_biyl2"]
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
+[ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]

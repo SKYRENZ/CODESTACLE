@@ -1,9 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cj2vsyb4iyfcl"]
 
+[ext_resource type="Script" uid="uid://bpodv1vdeqfnq" path="res://SCRIPTS/Floor/Dirt/Floor1door_dirt.gd" id="2_0djs3"]
 [ext_resource type="Texture2D" uid="uid://dhbcluva7tpti" path="res://ASSETS/Environment/DOORS/door-Sheet.png" id="2_1u57r"]
-
-[sub_resource type="Resource" id="Resource_dq4pa"]
-metadata/__load_path__ = "res://SCRIPTS/Mechanics/door.gd"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1mmi"]
 atlas = ExtResource("2_1u57r")
@@ -52,7 +50,7 @@ animations = [{
 size = Vector2(24, 54)
 
 [node name="Door" type="Node2D"]
-script = SubResource("Resource_dq4pa")
+script = ExtResource("2_0djs3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_io0nu")

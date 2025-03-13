@@ -1,16 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgfqa8defwpbh"]
+[gd_scene load_steps=5 format=3 uid="uid://c4u4jbf3tnef6"]
 
-[ext_resource type="Script" uid="uid://blqgxw7mlcm48" path="res://SCRIPTS/Mechanics/validation.gd" id="1_k2y11"]
-[ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_81hkj"]
-[ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="2_kl6au"]
+[ext_resource type="Script" uid="uid://ctgn7aqymuo6i" path="res://SCENES/Mechanics/validation_2.gd" id="1_2r8qn"]
+[ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_qsq6s"]
+[ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="3_myinc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1lj8"]
-texture = ExtResource("2_81hkj")
+texture = ExtResource("2_qsq6s")
 
 [node name="Validation" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_k2y11")
+script = ExtResource("1_2r8qn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -23,7 +23,7 @@ layout_mode = 2
 offset_top = 8.0
 offset_right = 536.0
 offset_bottom = 272.0
-theme_override_fonts/normal_font = ExtResource("2_kl6au")
+theme_override_fonts/normal_font = ExtResource("3_myinc")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 
@@ -52,6 +52,7 @@ layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
+script = ExtResource("1_2r8qn")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2

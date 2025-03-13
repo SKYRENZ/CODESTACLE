@@ -8,7 +8,7 @@ var interactable_item: Node = null  # Store the nearest interactable item
 func _ready():
 	if player:
 		# ✅ Set default spawn point
-		var spawn_point = get_node("Marker2D")  
+		var spawn_point = get_node("Marker2D")
 		if spawn_point:
 			player.spawn_point = spawn_point
 			print("✅ Initial spawn point set at:", spawn_point.global_position)
@@ -23,6 +23,10 @@ func _ready():
 			if checkpoint is Area2D:
 				checkpoint.connect("body_entered", _on_checkpoint_reached)
 				print("🔹 Checkpoint connected:", checkpoint.name)
+		
+		# Initially hide the inventory validation UI
+		if inventory:
+			inventory.visible = false  # Hide the UI initially
 	else:
 		print("❌ Error: Player not found!")
 
@@ -53,6 +57,11 @@ func _on_item_area_exited(area):
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and interactable_item:
 		_on_item_collected(interactable_item)
+	
+	# Optionally, you can also make the UI visible when the player presses 'F' 
+	# (or other designated input for interaction).
+	if Input.is_action_just_pressed("interact") and inventory:
+		inventory.visible = true  # Show the inventory UI when the player presses 'F'
 
 # 🎯 Store item in validation UI
 func _on_item_collected(item):
@@ -68,6 +77,7 @@ func _on_item_collected(item):
 			inventory.add_item(item.name, item_texture)  # ✅ Store in inventory
 			item.queue_free()  # Remove from scene
 			print("✅ Item stored:", item.name)
+			inventory.visible = true  # Show the UI when an item is collected
 		else:
 			print("❌ Error: Item texture not found for", item.name)
 	else:

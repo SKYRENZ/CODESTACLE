@@ -7,13 +7,17 @@ extends Control
 
 @export var font_resource: Font  
 @export var background_image: Texture  
-
-var sentence_template = ["Let [_] = 12;", "Let y = [_];"]
+var sentence_template =  [" Let x =  [_] "]    
 var valid_items = ["12", "13"]  
 var collected_items = []  
 var next_expected_index = 0  
 
 func _ready():
+	# Ensure all nodes are valid before accessing them
+	if not vbox_container:
+		print("❌ Error: VBoxContainer not found!")
+		return
+
 	if background_image and background_texture:
 		background_texture.texture = background_image  
 
@@ -33,6 +37,12 @@ func open_validation():
 	validation_panel.visible = true
 
 func update_sentence_display():
+	# Ensure vbox_container is valid before modifying it
+	if not vbox_container:
+		print("❌ Error: VBoxContainer is null!")
+		return
+
+	# Clear existing children before updating
 	for child in vbox_container.get_children():
 		vbox_container.remove_child(child)
 		child.queue_free()  
@@ -86,4 +96,4 @@ func add_item(item_name, item_texture) -> bool:
 func change_panel_color(color: Color):
 	validation_panel.modulate = color  
 	await get_tree().create_timer(0.3).timeout  
-	validation_panel.modulate = Color(1, 1, 1)  
+	validation_panel.modulate = Color(1, 1, 1)

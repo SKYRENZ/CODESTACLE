@@ -17,6 +17,5 @@ Runi: Welcome back, B-01! Now, let's delve into the heart of JavaScript code: st
 "Multiple statements can be written on one line, but it's generally better to keep them separate for readability.let a = 1; let b = 2;is valid but less readable than writing each statement on a new line."
 => END
 ~ Runiquiz
-Runiquiz
 Runi:"Great job, B-01! You've reached the end of Floor 6. Let's see if you've understood the importance of commenting with a quick quiz!"
 => END

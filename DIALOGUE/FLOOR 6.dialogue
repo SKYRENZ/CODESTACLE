@@ -1,0 +1,21 @@
+~ runi
+Runi: Welcome back, B-01! Now, let's delve into the heart of JavaScript code: statements! These are the instructions that tell the computer what to do."
+=> END
+~ signage1 
+"In JavaScript, a statement is a command that the interpreter executes. A program is a sequence of statements."
+=> END
+~ signage2
+"A simple JavaScript statement:let x = 5;This declares a variablexand assigns it the value5."
+=> END
+~ signage3
+ "Statements can be grouped together into code blocks using curly braces{}. Code blocks are often used in loops and conditional statements."
+=> END
+~ signage4
+"Example of a code block:{ let y = 10; console.log(y); }"
+=> END
+~ signage5 
+"Multiple statements can be written on one line, but it's generally better to keep them separate for readability.let a = 1; let b = 2;is valid but less readable than writing each statement on a new line."
+=> END
+~ Runiquiz
+Runi:"Great job, B-01! You've reached the end of Floor 6. Let's see if you've understood the importance of commenting with a quick quiz!"
+=> END

@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://clhgf55e4p6tw"]
+[gd_scene load_steps=22 format=3 uid="uid://clhgf55e4p6tw"]
 
 [ext_resource type="Script" uid="uid://bepwjxh6bklt3" path="res://SCRIPTS/Main/signup_screen.gd" id="1_qrye3"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="2_1ryr0"]
 [ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="2_4qxy3"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="2_jmqb2"]
-[ext_resource type="FontFile" uid="uid://0t7st6bras4i" path="res://ASSETS/FONT/Fontnilolo-Regular.ttf" id="3_psrf0"]
 [ext_resource type="Shader" uid="uid://bp4bk3el6wiby" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="3_ua0e6"]
 [ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="4_vlkih"]
 [ext_resource type="Shader" uid="uid://cf1g4u7i8nrso" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="5_pj77x"]
@@ -136,22 +135,6 @@ offset_bottom = 747.0
 texture = ExtResource("2_4qxy3")
 expand_mode = 1
 
-[node name="Codestacle" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 106.0
-offset_top = -165.0
-offset_right = 798.0
-offset_bottom = -73.0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
-theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
-theme_override_fonts/font = ExtResource("3_psrf0")
-theme_override_font_sizes/font_size = 90
-text = "codestacle"
-
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -276,6 +259,22 @@ offset_left = 940.0
 offset_top = 428.0
 offset_right = 1128.0
 offset_bottom = 451.0
+
+[node name="Codestacle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = -128.0
+offset_right = 832.0
+offset_bottom = -4.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
+theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 90
+text = "codestacle"
 
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer/Show Password Button" to="." method="_on_show_password_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Signup Button" to="." method="_on_signup_button_pressed"]

@@ -5,7 +5,7 @@ extends Node2D
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/timer.tscn")  # Create this scene
 var timer_ui_instance = null
-
+var quit_button = preload("res://SCENES/Main/quit_confirmation.tscn")
 func _ready():
 	# Get reference to the timer manager
 	timer_manager = get_node_or_null("/root/FloorTimerManager")
@@ -13,6 +13,11 @@ func _ready():
 		printerr("FloorTimerManager not found!")
 		return
 	
+	quit_button = get_node_or_null("/root/quit_button")
+	if quit_button == null:
+		print("ERROR: FloorTimerManager not found!")
+		return
+
 	# Start the timer for this floor
 	timer_manager.start_timer(floor_number)
 	

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cveuoaaxy7uu3"]
+[gd_scene load_steps=8 format=3 uid="uid://cveuoaaxy7uu3"]
 
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_fa8rb"]
+[ext_resource type="Script" uid="uid://b3bbwpmai525m" path="res://SCENES/Main/quit_confirmation.gd" id="1_pwup7"]
 [ext_resource type="Theme" uid="uid://c4q63lu5mxi8a" path="res://ASSETS/BUTTONS/quit_confirmation_yes.tres" id="2_x3mao"]
 [ext_resource type="Script" uid="uid://d0pss0aj6qer2" path="res://SCRIPTS/Main/quit_confirmation_yes.gd" id="3_0x43r"]
 [ext_resource type="Theme" uid="uid://ds324jywu26yr" path="res://ASSETS/BUTTONS/quit_confirmation_no.tres" id="3_x3mao"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pwup7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

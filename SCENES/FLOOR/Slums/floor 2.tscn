@@ -10,13 +10,13 @@
 [ext_resource type="Script" uid="uid://d1pgbrwn8w1w3" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_1.gd" id="7_6jk65"]
 [ext_resource type="Script" uid="uid://ba7j3saycr4fc" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_2.gd" id="7_vi21l"]
 [ext_resource type="Script" uid="uid://b0vjq3mipljpj" path="res://SCRIPTS/Floor/Slums/floor 2/F2signage_3.gd" id="8_w8cty"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="9_03f5i"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cu8ptd5rar217" path="res://SCRIPTS/Floor/Slums/floor 2/F2runi_quiz.gd" id="9_1373n"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
 [ext_resource type="AudioStream" uid="uid://bfrqwc3pidad2" path="res://BGM/slum.mp3" id="13_4dfna"]
 [ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="13_36jqm"]
 [ext_resource type="Script" uid="uid://oqlcumtntqxk" path="res://SCRIPTS/Mechanics/DoorFloor/Floor2door.gd" id="15_36jqm"]
-[ext_resource type="PackedScene" uid="uid://cuhnjxxok1dx0" path="res://SCENES/Mechanics/Floor3Door..tscn" id="16_36jqm"]
+[ext_resource type="PackedScene" uid="uid://cuhnjxxok1dx0" path="res://SCENES/Mechanics/doors( to be refactor)/Floor3Door..tscn" id="16_36jqm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 

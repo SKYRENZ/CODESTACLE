@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_paeh3"]
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="3_y3glp"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_vgoss"]
-[ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/door.tscn" id="5_ofvt8"]
+[ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/doors( to be refactor)/Dirtdoor.tscn" id="5_ofvt8"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_r7m2h"]
 [ext_resource type="PackedScene" uid="uid://c4u4jbf3tnef6" path="res://SCENES/Mechanics/Validation2.tscn" id="8_kfggu"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="10_glyw7"]

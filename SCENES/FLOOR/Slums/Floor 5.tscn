@@ -16,10 +16,10 @@
 [ext_resource type="Script" uid="uid://m3agidkegvbt" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_6.gd" id="14_m44sm"]
 [ext_resource type="Script" uid="uid://c4dhnfcwf8l5a" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_7.gd" id="15_fw7as"]
 [ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/floor 5/F5rodtang_quiz.gd" id="16_cvedv"]
-[ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/RodtangQUIZ.tscn" id="17_jm1gl"]
+[ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/Quiz Panel/RodtangQUIZ.tscn" id="17_jm1gl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="18_a1r14"]
 [ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="19_yqsx4"]
-[ext_resource type="PackedScene" uid="uid://c3jnjtkng6154" path="res://SCENES/Mechanics/Floor5Door..tscn" id="20_cir6d"]
+[ext_resource type="PackedScene" uid="uid://c3jnjtkng6154" path="res://SCENES/Mechanics/doors( to be refactor)/Floor5Door..tscn" id="20_cir6d"]
 [ext_resource type="Script" uid="uid://s1025fsj6ici" path="res://SCRIPTS/Mechanics/DoorFloor/Floor5door.gd" id="21_6xtaa"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]

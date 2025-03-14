@@ -13,10 +13,10 @@
 [ext_resource type="Script" uid="uid://clr0mh2cebbit" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_4.gd" id="11_mnqss"]
 [ext_resource type="Script" uid="uid://bqhlk7e36som8" path="res://SCRIPTS/Floor/Slums/floor 4/F4signage_5.gd" id="12_jqsga"]
 [ext_resource type="Script" uid="uid://dtqoy5k3i62jj" path="res://SCRIPTS/Floor/Slums/floor 4/F4runi_quiz.gd" id="13_ve8n5"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="14_u215q"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="14_u215q"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_4sclt"]
 [ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="16_cuovx"]
-[ext_resource type="PackedScene" uid="uid://b63jmo2gubd3o" path="res://SCENES/Mechanics/Floor4Door..tscn" id="17_uknhy"]
+[ext_resource type="PackedScene" uid="uid://b63jmo2gubd3o" path="res://SCENES/Mechanics/doors( to be refactor)/Floor4Door..tscn" id="17_uknhy"]
 [ext_resource type="Script" uid="uid://c7ljw3xnt3rpu" path="res://SCRIPTS/Mechanics/DoorFloor/Floor4door.gd" id="18_vduu8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]

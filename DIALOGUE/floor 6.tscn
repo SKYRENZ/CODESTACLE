@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=4 uid="uid://duo0k8f3hl34k"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_jclt3"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/Floor1Door.tscn" id="2_07epy"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Floor1Door.tscn" id="2_07epy"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_8ej5d"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_jhlam"]
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="5_nmfrq"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="8_eo0ge"]
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="9_5vmtn"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="10_bx7d7"]
-[ext_resource type="Script" uid="uid://ckmlhcjdbo4vb" path="res://SCENES/FLOOR/Slums/outside.gd" id="11_5tqis"]
+[ext_resource type="Script" uid="uid://ckmlhcjdbo4vb" path="res://SCRIPTS/Mechanics/deaths/outside.gd" id="11_5tqis"]
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="12_45chf"]
 [ext_resource type="Script" uid="uid://byxnfkjijo11w" path="res://SCRIPTS/Floor/Slums/floor 6/F6runiD1.gd" id="13_bx7d7"]
 [ext_resource type="Resource" uid="uid://ci7wld4rpeqrp" path="res://DIALOGUE/FLOOR 6.dialogue" id="14_6dbf5"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://kfqgy7rbauvk" path="res://SCRIPTS/Floor/Slums/floor 6/F6signage_4.gd" id="18_3rbgc"]
 [ext_resource type="Script" uid="uid://gamchjayu6su" path="res://SCRIPTS/Floor/Slums/floor 6/F6signage_5.gd" id="19_6dbf5"]
 [ext_resource type="Script" uid="uid://clj1m3bdl0mvw" path="res://SCRIPTS/Floor/Slums/floor 6/F6runi_quiz.gd" id="20_8ej5d"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/RuniQUIZ.tscn" id="22_ixjod"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="22_ixjod"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 

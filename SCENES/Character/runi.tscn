@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1c3xq2skqnso"]
 
 [ext_resource type="Texture2D" uid="uid://bxb3modnbf7pu" path="res://ASSETS/Character/Runi the all knowing-Sheet.png" id="1_kr4la"]
-[ext_resource type="Script" uid="uid://dacortjt1ly0r" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
+[ext_resource type="Script" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h78op"]
 atlas = ExtResource("1_kr4la")

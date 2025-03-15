@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1c3xq2skqnso"]
+[gd_scene load_steps=12 format=3 uid="uid://d1c3xq2skqnso"]
 
 [ext_resource type="Texture2D" uid="uid://bxb3modnbf7pu" path="res://ASSETS/Character/Runi the all knowing-Sheet.png" id="1_kr4la"]
 [ext_resource type="Script" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
+[ext_resource type="Script" uid="uid://c5dgisrpjlul" path="res://SCRIPTS/Character/interaction_labelRuni.gd" id="3_cslrd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h78op"]
 atlas = ExtResource("1_kr4la")
@@ -39,6 +40,36 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="FontFile" id="FontFile_cslrd"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ve7an"]
+font = SubResource("FontFile_cslrd")
+font_size = 11
+font_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cslrd"]
+size = Vector2(37, 25)
+
 [node name="Runi" type="CharacterBody2D"]
 z_index = 5
 script = ExtResource("1_v3dvr")
@@ -49,3 +80,19 @@ scale = Vector2(1.14286, 1.14286)
 sprite_frames = SubResource("SpriteFrames_bteqn")
 animation = &"idle"
 flip_h = true
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -39.0
+offset_top = -51.0
+offset_right = 53.0
+offset_bottom = -28.0
+text = "Press \"E\" to Interact"
+label_settings = SubResource("LabelSettings_ve7an")
+
+[node name="Area2D" type="Area2D" parent="InteractionLabel"]
+position = Vector2(54, 54)
+script = ExtResource("3_cslrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLabel/Area2D"]
+position = Vector2(-13, -21.5)
+shape = SubResource("RectangleShape2D_cslrd")

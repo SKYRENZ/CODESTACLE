@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_gcja0"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
-[ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="3_ei3xk"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_tpv1e"]
 [ext_resource type="Script" uid="uid://dfyt7b1yp6hil" path="res://SCRIPTS/Floor/Slums/floor 3/F3runiD1.gd" id="5_4cj71"]
+[ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="6_bp7c7"]
 [ext_resource type="Resource" uid="uid://dpoxlewle5b0s" path="res://DIALOGUE/FLOOR 3.dialogue" id="6_ei3xk"]
 [ext_resource type="Script" uid="uid://bdprael2fjkdd" path="res://SCRIPTS/Floor/Slums/floor 3/F3signage_1.gd" id="7_ei3xk"]
 [ext_resource type="Script" uid="uid://bupof1laosotu" path="res://SCRIPTS/Floor/Slums/floor 3/F3signage_2.gd" id="8_ei3xk"]
@@ -808,6 +808,7 @@ grow_vertical = 2
 size_flags_vertical = 4
 texture = SubResource("CanvasTexture_jhtpj")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect"]
 layout_mode = 0
@@ -816,8 +817,9 @@ offset_top = 2.0
 offset_right = 1912.0
 offset_bottom = 1022.0
 color = Color(0, 0.133333, 0.133333, 1)
+metadata/_edit_lock_ = true
 
-[node name="floor 3" parent="TextureRect/ColorRect" instance=ExtResource("13_tpv1e")]
+[node name="door 3" parent="TextureRect/ColorRect" instance=ExtResource("13_tpv1e")]
 position = Vector2(1810, 764)
 script = ExtResource("15_rnrk6")
 target_scene = "res://SCENES/FLOOR/Slums/floor 4.tscn"
@@ -835,21 +837,11 @@ position = Vector2(323, 775)
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 
-[node name="SlumssSign1" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(603, 633)
-texture = ExtResource("3_ei3xk")
+[node name="SlumsSign1" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
+position = Vector2(602, 633)
 
-[node name="SlumssSign2" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(958, 792)
-texture = ExtResource("3_ei3xk")
-
-[node name="SlumssSign3" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(1271, 746)
-texture = ExtResource("3_ei3xk")
-
-[node name="SlumssSign4" type="Sprite2D" parent="TextureRect/ColorRect/Signage"]
-position = Vector2(1537, 809)
-texture = ExtResource("3_ei3xk")
+[node name="SlumsSign2" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
+position = Vector2(958.046, 796.424)
 
 [node name="Map tile" type="Node" parent="TextureRect/ColorRect"]
 
@@ -919,14 +911,14 @@ dialogue_resource = ExtResource("6_ei3xk")
 position = Vector2(1535, 799)
 shape = SubResource("RectangleShape2D_atb3i")
 
-[node name="Runiquiz" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
-position = Vector2(2, 4)
+[node name="Runiquiz" type="Area2D" parent="TextureRect/ColorRect"]
+position = Vector2(11, 2)
 collision_layer = 32
 script = ExtResource("11_4cj71")
 dialogue_resource = ExtResource("6_ei3xk")
 quiz_scene = ExtResource("10_ics1b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/Runiquiz"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Runiquiz"]
 position = Vector2(1616, 798)
 shape = SubResource("RectangleShape2D_atb3i")
 

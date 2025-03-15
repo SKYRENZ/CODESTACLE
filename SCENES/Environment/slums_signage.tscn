@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbk4k3rjm4ix1"]
+
+[ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="1_5f5md"]
+[ext_resource type="Script" uid="uid://bdu4nwxdejoad" path="res://SCRIPTS/Environment/SignageLabel.gd" id="2_lukml"]
+
+[sub_resource type="FontFile" id="FontFile_5f5md"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lukml"]
+font = SubResource("FontFile_5f5md")
+font_size = 11
+font_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f5md"]
+size = Vector2(43, 24)
+
+[node name="SlumsSign1" type="Sprite2D"]
+z_index = 4
+texture = ExtResource("1_5f5md")
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -41.0
+offset_right = 42.0
+offset_bottom = -18.0
+text = "Press E to Read"
+label_settings = SubResource("LabelSettings_lukml")
+
+[node name="Area2D" type="Area2D" parent="InteractionLabel"]
+z_index = 1
+script = ExtResource("2_lukml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionLabel/Area2D"]
+position = Vector2(33.5, 35)
+shape = SubResource("RectangleShape2D_5f5md")

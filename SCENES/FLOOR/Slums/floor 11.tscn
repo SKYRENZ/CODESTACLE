@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="10_lgli4"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_p6a3l"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="12_jwtfj"]
-[ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="13_u7su5"]
+[ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="13_6c31h"]
 [ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="14_ptthj"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_qver0"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_v2ri5"]
@@ -791,7 +791,7 @@ sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 size = Vector2(49, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mab7b"]
-size = Vector2(30, 41)
+size = Vector2(58, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c31h"]
 size = Vector2(31.5, 54)
@@ -830,7 +830,7 @@ color = Color(0, 0.133333, 0.133333, 1)
 [node name="B-01" parent="TextureRect/Characters" instance=ExtResource("2_ptthj")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(1606, 616)
+position = Vector2(209, 767)
 
 [node name="Runi" parent="TextureRect/Characters" instance=ExtResource("3_qver0")]
 position = Vector2(277, 777)
@@ -874,12 +874,14 @@ position = Vector2(268, 769)
 shape = SubResource("RectangleShape2D_3jsy4")
 
 [node name="signage 1" type="Area2D" parent="TextureRect/Dialogues"]
+z_index = 3
 collision_layer = 32
 script = ExtResource("7_x3mxh")
 dialogue_resource = ExtResource("6_vuibs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Dialogues/signage 1"]
-position = Vector2(330, 779)
+z_index = 2
+position = Vector2(416, 789)
 shape = SubResource("RectangleShape2D_mab7b")
 
 [node name="signage 2" type="Area2D" parent="TextureRect/Dialogues"]
@@ -921,25 +923,14 @@ shape = SubResource("RectangleShape2D_mab7b")
 
 [node name="Signage" type="Node" parent="TextureRect"]
 
-[node name="SlumsSign1" type="Sprite2D" parent="TextureRect/Signage"]
-z_index = 4
-position = Vector2(327, 776)
-texture = ExtResource("13_u7su5")
+[node name="SlumsSign1" parent="TextureRect/Signage" instance=ExtResource("13_6c31h")]
+position = Vector2(415, 793)
 
-[node name="SlumsSign2" type="Sprite2D" parent="TextureRect/Signage"]
-z_index = 4
-position = Vector2(653, 715)
-texture = ExtResource("13_u7su5")
+[node name="SlumsSign2" parent="TextureRect/Signage" instance=ExtResource("13_6c31h")]
+position = Vector2(652, 713)
 
-[node name="SlumsSign3" type="Sprite2D" parent="TextureRect/Signage"]
-z_index = 4
-position = Vector2(1023, 713)
-texture = ExtResource("13_u7su5")
-
-[node name="SlumsSign4" type="Sprite2D" parent="TextureRect/Signage"]
-z_index = 4
-position = Vector2(1348, 713)
-texture = ExtResource("13_u7su5")
+[node name="SlumsSign3" parent="TextureRect/Signage" instance=ExtResource("13_6c31h")]
+position = Vector2(1348, 714)
 
 [node name="SlumssDoor2" type="Sprite2D" parent="TextureRect"]
 position = Vector2(1830, 598)

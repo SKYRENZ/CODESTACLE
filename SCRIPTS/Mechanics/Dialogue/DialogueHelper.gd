@@ -1,0 +1,36 @@
+extends Node
+
+signal interaction_available(interactable)
+signal interaction_unavailable(interactable)
+
+var current_interactable = null
+
+func _ready():
+	# Connect to input processing for the global interaction key
+	process_mode = Node.PROCESS_MODE_ALWAYS # To work even when game is paused
+	
+	# Connect to dialogue ended signal
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+func _unhandled_input(event):
+	if event.is_action_pressed("interact") and current_interactable != null:
+		if current_interactable.has_method("trigger_dialogue"):
+			current_interactable.trigger_dialogue()
+			get_viewport().set_input_as_handled()
+
+# Called by interactable when player enters its area
+func register_interactable(interactable):
+	if current_interactable == null:
+		current_interactable = interactable
+		emit_signal("interaction_available", interactable)
+
+# Called by interactable when player exits its area
+func unregister_interactable(interactable):
+	if current_interactable == interactable:
+		current_interactable = null
+		emit_signal("interaction_unavailable", interactable)
+
+func _on_dialogue_ended(_resource: DialogueResource):
+	# Reset interactable after dialogue ends
+	if current_interactable != null:
+		register_interactable(current_interactable)

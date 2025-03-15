@@ -170,6 +170,8 @@ animations = [{
 size = Vector2(31, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+visibility_layer = 65
+z_index = 7
 collision_mask = 17
 script = ExtResource("1_70g4a")
 

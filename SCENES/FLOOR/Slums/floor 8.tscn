@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
 [ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
-[ext_resource type="Script" uid="uid://ci4fjitviqam1" path="res://SCENES/FLOOR/Slums/anothertoxic.gd" id="11_01es4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 
@@ -595,6 +594,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01es4"]
 size = Vector2(1125, 39)
 
+[sub_resource type="GDScript" id="GDScript_qyilj"]
+script/source = "extends Area2D
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		print(\"🔥 Player fell into toxic lava!\")
+		get_tree().reload_current_scene()  # Restart the game
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
 size = Vector2(744, 20)
 
@@ -860,7 +871,7 @@ position = Vector2(595.5, 1151.5)
 shape = SubResource("RectangleShape2D_01es4")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("11_01es4")
+script = SubResource("GDScript_qyilj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1576, 719)

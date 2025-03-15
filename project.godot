@@ -23,6 +23,7 @@ FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
 PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
+DialogueHelper="*res://SCRIPTS/Mechanics/Dialogue/DialogueHelper.gd"
 
 [dialogue_manager]
 

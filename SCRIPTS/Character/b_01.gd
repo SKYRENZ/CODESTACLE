@@ -10,6 +10,7 @@ const CLIMB_SPEED = 200.0
 
 var is_on_ladder = false
 var movement_locked = false  # New variable to control movement lock
+var facing_direction = 1  # New variable to track facing direction
 
 func _ready():
 	print("Player script is running")
@@ -43,8 +44,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# Flip sprite based on movement direction
-	animated_sprite_2d.flip_h = velocity.x < 0
+	# Update facing direction based on movement
+	if velocity.x != 0:
+		facing_direction = sign(velocity.x)
+	# Flip sprite based on facing direction
+	animated_sprite_2d.flip_h = facing_direction < 0
+
 func apply_gravity():
 	print("Gravity reapplied to player!")  # Debugging message
 	velocity.y = 400  # Ensure the player is pushed downward
@@ -72,7 +77,7 @@ func _movement(delta):
 		velocity.x = direction * SPEED
 		animated_sprite_2d.play("walking")
 	else:
-		velocity.x = move_toward(velocity.x, 0, 12)
+		velocity.x = move_toward(velocity.x, 0, 20)
 		animated_sprite_2d.play("default")
 
 func _ladder_climb():

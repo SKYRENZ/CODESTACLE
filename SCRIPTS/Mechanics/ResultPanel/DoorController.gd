@@ -47,10 +47,6 @@ func handle_floor_completion():
 		print("Floor %d completed in %s" % [floor_number, timer_manager.format_time(elapsed_time)])
 		timer_manager.save_times()
 	
-	# Verify path exists
-	print("Results panel path: ", results_panel_path)
-	print("Path exists: ", ResourceLoader.exists(results_panel_path))
-	
 	# Show results panel
 	if ResourceLoader.exists(results_panel_path):
 		print("Loading results panel scene...")
@@ -72,7 +68,7 @@ func handle_floor_completion():
 		if results_instance.has_method("show_results"):
 			var score = get_player_score()
 			print("Showing results with score: %d" % score)
-			results_instance.show_results(floor_number, score)
+			results_instance.show_results(floor_number, score, self)
 		else:
 			printerr("Results panel missing show_results method!")
 	else:
@@ -128,8 +124,19 @@ func transition_to_next_floor():
 	# Ensure game is unpaused
 	get_tree().paused = false
 	
-	# Change scene if path is valid
-	if next_floor_path != "" and ResourceLoader.exists(next_floor_path):
-		get_tree().change_scene_to_file(next_floor_path)
-	else:
+	# Check that we have a valid next floor path
+	if next_floor_path == "" or !ResourceLoader.exists(next_floor_path):
 		printerr("Cannot transition: Invalid or missing next floor path")
+		return
+		
+	# Calculate next floor number
+	var next_floor = floor_number + 1
+	
+	# Find transition manager in the current scene
+	var transition_managers = get_tree().get_nodes_in_group("transition_layer")
+	if transition_managers.size() > 0:
+		# Start the transition
+		transition_managers[0].transition_to_scene(next_floor_path, next_floor)
+	else:
+		printerr("No transition manager found in current scene! Falling back to direct scene change.")
+		get_tree().change_scene_to_file(next_floor_path)

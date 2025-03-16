@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx6w7bfx5o7u3"]
+
+[ext_resource type="Script" uid="uid://ew8xilof60kp" path="res://SCRIPTS/Mechanics/SceneTransition/FloorTransitionManager.gd" id="1_w52dg"]
+
+[node name="FloorTransition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_w52dg")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FloorLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -81.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2

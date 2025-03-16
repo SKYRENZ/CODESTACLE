@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnax1136kjpp2"]
+
+[ext_resource type="Script" uid="uid://bytv2qgjubtuy" path="res://SCRIPTS/Mechanics/timer/FloorTimer.gd" id="1_f2nka"]
+[ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="2_1njoi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1njoi"]
+font = ExtResource("2_1njoi")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2nka"]
+font = ExtResource("2_1njoi")
+font_size = 30
+font_color = Color(0.992157, 0.807843, 0.666667, 1)
+
+[node name="Timer" type="CanvasLayer"]
+script = ExtResource("1_f2nka")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.5
+offset_top = 18.0
+offset_right = 117.5
+offset_bottom = 95.0
+grow_horizontal = 2
+
+[node name="Floor_Label" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 222.0
+offset_bottom = 35.0
+text = "FLOOR:"
+label_settings = SubResource("LabelSettings_1njoi")
+
+[node name="Timer_Panel" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 39.0
+offset_right = 222.0
+offset_bottom = 62.0
+text = "00:00.00"
+label_settings = SubResource("LabelSettings_f2nka")

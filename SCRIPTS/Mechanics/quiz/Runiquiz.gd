@@ -15,9 +15,14 @@ var question_label: Label
 var option_buttons = []
 var background_rect: ColorRect
 var content_rect: ColorRect
-
+var dim_background: ColorRect  # Reference for dim background
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dim_background = $CanvasLayer/DimBackground  
+
+	# Make the dim background visible when the quiz starts
+	dim_background.visible = true
+	dim_background.color = Color(0, 0, 0, 0.5)  # Semi-transparent black
 	# Get references to UI elements
 	background_rect = $CanvasLayer/ColorRect2
 	content_rect = $CanvasLayer/ColorRect2/ColorRect
@@ -231,6 +236,6 @@ func _on_continue_pressed() -> void:
 	if player.size() > 0:
 		# Re-enable player movement
 		enable_player_movement(player[0])
-	
+	dim_background.visible = false
 	# Close the quiz
 	queue_free()

@@ -95,3 +95,9 @@ offset_left = 21.0
 offset_top = 26.0
 offset_right = 992.0
 offset_bottom = 254.0
+
+[node name="DimBackground" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1409.0
+offset_bottom = 1409.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.67451)

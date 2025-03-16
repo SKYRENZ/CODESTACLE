@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccdye2d02ld6m"]
+
+[ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xkbqg"]
+line_spacing = 5.0
+font_size = 49
+font_color = Color(0.992157, 0.807843, 0.666667, 1)
+shadow_size = 3
+shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0cb"]
+font_size = 35
+font_color = Color(0.992157, 0.807843, 0.666667, 1)
+shadow_size = 3
+shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ehua"]
+font_size = 30
+font_color = Color(0.956863, 0.513726, 0.490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_spxw3"]
+font_size = 35
+font_color = Color(0.992157, 0.807843, 0.666667, 1)
+shadow_size = 3
+shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h5g7m"]
+font_size = 30
+font_color = Color(0.956863, 0.513726, 0.490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1rut"]
+font_size = 27
+font_color = Color(0.992157, 0.807843, 0.666667, 1)
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_xkbqg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.5
+offset_top = -236.5
+offset_right = 391.5
+offset_bottom = 236.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.211765, 0.231373, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+modulate = Color(0.6, 0.72549, 0.596078, 1)
+self_modulate = Color(0.6, 0.72549, 0.596078, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -215.0
+offset_right = 370.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Floor complete label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.5
+offset_top = 43.0
+offset_right = 220.5
+offset_bottom = 184.0
+grow_horizontal = 2
+text = "FLOOR COMPLETE!
+"
+label_settings = SubResource("LabelSettings_xkbqg")
+horizontal_alignment = 1
+
+[node name="quiz score" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 53.5
+offset_top = 176.5
+offset_right = 294.5
+offset_bottom = 249.5
+text = "Quiz Score:"
+label_settings = SubResource("LabelSettings_oo0cb")
+
+[node name="quiz percentage" type="Label" parent="ColorRect/quiz score"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 4.0
+offset_right = 554.0
+offset_bottom = 69.0
+label_settings = SubResource("LabelSettings_5ehua")
+
+[node name="floor time" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = 25.5
+offset_right = 244.0
+offset_bottom = 74.5
+grow_vertical = 2
+text = "Floor Time:"
+label_settings = SubResource("LabelSettings_spxw3")
+
+[node name="floor time timestamp" type="Label" parent="ColorRect/floor time"]
+layout_mode = 0
+offset_left = 198.5
+offset_top = 7.5
+offset_right = 561.5
+offset_bottom = 65.5
+label_settings = SubResource("LabelSettings_h5g7m")
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 272.5
+offset_top = 367.5
+offset_right = 486.5
+offset_bottom = 415.5
+
+[node name="Continue" type="Label" parent="ColorRect/Button"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -21.0
+offset_right = 60.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+label_settings = SubResource("LabelSettings_s1rut")

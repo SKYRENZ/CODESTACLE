@@ -5,7 +5,7 @@ signal results_closed
 var timer_manager = null
 var quiz_data_manager = null
 
-@onready var background_dim: ColorRect = $ColorRect  # Add this reference
+@onready var background_dim: ColorRect = $DimBackground  # Add this reference
 @onready var panel: Panel = $"ColorRect/Panel"
 @onready var title_label: Label = $"ColorRect/Floor complete label"
 @onready var score_label: Label = $"ColorRect/quiz score/quiz percentage"

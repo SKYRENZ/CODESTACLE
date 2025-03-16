@@ -100,4 +100,4 @@ offset_bottom = 254.0
 offset_right = 1409.0
 offset_bottom = 1409.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.67451)
+color = Color(0, 0, 0, 0.5)

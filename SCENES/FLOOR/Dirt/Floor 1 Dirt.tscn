@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="6_safdm"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_rjx8m"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="8_ng1k0"]
-[ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/doors( to be refactor)/Dirtdoor.tscn" id="10_qv7md"]
+[ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/doors/Dirtdoor.tscn" id="10_qv7md"]
 [ext_resource type="Script" uid="uid://cm1hr0p6gmlop" path="res://SCRIPTS/Floor/Dirt/FLOOR 11/signage_1.gd" id="11_bgbhj"]
 [ext_resource type="PackedScene" uid="uid://cgfqa8defwpbh" path="res://SCENES/Mechanics/Validation.tscn" id="11_pjnv8"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="12_o63ma"]

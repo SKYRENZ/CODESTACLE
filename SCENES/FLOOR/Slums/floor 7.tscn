@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=4 uid="uid://duo0k8f3hl34k"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_jclt3"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="2_07epy"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="2_07epy"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_8ej5d"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_jhlam"]
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="5_nmfrq"]

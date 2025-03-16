@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cu8ptd5rar217" path="res://SCRIPTS/Floor/Slums/floor 2/F2runi_quiz.gd" id="9_1373n"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="14_3xoiw"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="14_3xoiw"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="14_x28vg"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
@@ -941,5 +941,5 @@ results_panel_path = "uid://ccdye2d02ld6m"
 position = Vector2(6.30302, 52.8485)
 shape = SubResource("RectangleShape2D_x28vg")
 
-[node name="Door" parent="." instance=ExtResource("14_3xoiw")]
+[node name="Slums door" parent="." instance=ExtResource("14_3xoiw")]
 position = Vector2(1813, 673)

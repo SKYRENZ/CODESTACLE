@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="13_b4bnl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="15_ydj8t"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_ydj8t"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -950,5 +950,5 @@ results_panel_path = "uid://ccdye2d02ld6m"
 position = Vector2(3.87877, -1.45454)
 shape = SubResource("RectangleShape2D_g35fq")
 
-[node name="floor1" parent="TextureRect" instance=ExtResource("15_ydj8t")]
+[node name="Slums door" parent="TextureRect" instance=ExtResource("15_ydj8t")]
 position = Vector2(1805, 561)

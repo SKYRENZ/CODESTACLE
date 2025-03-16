@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/floor 5/F5rodtang_quiz.gd" id="16_cvedv"]
 [ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/Quiz Panel/RodtangQUIZ.tscn" id="17_jm1gl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="18_a1r14"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="19_g6c34"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="19_g6c34"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -980,5 +980,5 @@ floor_number = 5
 position = Vector2(12.6061, -132.848)
 shape = SubResource("RectangleShape2D_q25r6")
 
-[node name="Door" parent="." instance=ExtResource("19_g6c34")]
+[node name="Slums door" parent="." instance=ExtResource("19_g6c34")]
 position = Vector2(1822, 289)

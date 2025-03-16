@@ -3,7 +3,7 @@ extends Area2D
 # Configuration options
 @export var next_floor_path: String = ""  # Direct path to next floor scene
 @export var floor_number: int = 1  # Current floor number
-@export_file("*.tscn") var results_panel_path: String = "res://SCENES/Mechanics/results_panel.tscn"
+@export_file("*.tscn") var results_panel_path: String = "res://SCENES/Mechanics/resultpanel/results_panel.tscn"
 
 var player_in_area = false
 var timer_manager = null
@@ -13,7 +13,7 @@ func _ready():
 	print("DoorController %d initialized. Next floor: %s" % [floor_number, next_floor_path])
 	
 	# Get reference to timer manager
-	timer_manager = get_node_or_null("/root/FloorTimerManager")
+	timer_manager = get_node_or_null("res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd")
 	
 	# Connect signals
 	body_entered.connect(_on_body_entered)

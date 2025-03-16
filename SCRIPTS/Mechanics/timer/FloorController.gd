@@ -1,11 +1,10 @@
 extends Node2D
 
-@export var floor_number: int = 1  # Set this for each floor in the Inspector
+@export var floor_number: int = 0  # Set this for each floor in the Inspector
 
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/Timer/timer.tscn")  # Create this scene
 var timer_ui_instance = null
-var quit_button = preload("res://SCENES/Main/quit_confirmation.tscn")
 func _ready():
 	# Get reference to the timer manager
 	timer_manager = get_node_or_null("/root/FloorTimerManager")

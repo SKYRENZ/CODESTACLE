@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dmju10nxwgyr5"]
+[gd_scene load_steps=25 format=4 uid="uid://dmju10nxwgyr5"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_x28vg"]
@@ -12,9 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cu8ptd5rar217" path="res://SCRIPTS/Floor/Slums/floor 2/F2runi_quiz.gd" id="9_1373n"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="14_3xoiw"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="14_x28vg"]
-[ext_resource type="Script" uid="uid://oqlcumtntqxk" path="res://SCRIPTS/Mechanics/DoorFloor/Floor2door.gd" id="15_36jqm"]
-[ext_resource type="PackedScene" uid="uid://cuhnjxxok1dx0" path="res://SCENES/Mechanics/doors( to be refactor)/Floor3Door..tscn" id="16_36jqm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -939,11 +938,8 @@ floor_number = 2
 results_panel_path = "uid://ccdye2d02ld6m"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/show result"]
-position = Vector2(-51.394, 52.3636)
+position = Vector2(6.30302, 52.8485)
 shape = SubResource("RectangleShape2D_x28vg")
 
-[node name="floor 3" parent="." instance=ExtResource("16_36jqm")]
-position = Vector2(1820, 673)
-script = ExtResource("15_36jqm")
-target_scene = "res://SCENES/FLOOR/Slums/floor 3.tscn"
-target_floor_number = 3
+[node name="Door" parent="." instance=ExtResource("14_3xoiw")]
+position = Vector2(1813, 673)

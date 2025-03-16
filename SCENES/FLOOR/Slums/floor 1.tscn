@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=27 format=4 uid="uid://kgetvwqx48vl"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
@@ -12,11 +12,9 @@
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/floor 1/runi_quiz.gd" id="11_t2o2f"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="13_b4bnl"]
-[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Floor1Door.tscn" id="14_tpvb0"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
-[ext_resource type="PackedScene" uid="uid://dmju10nxwgyr5" path="res://SCENES/FLOOR/Slums/floor 2.tscn" id="16_uou1l"]
-[ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="17_7acq8"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="15_ydj8t"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -801,6 +799,7 @@ size = Vector2(20, 28.6061)
 
 [node name="Floor1" type="Node2D"]
 script = ExtResource("1_7k0cc")
+floor_number = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -944,12 +943,12 @@ z_index = 1
 position = Vector2(1830, 598)
 scale = Vector2(2.0625, 2.0625)
 script = ExtResource("15_b4bnl")
-next_floor = ExtResource("16_uou1l")
-results_panel_scene = ExtResource("17_7acq8")
+next_floor_path = "res://SCENES/FLOOR/Slums/floor 2.tscn"
+results_panel_path = "uid://ccdye2d02ld6m"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/show result"]
-position = Vector2(-54.7879, -1.93939)
+position = Vector2(3.87877, -1.45454)
 shape = SubResource("RectangleShape2D_g35fq")
 
-[node name="slumsdoor_transtoflr2" parent="TextureRect" instance=ExtResource("14_tpvb0")]
-position = Vector2(1831, 560)
+[node name="floor1" parent="TextureRect" instance=ExtResource("15_ydj8t")]
+position = Vector2(1805, 561)

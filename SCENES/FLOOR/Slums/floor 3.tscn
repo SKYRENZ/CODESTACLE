@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b5btesvhc6epn"]
+[gd_scene load_steps=26 format=4 uid="uid://b5btesvhc6epn"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_gcja0"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
@@ -13,10 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="10_ics1b"]
 [ext_resource type="Script" uid="uid://bh8gwv7aatqjc" path="res://SCRIPTS/Floor/Slums/floor 3/F3signage_4.gd" id="10_tpv1e"]
 [ext_resource type="Script" uid="uid://bk2wxawvnjo14" path="res://SCRIPTS/Floor/Slums/floor 3/F3runi_quiz.gd" id="11_4cj71"]
-[ext_resource type="PackedScene" uid="uid://cuhnjxxok1dx0" path="res://SCENES/Mechanics/doors( to be refactor)/Floor3Door..tscn" id="13_tpv1e"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="14_bp7c7"]
-[ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="15_cu62q"]
-[ext_resource type="Script" uid="uid://quyb0x6sikgr" path="res://SCRIPTS/Mechanics/DoorFloor/Floor3door.gd" id="15_rnrk6"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="15_rnrk6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -822,12 +820,6 @@ offset_bottom = 1022.0
 color = Color(0, 0.133333, 0.133333, 1)
 metadata/_edit_lock_ = true
 
-[node name="door 3" parent="TextureRect/ColorRect" instance=ExtResource("13_tpv1e")]
-position = Vector2(1810, 764)
-script = ExtResource("15_rnrk6")
-target_scene = "res://SCENES/FLOOR/Slums/floor 4.tscn"
-target_floor_number = 4
-
 [node name="Characters" type="Node" parent="TextureRect/ColorRect"]
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_xsifm")]
@@ -940,9 +932,12 @@ z_index = 1
 position = Vector2(1830, 598)
 scale = Vector2(2.0625, 2.0625)
 script = ExtResource("14_bp7c7")
+next_floor_path = "res://SCENES/FLOOR/Slums/Floor 4.tscn"
 floor_number = 3
-results_panel_scene = ExtResource("15_cu62q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/show result"]
-position = Vector2(-52.8485, 97.9394)
+position = Vector2(6.78786, 98.9091)
 shape = SubResource("RectangleShape2D_ics1b")
+
+[node name="Door" parent="." instance=ExtResource("15_rnrk6")]
+position = Vector2(1803, 769)

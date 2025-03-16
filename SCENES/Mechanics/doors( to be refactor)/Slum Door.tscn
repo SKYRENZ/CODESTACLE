@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3xerrje8kwmk"]
+
+[ext_resource type="Texture2D" uid="uid://bpoqf3bbh61f" path="res://ASSETS/Environment/DOORS/slumss_door2.png" id="1_ktj2l"]
+
+[node name="Door" type="Node2D"]
+
+[node name="SlumssDoor2" type="Sprite2D" parent="."]
+position = Vector2(32.9998, 39)
+scale = Vector2(1.9375, 1.9375)
+texture = ExtResource("1_ktj2l")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cqotakj0fnnbe"]
+[gd_scene load_steps=30 format=4 uid="uid://cqotakj0fnnbe"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_t5ei8"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4gso0"]
@@ -18,9 +18,7 @@
 [ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/floor 5/F5rodtang_quiz.gd" id="16_cvedv"]
 [ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/Quiz Panel/RodtangQUIZ.tscn" id="17_jm1gl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="18_a1r14"]
-[ext_resource type="PackedScene" uid="uid://ccdye2d02ld6m" path="res://SCENES/Mechanics/resultpanel/results_panel.tscn" id="19_yqsx4"]
-[ext_resource type="PackedScene" uid="uid://c3jnjtkng6154" path="res://SCENES/Mechanics/doors( to be refactor)/Floor5Door..tscn" id="20_cir6d"]
-[ext_resource type="Script" uid="uid://s1025fsj6ici" path="res://SCRIPTS/Mechanics/DoorFloor/Floor5door.gd" id="21_6xtaa"]
+[ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors( to be refactor)/Slum Door.tscn" id="19_g6c34"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -975,15 +973,12 @@ z_index = 1
 position = Vector2(1830, 598)
 scale = Vector2(2.0625, 2.0625)
 script = ExtResource("18_a1r14")
+next_floor_path = "res://SCENES/FLOOR/Slums/floor 6.tscn"
 floor_number = 5
-results_panel_scene = ExtResource("19_yqsx4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/show result"]
-position = Vector2(-70.303, -80.9697)
+position = Vector2(12.6061, -132.848)
 shape = SubResource("RectangleShape2D_q25r6")
 
-[node name="floor 5" parent="." instance=ExtResource("20_cir6d")]
-position = Vector2(1817, 287)
-script = ExtResource("21_6xtaa")
-target_scene = "res://SCENES/FLOOR/Slums/floor 6.tscn"
-target_floor_number = 6
+[node name="Door" parent="." instance=ExtResource("19_g6c34")]
+position = Vector2(1822, 289)

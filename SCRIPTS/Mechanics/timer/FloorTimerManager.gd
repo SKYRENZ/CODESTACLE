@@ -22,26 +22,24 @@ func start_timer(floor_number: int) -> void:
 func stop_timer() -> float:
 	if not timer_running:
 		return 0.0
-		
+
 	timer_running = false
 	var end_time = Time.get_unix_time_from_system()
 	var elapsed_time = end_time - start_time
-	
-	# Store the time for this floor
-	if floor_times.has(current_floor):
-		# Only update if new time is better
-		if elapsed_time < floor_times[current_floor]:
-			floor_times[current_floor] = elapsed_time
-	else:
-		# First completion of this floor
-		floor_times[current_floor] = elapsed_time
-	
+
+	# Store the latest time for this floor
+	floor_times[current_floor] = elapsed_time  # Always update with the latest time
+
 	print("Floor ", current_floor, " completed in ", format_time(elapsed_time))
-	
-	# Emit signal with floor number and time
+
+	# Emit signal with floor number and latest time
 	emit_signal("floor_completed", current_floor, elapsed_time)
-	
-	return elapsed_time
+
+	# Save times after each completion
+	save_times()
+
+	return elapsed_time  # Return latest time
+
 
 # Get the best time for a specific floor
 func get_best_time(floor_number: int) -> float:

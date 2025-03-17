@@ -1,70 +1,52 @@
 extends Node2D
 
+@export var floor_number: int = 12
 @onready var inventory = $UI/Validation  # Reference to Inventory UI
 
 func _ready():
-	var player = get_node("CharacterBody2D")
-	if player:
-		# ✅ Set default spawn pointd
-		var spawn_point = get_node("Marker2D")  
-		if spawn_point:
-			player.spawn_point = spawn_point
-			print("✅ Initial spawn point set at:", spawn_point.global_position)
-		else:
-			print("❌ Error: Default spawn Marker2D not found in Underground!")
+	print("🟢 Loading Floor:", floor_number)  
 
-		# ✅ Connect Void Area if exists
-		var void_area = get_node("VoidArea")
-		if void_area:
-			void_area.connect("body_entered", _on_void_area_body_entered)
-			print("✅ Void area signal connected!")
-		else:
-			print("❌ Error: VoidArea not found in Underground!")
+	var player = get_node_or_null("CharacterBody2D")
+	if not player:
+		print("❌ Error: Player not found!")
+		return
 
-		# ✅ Connect all checkpoints in the scene
-		var checkpoints = get_tree().get_nodes_in_group("checkpoint")
-		print("🟢 Found checkpoints:", checkpoints.size())
-
-		for checkpoint in checkpoints:
-			if checkpoint is Area2D:
-				checkpoint.connect("body_entered", _on_checkpoint_reached)
-				print("🔹 Checkpoint connected:", checkpoint.name)
+	var spawn_point = get_node_or_null("Marker2D")  
+	if spawn_point:
+		player.spawn_point = spawn_point
+		print("✅ Spawn point set at:", spawn_point.global_position)
 	else:
-		print("❌ Error: CharacterBody2D (Player) not found in Underground!")
+		print("❌ Error: Marker2D missing!")
 
-# 🚨 Handle when player falls into void
+	var void_area = get_node_or_null("VoidArea")
+	if void_area:
+		void_area.connect("body_entered", _on_void_area_body_entered)
+	
+	for checkpoint in get_tree().get_nodes_in_group("checkpoint"):
+		if checkpoint is Area2D:
+			checkpoint.connect("body_entered", _on_checkpoint_reached)
+
+# 🚨 Handle void area fall
 func _on_void_area_body_entered(body):
 	if body.is_in_group("player"):
 		print("🚨 Player fell into void! Respawning...")
 		body._on_player_died()
-	else:
-		print("❌ Warning: Non-player object entered VoidArea!")
 
 # 🏁 Handle checkpoint reach
 func _on_checkpoint_reached(body):
 	if body.is_in_group("player"):
-		var checkpoint = body.get_parent()  # Get the checkpoint node
-
-		# ✅ Debug: Print checkpoint children
-		print("🔍 Checkpoint Children:", checkpoint.get_children())
-
-		# ✅ Use find_child to find the marker properly
-		var spawn_marker = checkpoint.find_child("Spawnpoint", true, false)
-
+		var spawn_marker = body.get_parent().find_child("Spawnpoint", true, false)
 		if spawn_marker:
-			body.spawn_point = spawn_marker  # ✅ Set spawn point
-			print("✅ Checkpoint reached! New spawn point:", spawn_marker.global_position)
-		else:
-			print("❌ ERROR: 'Spawnpoint' is missing inside the Checkpoint!")
+			body.spawn_point = spawn_marker
+			print("✅ Checkpoint reached! New spawn:", spawn_marker.global_position)
 
 # 🎯 Handle item collection
 func _on_item_collected(item):
-	if inventory:
-		if inventory.validate_item(item.name):
-			inventory.add_item(item.name, item.get_texture())  # ✅ Store in inventory
-			item.queue_free()  # Remove from scene
-			print("✅ Correct! Item stored:", item.name)
-		else:
-			inventory.show_wrong_feedback()  # ❌ Shake and red effect
-			item.return_to_scene()  # Return item to original position
-			print("❌ Incorrect! Item rejected:", item.name)
+	if inventory and inventory.validate_item(item.name):
+		inventory.add_item(item.name, item.get_texture())  
+		item.queue_free()
+		print("✅ Item stored:", item.name)
+	else:
+		inventory.show_wrong_feedback()
+		item.return_to_scene()
+		print("❌ Item rejected:", item.name)

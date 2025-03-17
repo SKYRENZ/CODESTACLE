@@ -31,8 +31,12 @@ func validate_item():
 		print("❌ Error: Validation UI not found!")
 		return  
 
+	# Normalize item name (remove spaces & lowercase)
+	var normalized_item_name = item_name.strip_edges().to_lower()
+
 	# Get texture from either the exported value or the sprite
-	var stored_texture = item_texture if item_texture else sprite.texture
+	var stored_texture = item_texture if item_texture else (sprite.texture if sprite else null)
+
 	if not stored_texture:
 		print("❌ Error: No valid texture found for", item_name)
 		return  
@@ -44,8 +48,8 @@ func validate_item():
 	# Try to add the item
 	var added = false
 	if validation.has_method("add_item"):
-		added = validation.add_item(item_name, stored_texture)  
-	
+		added = validation.add_item(normalized_item_name, stored_texture)  
+
 	if added:
 		print("✅ Item added to validation:", item_name)
 		queue_free()  # Remove item from the scene
@@ -54,5 +58,12 @@ func validate_item():
 		respawn_item()  # Respawn the item if incorrect
 
 func respawn_item():
+	# Add a shake effect for feedback
+	for i in range(3):
+		global_position += Vector2(5, 0)
+		await get_tree().create_timer(0.05).timeout
+		global_position -= Vector2(5, 0)
+		await get_tree().create_timer(0.05).timeout
+
 	await get_tree().create_timer(1.0).timeout  # Add delay
-	global_position = original_position  # Reset position
+	set_deferred("global_position", original_position)  # Reset properly

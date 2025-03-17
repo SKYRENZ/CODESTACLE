@@ -1,22 +1,18 @@
-[gd_scene load_steps=29 format=4 uid="uid://kypp586y8v8g"]
+[gd_scene load_steps=26 format=4 uid="uid://bsywucvxai48"]
 
 [ext_resource type="Script" uid="uid://dtem337q1ovmr" path="res://SCRIPTS/Floor/Dirt/Floor 1 Dirt.gd" id="1_emdyd"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ou2o0"]
 [ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="3_ygc1j"]
-[ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="4_23xn5"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="5_ctcxy"]
 [ext_resource type="Texture2D" uid="uid://cuurnlf241qui" path="res://ASSETS/TILESETS/samplebg.png" id="6_safdm"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_rjx8m"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="8_ng1k0"]
 [ext_resource type="PackedScene" uid="uid://cj2vsyb4iyfcl" path="res://SCENES/Mechanics/doors/Dirtdoor.tscn" id="10_qv7md"]
 [ext_resource type="Script" uid="uid://cm1hr0p6gmlop" path="res://SCRIPTS/Floor/Dirt/FLOOR 11/signage_1.gd" id="11_bgbhj"]
-[ext_resource type="PackedScene" uid="uid://cgfqa8defwpbh" path="res://SCENES/Mechanics/Validation.tscn" id="11_pjnv8"]
+[ext_resource type="PackedScene" uid="uid://g5ur05jrsv1c" path="res://SCENES/Mechanics/Validation.tscn" id="11_pjnv8"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="12_o63ma"]
 [ext_resource type="Script" uid="uid://bmq64f3dskhvn" path="res://SCRIPTS/Floor/Dirt/FLOOR 11/signage_2.gd" id="13_xidf8"]
 [ext_resource type="Script" uid="uid://deampxsejesqo" path="res://SCRIPTS/Floor/Dirt/FLOOR 11/signage_3.gd" id="14_ynnkf"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xedq1"]
-texture = ExtResource("4_23xn5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1urn"]
 texture = ExtResource("5_ctcxy")
@@ -160,158 +156,6 @@ texture = ExtResource("5_ctcxy")
 11:8/0 = 0
 8:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71o1h"]
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twvsl"]
 texture = ExtResource("6_safdm")
 0:6/0 = 0
@@ -450,9 +294,7 @@ texture = ExtResource("8_ng1k0")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_xedq1")
 sources/1 = SubResource("TileSetAtlasSource_s1urn")
-sources/2 = SubResource("TileSetAtlasSource_71o1h")
 sources/3 = SubResource("TileSetAtlasSource_twvsl")
 sources/4 = SubResource("TileSetAtlasSource_bgbhj")
 
@@ -513,8 +355,7 @@ size = Vector2(29, 405)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o63ma"]
 size = Vector2(39, 20)
 
-[node name="Underground" type="Node2D"]
-position = Vector2(-424, -200)
+[node name="Floor12" type="Node2D" groups=["floor"]]
 script = ExtResource("1_emdyd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_ou2o0")]
@@ -558,7 +399,7 @@ shape = SubResource("RectangleShape2D_xvj6p")
 
 [node name="collectible" parent="." instance=ExtResource("7_rjx8m")]
 position = Vector2(-1033, -162)
-item_name = "12"
+item_name = "10"
 item_texture = SubResource("CompressedTexture2D_pw0m2")
 
 [node name="collectible2" parent="." instance=ExtResource("7_rjx8m")]
@@ -593,7 +434,8 @@ dialogue_resource = ExtResource("12_o63ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="signs/sign1"]
 z_index = 2
-position = Vector2(-1603.5, -366)
+position = Vector2(-1181, -167)
+rotation = -0.00479313
 shape = SubResource("RectangleShape2D_o63ma")
 
 [node name="sign2" type="Area2D" parent="signs"]
@@ -602,7 +444,7 @@ dialogue_resource = ExtResource("12_o63ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="signs/sign2"]
 z_index = 2
-position = Vector2(-1251, -366)
+position = Vector2(-827, -164)
 shape = SubResource("RectangleShape2D_o63ma")
 
 [node name="sign3" type="Area2D" parent="signs"]
@@ -611,5 +453,5 @@ dialogue_resource = ExtResource("12_o63ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="signs/sign3"]
 z_index = 2
-position = Vector2(-674, -366)
+position = Vector2(-253, -166)
 shape = SubResource("RectangleShape2D_o63ma")

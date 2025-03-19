@@ -76,7 +76,8 @@ func _on_item_area_exited(area):
 # 🎯 Handle player collecting an item
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and interactable_items.size() > 0:
-		_on_item_collected(interactable_items[0])  # Collect first item in range
+		var item = interactable_items.pop_front()  # Ensures only one item is taken
+		_on_item_collected(item)
 
 	if Input.is_action_just_pressed("toggle_validation") and inventory:
 		inventory.visible = not inventory.visible  # Toggle visibility
@@ -86,22 +87,33 @@ func _on_item_collected(item):
 	if not inventory:
 		print("❌ Error: Inventory UI not found!")
 		return
+
+	if not item:
+		print("❌ Error: No interactable item found!")
+		return
 	
-	if item and inventory.validate_item(item.name):
-		var item_texture = item.get_node("Sprite2D").texture if item.has_node("Sprite2D") else null
+	if not inventory.has_method("validate_item"):
+		print("⚠️ Warning: Inventory script is missing 'validate_item' method.")
+
+	if inventory.validate_item(item.name):  
+		var item_texture = null
 		
+		if item.has_node("Sprite2D"):
+			var sprite = item.get_node("Sprite2D")
+			if sprite and sprite.texture:
+				item_texture = sprite.texture
+			else:
+				print("⚠️ Warning: Sprite2D exists but has no texture!")
+
 		if item_texture:
-			inventory.add_item(item.name, item_texture)  # ✅ Store in inventory
-			interactable_items.erase(item)  # ✅ Remove from list
-			item.queue_free()  # Remove from scene
-			print("✅ Item stored:", item.name)
+			inventory.add_item(item.name, item_texture)  
+			interactable_items.erase(item)  
+			item.queue_free()  
+			print("✅ Item stored in inventory:", item.name)
 			inventory.visible = true
 		else:
-			print("❌ Error: Item texture not found for", item.name)
+			print("❌ Error: Item has no valid texture!")
 	else:
-		if item:
-			inventory.show_wrong_feedback()
-			item.return_to_scene()
-			print("❌ Item rejected:", item.name)
-		else:
-			print("❌ Error: No interactable item found!")
+		inventory.show_wrong_feedback()
+		item.return_to_scene()
+		print("❌ Item rejected:", item.name)

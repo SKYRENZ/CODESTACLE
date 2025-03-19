@@ -364,7 +364,7 @@ position = Vector2(-1421, -144)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Validation" parent="UI" instance=ExtResource("11_pjnv8")]
+[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("11_pjnv8")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1657.0

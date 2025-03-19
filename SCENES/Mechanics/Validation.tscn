@@ -9,7 +9,14 @@ texture = ExtResource("2_81hkj")
 
 [node name="Validation" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_left = 0.035
+anchor_top = 0.036
+anchor_right = 0.427
+anchor_bottom = 0.355
+offset_left = -44.8
+offset_top = -25.92
+offset_right = -546.56
+offset_bottom = -255.6
 script = ExtResource("1_k2y11")
 
 [node name="Panel" type="Panel" parent="."]
@@ -20,26 +27,33 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_m1lj8")
 
 [node name="Label" type="RichTextLabel" parent="Panel"]
 layout_mode = 2
-offset_top = 8.0
-offset_right = 536.0
-offset_bottom = 272.0
+offset_left = 32.0
+offset_top = 17.0
+offset_right = 554.0
+offset_bottom = 268.0
 theme_override_fonts/normal_font = ExtResource("2_kl6au")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_left = 45.0
-offset_top = 31.0
-offset_right = 536.0
-offset_bottom = 245.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.112
+anchor_right = 0.929
+anchor_bottom = 0.888
+offset_left = -0.00600052
+offset_top = 0.0879993
+offset_right = -0.03302
+offset_bottom = -0.0880127
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+bbcode_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(70, 70)
@@ -47,19 +61,22 @@ layout_mode = 2
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+bbcode_enabled = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+bbcode_enabled = true
 
 [node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 2
 
-[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Label3" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+bbcode_enabled = true

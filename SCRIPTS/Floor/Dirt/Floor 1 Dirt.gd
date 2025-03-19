@@ -4,7 +4,7 @@ extends Node2D
 @onready var inventory = $UI/Validation  # Reference to Inventory UI
 
 func _ready():
-	print("🟢 Loading Floor:", floor_number)  
+	print("🟢 Loading Floor:", floor_number)
 
 	var player = get_node_or_null("CharacterBody2D")
 	if not player:

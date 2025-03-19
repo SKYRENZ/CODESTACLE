@@ -356,8 +356,12 @@ size = Vector2(41, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfggu"]
 size = Vector2(39, 20)
 
-[node name="Dirt_Entrance" type="Node2D" groups=["Validation", "floor"]]
+[node name="Dirt_Entrance" type="Node2D" groups=["floor"]]
 script = ExtResource("1_4elvs")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("7_glyw7")]
 
 [node name="collectible" parent="." instance=ExtResource("7_r7m2h")]
 position = Vector2(716, 406)
@@ -386,10 +390,6 @@ shape = SubResource("RectangleShape2D_4kkfr")
 
 [node name="Spawnpoint" type="Marker2D" parent="Checkpoint"]
 position = Vector2(-1, -14)
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Validation" parent="UI" groups=["Validation"] instance=ExtResource("7_glyw7")]
 
 [node name="Dialogue" type="Node" parent="."]
 

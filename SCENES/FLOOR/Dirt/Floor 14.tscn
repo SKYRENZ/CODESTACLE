@@ -422,7 +422,7 @@ texture = ExtResource("3_l112t")
 [sub_resource type="TileSet" id="TileSet_sgnxk"]
 sources/0 = SubResource("TileSetAtlasSource_wahqy")
 
-[node name="Node2D" type="Node2D"]
+[node name="Floor 14" type="Node2D"]
 
 [node name="stagetiles" type="TileMapLayer" parent="."]
 z_index = 2

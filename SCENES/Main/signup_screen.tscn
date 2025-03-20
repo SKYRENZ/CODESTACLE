@@ -238,11 +238,13 @@ secret = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("14_tb5js")
 theme_override_font_sizes/font_size = 16
-text = "CONFIRM PASSWORD:"
+text = "CONFIRM:"
 
 [node name="Show Password Button2" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(30, 12)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("14_5s161")
 toggle_mode = true
 
@@ -271,12 +273,12 @@ theme_override_font_sizes/font_size = 15
 text = "back to login"
 flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="NotificationLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 940.0
-offset_top = 428.0
-offset_right = 1128.0
-offset_bottom = 451.0
+offset_left = 192.0
+offset_top = 407.0
+offset_right = 443.0
+offset_bottom = 567.0
 
 [node name="Codestacle" type="Label" parent="."]
 layout_mode = 1

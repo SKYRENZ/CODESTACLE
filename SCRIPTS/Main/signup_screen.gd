@@ -16,12 +16,15 @@ func _on_back_button_pressed() -> void:
 func _on_signup_button_pressed() -> void:
 	print("🔘 Signup button pressed!")  # Debug print
 
+	# Get input fields
 	var email_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Email Container/Email Edit")
 	var password_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Password Edit")
 	var confirm_password_edit = get_node_or_null("NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Password Edit2")
+	var notification_label = get_node_or_null("NotificationLabel")  # ✅ Get NotificationLabel
 
-	if not email_edit or not password_edit or not confirm_password_edit:
-		print("❌ Error: Email, Password, or Confirm Password field not found!")
+	# Check if nodes exist
+	if not email_edit or not password_edit or not confirm_password_edit or not notification_label:
+		print("❌ Error: Missing UI elements!")
 		return
 
 	var email = email_edit.text.strip_edges()
@@ -32,52 +35,60 @@ func _on_signup_button_pressed() -> void:
 	print("🔑 Entered Password:", password)
 	print("🔄 Confirm Password:", confirm_password)
 
-	var validation_failed := false  # Track if any validation fails
+	var validation_errors := []  # ✅ Store validation messages
 
 	# ✅ Validate email format
 	if not _is_valid_email(email):
-		print("⚠ Error: Invalid email format! Must be in the format name@domain.com")
-		validation_failed = true
+		validation_errors.append("⚠ Invalid email format! Must be name@domain.com")
 
 	# ✅ Validate password strength
 	if not _is_valid_password(password):
-		print("⚠ Error: Password must be at least 6 characters long and contain a number!")
-		validation_failed = true
+		validation_errors.append("⚠ Password must be at least 6 characters and contain a number!")
 
 	# ✅ Confirm passwords match
 	if password != confirm_password:
-		print("⚠ Error: Passwords do not match!")
-		validation_failed = true
+		validation_errors.append("⚠ Passwords do not match!")
 
 	# 🚫 Stop signup if validation failed
-	if validation_failed:
+	if validation_errors.size() > 0:
+		notification_label.text = "\n".join(validation_errors)  # ✅ Display errors in label
 		print("❌ Signup failed due to validation errors.")
 		return
 
 	print("✅ Valid input. Attempting signup...")
+	notification_label.text = "⏳ Signing up..."  # ✅ Show progress in label
 	Firebase.Auth.signup_with_email_and_password(email, password)
 
 # ✅ Email validation function
 func _is_valid_email(email: String) -> bool:
 	return email.match("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
 
-# ✅ Password validation function
+# ✅ Password validation function (Fixed version)
 func _is_valid_password(password: String) -> bool:
-	return password.length() >= 6 and password.match(".*[0-9].*")
+	return password.length() >= 6 and password.to_lower().match(".*[0-9].*")
 
 # ✅ Handle successful signup
 func _on_signup_success(auth_data: Dictionary) -> void:
 	print("✅ Signup successful! Sending verification email...")
 
+	var notification_label = get_node_or_null("NotificationLabel")
+	if notification_label:
+		notification_label.text = "✅ Signup successful! Sending verification email..."
+
 	var result = await Firebase.Auth.send_account_verification_email()
 	if result:
 		print("📩 Verification email sent successfully.")
+		if notification_label:
+			notification_label.text = "📩 Verification email sent! Redirecting to login..."
 		await get_tree().create_timer(5.0).timeout
 		_on_back_button_pressed()  # Redirect back to login
 
 # ❌ Handle failed signup
 func _on_signup_fail(error_code: int, message: String) -> void:
 	print("❌ Signup failed! Error:", message)
+	var notification_label = get_node_or_null("NotificationLabel")
+	if notification_label:
+		notification_label.text = "❌ Signup failed: " + message
 
 # ✅ Show/Hide Password Functionality
 func _on_show_password_button_pressed() -> void:

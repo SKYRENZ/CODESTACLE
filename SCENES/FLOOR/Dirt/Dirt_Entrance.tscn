@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_r7m2h"]
 [ext_resource type="PackedScene" uid="uid://c4u4jbf3tnef6" path="res://SCENES/Mechanics/Validation2.tscn" id="8_kfggu"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="10_glyw7"]
-[ext_resource type="Script" uid="uid://blyakiexal6t2" path="res://SCRIPTS/Floor/Dirt/signage_3.gd" id="10_kfggu"]
-[ext_resource type="Script" uid="uid://bvyxp7s4eeyfj" path="res://SCRIPTS/Floor/Dirt/signage_2.gd" id="11_glyw7"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/signage_3.gd" id="10_kfggu"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/signage_2.gd" id="11_glyw7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3um0"]
 texture = ExtResource("2_48kuv")

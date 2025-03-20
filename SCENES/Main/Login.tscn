@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://hak4twerclvv"]
+[gd_scene load_steps=23 format=3 uid="uid://ptmnjigr1hjd"]
 
 [ext_resource type="Script" uid="uid://df6u7eiveqd1" path="res://SCRIPTS/Main/login_screen.gd" id="1_52kbi"]
 [ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="1_u5d1f"]

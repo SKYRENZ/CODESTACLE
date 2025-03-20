@@ -14,6 +14,7 @@ func _ready() -> void:
 # ✅ Handles login button press
 func _on_login_button_pressed() -> void:
 	AudioPlayer.play_FX(transition_fx, -12.0)
+
 	var email_edit = get_node_or_null("Container/Login Container/User and Pass Container/Username Container/EmailEdit")
 	var password_line = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
 
@@ -21,11 +22,39 @@ func _on_login_button_pressed() -> void:
 		print("❌ Error: Required input fields missing!")
 		return
 
-	email = email_edit.text
-	password = password_line.text
-	
+	email = email_edit.text.strip_edges()
+	password = password_line.text.strip_edges()
+
+	print("📩 Entered Email:", email)
+	print("🔑 Entered Password:", password)
+
+	var validation_failed := false  # Track if validation fails
+
+	# ✅ Validate email format
+	if not _is_valid_email(email):
+		print("⚠ Error: Invalid email format! Must be in the format name@domain.com")
+		validation_failed = true
+
+	# ✅ Validate password strength
+	if not _is_valid_password(password):
+		print("⚠ Error: Password must be at least 6 characters long and contain a number!")
+		validation_failed = true
+
+	# 🚫 Stop login if validation failed
+	if validation_failed:
+		print("❌ Login failed due to validation errors.")
+		return
+
 	print("🔍 Attempting login with email:", email)
 	Firebase.Auth.login_with_email_and_password(email, password)
+
+# ✅ Email validation function
+func _is_valid_email(email: String) -> bool:
+	return email.match("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+
+# ✅ Password validation function
+func _is_valid_password(password: String) -> bool:
+	return password.length() >= 6 and password.match(".*[0-9].*")
 
 # ✅ Callback for successful login
 func on_login_succeeded(auth_data: Dictionary) -> void:

@@ -151,10 +151,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -383.0
-offset_top = -212.5
-offset_right = -68.0
-offset_bottom = 212.5
+offset_left = -366.0
+offset_top = -212.0
+offset_right = -51.0
+offset_bottom = 264.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("2_jmqb2")
@@ -234,6 +234,24 @@ theme_override_fonts/font = ExtResource("14_tb5js")
 theme_override_font_sizes/font_size = 22
 secret = true
 
+[node name="Label2" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 16
+text = "CONFIRM PASSWORD:"
+
+[node name="Show Password Button2" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme = ExtResource("14_5s161")
+toggle_mode = true
+
+[node name="Password Edit2" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_tb5js")
+theme_override_font_sizes/font_size = 22
+secret = true
+
 [node name="Signup Button" type="Button" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -277,5 +295,6 @@ theme_override_font_sizes/font_size = 90
 text = "codestacle"
 
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/HBoxContainer/Show Password Button" to="." method="_on_show_password_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Password Container/Show Password Button2" to="." method="_on_show_password_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Signup Button" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Container/Signup Container/User and Pass Container/Back Button" to="." method="_on_back_button_pressed"]

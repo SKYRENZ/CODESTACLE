@@ -1,4 +1,4 @@
-extends Button
+extends CanvasLayer
 
 var option_instance = null  # Store a reference to the Option scene instance
 

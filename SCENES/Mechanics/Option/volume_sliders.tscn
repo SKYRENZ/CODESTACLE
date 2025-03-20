@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bilupl7oyesr5"]
+
+[node name="VolumeSliders" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -290.0
+offset_right = 160.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.601067, 0.33012, 0.0199848, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 139.0
+offset_bottom = 62.0
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="ColorRect/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -5.0
+offset_right = 218.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 15.0
+step = 0.001
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 157.0
+offset_right = 109.0
+offset_bottom = 180.0
+text = "SFX Volume"
+
+[node name="HSlider" type="HSlider" parent="ColorRect/Label2"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 278.0
+offset_bottom = 43.0
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

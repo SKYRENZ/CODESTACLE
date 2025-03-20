@@ -19,11 +19,12 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
-FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
+FloorTimerManager="*res://SCRIPTS/Mechanics/HUD/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
 PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
 DialogueHelper="*res://SCRIPTS/Mechanics/Dialogue/DialogueHelper.gd"
+ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
 
 [dialogue_manager]
 

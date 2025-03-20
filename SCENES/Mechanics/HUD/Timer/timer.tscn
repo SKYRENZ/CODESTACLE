@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnax1136kjpp2"]
 
-[ext_resource type="Script" uid="uid://bytv2qgjubtuy" path="res://SCRIPTS/Mechanics/timer/FloorTimer.gd" id="1_f2nka"]
+[ext_resource type="Script" uid="uid://bytv2qgjubtuy" path="res://SCRIPTS/Mechanics/HUD/timer/FloorTimer.gd" id="1_f2nka"]
 [ext_resource type="FontFile" uid="uid://bxus4jinrhne" path="res://ASSETS/FONT/Eight-Bit Madness.ttf" id="2_1njoi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1njoi"]

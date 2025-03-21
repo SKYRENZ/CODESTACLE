@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
 [ext_resource type="Script" path="res://SCRIPTS/Mechanics/popup.gd" id="5_hhn16"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="6_kynt8"]
-[ext_resource type="PackedScene" uid="uid://cthpycglwhycd" path="res://SCENES/Mechanics/flag(transitionflr).tscn" id="7_yny8n"]
+[ext_resource type="PackedScene" path="res://SCENES/Mechanics/flag(transitionflr).tscn" id="7_yny8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
 texture = ExtResource("2_yvwxb")

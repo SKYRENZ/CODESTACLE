@@ -31,10 +31,10 @@ offset_top = 34.0
 offset_right = 223.0
 offset_bottom = 154.0
 
-[node name="SignageObjectives" type="Label" parent="Panel/Objectives_label/VBoxContainer"]
+[node name="Objectives" type="Label" parent="Panel/Objectives_label/VBoxContainer"]
 layout_mode = 2
 
-[node name="NPCObjectives" type="Label" parent="Panel/Objectives_label/VBoxContainer"]
+[node name="Objectives_1" type="Label" parent="Panel/Objectives_label/VBoxContainer"]
 layout_mode = 2
 
 [node name="Objectives_2" type="Label" parent="Panel/Objectives_label/VBoxContainer"]

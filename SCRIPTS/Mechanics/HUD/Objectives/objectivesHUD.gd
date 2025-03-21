@@ -1,16 +1,23 @@
 extends CanvasLayer
+
 var signage_count: int = 0
+var npc_count: int = 0
+
+@onready var signage_label = $Panel/Objectives_label/VBoxContainer/SignageObjectives
+@onready var npc_label = $Panel/Objectives_label/VBoxContainer/NPCObjectives
 
 func _ready():
-	print("hello world") # testing purpose
+	print("hello world") # Testing purpose
 	ObjectiveManager.connect("objective_updated", Callable(self, "_on_objective_updated"))
 	print("Connected signal: objective_updated")
 
-	# Find the FloorController to access the signage count.
+	# Find the FloorController to access the signage count and NPC count.
 	var floor_controller = find_parent("FloorController")
 	if floor_controller:
 		signage_count = floor_controller.signage_count
+		npc_count = floor_controller.npc_count  # Add this line if `npc_count` is exported in FloorController
 		print("ObjectivesHUD: signage_count from FloorController is", signage_count)
+		print("ObjectivesHUD: npc_count from FloorController is", npc_count)
 	else:
 		printerr("FloorController not found! Ensure ObjectivesHUD is a child (or grandchild) of the FloorController.")
 		return
@@ -18,39 +25,32 @@ func _ready():
 	# Update the HUD initially
 	update_hud_text()
 
+func set_total_objectives_count(signage: int, npcs: int): # CHANGED NAME
+	signage_count = signage
+	npc_count = npcs
+	update_hud_text()
+
 # This function receives the signal
-func _on_objective_updated(current, total):
-	print("Signal received in Objectives! Current:", current, " Total:", total)
-	update_hud_text()
+func _on_objective_updated(signage_current: int, signage_total: int, npc_current: int, npc_total: int):
+	print("Signal received in Objectives! Signage:", signage_current, "/", signage_total, " NPC:", npc_current, "/", npc_total)
+	update_hud_text(signage_current, signage_total, npc_current, npc_total)
 
-func update_objective(index: int, text: String):
-	var labels = $Panel/Objective_label/VboxContainer.get_children()
-	if index < labels.size():
-		labels[index].text = text
-
-func set_signage_count(count):
-	signage_count = count
-	update_hud_text()
-
-func update_hud_text():
-	var label_node = $Panel/Objectives_label/VBoxContainer/Objectives
-	if label_node != null:
-		label_node.text = "%d/%d Signage Read" % [ObjectiveManager.current_read, signage_count]
-		print("HUD updated to show: ", label_node.text)
-	else:
-		printerr("Error: Label node not found in ObjectivesHUD!")
-		# Debug node structure
-		print_debug_node_structure()
-		
-func print_debug_node_structure():
-	print("Available nodes in Panel path:")
-	var panel = $Panel
-	if panel:
-		print("Panel exists. Children: ", panel.get_children())
-		var objectives_label = panel.get_node_or_null("Objectives_label")
-		if objectives_label:
-			print("Objectives_label exists. Children: ", objectives_label.get_children())
+func update_hud_text(signage_current: int = 0, signage_total: int = 0, npc_current: int = 0, npc_total: int = 0):
+	if signage_label:
+		if signage_current >= signage_total:
+			signage_label.set("theme_override_colors/default_color", Color("green")) # Make the text green
 		else:
-			print("Objectives_label not found under Panel")
+			signage_label.set("theme_override_colors/default_color", Color("white")) # set it to default color or whatever you want
+
+		signage_label.text = "Signage: %d/%d" % [signage_current, signage_total]
 	else:
-		print("Panel node not found")
+		printerr("Error: Signage Label not found in ObjectivesHUD!")
+
+	if npc_label:
+		if npc_current >= npc_total:
+			npc_label.set("theme_override_colors/default_color", Color("green")) # Make the text green
+		else:
+			npc_label.set("theme_override_colors/default_color", Color("white")) # set it to default color or whatever you want
+		npc_label.text = "NPC: %d/%d" % [npc_current, npc_total]
+	else:
+		printerr("Error: NPC Label not found in ObjectivesHUD!")

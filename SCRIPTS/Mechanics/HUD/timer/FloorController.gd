@@ -2,6 +2,7 @@ extends Node2D
 
 @export var floor_number: int = 0  # Set this for each floor in the Inspector
 @export var signage_count: int = 0
+@export var npc_count: int = 0
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
 const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objectives.tscn")
@@ -24,7 +25,7 @@ func _ready():
 
 	add_gear_hud() # Renamed to follow convention.
 	add_objectives_hud()
-	ObjectiveManager.set_total_signage(signage_count)  # Use the per-floor signage count
+	ObjectiveManager.set_total_objectives(signage_count, npc_count)  # Use the per-floor signage count
 	reset_objectives_for_new_floor(signage_count)
 
 func add_gear_hud(): # Changed this
@@ -34,10 +35,16 @@ func add_gear_hud(): # Changed this
 func add_objectives_hud():
 	objectives_instance = ObjectivesScene.instantiate()
 	add_child(objectives_instance)
-	objectives_instance.set_signage_count(signage_count)
+	# Ensure the instance has the method and call it
+	if objectives_instance.has_method("set_total_objectives_count"): # CHANGED NAME
+		objectives_instance.set_total_objectives_count(signage_count, npc_count) # CHANGED NAME
+	else:
+		printerr("Error: ObjectivesHUD instance does not have set_total_objectives_count method!")
+
 
 func reset_objectives_for_new_floor(signage_count: int):
-	ObjectiveManager.set_total_signage(signage_count)
+	ObjectiveManager.set_total_objectives(signage_count, npc_count)  # Use the per-floor signage count
+
 
 func update_game_objective(index: int, text: String):
 	var objectives_hud = get_node("Objectives")

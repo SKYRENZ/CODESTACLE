@@ -1,0 +1,35 @@
+~ Runistart
+Runistart: "Welcome, B-01! It's time to delve into the different kinds of information our variables can hold! This is where we learn about JavaScript Data Types!"
+=> END
+~ signage1
+Signage1: "In JavaScript, a data type is a classification that specifies which type of value a variable has and what type of operations can be performed on it."
+B-01: "Beep boop! Classifications? So, what are the different types?"
+Runi: "JavaScript has several fundamental data types: String, Number, Boolean, Array, Object, Null, and Undefined."
+~ signage2
+Sign 2: "A String represents textual data and is enclosed in single quotes (' ') or double quotes (" "). Example: let name = "B-01";"
+=> END
+~ signage3
+Sign 3: "A Number represents numeric data, which can be integers or floating-point numbers. Example: let age = 5; let pi = 3.14;"
+=> END
+~ signage4
+Sign 4: "A Boolean represents a logical value that can be either true or false. Example: let isOnline = true;"
+=> END
+~ signage5
+Sign 5: "An Array is an ordered collection of values, which can be of any data type. Arrays are enclosed in square brackets []. Example: let colors = ["red", "green", "blue"];"
+=> END 
+~ signage6
+Sign 6: "An Object is a collection of key-value pairs, where keys are strings and values can be of any data type. Objects are enclosed in curly braces {}. Example: let person = {name: "B-01", age: 5};"
+=> END 
+~ signage7
+Sign 7: "Null represents the intentional absence of a value. It means a variable has no value assigned to it. Example: let empty = null;"
+=> END 
+~ signage8
+Sign 8: "Undefined represents a variable that has been declared but has not been assigned a value. Example: let city; console.log(city); // Output: undefined"
+=> END 
+~ Rodtangquiz
+Rodtangquiz: "Alright, B-01! Let's see if you know your Strings from your Booleans! It's time for a 15-question Data Type showdown covering what you've learned from commenting to the different datatypes!"
+=> END
+~ Rodtangend
+Rodtangend: "Alright, B-01! You've survived the Data Type gauntlet. You now know what variables should look like when storing them, Good job, and good luck for the next lesson!"
+
+=> END

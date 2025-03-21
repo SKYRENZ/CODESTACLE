@@ -1,0 +1,28 @@
+~ Runistart
+Runistart: "Welcome, B-01! We've learned about variables using var, but modern JavaScript gives us a better way: the let keyword! It's time to level up your variable game!"
+=> END
+~ signage1
+Signage 1: "The let keyword was introduced in ES6 (2015) and is the preferred way to declare variables in modern JavaScript. It offers better scoping rules than the older var keyword."
+B-01: "Beep boop! Another way to declare variables? What makes let better?"
+Runi: "It's all about scope, my friend! let gives you more control over where your variables exist and can be accessed!"
+=> END
+~ signage2
+Sign 2: "Unlike var, which has function scope, let has block scope. This means a variable declared with let is only available within the block it was defined in."
+=> END
+~ signage3
+Sign 3: "A block is code enclosed in curly braces {}. For example, if statements, loops, and functions all create blocks."
+=> END
+~ signage4
+Sign 4: "Example: if(true) { let x = 10; } console.log(x); will result in an error because x only exists inside the if block."
+=> END
+~ signage5
+Sign 5: "Variables declared with let cannot be redeclared in the same scope. This helps prevent accidental redeclarations, which can cause bugs."
+=> END 
+~ signage6
+Sign 6: "Unlike var, let does not hoist to the top of the scope. This means you cannot use a let variable before it's declared in the code."
+~ Runiquiz
+Runiquiz: "Excellent job navigating the world of let, B-01! Time for a quiz to see if you've grasped the concept of block scope!"
+=> END
+~ Runiend
+Runiend: "Fantastic work, B-01! You now understand the modern way to declare variables using let. This knowledge will serve you well as you continue your JavaScript journey!"
+=> END

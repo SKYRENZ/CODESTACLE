@@ -40,18 +40,19 @@ func update_hud_text(signage_current: int = 0, signage_total: int = 0, npc_curre
 	if signage_label:
 		if signage_current >= signage_total and signage_total > 0:
 			signage_label.modulate = Color(0, 1, 0)
+			signage_label.text = "Signage: %d/%d ✓" % [signage_current, signage_total]
 		else:
 			signage_label.modulate = Color(1, 1, 1)
-		signage_label.text = "Signage: %d/%d" % [signage_current, signage_total]
-	else:
-		printerr("Error: Signage Label not found in ObjectivesHUD!")
+			signage_label.text = "Signage: %d/%d" % [signage_current, signage_total]
+	
+	# Similar code for NPC label
 
 	if npc_label:
 		if npc_current >= npc_total and npc_total > 0:
 			npc_label.modulate = Color(0, 1, 0)  # Green
+			npc_label.text = "NPC: %d/%d ✓" % [npc_current, npc_total]
 		else:
 			npc_label.modulate = Color(1, 1, 1)  # White
-			
-		npc_label.text = "NPC: %d/%d" % [npc_current, npc_total]
+			npc_label.text = "NPC: %d/%d" % [npc_current, npc_total]
 	else:
 		printerr("Error: NPC Label not found in ObjectivesHUD!")

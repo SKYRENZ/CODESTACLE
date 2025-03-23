@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cj2vsyb4iyfcl"]
 
-[ext_resource type="Script" uid="uid://bpodv1vdeqfnq" path="res://SCRIPTS/Floor/Dirt/Floor1door_dirt.gd" id="2_0djs3"]
+[ext_resource type="Script" uid="uid://bpodv1vdeqfnq" path="res://SCRIPTS/Floor/Dirt/FLOOR 11/Floor1door_dirt.gd" id="2_0djs3"]
 [ext_resource type="Texture2D" uid="uid://dhbcluva7tpti" path="res://ASSETS/Environment/DOORS/door-Sheet.png" id="2_1u57r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1mmi"]

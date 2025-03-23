@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://chtwgpl8xphmn"]
+[gd_scene load_steps=3 format=3 uid="uid://csblrayv5qel1"]
 
 [ext_resource type="Script" uid="uid://txx54s74snmw" path="res://SCRIPTS/Option/gear_icon.gd" id="1_a61yn"]
 [ext_resource type="Texture2D" uid="uid://bi5hoo48nj070" path="res://ASSETS/BUTTONS/Option/codegeear.png" id="2_vxhs0"]

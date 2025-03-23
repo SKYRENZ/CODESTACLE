@@ -30,8 +30,12 @@ region_rect = Rect2(1, 14, 34, 12)
 [sub_resource type="Theme" id="Theme_i0gq4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bv77j"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(65, 27, 52, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa0nc"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(129, 27, 52, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dk8l8"]
 texture = ExtResource("2_q8k63")
@@ -128,5 +132,5 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_6txsl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n87ot")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ddwwi")
 
-[connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="ColorRect/Exit" to="." method="_on_Exit_pressed"]

@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var transition_fx = preload("res://BGM/button.mp3")
 var option_instance = null  # Store a reference to the Option scene instance
 
 func _ready():
@@ -7,7 +8,8 @@ func _ready():
 	if not is_connected("pressed", Callable(self, "_on_pressed")):
 		connect("pressed", Callable(self, "_on_pressed"))
 
-func _on_pressed():
+func _on_pressed(): 
+	AudioPlayer.play_FX(transition_fx, -12.0)
 	if option_instance == null:  # Check if the Option scene is not already loaded
 		var option_scene = ResourceLoader.load("res://SCENES/Mechanics/Option/Option.tscn")  # Load the scene
 		if option_scene:

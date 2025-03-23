@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bilupl7oyesr5"]
+[gd_scene load_steps=2 format=3 uid="uid://bilupl7oyesr5"]
+
+[ext_resource type="Script" uid="uid://c3cr26mv4kd6m" path="res://SCRIPTS/Option/Volume Script/Volume_Slider.gd" id="1_bui32"]
 
 [node name="VolumeSliders" type="CanvasLayer"]
+script = ExtResource("1_bui32")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -24,7 +27,7 @@ offset_right = 139.0
 offset_bottom = 62.0
 text = "Master Volume"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Label"]
+[node name="master" type="HSlider" parent="ColorRect/Label"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -40,21 +43,59 @@ grow_vertical = 0
 max_value = 15.0
 step = 0.001
 
-[node name="Label2" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 157.0
-offset_right = 109.0
-offset_bottom = 180.0
-text = "SFX Volume"
+[node name="Label2" type="Label" parent="ColorRect/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 63.5
+offset_right = 80.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Background Music"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Label2"]
+[node name="BGM" type="HSlider" parent="ColorRect/Label/Label2"]
 layout_mode = 0
-offset_top = 27.0
-offset_right = 278.0
-offset_bottom = 43.0
+offset_left = 1.0
+offset_top = 24.5
+offset_right = 281.0
+offset_bottom = 40.5
+max_value = 15.0
+step = 0.001
 
 [node name="Label3" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 13.0
+offset_top = 187.0
+offset_right = 104.0
+offset_bottom = 210.0
+text = "SFX Volume"
+
+[node name="SFX" type="HSlider" parent="ColorRect/Label3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 281.0
+offset_bottom = 46.0
+max_value = 15.0
+step = 0.001
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.01
+anchor_bottom = 0.028
+offset_left = 775.0
+offset_top = 57.0
+offset_right = 819.8
+offset_bottom = 71.76
+text = "close
+"
+
+[connection signal="value_changed" from="ColorRect/Label/master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="ColorRect/Label/Label2/BGM" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="ColorRect/Label3/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

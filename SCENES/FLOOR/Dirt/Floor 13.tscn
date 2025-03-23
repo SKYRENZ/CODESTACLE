@@ -512,7 +512,7 @@ dialogue_resource = ExtResource("6_5rdak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stagetiles/DIALOGUE/INTRODIALOGUE1"]
 z_index = 1
-position = Vector2(407, 6)
+position = Vector2(79, -32)
 shape = SubResource("RectangleShape2D_rx7dn")
 
 [node name="Area2D" type="Area2D" parent="stagetiles/DIALOGUE"]

@@ -1,0 +1,22 @@
+~ dialogue1
+Floor 19: JS Conditional Statements (if-else & switch)
+D: "Programs need to make decisions! Conditionals let JavaScript choose what to do based on conditions."
+
+D: "Conditional Types:\n• if / else if / else → Runs different code based on conditions.\n• switch → Chooses from multiple options."
+
+=> END
+
+~ dialogue2
+D: "Example 1: Using if-else"
+D: "js\nlet age = 18;\nif (age < 18) {\n console.log("You are a minor.");\n} else {\n console.log("You are an adult.");\n}\n"
+D: "The program checks the value of age and prints a message based on the condition!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Using switch"
+D: "js\nlet day = "Monday";\nswitch (day) {\n case "Monday":\n console.log("Start of the week!");\n break;\n case "Friday":\n console.log("Weekend is coming!");\n break;\n default:\n console.log("Just another day!");\n}\n"
+D: "The switch statement selects a block of code based on the day variable!"
+
+=> END
+

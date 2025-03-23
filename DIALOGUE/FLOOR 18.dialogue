@@ -1,0 +1,22 @@
+~ dialogue1
+
+Floor 18: JS Loops (For & While)
+D: "Loops let us repeat actions multiple times without writing the same code over and over!"
+
+D: "Types of Loops:\n• for loop → Repeats for a set number of times.\n• while loop → Repeats while a condition is true."
+
+=> END
+
+~ dialogue2
+D: "Example 1: Using a for Loop"
+D: "js\nfor (let i = 1; i <= 5; i++) {\n    console.log(\"Step \" + i);\n}\n"
+D: "This loop runs 5 times, printing 'Step 1' to 'Step 5'!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Using a while Loop"
+D: "js\nlet count = 0;\nwhile (count < 3) {\n    console.log(\"Count is: \" + count);\n    count++;\n}\n"
+D: "The while loop keeps running until the condition (count < 3) is false!"
+
+=> END

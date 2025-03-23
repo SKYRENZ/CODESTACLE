@@ -1,0 +1,15 @@
+~ dialogue1
+
+Floor 17: JS Arrays and Array Methods
+D: "Arrays let us store multiple values in a single variable—think of them as a list!"
+
+D: "Common Array Methods:\n• .push(value) → Adds an item to the end.\n• .pop() → Removes the last item.\n• .shift() / .unshift(value) → Removes/adds to the start.\n• .length → Gets the number of items."
+
+=> END
+
+~ dialogue2
+D: "Example 1: Basic Array Operations"
+D: "js\nlet fruits = [\"Apple\", \"Banana\", \"Cherry\"];\nfruits.push(\"Mango\"); \nconsole.log(fruits); // [\"Apple\", \"Banana\", \"Cherry\", \"Mango\"]\n"
+
+=> END
+

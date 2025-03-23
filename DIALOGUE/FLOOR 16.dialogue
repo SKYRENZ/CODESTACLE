@@ -1,0 +1,22 @@
+~ dialogue1
+
+Floor 16: JS Strings and String Methods
+D: "Strings are text in JavaScript, and we can manipulate them in many ways using built-in methods!"
+
+D: "Common String Methods:\n• .length → Finds the number of characters in a string.\n• .toUpperCase() / .toLowerCase() → Changes case.\n• .slice(start, end) → Extracts a part of a string.\n• .replace("old", "new") → Replaces text."
+
+=> END
+
+~ dialogue2
+D: "Example 1: String Length & Case Conversion"
+D: "js\nlet message = \"JavaScript is fun!\";\nconsole.log(message.length); // 18\nconsole.log(message.toUpperCase()); // JAVASCRIPT IS FUN!\n"
+D: "We found the length of the string and changed it to uppercase!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Extracting & Replacing Text"
+D: "js\nlet text = \"I love coding!\";\nconsole.log(text.slice(2, 6)); // \"love\"\nconsole.log(text.replace(\"coding\", \"JavaScript\")); // \"I love JavaScript!\"\n"
+D: "With .slice(), we extract part of the text, and with .replace(), we change a word!"
+
+=> END

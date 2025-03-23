@@ -1,0 +1,23 @@
+~ dialogue1
+
+Floor 15: JS Function Parameters and Return Values
+D: "Functions become even more powerful when we pass values into them! Parameters let us customize what a function does, and return values give us results that we can use later."
+
+D: "Function Parameters & Return Values:\n• Parameters → Allow functions to accept input.\n• Return Values → Allow functions to send output back."
+
+=> END
+
+~ dialogue2
+D: "Example 1: Function with Parameters"
+D: "js\nfunction greet(name) {\n    console.log(\"Hello, \" + name + \"!\");\n}\ngreet(\"Alice\"); // Hello, Alice!\ngreet(\"Bob\");   // Hello, Bob!\n"
+D: "Here, we pass different names into the greet() function, and it customizes the message for each one!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Function Returning a Value"
+D: "js\nfunction add(a, b) {\n    return a + b;\n}\nlet sum = add(4, 6);\nconsole.log(sum); // 10\n"
+D: "This function adds two numbers and returns the result, which we store in the sum variable!"
+
+=> END
+

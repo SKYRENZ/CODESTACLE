@@ -1,0 +1,25 @@
+~ dialogue1
+Floor 20: JS Objects and Properties
+D: "Objects let us store related data together, like a real-world entity with multiple details!"
+
+=> END
+
+~ dialogue2
+D: "Example 1: Creating an Object"
+D: "js\nlet person = {\n name: "Alice",\n age: 25,\n isStudent: true\n};\nconsole.log(person.name); // Alice\nconsole.log(person.age); // 25\n"
+D: "Here, person is an object with properties like name, age, and isStudent!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Updating Object Properties"
+D: "js\nperson.age = 26;\nconsole.log(person.age); // 26\n"
+D: "We updated the age property from 25 to 26!"
+
+=> END
+
+~ dialogue4
+D: "Objects are one of JavaScript’s most powerful features! You’ve now reached the top floor, but this is just the beginning of your coding journey. Keep exploring, keep practicing, and soon, you'll be a JavaScript master!" 🚀
+
+=> END
+

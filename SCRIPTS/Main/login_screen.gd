@@ -1,6 +1,6 @@
 extends Control
 
-var firebase_api_key = "AIzaSyB02zOyEW28ep26AAlVWrzRD1X3Hwznp1A"
+var firebase_api_key = "AIzaSyB02zOyEW28p26AAlVWrzRD1X3Hwznp1A"  # Firebase API Key
 var email = ""
 var password = ""
 var password_hidden = true  # Track password visibility state
@@ -17,9 +17,12 @@ func _on_login_button_pressed() -> void:
 
 	var email_edit = get_node_or_null("Container/Login Container/User and Pass Container/Username Container/EmailEdit")
 	var password_line = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
+	var notification_label = get_node_or_null("NotificationLabel")  # ✅ Use NotificationLabel
 
-	if not email_edit or not password_line:
+	if not email_edit or not password_line or not notification_label:
 		print("❌ Error: Required input fields missing!")
+		if notification_label:
+			notification_label.text = "❌ Error: Missing UI elements!"
 		return
 
 	email = email_edit.text.strip_edges()
@@ -28,24 +31,24 @@ func _on_login_button_pressed() -> void:
 	print("📩 Entered Email:", email)
 	print("🔑 Entered Password:", password)
 
-	var validation_failed := false  # Track if validation fails
+	var validation_errors := []  # ✅ Store validation messages
 
 	# ✅ Validate email format
 	if not _is_valid_email(email):
-		print("⚠ Error: Invalid email format! Must be in the format name@domain.com")
-		validation_failed = true
+		validation_errors.append("⚠ Invalid email format! Must be name@domain.com")
 
 	# ✅ Validate password strength
 	if not _is_valid_password(password):
-		print("⚠ Error: Password must be at least 6 characters long and contain a number!")
-		validation_failed = true
+		validation_errors.append("⚠ Password must be at least 6 characters and contain a number!")
 
 	# 🚫 Stop login if validation failed
-	if validation_failed:
+	if validation_errors.size() > 0:
+		notification_label.text = "\n".join(validation_errors)  # ✅ Display errors in label
 		print("❌ Login failed due to validation errors.")
 		return
 
 	print("🔍 Attempting login with email:", email)
+	notification_label.text = "⏳ Logging in..."  # ✅ Show progress
 	Firebase.Auth.login_with_email_and_password(email, password)
 
 # ✅ Email validation function
@@ -60,6 +63,10 @@ func _is_valid_password(password: String) -> bool:
 func on_login_succeeded(auth_data: Dictionary) -> void:
 	print("✅ Login successful! Checking email verification status...")
 
+	var notification_label = get_node_or_null("NotificationLabel")
+	if notification_label:
+		notification_label.text = "✅ Login successful! Checking email verification..."
+
 	if auth_data.has("idtoken"):
 		check_email_verification(auth_data["idtoken"])
 	else:
@@ -68,9 +75,9 @@ func on_login_succeeded(auth_data: Dictionary) -> void:
 # ❌ Callback for failed login
 func on_login_failed(error_code: int, message: String) -> void:
 	print("❌ Login failed! Error:", message)
-	var state_label = get_node_or_null("statelabel")
-	if state_label:
-		state_label.text = "Login failed: " + message
+	var notification_label = get_node_or_null("NotificationLabel")
+	if notification_label:
+		notification_label.text = "❌ Login failed: " + message
 
 # ✅ Check if email is verified using Firebase REST API
 func check_email_verification(user_id_token: String) -> void:
@@ -88,18 +95,20 @@ func check_email_verification(user_id_token: String) -> void:
 # ✅ Handle Firebase API response for verification check
 func _on_verification_response(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
+	var notification_label = get_node_or_null("NotificationLabel")
 
 	if response and response.has("users") and response["users"].size() > 0:
 		var is_verified = response["users"][0].get("emailVerified", false)
 
 		if is_verified:
 			print("✅ Email is verified! Redirecting to main menu...")
+			if notification_label:
+				notification_label.text = "✅ Email verified! Redirecting..."
 			get_tree().change_scene_to_file("res://SCENES/Main/main_menu.tscn")
 		else:
 			print("❌ Email not verified. Please verify your email.")
-			var state_label = get_node_or_null("statelabel")
-			if state_label:
-				state_label.text = "Please verify your email before logging in."
+			if notification_label:
+				notification_label.text = "❌ Please verify your email before logging in."
 			await get_tree().create_timer(5.0).timeout
 			refresh_id_token()
 	else:
@@ -145,7 +154,8 @@ func _on_google_sso_pressed() -> void:
 func _on_forgot_btn_pressed() -> void:
 	AudioPlayer.play_FX(transition_fx, -12.0)
 	var email_edit = get_node_or_null("Container/Login Container/User and Pass Container/Username Container/EmailEdit")
-	
+	var notification_label = get_node_or_null("NotificationLabel")
+
 	if not email_edit:
 		print("❌ Error: Email input field not found!")
 		return
@@ -154,14 +164,12 @@ func _on_forgot_btn_pressed() -> void:
 	
 	if email.is_empty():
 		print("⚠ Warning: Email field is empty!")
-		var state_label = get_node_or_null("statelabel")
-		if state_label:
-			state_label.text = "Please enter your email to reset your password."
+		if notification_label:
+			notification_label.text = "⚠ Please enter your email to reset your password."
 		return
 
 	print("📩 Sending password reset email to:", email)
 
-	# ✅ Firebase Password Reset API
 	var url = "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=" + firebase_api_key
 	var headers = ["Content-Type: application/json"]
 	var body = {"requestType": "PASSWORD_RESET", "email": email}
@@ -174,16 +182,16 @@ func _on_forgot_btn_pressed() -> void:
 # ✅ Handle Firebase Password Reset Response
 func _on_password_reset_response(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
-	var state_label = get_node_or_null("statelabel")
+	var notification_label = get_node_or_null("NotificationLabel")
 
 	if response and response.has("email"):
 		print("✅ Password reset email sent successfully!")
-		if state_label:
-			state_label.text = "Password reset email sent! Check your inbox."
+		if notification_label:
+			notification_label.text = "📩 Password reset email sent! Check your inbox."
 	else:
 		print("❌ Failed to send password reset email.")
-		if state_label:
-			state_label.text = "Error: Unable to send reset email."
+		if notification_label:
+			notification_label.text = "❌ Error: Unable to send reset email."
 
 # ✅ Show/Hide Password Functionality
 func _on_show_password_button_pressed() -> void:
@@ -191,7 +199,7 @@ func _on_show_password_button_pressed() -> void:
 	var password_edit = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
 
 	if password_edit:
-		password_hidden = !password_hidden  # Toggle state
-		password_edit.secret = password_hidden  # Update visibility
+		password_hidden = !password_hidden
+		password_edit.secret = password_hidden
 	else:
 		print("❌ Error: Could not find PasswordLine")

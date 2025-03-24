@@ -271,6 +271,13 @@ theme_override_font_sizes/font_size = 15
 text = "back to login"
 flat = true
 
+[node name="NotificationLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 494.0
+offset_right = 446.0
+offset_bottom = 574.0
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 940.0

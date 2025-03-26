@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://lwy2nskqb7g5"]
+[gd_scene load_steps=24 format=4 uid="uid://du41kdqbufgkg"]
 
 [ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="1_sw3tu"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_yldgp"]

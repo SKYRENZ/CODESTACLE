@@ -4,7 +4,7 @@
 
 [node name="Door" type="Node2D"]
 
-[node name="SlumssDoor2" type="Sprite2D" parent="."]
+[node name="SlumssDoor2" type="Sprite2D" parent="." groups=["door"]]
 position = Vector2(32.9998, 39)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("1_ktj2l")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4t0k034llkia"]
+[gd_scene load_steps=7 format=3 uid="uid://4t0k034llkia"]
 
 [ext_resource type="Script" uid="uid://d1dtt2rv70sdq" path="res://SCRIPTS/Main/main_menu.gd" id="1_25day"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_34ebn"]
@@ -6,11 +6,6 @@
 [ext_resource type="Theme" uid="uid://36p0jcgejxvu" path="res://ASSETS/BUTTONS/Main Menu Buttons/Play_button.tres" id="4_lpvqe"]
 [ext_resource type="Theme" uid="uid://3qiugl1iaq0w" path="res://ASSETS/BUTTONS/Main Menu Buttons/Quit_button.tres" id="6_5e1ex"]
 [ext_resource type="Theme" uid="uid://4ys534v78vtd" path="res://ASSETS/BUTTONS/Main Menu Buttons/Options_button.tres" id="7_80opd"]
-[ext_resource type="Script" uid="uid://b570y5kblhekm" path="res://SCRIPTS/Main/quit_button.gd" id="7_sbnqe"]
-
-[sub_resource type="GDScript" id="GDScript_sbnqe"]
-script/source = "extends Button
-"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -84,7 +79,6 @@ grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
 theme = ExtResource("6_5e1ex")
-script = ExtResource("7_sbnqe")
 
 [node name="Option Button" type="Button" parent="."]
 custom_minimum_size = Vector2(44, 12)
@@ -102,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme = ExtResource("7_80opd")
-script = SubResource("GDScript_sbnqe")
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Quit Button" to="Quit Button" method="_on_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Option Button" to="." method="_on_option_button_pressed"]

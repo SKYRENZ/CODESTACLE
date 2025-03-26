@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=3 uid="uid://deyfbrvvgqcud"]
+
+[ext_resource type="Script" uid="uid://ddfgixwj24yej" path="res://SCRIPTS/Option/gear.gd" id="1_k5r2w"]
+[ext_resource type="Texture2D" uid="uid://bjud3kjmj0p8s" path="res://ASSETS/BUTTONS/Option/Hud_buttons_slums.png" id="2_q8k63"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbrnv"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(65, 1, 48, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26f7s"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(129, 1, 48, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_144yl"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(1, 1, 49, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jg8ty"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(65, 14, 34, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhcrx"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(129, 14, 34, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_84wn6"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(1, 14, 34, 12)
+
+[sub_resource type="Theme" id="Theme_i0gq4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bv77j"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(65, 27, 52, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa0nc"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(129, 27, 52, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dk8l8"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(1, 27, 52, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6txsl"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(65, 40, 31, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87ot"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(129, 40, 31, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddwwi"]
+texture = ExtResource("2_q8k63")
+region_rect = Rect2(1, 40, 31, 12)
+
+[node name="Setting" type="CanvasLayer"]
+script = ExtResource("1_k5r2w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.317647, 0.290196, 0.2, 0.192157)
+
+[node name="Resume" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(33, 12)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.5
+offset_top = 96.0
+offset_right = 117.5
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_pbrnv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_26f7s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_144yl")
+
+[node name="Save" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(33, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -161.0
+offset_right = 103.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_jg8ty")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bhcrx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_84wn6")
+
+[node name="Option" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -40.0
+offset_right = 120.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_i0gq4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bv77j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aa0nc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dk8l8")
+
+[node name="Exit" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -283.0
+offset_right = 103.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_6txsl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n87ot")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ddwwi")
+
+[connection signal="pressed" from="ColorRect/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="ColorRect/Exit" to="." method="_on_Exit_pressed"]

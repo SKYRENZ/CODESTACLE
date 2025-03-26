@@ -1,4 +1,3 @@
-# InteractableDialogue.gd - Use this for any dialogue-enabled object
 extends Area2D
 
 @export var dialogue_resource: DialogueResource
@@ -41,3 +40,5 @@ func _on_dialogue_ended(_resource: DialogueResource):
 		player.set_movement_locked(false)
 	
 	dialogue_active = false
+	
+	ObjectiveManager.increment_npc_interacted()  # Increment NPC counter here!

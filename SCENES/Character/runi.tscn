@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxb3modnbf7pu" path="res://ASSETS/Character/Runi the all knowing-Sheet.png" id="1_kr4la"]
 [ext_resource type="Script" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
-[ext_resource type="Script" path="res://SCRIPTS/Character/interaction_labelRuni.gd" id="3_cslrd"]
+[ext_resource type="Script" uid="uid://c5dgisrpjlul" path="res://SCRIPTS/Character/interaction_labelRuni.gd" id="3_cslrd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h78op"]
 atlas = ExtResource("1_kr4la")
@@ -41,6 +41,9 @@ animations = [{
 }]
 
 [sub_resource type="FontFile" id="FontFile_cslrd"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

@@ -14,16 +14,22 @@ config/name="Codestacle"
 run/main_scene="res://SCENES/Main/MAIN.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout="uid://dhm3hlcx2cwu5"
+
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
-FloorTimerManager="*res://SCRIPTS/Mechanics/timer/FloorTimerManager.gd"
+FloorTimerManager="*res://SCRIPTS/Mechanics/HUD/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
 MenuMusic="*res://BGM/Menu_Music.gd"
 PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
 DialogueHelper="*res://SCRIPTS/Mechanics/Dialogue/DialogueHelper.gd"
+ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
+VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 
 [dialogue_manager]
 
@@ -47,6 +53,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 ladder=""
 player=""
+door=""
 
 [input]
 

@@ -49,7 +49,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35dcm"]
 size = Vector2(24, 54)
 
-[node name="Door" type="Node2D"]
+[node name="Door" type="Node2D" groups=["door"]]
 script = ExtResource("2_0djs3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,3 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://j5libe3y6jue"]
+[gd_scene load_steps=3 format=3 uid="uid://brxfg05kb8ddm"]
+
+[ext_resource type="Script" uid="uid://6msndyjxr5kj" path="res://BGM/Menu_Music.gd" id="1_6kjdq"]
+[ext_resource type="AudioStream" uid="uid://bt84wh2al8scf" path="res://BGM/Menu.mp3" id="1_yjxal"]
 
 [node name="MenuMusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_yjxal")
+bus = &"BGM"
+script = ExtResource("1_6kjdq")

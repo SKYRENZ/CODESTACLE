@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b3bxmrjeptvdt"
+path="res://.godot/imported/FLOOR 17.dialogue-f9b52231e728da1d061ed0647c2a7253.tres"
+
+[deps]
+
+source_file="res://DIALOGUE/FLOOR 17.dialogue"
+dest_files=["res://.godot/imported/FLOOR 17.dialogue-f9b52231e728da1d061ed0647c2a7253.tres"]
+
+[params]
+
+defaults=true

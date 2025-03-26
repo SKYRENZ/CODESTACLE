@@ -1,0 +1,25 @@
+~ dialogue1
+
+Floor 13: JS Assignment Operators
+D: "Assignment operators allow us to store and update values efficiently. Instead of writing repetitive code, we can use shortcuts to make our code cleaner!"
+
+D: "Assignment Operators:\n• = → Assigns a value to a variable.\n• += → Adds and assigns in one step.\n• -= → Subtracts and assigns.\n• *= → Multiplies and assigns.\n• /= → Divides and assigns.\n• %= → Modulus and assigns."
+
+=> END
+
+~ dialogue2
+D: "Example 1: Basic Assignment"
+D: "js\nlet score = 10;\nconsole.log(score); // 10\n"
+D: "Here, we store the number 10 in the variable score. Simple!"
+
+=> END
+
+~ dialogue3
+D: "Example 2: Using += to Add Values"
+D: "js\nlet points = 5;\npoints += 3; // Same as points = points + 3;\nconsole.log(points); // 8\n"
+D: "Instead of writing points = points + 3, we use points += 3 for a cleaner approach!"
+
+=> END
+
+
+

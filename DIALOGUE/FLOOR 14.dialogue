@@ -1,0 +1,14 @@
+~ dialogue1
+
+Floor 14: JS Functions
+D: "Functions are reusable blocks of code. Instead of writing the same code multiple times, we can define a function and call it whenever
+
+=> END
+
+~ dialogue2
+
+D: "Example 1: Declaring and Calling a Function"
+D: "js\nfunction greet() {\n    console.log(\"Hello, JavaScript learner!\");\n}\ngreet();\n"
+D: "Here, we defined a function greet() that prints a message. We call it by writing greet();."
+
+=> END

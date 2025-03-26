@@ -12,9 +12,13 @@ bg_color = Color(0.13846, 0.667774, 0.516849, 1)
 script = ExtResource("1_x13es")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 38.0
-offset_top = 662.0
-offset_right = 332.0
-offset_bottom = 689.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 20.0
+offset_right = 147.0
+offset_bottom = 47.0
+grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_6d606")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x13es")

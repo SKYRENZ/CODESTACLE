@@ -40,31 +40,31 @@ offset_right = 218.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
-max_value = 15.0
+max_value = 2.0
 step = 0.001
 
-[node name="Label2" type="Label" parent="ColorRect/Label"]
+[node name="Label2" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = 63.5
-offset_right = 80.0
-offset_bottom = 86.5
+offset_left = -147.0
+offset_top = -182.0
+offset_right = -4.0
+offset_bottom = -159.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Background Music"
 
-[node name="BGM" type="HSlider" parent="ColorRect/Label/Label2"]
+[node name="BGM" type="HSlider" parent="ColorRect/Label2"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 24.5
 offset_right = 281.0
 offset_bottom = 40.5
-max_value = 15.0
+max_value = 2.0
 step = 0.001
 
 [node name="Label3" type="Label" parent="ColorRect"]
@@ -81,7 +81,7 @@ offset_left = 1.0
 offset_top = 30.0
 offset_right = 281.0
 offset_bottom = 46.0
-max_value = 15.0
+max_value = 2.0
 step = 0.001
 
 [node name="Button" type="Button" parent="."]
@@ -96,6 +96,6 @@ text = "close
 "
 
 [connection signal="value_changed" from="ColorRect/Label/master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="ColorRect/Label/Label2/BGM" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="ColorRect/Label2/BGM" to="." method="_on_bgm_value_changed"]
 [connection signal="value_changed" from="ColorRect/Label3/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

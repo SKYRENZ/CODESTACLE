@@ -8,7 +8,8 @@ func _ready():
 	if not is_connected("pressed", Callable(self, "_on_pressed")):
 		connect("pressed", Callable(self, "_on_pressed"))
 
-func _on_pressed(): 
+func _on_pressed():
+	MenuMusic.stop_music() 
 	AudioPlayer.play_FX(transition_fx, -12.0)
 	if option_instance == null:  # Check if the Option scene is not already loaded
 		var option_scene = ResourceLoader.load("res://SCENES/Mechanics/Option/Option.tscn")  # Load the scene

@@ -1,89 +1,154 @@
 extends Control
 
-@onready var background_texture = $Background  
 @onready var sentence_label = $Panel/Label
 @onready var vbox_container = $Panel/VBoxContainer
 @onready var validation_panel = $Panel  
 
-@export var font_resource: Font  
-@export var background_image: Texture  
-
-var sentence_template = ["Let [_] = 12;", "Let y = [_];"]
-var valid_items = ["12", "13"]  
-var collected_items = []  
+var sentence_template = []
+var valid_items = []
+var collected_items = []  # Store item names instead of textures
 var next_expected_index = 0  
+var current_floor  
 
 func _ready():
-	if background_image and background_texture:
-		background_texture.texture = background_image  
+	await get_tree().process_frame  
 
-	if font_resource:
-		sentence_label.add_theme_font_override("font", font_resource)
-		sentence_label.add_theme_color_override("font_color", Color(1, 1, 1))  
-		sentence_label.add_theme_font_size_override("font_size", 32)  
-		sentence_label.alignment = HORIZONTAL_ALIGNMENT_CENTER  
+	var floor_node = get_tree().get_first_node_in_group("floor")
+	if floor_node:
+		if floor_node.has_meta("floor_number"):
+			current_floor = floor_node.get_meta("floor_number")  
+		elif "floor_number" in floor_node:
+			current_floor = floor_node.floor_number
+		else:
+			print("⚠️ Warning: Floor node does not have 'floor_number'!")
+			current_floor = -1  
+	else:
+		print("⚠️ Warning: Floor node not found!")
+		current_floor = -1  
 
-	update_sentence_display()
+	print("🟢 Detected Floor:", current_floor)
 
-func _process(_delta):
-	if Input.is_action_just_pressed("toggle_validation"):
-		validation_panel.visible = !validation_panel.visible  
+	var floor_data = FloorData.get_floor_data(current_floor)
+	print("📜 Floor Data Retrieved:", floor_data)
 
-func open_validation():
-	validation_panel.visible = true
+	if floor_data and "valid_items" in floor_data:
+		sentence_template = floor_data.sentence_template
+		valid_items = floor_data.valid_items  
 
-func update_sentence_display():
-	for child in vbox_container.get_children():
-		vbox_container.remove_child(child)
-		child.queue_free()  
+		print("✅ Loaded Floor Data:", floor_data)
+		print("🎯 Valid Items:", valid_items)
 
-	var collected_index = 0  
+		setup_label_style()
+		update_ui()
+	else:
+		print("❌ Error: No valid items found in floor data for floor", current_floor)
 
-	for line_index in range(sentence_template.size()):
-		var hbox = HBoxContainer.new()
-		var parts = sentence_template[line_index].split("_")
+func setup_label_style():
+	# Load a small custom font
+	var custom_font = load("res://ASSETS/FONT/Eight-Bit Madness.ttf")  # Replace with your actual font path
+	if custom_font:
+		sentence_label.add_theme_font_override("font", custom_font)
 
-		for i in range(parts.size()):
-			var text_label = Label.new()
-			text_label.text = parts[i]
-			text_label.add_theme_font_override("font", font_resource)  
-			text_label.add_theme_color_override("font_color", Color(0.9, 0.9, 0.9))  
-			text_label.add_theme_font_size_override("font_size", 32)  
-			text_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
-			hbox.add_child(text_label)
+	# Adjust text alignment
+	sentence_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	sentence_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
-			if i < parts.size() - 1 and collected_index < collected_items.size():
-				var texture_rect = TextureRect.new()
-				texture_rect.texture = collected_items[collected_index]  
-				texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  
-				texture_rect.custom_minimum_size = Vector2(48, 48)  
-				texture_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-				texture_rect.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-				hbox.add_child(texture_rect)
-				collected_index += 1  
+	# Enable word wrapping
+	sentence_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 
-		vbox_container.add_child(hbox)
+	# Increase line spacing
+	sentence_label.add_theme_constant_override("line_spacing", 10)
+
+	# Add left padding
+	sentence_label.add_theme_constant_override("margin_left", 200)  # Adjust as needed
+
+	# Make sure label expands properly
+	sentence_label.custom_minimum_size = Vector2(400, 200)
+	sentence_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sentence_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+func update_ui():
+	if sentence_label:
+		sentence_label.text = "\n".join(sentence_template)
+
+		# Reapply small font to prevent size reset
+		var custom_font = load("res://small_font.tres")
+		if custom_font:
+			sentence_label.add_theme_font_override("font", custom_font)
+
+		print("📜 Updating Label Text:", sentence_label.text)
+	else:
+		print("⚠️ Warning: sentence_label not found!")
+
+	if validation_panel:
+		validation_panel.visible = true
+	else:
+		print("⚠️ Warning: validation_panel is missing!")
 
 func add_item(item_name, item_texture) -> bool:
 	open_validation()  
 
-	if item_name in valid_items:
-		var expected_item = valid_items[next_expected_index]
+	var item_value = item_name
+	if item_name.is_valid_int():
+		item_value = item_name.to_int()
 
-		if item_name == expected_item:
-			collected_items.append(item_texture)  
+	var converted_valid_items = valid_items.map(func(item):
+		return int(item) if typeof(item) == TYPE_STRING and item.is_valid_int() else item
+	)
+
+	print("🔎 Checking Item:", item_value, "Expected:", converted_valid_items)
+
+	if item_value in converted_valid_items:
+		var expected_item = converted_valid_items[next_expected_index]
+
+		if item_value == expected_item:
+			collected_items.append(item_name)  # Store the item's name
 			next_expected_index += 1  
 			update_sentence_display()  
-			change_panel_color(Color(0.5, 1.0, 0.5))  # ✅ Green for correct
+			change_panel_color(Color(0.5, 1.0, 0.5))  
+			print("✅ Item accepted:", item_value)
 			return true
 		else:
-			change_panel_color(Color(1.0, 0.5, 0.5))  # ❌ Red for incorrect order
+			change_panel_color(Color(1.0, 0.5, 0.5))  
+			print("❌ Wrong order:", item_value, "Expected:", expected_item)
 			return false
 	else:
-		change_panel_color(Color(1.0, 0.5, 0.5))  # ❌ Red for invalid item
+		change_panel_color(Color(1.0, 0.5, 0.5))  
+		print("❌ Invalid item:", item_value, "Valid options:", converted_valid_items)
 		return false
+
+func open_validation():
+	validation_panel.visible = true
 
 func change_panel_color(color: Color):
 	validation_panel.modulate = color  
 	await get_tree().create_timer(0.3).timeout  
 	validation_panel.modulate = Color(1, 1, 1)  
+
+func update_sentence_display():
+	if sentence_label:
+		var display_text = ""
+		var collected_index = 0
+
+		for line in sentence_template:
+			var parts = line.split("_")
+			var line_text = ""
+
+			for i in range(parts.size()):
+				line_text += parts[i]
+				if i < parts.size() - 1 and collected_index < collected_items.size():
+					line_text += collected_items[collected_index]  # Use the collected item's name
+					collected_index += 1
+
+			display_text += line_text + "\n"
+
+		sentence_label.text = display_text.strip_edges()
+
+		# Reapply small font to prevent resets
+		var custom_font = load("res://small_font.tres")
+		if custom_font:
+			sentence_label.add_theme_font_override("font", custom_font)
+
+		print("📜 Updating Label Text:", sentence_label.text)
+	else:
+		print("⚠️ Warning: sentence_label not found!")

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=51 format=4 uid="uid://dog4jjbgfipmm"]
+=======
+[gd_scene load_steps=45 format=4 uid="uid://dog4jjbgfipmm"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_xwx4o"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_pmssi"]
@@ -1049,10 +1053,14 @@ size = Vector2(69, 37)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4vnj"]
 size = Vector2(70.6875, 47.5)
 
+<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipmy3"]
 size = Vector2(20, 28.6061)
 
 [node name="Floor1" type="Node2D"]
+=======
+[node name="Floor2" type="Node2D"]
+>>>>>>> Stashed changes
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

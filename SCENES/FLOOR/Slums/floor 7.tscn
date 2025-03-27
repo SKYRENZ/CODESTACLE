@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=49 format=4 uid="uid://dwg87rtd7v3wk"]
+=======
+[gd_scene load_steps=63 format=4 uid="uid://dwg87rtd7v3wk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_aoavd"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_s4vnj"]

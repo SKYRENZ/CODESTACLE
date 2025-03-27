@@ -1,11 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=63 format=4 uid="uid://dk2tob75hnebq"]
+=======
+[gd_scene load_steps=63 format=4 uid="uid://brsjbg0dv8twm"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_dcw44"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_wkp72"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_mr0hd"]
 [ext_resource type="PackedScene" uid="uid://c0lnlunk78q1m" path="res://SCENES/Character/Rodtang.tscn" id="3_u1p6f"]
 [ext_resource type="Script" uid="uid://c5i2mqin4nk0a" path="res://SCRIPTS/Floor/Slums/floor 5/F5runiD1.gd" id="5_60y8k"]
+<<<<<<< Updated upstream
 [ext_resource type="Resource" uid="uid://ccaa2yhd12dh0" path="res://DIALOGUE/FLOOR 10.dialogue" id="6_u1p6f"]
+=======
+[ext_resource type="Resource" path="res://DIALOGUE/FLOOR 10.dialogue" id="6_u1p6f"]
+>>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://cegq76x4nglu4" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_1.gd" id="7_u1p6f"]
 [ext_resource type="Script" uid="uid://dpix2vkel4u1f" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_2.gd" id="8_7t16n"]
 [ext_resource type="Script" uid="uid://cks530ufhn87m" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_3.gd" id="9_wsdvg"]
@@ -19,7 +27,11 @@
 [ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/floor 5/F5rodtang_quiz.gd" id="15_wsdvg"]
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="16_mr0hd"]
 [ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="17_k5kbx"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bhkr2cp82ucl2" path="res://SCRIPTS/Floor/Slums/floor 6/tagilid.gd" id="18_k5kbx"]
+=======
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/tagilid.gd" id="18_k5kbx"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="19_60y8k"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]

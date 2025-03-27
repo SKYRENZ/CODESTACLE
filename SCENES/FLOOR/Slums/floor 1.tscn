@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=29 format=4 uid="uid://kgetvwqx48vl"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_ydj8t"]
 [ext_resource type="Script" uid="uid://1npe7tu33acv" path="res://SCRIPTS/Floor/Slums/Transition.gd" id="16_ydj8t"]
+[ext_resource type="Script" uid="uid://cnemqjl8iopdx" path="res://SCENES/FLOOR/Slums/TaskBoard.gd" id="17_47281"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -802,6 +803,20 @@ size = Vector2(20, 28.6061)
 script = ExtResource("1_7k0cc")
 floor_number = 1
 
+[node name="TaskBoard" type="Control" parent="." groups=["task_board"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_47281")
+
+[node name="TaskLabel" type="Label" parent="TaskBoard"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 92.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -840,6 +855,7 @@ position = Vector2(1581, 610)
 
 [node name="Runi" parent="TextureRect/Characters" instance=ExtResource("3_ydj8t")]
 position = Vector2(277, 777)
+rotation = -0.0959931
 
 [node name="Tile map" type="Node" parent="TextureRect"]
 

@@ -16,6 +16,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player") and not dialogue_active:
 		DialogueHelper.register_interactable(self)
+		print("📜 Player near sign!")  # Debugging check
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
@@ -27,6 +28,13 @@ func trigger_dialogue():
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 		dialogue_active = true
 		AudioPlayer.play_DIA(dia_start, -12.0)
+
+		# ✅ Call TaskManager.read_sign() when player interacts with a sign
+		if TaskManager:
+			TaskManager.read_sign()
+			print("📜 Sign read event triggered!")  # Debugging check
+		else:
+			print("❌ TaskManager not found!")  # Debugging check
 	else:
 		print("Error: dialogue_resource is not assigned or dialogue already active!")
 

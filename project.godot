@@ -25,11 +25,15 @@ MenuMusic="*res://BGM/Menu_Music.gd"
 PlayerData="*res://SCRIPTS/Mechanics/ResultPanel/PlayerData.gd"
 DialogueHelper="*res://SCRIPTS/Mechanics/Dialogue/DialogueHelper.gd"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 TaskManager="*res://TaskManager.gd"
 ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
 VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 FloorData="*res://floor_data.gd"
+>>>>>>> Stashed changes
+=======
+TaskManager="*res://TaskManager.gd"
 >>>>>>> Stashed changes
 
 [dialogue_manager]

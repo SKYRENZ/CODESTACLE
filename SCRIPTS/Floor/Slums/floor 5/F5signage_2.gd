@@ -34,3 +34,7 @@ func _on_dialogue_ended(_resource: DialogueResource):
 	# Stop audio after dialogue ends
 	AudioPlayer.stop_DIA()
 	dialogue_active = false
+
+	# Update TaskManager to track sign reading
+	TaskManager.read_sign()
+	

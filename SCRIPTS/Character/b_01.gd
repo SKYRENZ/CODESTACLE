@@ -59,10 +59,15 @@ func apply_gravity():
 func set_movement_locked(locked: bool) -> void:
 	movement_locked = locked
 	if locked:
-		# Stop all current movement
-		velocity = Vector2.ZERO
-		# Set idle animation
-		animated_sprite_2d.play("default")
+		velocity = Vector2.ZERO  # Stop movement immediately
+		set_physics_process(false)  # 🔴 Completely disables movement
+		print("🚷 Player movement locked!")
+	else:
+		set_physics_process(true)  # ✅ Re-enable movement
+		print("🚶 Player can move again!")
+
+
+
 
 func _movement(delta):
 	# Handle jump

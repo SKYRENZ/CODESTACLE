@@ -1,28 +1,20 @@
-[gd_scene load_steps=59 format=4 uid="uid://c3sgbai5gg7og"]
+[gd_scene load_steps=50 format=4 uid="uid://c5yjxc3h4u773"]
 
-[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_ol3xk"]
-[ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="2_d138q"]
-[ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_udhfs"]
-[ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="3_qyilj"]
-[ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="4_01es4"]
-[ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="5_6nwro"]
-[ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="6_anqv7"]
-[ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="7_yfx3q"]
-[ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="8_0n8me"]
-[ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="10_s4gq6"]
-[ext_resource type="Script" uid="uid://c5i2mqin4nk0a" path="res://SCRIPTS/Floor/Slums/floor 5/F5runiD1.gd" id="11_epylf"]
-[ext_resource type="Resource" uid="uid://blt1lg01oowyl" path="res://DIALOGUE/FLOOR 8.dialogue" id="12_udhfs"]
-[ext_resource type="Script" uid="uid://cegq76x4nglu4" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_1.gd" id="13_2b6pb"]
-[ext_resource type="Script" uid="uid://dpix2vkel4u1f" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_2.gd" id="14_86qcg"]
-[ext_resource type="Script" uid="uid://cks530ufhn87m" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_3.gd" id="15_bjgr5"]
-[ext_resource type="Script" uid="uid://ogpvccxe6wc6" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_4.gd" id="16_fehiu"]
-[ext_resource type="Script" uid="uid://dmxlcqmv41fv3" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_5.gd" id="17_yxwtw"]
-[ext_resource type="Script" uid="uid://m3agidkegvbt" path="res://SCRIPTS/Floor/Slums/floor 5/F5signage_6.gd" id="18_p8inn"]
+[ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
+[ext_resource type="PackedScene" uid="uid://convdqxhs5j5m" path="res://SCENES/Mechanics/slumsdoor_transtoflr_2.tscn" id="2_l3kwt"]
+[ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_biyl2"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="4_l3kwt"]
+[ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="5_gfbai"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="6_biyl2"]
+[ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
+[ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
+[ext_resource type="Script" uid="uid://bji2edrfkaqcp" path="res://SCENES/FLOOR/Slums/MazeTrigger.gd" id="10_qyilj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxlvv"]
-texture = ExtResource("2_d138q")
+texture = ExtResource("4_biyl2")
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
@@ -233,7 +225,7 @@ texture = ExtResource("2_d138q")
 10:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_biyl2"]
-texture = ExtResource("2_d138q")
+texture = ExtResource("4_biyl2")
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -396,83 +388,83 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdjog"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(0, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmbq7"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(105, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ald7m"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(210, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ache6"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(315, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_314vw"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(420, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv7af"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(525, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwx4o"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(630, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmssi"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(735, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ste03"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(840, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrffn"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(945, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipmy3"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1050, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ota6"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1155, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu51i"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1260, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ur6i"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1365, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yy6ir"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1470, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bus6a"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1575, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awia4"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1680, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6c1i"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1785, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0y5c"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1890, 0, 105, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hpga"]
-atlas = ExtResource("6_anqv7")
+atlas = ExtResource("7_5x88h")
 region = Rect2(1995, 0, 105, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4hmdp"]
@@ -602,9 +594,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01es4"]
 size = Vector2(32.5, 82)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_moj6y"]
-size = Vector2(48, 55.25)
-
 [node name="Floor6" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -635,13 +624,13 @@ color = Color(0, 0.133333, 0.133333, 1)
 
 [node name="Characters" type="Node" parent="TextureRect"]
 
-[node name="B-01" parent="TextureRect/Characters" instance=ExtResource("1_ol3xk")]
+[node name="B-01" parent="TextureRect/Characters" instance=ExtResource("1_wxlvv")]
 visibility_layer = 8
 z_index = 5
 position = Vector2(380, 251)
 
-[node name="Runi" parent="TextureRect/Characters" instance=ExtResource("2_udhfs")]
-position = Vector2(109, 980)
+[node name="slumsdoor_transtoflr2" parent="TextureRect" instance=ExtResource("2_l3kwt")]
+position = Vector2(1762, 561)
 
 [node name="map" type="Node" parent="."]
 
@@ -652,7 +641,7 @@ tile_set = SubResource("TileSet_l3kwt")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_l3kwt")
-script = ExtResource("3_qyilj")
+script = ExtResource("4_l3kwt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(465, 715)
@@ -670,7 +659,7 @@ rotation = 0.0117642
 position = Vector2(15.9636, 81.8179)
 rotation = -0.0218133
 scale = Vector2(0.819493, 1.02144)
-texture = ExtResource("4_01es4")
+texture = ExtResource("5_gfbai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/AnimatableBody2D"]
 position = Vector2(59.043, 3.30563)
@@ -683,7 +672,7 @@ libraries = {
 }
 
 [node name="BreakingPlatform1" type="StaticBody2D" parent="."]
-script = ExtResource("5_6nwro")
+script = ExtResource("6_biyl2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BreakingPlatform1"]
 position = Vector2(962, 815)
@@ -705,7 +694,7 @@ position = Vector2(962.313, 811.25)
 shape = SubResource("RectangleShape2D_tdjog")
 
 [node name="BreakingPlatform2" type="StaticBody2D" parent="."]
-script = ExtResource("5_6nwro")
+script = ExtResource("6_biyl2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BreakingPlatform2"]
 position = Vector2(1102, 736)
@@ -727,7 +716,7 @@ position = Vector2(1102, 731)
 shape = SubResource("RectangleShape2D_tdjog")
 
 [node name="BreakingPlatform3" type="StaticBody2D" parent="."]
-script = ExtResource("5_6nwro")
+script = ExtResource("6_biyl2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BreakingPlatform3"]
 position = Vector2(965, 657)
@@ -749,7 +738,7 @@ position = Vector2(965, 651)
 shape = SubResource("RectangleShape2D_tdjog")
 
 [node name="BreakingPlatform4" type="StaticBody2D" parent="."]
-script = ExtResource("5_6nwro")
+script = ExtResource("6_biyl2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BreakingPlatform4"]
 position = Vector2(916, 527)
@@ -771,7 +760,7 @@ position = Vector2(915, 526)
 shape = SubResource("RectangleShape2D_tdjog")
 
 [node name="BreakingPlatform5" type="StaticBody2D" parent="."]
-script = ExtResource("5_6nwro")
+script = ExtResource("6_biyl2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BreakingPlatform5"]
 position = Vector2(1071, 394)
@@ -793,19 +782,19 @@ position = Vector2(1071, 389)
 shape = SubResource("RectangleShape2D_tdjog")
 
 [node name="lava1" type="Area2D" parent="."]
-script = ExtResource("7_yfx3q")
+script = ExtResource("8_tdjog")
 
 [node name="Toxic" type="Sprite2D" parent="lava1"]
 position = Vector2(672, 345)
 scale = Vector2(0.795527, 1)
-texture = ExtResource("8_0n8me")
+texture = ExtResource("9_tdjog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lava1"]
 position = Vector2(733, 348)
 shape = SubResource("RectangleShape2D_gmbq7")
 
 [node name="lava2" type="Area2D" parent="."]
-script = ExtResource("7_yfx3q")
+script = ExtResource("8_tdjog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lava2"]
 position = Vector2(863, 343)
@@ -813,7 +802,7 @@ shape = SubResource("RectangleShape2D_gmbq7")
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_tdjog")
-script = ExtResource("3_qyilj")
+script = ExtResource("4_l3kwt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
 position = Vector2(1316, 436)
@@ -830,7 +819,7 @@ rotation = 1.56637
 [node name="Sprite2D" type="Sprite2D" parent="Path2D2/AnimatableBody2D"]
 position = Vector2(80.9196, 18.3582)
 rotation = -1.57925
-texture = ExtResource("4_01es4")
+texture = ExtResource("5_gfbai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D2/AnimatableBody2D"]
 position = Vector2(1.12829, -28.9953)
@@ -842,112 +831,21 @@ libraries = {
 }
 
 [node name="fake" type="Area2D" parent="."]
-script = ExtResource("7_yfx3q")
+script = ExtResource("8_tdjog")
 
 [node name="GreenToxicLava" type="Sprite2D" parent="fake"]
 self_modulate = Color(1, 1, 1, 0.807843)
 position = Vector2(1437, 616)
 scale = Vector2(1.03906, 1.00586)
-texture = ExtResource("4_01es4")
+texture = ExtResource("5_gfbai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fake"]
 position = Vector2(1486, 536)
 shape = SubResource("RectangleShape2D_gmbq7")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("10_qyilj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(452.75, 242)
 shape = SubResource("RectangleShape2D_01es4")
-
-[node name="Signage" type="Node" parent="."]
-
-[node name="SlumsSign1" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(415, 768)
-
-[node name="SlumsSign2" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(867, 833)
-
-[node name="SlumsSign3" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(697, 493)
-
-[node name="SlumsSign4" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(576, 492)
-
-[node name="SlumsSign5" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(507, 266)
-
-[node name="SlumsSign6" parent="Signage" instance=ExtResource("10_s4gq6")]
-position = Vector2(959, 274)
-
-[node name="dialogue" type="Node" parent="."]
-
-[node name="RuniStart" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("11_epylf")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/RuniStart"]
-position = Vector2(108, 968)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage1" type="Area2D" parent="dialogue"]
-position = Vector2(-66, -5)
-collision_layer = 32
-script = ExtResource("13_2b6pb")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage1"]
-position = Vector2(481, 763)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage2" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("14_86qcg")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage2"]
-position = Vector2(865, 817)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage3" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("15_bjgr5")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage3"]
-position = Vector2(696, 482)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage4" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("16_fehiu")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage4"]
-position = Vector2(574, 485)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage5" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("17_yxwtw")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage5"]
-position = Vector2(500, 260)
-shape = SubResource("RectangleShape2D_moj6y")
-
-[node name="signage6" type="Area2D" parent="dialogue"]
-position = Vector2(2, 4)
-collision_layer = 32
-script = ExtResource("18_p8inn")
-dialogue_resource = ExtResource("12_udhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/signage6"]
-position = Vector2(960, 256)
-shape = SubResource("RectangleShape2D_moj6y")

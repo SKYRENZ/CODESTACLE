@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://do5s2ve1m7fjx"]
+
+[node name="SlumsParallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]

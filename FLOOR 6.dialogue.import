@@ -1,0 +1,19 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+<<<<<<< HEAD
+uid="uid://r8iky38yi7xv"
+=======
+uid="uid://ci7wld4rpeqrp"
+>>>>>>> 88b67da2791fa857411afec56dae0dc2a9c4593f
+path="res://.godot/imported/FLOOR 6.dialogue-9a3e61cc215f5c01f654cd403538796e.tres"
+
+[deps]
+
+source_file="res://FLOOR 6.dialogue"
+dest_files=["res://.godot/imported/FLOOR 6.dialogue-9a3e61cc215f5c01f654cd403538796e.tres"]
+
+[params]
+
+defaults=true

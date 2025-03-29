@@ -589,3 +589,4 @@ shape = SubResource("RectangleShape2D_e3rdq")
 
 [node name="FLAG(TRANSITIONTOTS-FLR1))" parent="." instance=ExtResource("7_yny8n")]
 position = Vector2(718, 137)
+target_scene = "res://SCENES/FLOOR/Slums/floor 1.tscn"

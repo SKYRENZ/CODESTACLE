@@ -12,30 +12,31 @@ var is_on_ladder = false
 var movement_locked = false
 var facing_direction = 1
 
-# NEW variables to store door info & HUD
+# Variables for doors & progress tracking
 var doors = []
 var max_distance = 0.0
 var floor_controller = null
 
 func _ready():
-	print("Player script is running")
+	print("[Player] Script is running")
 	if not is_in_group("player"):
 		add_to_group("player")
-	
+
 	floor_controller = get_tree().get_current_scene()
-	
+
 	if floor_controller:
-		print("Floor controller found:", floor_controller.name)
+		print("[Player] Floor controller found:", floor_controller.name)
 	else:
-		print("Error: Floor controller not found!")
-	
+		print("[Player] ERROR: Floor controller not found!")
+
 func _physics_process(delta: float) -> void:
 	if movement_locked:
+		# Prevent all movement but apply gravity if needed
 		if not is_on_floor() and not is_on_ladder:
 			velocity += get_gravity() * delta
 			move_and_slide()
-		return
-	
+		return  # ✅ Fully stop input when locked
+
 	var ladderCollider = ladder_ray_cast.get_collider()
 	is_on_ladder = ladderCollider != null
 
@@ -49,6 +50,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	# Flip sprite based on movement direction
 	if velocity.x != 0:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
@@ -57,20 +59,23 @@ func _physics_process(delta: float) -> void:
 	_update_progress()
 
 func apply_gravity():
-	print("Gravity reapplied to player!")
+	print("[Player] Gravity applied!")
 	velocity.y = 400
 
 func set_movement_locked(locked: bool) -> void:
 	movement_locked = locked
 	if locked:
-		velocity = Vector2.ZERO
-		animated_sprite_2d.play("default")
+		velocity = Vector2.ZERO  # ✅ Fully freeze player
+		animated_sprite_2d.play("default")  
+		print("[Player] Movement locked")
+	else:
+		print("[Player] Movement unlocked")
 
 func _movement(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_ladder:
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.play("jumping")
-		print("Jumping animation triggered")
+		print("[Player] Jumping")
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -91,12 +96,12 @@ func _ladder_climb():
 
 func _on_ladder_area_entered(area: Area2D):
 	if area.is_in_group("ladder"):
-		print("Entered ladder area")
+		print("[Player] Entered ladder area")
 		is_on_ladder = true
 
 func _on_ladder_area_exited(area: Area2D):
 	if area.is_in_group("ladder"):
-		print("Exited ladder area")
+		print("[Player] Exited ladder area")
 		is_on_ladder = false
 
 func _on_void_area_entered(body):
@@ -108,21 +113,21 @@ func _on_player_died():
 	is_on_ladder = false
 	if spawn_point:
 		global_position = spawn_point.global_position
-		print("Player Respawned at:", spawn_point.global_position)
+		print("[Player] Respawned at:", spawn_point.global_position)
 	else:
-		print("Error: SpawnPoint not set!")
+		print("[Player] ERROR: SpawnPoint not set!")
 
 func _on_checkpoint_reached(checkpoint: Area2D):
 	if checkpoint.has_node("Spawnpoint"):
 		spawn_point = checkpoint.get_node("Spawnpoint")
-		print("Checkpoint reached! New spawn point set at:", spawn_point.global_position)
+		print("[Player] Checkpoint reached! New spawn point set at:", spawn_point.global_position)
 	else:
-		print("Error: Checkpoint missing 'Point'!")
+		print("[Player] ERROR: Checkpoint missing 'Point'!")
 
-# NEW: Function to update proximity HUD
+# ✅ Ensures progress updates
 func _update_progress():
 	if doors.is_empty() or floor_controller == null:
-		print("Error: Doors list is empty or floor controller is null!")
+		print("[Player] ERROR: Doors list empty or floor controller missing!")
 		return
 
 	var closest_distance = INF
@@ -134,5 +139,5 @@ func _update_progress():
 
 	var progress = 1.0 - (closest_distance / max_distance)
 	progress = clamp(progress, 0, 1)
-	print("Progress calculated:", progress)
+	print("[Player] Progress:", progress)
 	floor_controller.update_progress_bar(progress)

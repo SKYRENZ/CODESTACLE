@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ccdye2d02ld6m"]
 
-[ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkbqg"]
 line_spacing = 5.0

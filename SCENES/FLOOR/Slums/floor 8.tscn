@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
-[ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 

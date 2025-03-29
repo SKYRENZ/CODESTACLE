@@ -31,6 +31,7 @@ DialogueHelper="*res://SCRIPTS/Mechanics/Dialogue/DialogueHelper.gd"
 ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
 VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 FloorData="*res://floor_data.gd"
+Transition="*res://Transition.tscn"
 
 [dialogue_manager]
 

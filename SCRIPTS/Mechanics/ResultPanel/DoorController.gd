@@ -40,7 +40,7 @@ func _unhandled_input(event):
 
 func handle_floor_completion():
 	print("Handling floor completion...")
-	
+
 	# Stop and save timer
 	if timer_manager and timer_manager.timer_running:
 		var elapsed_time = timer_manager.stop_timer()
@@ -82,7 +82,7 @@ func handle_floor_completion():
 
 func _setup_results_panel(panel):
 	print("Setting up results panel...")
-	
+
 	# Make sure the panel is visible
 	if panel.has_node("ColorRect/Panel"):
 		panel.get_node("ColorRect/Panel").visible = true
@@ -105,7 +105,7 @@ func _setup_results_panel(panel):
 
 func _on_continue_pressed(panel):
 	print("Continue button pressed!")
-	
+
 	# Unpause game
 	get_tree().paused = false
 	
@@ -123,13 +123,37 @@ func get_player_score() -> int:
 	return 0
 
 func transition_to_next_floor():
-	print("Transitioning to next floor: %s" % next_floor_path)
-	
+	print("🚪 Transitioning to next floor: %s" % next_floor_path)
+
+	# Get the Transition node
+	var transition = get_node_or_null("/root/Transition")
+	if transition and transition.has_method("fade_out"):
+		print("🔄 Fading out before changing scene...")
+		transition.fade_out()
+
+		# Ensure AnimationPlayer exists and wait for animation
+		var anim_player = transition.get_node_or_null("AnimationPlayer")
+		if anim_player:
+			print("⏳ Waiting for fade-out animation...")
+			await anim_player.animation_finished
+			print("✔ Fade-out animation finished!")
+		else:
+			print("⚠ No AnimationPlayer found in Transition.")
+
 	# Ensure game is unpaused
 	get_tree().paused = false
-	
+
 	# Change scene if path is valid
 	if next_floor_path != "" and ResourceLoader.exists(next_floor_path):
+		print("🛠 Changing scene to %s..." % next_floor_path)
 		get_tree().change_scene_to_file(next_floor_path)
+
+		# Wait a frame before fading in (only if tree exists)
+		if get_tree():
+			await get_tree().process_frame
+		
+		if transition and transition.has_method("fade_in"):
+			print("🎬 Fading in new scene...")
+			transition.fade_in()
 	else:
-		printerr("Cannot transition: Invalid or missing next floor path")
+		printerr("❌ ERROR: Cannot transition - Invalid or missing scene path")

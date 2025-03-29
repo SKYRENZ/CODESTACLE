@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4qjmmub1w4ib"]
 
 [ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="1_3i2b0"]
-[ext_resource type="Script" uid="uid://c30wwwqod5ile" path="res://SCRIPTS/Mechanics/HUD/Objectives/objectivesHUD.gd" id="1_nyhhm"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/HUD/Objectives/objectivesHUD.gd" id="1_nyhhm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nyhhm"]
 font = ExtResource("1_3i2b0")

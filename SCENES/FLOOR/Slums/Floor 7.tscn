@@ -1172,7 +1172,6 @@ position = Vector2(-24, -1)
 collision_layer = 32
 script = ExtResource("10_a5nq2")
 dialogue_resource = ExtResource("8_vp7op")
-dialogue_start = "signage2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 2"]
 position = Vector2(265, 554)

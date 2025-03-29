@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccdye2d02ld6m"]
+[gd_scene load_steps=12 format=3 uid="uid://ccdye2d02ld6m"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
+[ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkbqg"]
 line_spacing = 5.0
@@ -11,7 +11,7 @@ shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo0cb"]
 font_size = 35
-font_color = Color(0.992157, 0.807843, 0.666667, 1)
+font_color = Color(0.921569, 0.862745, 0.356863, 1)
 shadow_size = 3
 shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
 
@@ -21,7 +21,7 @@ font_color = Color(0.956863, 0.513726, 0.490196, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_spxw3"]
 font_size = 35
-font_color = Color(0.992157, 0.807843, 0.666667, 1)
+font_color = Color(0.92075, 0.864399, 0.356492, 1)
 shadow_size = 3
 shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
 
@@ -30,8 +30,22 @@ font_size = 30
 font_color = Color(0.956863, 0.513726, 0.490196, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1rut"]
-font_size = 27
-font_color = Color(0.992157, 0.807843, 0.666667, 1)
+font_size = 32
+font_color = Color(0.921569, 0.862745, 0.356863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w730j"]
+font_size = 21
+font_color = Color(0.999056, 1, 0.0694165, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k2l0e"]
+font_size = 22
+font_color = Color(1, 1, 0.0705882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_occai"]
+font_size = 22
+font_color = Color(1, 1, 0.0705882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vdw5"]
 
 [node name="Control" type="CanvasLayer"]
 script = ExtResource("1_xkbqg")
@@ -43,13 +57,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -391.5
-offset_top = -236.5
-offset_right = 391.5
-offset_bottom = 236.5
+offset_left = -391.0
+offset_top = -236.0
+offset_right = 497.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.152941, 0.211765, 0.231373, 1)
+color = Color(0.262727, 0.181329, 0.108937, 1)
 
 [node name="Panel" type="Panel" parent="ColorRect"]
 modulate = Color(0.6, 0.72549, 0.596078, 1)
@@ -61,10 +75,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -370.0
-offset_top = -215.0
-offset_right = 370.0
-offset_bottom = 215.0
+offset_left = -430.0
+offset_top = -266.5
+offset_right = 420.0
+offset_bottom = 268.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -87,10 +101,10 @@ horizontal_alignment = 1
 [node name="quiz score" type="Label" parent="ColorRect"]
 z_index = 5
 layout_mode = 0
-offset_left = 53.5
-offset_top = 176.5
-offset_right = 294.5
-offset_bottom = 249.5
+offset_left = 46.0
+offset_top = 121.0
+offset_right = 287.0
+offset_bottom = 194.0
 text = "Quiz Score:"
 label_settings = SubResource("LabelSettings_oo0cb")
 
@@ -109,10 +123,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 56.0
-offset_top = 25.5
-offset_right = 244.0
-offset_bottom = 74.5
+offset_left = 46.0
+offset_top = -101.5
+offset_right = 234.0
+offset_bottom = -52.5
 grow_vertical = 2
 text = "Floor Time:"
 label_settings = SubResource("LabelSettings_spxw3")
@@ -129,10 +143,10 @@ label_settings = SubResource("LabelSettings_h5g7m")
 [node name="Button" type="Button" parent="ColorRect"]
 z_index = 5
 layout_mode = 0
-offset_left = 272.5
-offset_top = 367.5
-offset_right = 486.5
-offset_bottom = 415.5
+offset_left = 331.0
+offset_top = 469.0
+offset_right = 545.0
+offset_bottom = 517.0
 
 [node name="Continue" type="Label" parent="ColorRect/Button"]
 z_index = 1
@@ -150,6 +164,70 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Continue"
 label_settings = SubResource("LabelSettings_s1rut")
+
+[node name="Points" type="Label" parent="ColorRect"]
+z_index = 10
+layout_mode = 0
+offset_left = 51.0
+offset_top = 245.0
+offset_right = 156.0
+offset_bottom = 290.0
+text = "Points:"
+label_settings = SubResource("LabelSettings_s1rut")
+
+[node name="NPC" type="Label" parent="ColorRect"]
+z_index = 10
+layout_mode = 0
+offset_left = 132.0
+offset_top = 343.0
+offset_right = 332.0
+offset_bottom = 373.0
+text = "Engaged with NPCs:"
+label_settings = SubResource("LabelSettings_w730j")
+
+[node name="NPC Score" type="Label" parent="ColorRect/NPC"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 1.0
+offset_right = 253.0
+offset_bottom = 32.0
+label_settings = SubResource("LabelSettings_k2l0e")
+
+[node name="Sign" type="Label" parent="ColorRect"]
+z_index = 10
+layout_mode = 0
+offset_left = 131.0
+offset_top = 305.0
+offset_right = 248.0
+offset_bottom = 328.0
+text = "Reading a Sign:"
+label_settings = SubResource("LabelSettings_w730j")
+
+[node name="Sign Score" type="Label" parent="ColorRect/Sign"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -1.0
+offset_right = 210.0
+offset_bottom = 30.0
+label_settings = SubResource("LabelSettings_occai")
+
+[node name="Coins" type="Label" parent="ColorRect"]
+z_index = 10
+layout_mode = 0
+offset_left = 131.0
+offset_top = 378.0
+offset_right = 293.0
+offset_bottom = 408.0
+text = "Gathered Coins:"
+label_settings = SubResource("LabelSettings_w730j")
+
+[node name="Gathered Coins" type="Label" parent="ColorRect/Coins"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 3.0
+offset_right = 253.0
+offset_bottom = 26.0
+label_settings = SubResource("LabelSettings_7vdw5")
 
 [node name="DimBackground" type="ColorRect" parent="."]
 offset_right = 1307.0

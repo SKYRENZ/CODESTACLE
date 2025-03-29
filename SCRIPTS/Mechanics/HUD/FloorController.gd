@@ -37,7 +37,7 @@ func _ready():
 	print("Doors found:", doors.size())
 	
 	# PASS info to player
-	pass_info_to_player()
+#	pass_info_to_player()
 
 func add_gear_hud():
 	GearScene_instance = GearScene.instantiate()
@@ -58,14 +58,14 @@ func add_progress_bar_hud():
 	add_child(progress_bar_instance)
 	print("Progress bar instance created:", progress_bar_instance)
 
-func update_progress_bar(value: float):
+"""func update_progress_bar(value: float):
 	var canvas_layer = get_tree().get_root().get_node("ProgressBar") # Adjust path if needed
 	if canvas_layer:
 		print("CanvasLayer (ProgressBar) found:", canvas_layer.name)
 		canvas_layer.update_progress(value)
 	else:
 		print("Error: CanvasLayer (ProgressBar) not found!")
-		print("Current scene tree:", get_tree().get_root().get_children())
+		print("Current scene tree:", get_tree().get_root().get_children())"""
 
 func reset_objectives_for_new_floor(signage_count: int):
 	ObjectiveManager.set_total_objectives(signage_count, npc_count) 
@@ -80,7 +80,7 @@ func _exit_tree():
 		timer_manager.stop_timer()
 		timer_manager.save_times()
 
-func pass_info_to_player():
+"""func pass_info_to_player():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		var player = players[0]
@@ -101,4 +101,4 @@ func calculate_max_distance() -> float:
 			if dist > max_dist:
 				max_dist = dist
 	print("Max distance calculated:", max_dist)
-	return max_dist
+	return max_dist"""

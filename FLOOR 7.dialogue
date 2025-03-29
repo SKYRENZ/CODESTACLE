@@ -1,0 +1,33 @@
+~ Runistart
+Runistart:"Welcome back, B-01! Now, let's delve into the heart of JavaScript code: statements! These are the instructions that tell the computer what to do."
+=> END
+~ signage1
+Signage 1:"In JavaScript, a statement is a command that the interpreter executes. A program is a sequence of statements."
+B-01:"Beep boop! Statements? So, how do I write them?"
+Runi:"A statement usually ends with a semicolon (;). Although JavaScript often automatically inserts semicolons, it's good practice to include them explicitly for clarity."
+=> END
+~ signage2
+Sign 2:"A simple JavaScript statement:let x = 5;This declares a variablexand assigns it the value5."
+=> END
+
+~ signage3
+Sign 3:"Statements can be grouped together into code blocks using curly braces{}. Code blocks are often used in loops and conditional statements."
+=> END
+
+~ signage4
+Sign 4:"Example of a code block:{ let y = 10; console.log(y); }"
+
+=> END
+
+~ signage5
+Sign 5:"Multiple statements can be written on one line, but it's generally better to keep them separate for readability.let a = 1; let b = 2;is valid but less readable than writing each statement on a new line."
+
+=> END
+~ Runiquiz
+Runiquiz:"Excellent work, B-01! You've reached the end of Floor 4. Now, it's time to test your understanding of JavaScript statements!"
+
+=> END
+
+~ Runiend
+Runiend:"Fantastic, B-01! You now understand how to write JavaScript statements. Onward to the next lesson!"
+=> END

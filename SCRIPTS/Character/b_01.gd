@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	animated_sprite_2d.flip_h = facing_direction < 0
 
 	# Update Progress Bar every frame
-	_update_progress()
+	#_update_progress()
 
 func apply_gravity():
 	print("Gravity reapplied to player!")
@@ -120,7 +120,7 @@ func _on_checkpoint_reached(checkpoint: Area2D):
 		print("Error: Checkpoint missing 'Point'!")
 
 # NEW: Function to update proximity HUD
-func _update_progress():
+"""func _update_progress():
 	if doors.is_empty() or floor_controller == null:
 		print("Error: Doors list is empty or floor controller is null!")
 		return
@@ -136,3 +136,4 @@ func _update_progress():
 	progress = clamp(progress, 0, 1)
 	print("Progress calculated:", progress)
 	floor_controller.update_progress_bar(progress)
+"""

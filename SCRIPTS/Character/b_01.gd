@@ -8,13 +8,13 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const CLIMB_SPEED = 200.0
-const OFFSET_DELAY = 0.0  # Delay before changing camera offset
+const OFFSET_DELAY = 0.0
 const MOVEMENT_THRESHOLD = 10  
-const CENTER_DELAY = 0.42  # Time to stop before centering the camera
-const CAMERA_FOLLOW_SPEED = 0.8  # Slower speed for smoother panning
-const MOVEMENT_SPAM_THRESHOLD = 200  # Speed at which we consider lateral movement "spammed"
-const SPAM_COOLDOWN = 0.8  # Cooldown time before re-enabling panning
-const PANNING_DELAY = 0.8  # Delay time before panning starts after a direction change
+const CENTER_DELAY = 0.42
+const CAMERA_FOLLOW_SPEED = 0.8
+const MOVEMENT_SPAM_THRESHOLD = 200
+const SPAM_COOLDOWN = 0.8
+const PANNING_DELAY = 0.8
 
 var is_on_ladder = false
 var movement_locked = false
@@ -30,37 +30,36 @@ var camera_offset = Vector2(180, 0)
 var target_offset = Vector2.ZERO
 var direction_change_timer = 0.5
 var last_direction = 0
-var camera_stop = 0.0  # Timer to control centering the camera when stopped
-var camera_delay_timer = 0.5  # Timer to control camera delay after direction change
+var camera_stop = 0.0
+var camera_delay_timer = 0.5
 
-# Track lateral movement speed to detect spam
 var last_lateral_speed = 0.0
 var spam_timer = 0.0
 var panning_locked = false
-var panning_delay_timer = 0.5  # Timer to control panning delay
+var panning_delay_timer = 0.5
 
 func _ready():
 	print("Player script is running")
 	if not is_in_group("player"):
 		add_to_group("player")
-	
+
 	floor_controller = get_tree().get_current_scene()
-	
+
 	if floor_controller:
 		print("Floor controller found:", floor_controller.name)
 	else:
 		print("Error: Floor controller not found!")
-	
+
 	camera.position_smoothing_enabled = false
-	camera.position_smoothing_speed = 5.0
-	
+	camera.position_smoothing_speed = 0.0
+
 func _physics_process(delta: float) -> void:
 	if movement_locked:
 		if not is_on_floor() and not is_on_ladder:
 			velocity += get_gravity() * delta
 			move_and_slide()
 		return
-	
+
 	var ladderCollider = ladder_ray_cast.get_collider()
 	is_on_ladder = ladderCollider != null
 
@@ -78,7 +77,6 @@ func _physics_process(delta: float) -> void:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
 
-	# Update Progress Bar every frame
 	_update_progress()
 
 func apply_gravity():
@@ -98,18 +96,16 @@ func _movement(delta):
 		print("Jumping animation triggered")
 
 	var direction := Input.get_axis("left", "right")
-	var lateral_speed = abs(velocity.x)  # Get lateral speed
+	var lateral_speed = abs(velocity.x)
 
-	# If lateral movement is spammed (rapid change), lock panning
 	if lateral_speed > MOVEMENT_SPAM_THRESHOLD:
 		spam_timer += delta
-		if spam_timer > SPAM_COOLDOWN:  # Cooldown before re-enabling panning
-			panning_locked = false  # Allow panning again after cooldown
+		if spam_timer > SPAM_COOLDOWN:
+			panning_locked = false
 	else:
 		spam_timer = 0.0
-		panning_locked = false  # Unlock camera panning if movement stops spamming
+		panning_locked = false
 
-	# Apply the movement if panning is not locked
 	if not panning_locked:
 		if direction:
 			velocity.x = direction * SPEED
@@ -158,54 +154,45 @@ func _on_checkpoint_reached(checkpoint: Area2D):
 		print("Error: Checkpoint missing 'Point'!")
 
 func _process(delta: float):
-	var direction = sign(velocity.x)  # Get movement direction (-1, 0, 1)
-	
-	# Detect small movements (e.g., when stuck)
+	var direction = sign(velocity.x)
+
 	if abs(velocity.x) < MOVEMENT_THRESHOLD:
-		direction_change_timer = 0  # Reset timer if movement is too small
+		direction_change_timer = 0
 	else:
-		# If direction changes, reset timer
 		if direction != 0 and direction != last_direction:
 			direction_change_timer = 0  
 		else:
-			direction_change_timer += delta  # Increase timer if movement is stable
+			direction_change_timer += delta  
 
-	last_direction = direction  # Update last movement direction
+	last_direction = direction  
 
-	# **Center camera immediately after a direction change**
 	if direction != last_direction and direction != 0 and not panning_locked:
-		camera_stop = 0  # Reset stop timer when direction changes
-		target_offset = Vector2.ZERO  # Instantly center camera on change
+		camera_stop = 0  
+		target_offset = Vector2.ZERO  
 
-	# **Center the camera when player stops for .3 seconds**
 	if velocity.x == 0:
 		camera_stop += delta
 		if camera_stop >= CENTER_DELAY:
-			target_offset = Vector2.ZERO  # Center the camera immediately
+			target_offset = Vector2.ZERO  
 	else:
-		camera_stop = 0  # Reset the stop timer when moving
+		camera_stop = 0  
 
-	# **Smooth panning effect when moving**
 	if direction_change_timer >= OFFSET_DELAY:
 		if direction > 0 and not panning_locked:
 			target_offset = camera_offset
 		elif direction < 0 and not panning_locked:
 			target_offset = -camera_offset
 
-	# Handle panning delay
 	if panning_delay_timer > 0:
-		panning_delay_timer -= delta  # Decrease delay timer
-		return  # Skip the actual panning until delay is finished
+		panning_delay_timer -= delta  
+		return  
 
-	# **Smoothly transition the camera offset with a slower speed, only if panning is not locked**
 	if not panning_locked:
 		camera.offset = lerp(camera.offset, target_offset, CAMERA_FOLLOW_SPEED * delta)
 
-	# **Add panning delay after direction change**
 	if direction != last_direction and direction != 0:
-		panning_delay_timer = PANNING_DELAY  # Start the panning delay
+		panning_delay_timer = PANNING_DELAY  
 
-#NEW: Function to update proximity HUD (Progress Bar)
 func _update_progress():
 	if doors.is_empty() or floor_controller == null:
 		print("Error: Doors list is empty or floor controller is null!")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cqotakj0fnnbe"]
+[gd_scene load_steps=32 format=4 uid="uid://cqotakj0fnnbe"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_t5ei8"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4gso0"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/Quiz Panel/RodtangQUIZ.tscn" id="17_jm1gl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="18_a1r14"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="19_g6c34"]
+[ext_resource type="Script" uid="uid://d2um672rnl4b0" path="res://SCRIPTS/Camera/Slums/Floor 5/Zoom1.gd" id="19_w332r"]
+[ext_resource type="Script" uid="uid://dolaqe60wvesx" path="res://SCRIPTS/Camera/Slums/Floor 5/Zoom2.gd" id="20_diorx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -980,5 +982,24 @@ floor_number = 5
 position = Vector2(12.6061, -132.848)
 shape = SubResource("RectangleShape2D_q25r6")
 
+[node name="Camera Zoom" type="Node" parent="TextureRect/ColorRect"]
+
+[node name="Area2D1" type="Area2D" parent="TextureRect/ColorRect/Camera Zoom"]
+script = ExtResource("19_w332r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/ColorRect/Camera Zoom/Area2D1"]
+polygon = PackedVector2Array(573, 685, 602, 729, 656, 734, 659, 561, 325, 556, 291, 545, 270, 452, 238, 405, -8, 399, -6, 626, 110, 626, 110, 642, 240, 642, 247, 674, 389, 674, 429, 666, 451, 689, 479, 688, 517, 669, 563, 677)
+
+[node name="Area2D2" type="Area2D" parent="TextureRect/ColorRect/Camera Zoom"]
+script = ExtResource("20_diorx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/ColorRect/Camera Zoom/Area2D2"]
+polygon = PackedVector2Array(1021, 496, 1020, 621, 1020, 654, 1050, 686, 1079, 689, 1121, 679, 1148, 680, 1166, 675, 1204, 555, 1202, 466, 1191, 459, 1184, 431, 1168, 412, 1105, 400, 1013, 414)
+
 [node name="Slums door" parent="." instance=ExtResource("19_g6c34")]
 position = Vector2(1822, 289)
+
+[connection signal="body_entered" from="TextureRect/ColorRect/Camera Zoom/Area2D1" to="TextureRect/ColorRect/Camera Zoom/Area2D1" method="_on_body_entered"]
+[connection signal="body_exited" from="TextureRect/ColorRect/Camera Zoom/Area2D1" to="TextureRect/ColorRect/Camera Zoom/Area2D1" method="_on_body_exited"]
+[connection signal="body_entered" from="TextureRect/ColorRect/Camera Zoom/Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="TextureRect/ColorRect/Camera Zoom/Area2D2" to="." method="_on_area_2d_2_body_exited"]

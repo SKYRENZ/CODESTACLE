@@ -4,7 +4,7 @@ extends Area2D
 
 var original_offset: Vector2
 var normal_zoom = Vector2(2, 2)
-var zoomed_out = Vector2(1, 1)  # Adjust as needed
+var zoomed_out = Vector2(2.3, 2.3)  # Adjust as needed
 var original_position_smoothing: bool
 var zoom_speed = 1.5  # Increased duration for smoother transition
 

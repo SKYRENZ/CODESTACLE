@@ -26,9 +26,9 @@ var max_distance = 0.0
 var floor_controller = null
 
 # Camera movement variables
-var camera_offset = Vector2(180, 0)
+var camera_offset = Vector2(200, 0)
 var target_offset = Vector2.ZERO
-var direction_change_timer = 0.5
+var direction_change_timer = 1.0
 var last_direction = 0
 var camera_stop = 0.0
 var camera_delay_timer = 0.5
@@ -36,7 +36,7 @@ var camera_delay_timer = 0.5
 var last_lateral_speed = 0.0
 var spam_timer = 0.0
 var panning_locked = false
-var panning_delay_timer = 0.5
+var panning_delay_timer = 1.0
 
 func _ready():
 	print("Player script is running")
@@ -77,7 +77,6 @@ func _physics_process(delta: float) -> void:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
 
-	_update_progress()
 
 func apply_gravity():
 	print("Gravity reapplied to player!")
@@ -192,20 +191,3 @@ func _process(delta: float):
 
 	if direction != last_direction and direction != 0:
 		panning_delay_timer = PANNING_DELAY  
-
-func _update_progress():
-	if doors.is_empty() or floor_controller == null:
-		print("Error: Doors list is empty or floor controller is null!")
-		return
-
-	var closest_distance = INF
-	for door in doors:
-		if door:
-			var dist = global_position.distance_to(door.global_position)
-			if dist < closest_distance:
-				closest_distance = dist
-
-	var progress = 1.0 - (closest_distance / max_distance)
-	progress = clamp(progress, 0, 1)
-	print("Progress calculated:", progress)
-	floor_controller.update_progress_bar(progress)

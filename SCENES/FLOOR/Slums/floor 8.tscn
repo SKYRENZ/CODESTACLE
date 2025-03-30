@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://1h5vq30pmrvq"]
+[gd_scene load_steps=53 format=4 uid="uid://1h5vq30pmrvq"]
 
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_01es4"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="2_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_biyl2"]
@@ -610,6 +611,7 @@ func _on_body_entered(body):
 size = Vector2(744, 20)
 
 [node name="Floor6" type="Node2D"]
+script = ExtResource("1_01es4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

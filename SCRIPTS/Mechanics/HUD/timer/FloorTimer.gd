@@ -3,6 +3,7 @@ extends CanvasLayer
 var timer_label
 var floor_label
 var timer_manager = null
+var paused = false  # Tracks whether the timer display should pause
 
 # Called when the node enters the scene tree
 func _ready():
@@ -19,11 +20,18 @@ func _ready():
 		
 	# Update floor label
 	floor_label.text = "FLOOR: " + str(timer_manager.current_floor)
-	
-	# Initial timer display is already set in the scene
 
 # Called every frame
 func _process(delta):
+	if paused or timer_manager.is_paused:  # Stop updating if paused
+		return
+	
 	if timer_manager and timer_manager.timer_running:
 		var current_time = Time.get_unix_time_from_system() - timer_manager.start_time
 		timer_label.text = timer_manager.format_time(current_time)
+
+# ✅ Properly pause and resume the timer display
+func set_timer_paused(state: bool):
+	paused = state
+	if timer_manager:
+		timer_manager.set_timer_paused(state)

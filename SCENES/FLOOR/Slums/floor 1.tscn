@@ -952,5 +952,5 @@ results_panel_path = "uid://ccdye2d02ld6m"
 position = Vector2(3.87877, -1.45454)
 shape = SubResource("RectangleShape2D_g35fq")
 
-[node name="Slums door" parent="TextureRect" instance=ExtResource("15_ydj8t")]
+[node name="Slums door" parent="TextureRect" groups=["door"] instance=ExtResource("15_ydj8t")]
 position = Vector2(1805, 561)

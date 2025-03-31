@@ -79,30 +79,3 @@ func _exit_tree():
 	if timer_manager and timer_manager.timer_running and timer_manager.current_floor == floor_number:
 		timer_manager.stop_timer()
 		timer_manager.save_times()
-
-"""func pass_info_to_player():
-	var players = get_tree().get_nodes_in_group("player")
-	if players.size() > 0:
-		var player = players[0]
-		player.doors = doors
-		player.max_distance = calculate_max_distance()
-		print("Player info passed: Doors =", doors.size(), ", Max Distance =", player.max_distance)
-
-func calculate_max_distance() -> float:
-	var max_dist = 0.0
-	var player = get_node("Player") # Adjust path if needed
-	if not player:
-		print("Error: Player node not found!")
-		return 0.0
-	
-	for door in doors:
-		if door:
-			var dist = player.global_position.distance_to(door.global_position)
-			if dist > max_dist:
-				max_dist = dist
-	print("Max distance calculated:", max_dist)
-	return max_dist"""
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

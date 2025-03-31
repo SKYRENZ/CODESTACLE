@@ -10,7 +10,7 @@ const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objective
 const GearScene = preload("res://SCENES/Mechanics/Option/GearHud.tscn")
 const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progress bar.tscn")
 
-const SceneIntro = preload("res://SceneIntro.tscn")  # ✅ SceneIntro preload
+const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn")  # ✅ SceneIntro preload
 
 var timer_ui_instance = null
 var objectives_instance = null
@@ -73,7 +73,7 @@ func add_progress_bar_hud():
 	print("Progress bar instance created:", progress_bar_instance)
 
 
-func reset_objectives_for_new_floor(signage_count: int):
+func reset_objectives_for_new_floor(new_signage_count: int):
 	ObjectiveManager.set_total_objectives(signage_count, npc_count)
 
 func update_game_objective(index: int, text: String):

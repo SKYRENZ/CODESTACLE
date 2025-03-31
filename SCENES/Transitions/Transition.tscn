@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbxet2oox25h0"]
 
-[ext_resource type="Script" uid="uid://digtwlgckf3nc" path="res://Transition.gd" id="1_ws5yv"]
+[ext_resource type="Script" uid="uid://digtwlgckf3nc" path="res://SCRIPTS/Transitions/Transition.gd" id="1_pac15"]
 
 [sub_resource type="Animation" id="Animation_jaa4l"]
 length = 0.001
@@ -55,7 +55,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_ws5yv")
+script = ExtResource("1_pac15")
 
 [node name="BlackScreen" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 1)

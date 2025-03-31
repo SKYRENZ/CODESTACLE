@@ -1,17 +1,17 @@
 [gd_scene load_steps=63 format=4 uid="uid://cojlhv3w8q6gc"]
 
-[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/timer/FloorController.gd" id="1_3sguh"]
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_3sguh"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_aagob"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_g76te"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_0ywbu"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="10_secm6"]
-[ext_resource type="Resource" uid="uid://ck1213lxvkyg1" path="res://FLOOR 9.dialogue" id="12_3sguh"]
-[ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="12_bdw8k"]
+[ext_resource type="Resource" uid="uid://ck1213lxvkyg1" path="res://DIALOGUE/FLOOR 9.dialogue" id="12_8xpl6"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="12_bdw8k"]
 [ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="12_d0nm8"]
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="13_gy05e"]
-[ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="13_lu5w7"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="13_lu5w7"]
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="14_0ywbu"]
-[ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="14_v21n8"]
+[ext_resource type="Script" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="14_v21n8"]
 [ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="15_fd00x"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="15_vj2gn"]
 [ext_resource type="Script" uid="uid://cu8ptd5rar217" path="res://SCRIPTS/Floor/Slums/floor 2/F2runi_quiz.gd" id="17_wry23"]
@@ -1379,7 +1379,7 @@ shape = SubResource("RectangleShape2D_aa23p")
 [node name="start dialogue" type="Area2D" parent="Dialogues"]
 collision_layer = 32
 script = ExtResource("10_secm6")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/start dialogue"]
 position = Vector2(175, 771)
@@ -1388,7 +1388,7 @@ shape = SubResource("RectangleShape2D_wry23")
 [node name="signage 1" type="Area2D" parent="Dialogues"]
 collision_layer = 32
 script = ExtResource("12_bdw8k")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 dialogue_start = "signage1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 1"]
@@ -1400,7 +1400,7 @@ z_index = 3
 position = Vector2(-24, -1)
 collision_layer = 32
 script = ExtResource("13_lu5w7")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 2"]
 position = Vector2(215, 559)
@@ -1409,7 +1409,7 @@ shape = SubResource("RectangleShape2D_d14r8")
 [node name="signage 3" type="Area2D" parent="Dialogues"]
 collision_layer = 32
 script = ExtResource("14_v21n8")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 dialogue_start = "signage3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 3"]
@@ -1419,7 +1419,7 @@ shape = SubResource("RectangleShape2D_d14r8")
 [node name="signage 4" type="Area2D" parent="Dialogues"]
 collision_layer = 32
 script = ExtResource("12_bdw8k")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 dialogue_start = "signage4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 4"]
@@ -1429,7 +1429,7 @@ shape = SubResource("RectangleShape2D_d14r8")
 [node name="signage 5" type="Area2D" parent="Dialogues"]
 collision_layer = 32
 script = ExtResource("12_bdw8k")
-dialogue_resource = ExtResource("12_3sguh")
+dialogue_resource = ExtResource("12_8xpl6")
 dialogue_start = "signage5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 5"]

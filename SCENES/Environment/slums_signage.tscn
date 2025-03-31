@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbk4k3rjm4ix1"]
 
 [ext_resource type="Texture2D" uid="uid://woxqoqx5nak7" path="res://ASSETS/Environment/Signage/slumss_sign_1.png" id="1_5f5md"]
-[ext_resource type="Script" uid="uid://bdu4nwxdejoad" path="res://SCRIPTS/Environment/SignageLabel.gd" id="2_lukml"]
+[ext_resource type="Script" path="res://SCRIPTS/Environment/SignageLabel.gd" id="2_lukml"]
 
 [sub_resource type="FontFile" id="FontFile_5f5md"]
 subpixel_positioning = 0

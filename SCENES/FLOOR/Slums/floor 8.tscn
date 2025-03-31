@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://1h5vq30pmrvq"]
+[gd_scene load_steps=63 format=4 uid="uid://1h5vq30pmrvq"]
 
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/timer/FloorController.gd" id="1_j1m7x"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="2_l3kwt"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_biyl2"]
@@ -9,7 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
-[ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
+[ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/floor 1/RuniD1.gd" id="11_eih0j"]
+[ext_resource type="Resource" uid="uid://clgy2ml5pyygy" path="res://FLOOR 8.dialogue" id="13_s4gq6"]
+[ext_resource type="Script" uid="uid://dxp06w3j6ldj1" path="res://SCRIPTS/Floor/Slums/floor 1/signage_2.gd" id="13_udhfs"]
+[ext_resource type="Script" uid="uid://bnnnp855abu8o" path="res://SCRIPTS/Floor/Slums/floor 1/signage_3.gd" id="14_s4gq6"]
+[ext_resource type="Script" uid="uid://dytjx7gf57cxr" path="res://SCRIPTS/Floor/Slums/floor 1/signage_4.gd" id="15_epylf"]
+[ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="16_0f4ds"]
+[ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="17_udhfs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
 
@@ -609,7 +617,20 @@ func _on_body_entered(body):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
 size = Vector2(744, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b6pb"]
+size = Vector2(49, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86qcg"]
+size = Vector2(42, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4gq6"]
+size = Vector2(20, 28.6061)
+
 [node name="Floor6" type="Node2D"]
+script = ExtResource("1_j1m7x")
+floor_number = 8
+signage_count = 6
+npc_count = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -643,9 +664,6 @@ color = Color(0, 0.133333, 0.133333, 1)
 visibility_layer = 8
 z_index = 5
 position = Vector2(91, 969)
-
-[node name="slumsdoor_transtoflr2" parent="TextureRect" instance=ExtResource("2_l3kwt")]
-position = Vector2(1762, 561)
 
 [node name="map" type="Node" parent="."]
 
@@ -881,3 +899,111 @@ shape = SubResource("RectangleShape2D_6nwro")
 position = Vector2(1581, 735)
 scale = Vector2(1.14058, 1)
 texture = ExtResource("9_tdjog")
+
+[node name="Dialogues" type="Node" parent="."]
+
+[node name="start dialogue" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("11_eih0j")
+dialogue_resource = ExtResource("13_s4gq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/start dialogue"]
+position = Vector2(278, 769)
+shape = SubResource("RectangleShape2D_2b6pb")
+
+[node name="signage 1" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("13_udhfs")
+dialogue_resource = ExtResource("13_s4gq6")
+dialogue_start = "signage1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 1"]
+position = Vector2(419, 768)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="signage 2" type="Area2D" parent="Dialogues"]
+z_index = 3
+position = Vector2(-24, -1)
+collision_layer = 32
+script = ExtResource("14_s4gq6")
+dialogue_resource = ExtResource("13_s4gq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 2"]
+position = Vector2(724, 493)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="signage 3" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("15_epylf")
+dialogue_resource = ExtResource("13_s4gq6")
+dialogue_start = "signage3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 3"]
+position = Vector2(571, 496)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="signage 4" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("13_udhfs")
+dialogue_resource = ExtResource("13_s4gq6")
+dialogue_start = "signage4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 4"]
+position = Vector2(351, 258)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="signage 5" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("13_udhfs")
+dialogue_resource = ExtResource("13_s4gq6")
+dialogue_start = "signage5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 5"]
+position = Vector2(594, 268)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="signage 6" type="Area2D" parent="Dialogues"]
+collision_layer = 32
+script = ExtResource("13_udhfs")
+dialogue_resource = ExtResource("13_s4gq6")
+dialogue_start = "signage6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 6"]
+position = Vector2(1194, 398)
+shape = SubResource("RectangleShape2D_86qcg")
+
+[node name="Signage" type="Node" parent="."]
+
+[node name="SlumsSign1" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(416, 763)
+
+[node name="SlumsSign2" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(701, 492)
+
+[node name="SlumsSign3" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(572, 493)
+
+[node name="SlumsSign4" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(352, 259)
+
+[node name="SlumsSign5" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(593, 265)
+
+[node name="SlumsSign6" parent="Signage" instance=ExtResource("16_0f4ds")]
+position = Vector2(1195, 395)
+
+[node name="show result" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(1773, 629)
+scale = Vector2(2.0625, 2.0625)
+script = ExtResource("17_udhfs")
+next_floor_path = "res://SCENES/FLOOR/Slums/floor 9.tscn"
+floor_number = 8
+results_panel_path = "uid://ccdye2d02ld6m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="show result"]
+position = Vector2(3.87877, -1.45454)
+shape = SubResource("RectangleShape2D_s4gq6")
+
+[node name="Slums door" parent="." instance=ExtResource("2_l3kwt")]
+position = Vector2(1748, 592)

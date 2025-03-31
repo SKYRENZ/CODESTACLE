@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=28 format=4 uid="uid://kgetvwqx48vl"]
 
-[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_7k0cc"]
+[ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/timer/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="3_ydj8t"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_47281"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_ydj8t"]
+[ext_resource type="PackedScene" uid="uid://b6ktadcnq5qes" path="res://SceneIntro.tscn" id="16_ydj8t"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -837,7 +838,7 @@ metadata/_edit_lock_ = true
 [node name="B-01" parent="TextureRect/Characters" instance=ExtResource("2_ttjng")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(1586.5, 595.646)
+position = Vector2(1576, 610)
 
 [node name="Runi" parent="TextureRect/Characters" instance=ExtResource("3_ydj8t")]
 position = Vector2(277, 777)
@@ -954,3 +955,5 @@ shape = SubResource("RectangleShape2D_g35fq")
 
 [node name="Slums door" parent="TextureRect" instance=ExtResource("15_ydj8t")]
 position = Vector2(1805, 561)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("16_ydj8t")]

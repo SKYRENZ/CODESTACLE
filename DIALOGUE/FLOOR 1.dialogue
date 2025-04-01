@@ -6,15 +6,15 @@ runi: "Think of it this way HTML builds the structure of a webpage, CSS styles i
 => END
 
 
-~ signage2
+~ signage1
 "JavaScript is used everywhere! From simple animations to complex web applications, it's the backbone of the modern web."
 => END
 
-~ signage3
+~ signage2
 "Why learn JavaScript? Because it opens doors to endless possibilities! You can create games, interactive maps, data visualizations, and much more."
 => END
 
-~ signage4
+~ signage3
  "JavaScript is the most popular programming language in the world. A skill for the future!"
 => END
 

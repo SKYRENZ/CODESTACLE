@@ -34,7 +34,7 @@ func _change_scene():
 
 	if target_scene == "res://SCENES/FLOOR/Slums/floor_1.tscn":
 		print("[Checkpoint] Using SceneIntro for transition to Floor 1")
-		var scene_intro = preload("res://SceneIntro.tscn").instantiate()
+		var scene_intro = preload("res://SCENES/Transitions/SceneIntro.tscn").instantiate()
 		get_tree().current_scene.add_child(scene_intro)
 		scene_intro.intro_finished.connect(_change_scene_to_floor1)
 	else:

@@ -1,6 +1,6 @@
 extends Control
 
-var firebase_api_key = "AIzaSyB02zOyEW28p26AAlVWrzRD1X3Hwznp1A"  # Firebase API Key
+var firebase_api_key = OS.get_environment("FIREBASE_API_KEY")  # Load API Key from .env
 var email = ""
 var password = ""
 var password_hidden = true  # Track password visibility state
@@ -61,16 +61,13 @@ func _is_valid_password(password: String) -> bool:
 
 # ✅ Callback for successful login
 func on_login_succeeded(auth_data: Dictionary) -> void:
-	print("✅ Login successful! Checking email verification status...")
+	print("✅ Login successful!")
 
 	var notification_label = get_node_or_null("NotificationLabel")
 	if notification_label:
-		notification_label.text = "✅ Login successful! Checking email verification..."
-
-	if auth_data.has("idtoken"):
-		check_email_verification(auth_data["idtoken"])
-	else:
-		print("❌ Error: No ID token found in auth_data!")
+		notification_label.text = "✅ Login successful! Redirecting..."
+	
+	get_tree().change_scene_to_file("res://SCENES/Main/main_menu.tscn")
 
 # ❌ Callback for failed login
 func on_login_failed(error_code: int, message: String) -> void:
@@ -78,64 +75,6 @@ func on_login_failed(error_code: int, message: String) -> void:
 	var notification_label = get_node_or_null("NotificationLabel")
 	if notification_label:
 		notification_label.text = "❌ Login failed: " + message
-
-# ✅ Check if email is verified using Firebase REST API
-func check_email_verification(user_id_token: String) -> void:
-	var url = "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=" + firebase_api_key
-	var headers = ["Content-Type: application/json"]
-	var body = {"idToken": user_id_token}
-
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(_on_verification_response)
-	http_request.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
-
-	print("🔍 Checking email verification status...")
-
-# ✅ Handle Firebase API response for verification check
-func _on_verification_response(result, response_code, headers, body):
-	var response = JSON.parse_string(body.get_string_from_utf8())
-	var notification_label = get_node_or_null("NotificationLabel")
-
-	if response and response.has("users") and response["users"].size() > 0:
-		var is_verified = response["users"][0].get("emailVerified", false)
-
-		if is_verified:
-			print("✅ Email is verified! Redirecting to main menu...")
-			if notification_label:
-				notification_label.text = "✅ Email verified! Redirecting..."
-			get_tree().change_scene_to_file("res://SCENES/Main/main_menu.tscn")
-		else:
-			print("❌ Email not verified. Please verify your email.")
-			if notification_label:
-				notification_label.text = "❌ Please verify your email before logging in."
-			await get_tree().create_timer(5.0).timeout
-			refresh_id_token()
-	else:
-		print("❌ Error: Failed to check email verification status.")
-
-# ✅ Refresh user token & re-check verification
-func refresh_id_token() -> void:
-	print("🔄 Refreshing user authentication...")
-	
-	var url = "https://securetoken.googleapis.com/v1/token?key=" + firebase_api_key
-	var headers = ["Content-Type: application/json"]
-	var body = {"grant_type": "refresh_token", "refresh_token": Firebase.Auth.refresh_token}
-
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(_on_refresh_token_response)
-	http_request.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
-
-# ✅ Handle Firebase Token Refresh
-func _on_refresh_token_response(result, response_code, headers, body):
-	var response = JSON.parse_string(body.get_string_from_utf8())
-
-	if response and response.has("id_token"):
-		print("✅ Refreshed ID Token:", response["id_token"])
-		check_email_verification(response["id_token"])
-	else:
-		print("❌ Failed to refresh ID token!")
 
 # ✅ Handles signup button click
 func _on_signup_button_pressed() -> void:
@@ -170,36 +109,5 @@ func _on_forgot_btn_pressed() -> void:
 
 	print("📩 Sending password reset email to:", email)
 
-	var url = "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=" + firebase_api_key
-	var headers = ["Content-Type: application/json"]
-	var body = {"requestType": "PASSWORD_RESET", "email": email}
-
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(_on_password_reset_response)
-	http_request.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
-
-# ✅ Handle Firebase Password Reset Response
-func _on_password_reset_response(result, response_code, headers, body):
-	var response = JSON.parse_string(body.get_string_from_utf8())
-	var notification_label = get_node_or_null("NotificationLabel")
-
-	if response and response.has("email"):
-		print("✅ Password reset email sent successfully!")
-		if notification_label:
-			notification_label.text = "📩 Password reset email sent! Check your inbox."
-	else:
-		print("❌ Failed to send password reset email.")
-		if notification_label:
-			notification_label.text = "❌ Error: Unable to send reset email."
-
-# ✅ Show/Hide Password Functionality
-func _on_show_password_button_pressed() -> void:
-	AudioPlayer.play_FX(transition_fx, -12.0)
-	var password_edit = get_node_or_null("Container/Login Container/User and Pass Container/Password Container/PasswordLine")
-
-	if password_edit:
-		password_hidden = !password_hidden
-		password_edit.secret = password_hidden
-	else:
-		print("❌ Error: Could not find PasswordLine")
+	Firebase.Auth.send_password_reset_email(email)
+	notification_label.text = "✅ Password reset email sent! Check your inbox."

@@ -132,5 +132,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_6txsl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n87ot")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ddwwi")
 
+[connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ColorRect/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="ColorRect/Exit" to="." method="_on_Exit_pressed"]

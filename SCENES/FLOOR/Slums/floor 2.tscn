@@ -790,7 +790,7 @@ size = Vector2(20, 640)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x28vg"]
 size = Vector2(20, 28.6061)
 
-[node name="Floor1" type="Node2D"]
+[node name="Floor3" type="Node2D"]
 script = ExtResource("1_x28vg")
 floor_number = 2
 signage_count = 3

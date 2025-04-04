@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bilupl7oyesr5"]
+[gd_scene load_steps=9 format=3 uid="uid://bilupl7oyesr5"]
 
 [ext_resource type="Script" uid="uid://c3cr26mv4kd6m" path="res://SCRIPTS/Option/Volume Script/Volume_Slider.gd" id="1_bui32"]
+[ext_resource type="Texture2D" uid="uid://bceoisyg7u0tv" path="res://ASSETS/BUTTONS/Option/closebuttonpressed.png" id="2_26r1l"]
+[ext_resource type="Texture2D" uid="uid://bivlq4yxegtba" path="res://ASSETS/BUTTONS/Option/closebutton.png" id="2_bui32"]
+[ext_resource type="Texture2D" uid="uid://y6ts4ij42o68" path="res://ASSETS/BUTTONS/Option/closebuttonhover.png" id="2_dgw17"]
+
+[sub_resource type="Theme" id="Theme_26r1l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rlr38"]
+texture = ExtResource("2_dgw17")
+region_rect = Rect2(1, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cclva"]
+texture = ExtResource("2_26r1l")
+region_rect = Rect2(1, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgw17"]
+texture = ExtResource("2_bui32")
+region_rect = Rect2(1, 1, 14, 14)
 
 [node name="VolumeSliders" type="CanvasLayer"]
 script = ExtResource("1_bui32")
@@ -88,12 +105,14 @@ step = 0.001
 anchors_preset = -1
 anchor_right = 0.01
 anchor_bottom = 0.028
-offset_left = 775.0
-offset_top = 57.0
-offset_right = 819.8
-offset_bottom = 71.76
-text = "close
-"
+offset_left = 774.0
+offset_top = 49.0
+offset_right = 813.2
+offset_bottom = 74.84
+theme = SubResource("Theme_26r1l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rlr38")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cclva")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dgw17")
 
 [connection signal="value_changed" from="ColorRect/Label/master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="ColorRect/Label2/BGM" to="." method="_on_bgm_value_changed"]

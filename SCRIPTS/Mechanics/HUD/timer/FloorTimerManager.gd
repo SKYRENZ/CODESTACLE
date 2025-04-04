@@ -7,6 +7,8 @@ var floor_times = {}
 var current_floor = 0
 var timer_running = false
 var start_time = 0
+var is_paused = false
+var paused_time_offset = 0  # Track pause duration
 
 # Signal for when a floor is completed
 signal floor_completed(floor_number, time_seconds)
@@ -14,8 +16,10 @@ signal floor_completed(floor_number, time_seconds)
 # Start the timer for a specific floor
 func start_timer(floor_number: int) -> void:
 	current_floor = floor_number
-	start_time = Time.get_unix_time_from_system()
+	start_time = Time.get_unix_time_from_system() - paused_time_offset
 	timer_running = true
+	is_paused = false
+	paused_time_offset = 0
 	print("Timer started for floor ", floor_number)
 
 # Stop the timer and record the time
@@ -40,6 +44,17 @@ func stop_timer() -> float:
 
 	return elapsed_time  # Return latest time
 
+# Properly pause/resume the timer
+func set_timer_paused(state: bool) -> void:
+	if state and not is_paused:  # Only pause if it's not already paused
+		is_paused = true
+		paused_time_offset = Time.get_unix_time_from_system() - start_time
+	elif not state and is_paused:  # Only resume if it's currently paused
+		is_paused = false
+		start_time = Time.get_unix_time_from_system() - paused_time_offset
+		paused_time_offset = 0
+	
+	print("Timer paused: ", is_paused)
 
 # Get the best time for a specific floor
 func get_best_time(floor_number: int) -> float:
@@ -69,3 +84,6 @@ func load_times() -> void:
 		floor_times = save_file.get_var()
 		save_file.close()
 		print("Floor times loaded")
+		
+func get_timer_paused() -> bool:
+	return is_paused

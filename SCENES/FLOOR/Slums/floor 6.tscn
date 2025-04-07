@@ -1050,7 +1050,7 @@ size = Vector2(20, 640)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipmy3"]
 size = Vector2(20, 28.6061)
 
-[node name="Floor1" type="Node2D"]
+[node name="Floor6" type="Node2D"]
 script = ExtResource("1_ache6")
 floor_number = 6
 signage_count = 5

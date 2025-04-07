@@ -21,7 +21,6 @@ buses/default_bus_layout="uid://dhm3hlcx2cwu5"
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuizDataManager="*res://SCRIPTS/Mechanics/quiz/QuizDataManager.gd"
 FloorTimerManager="*res://SCRIPTS/Mechanics/HUD/timer/FloorTimerManager.gd"
 AudioPlayer="*res://BGM/Audio_Player.gd"
@@ -32,6 +31,7 @@ ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
 VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 FloorData="*res://SCRIPTS/Mechanics/floor_data.gd"
 Transition="*res://SCENES/Transitions/Transition.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
@@ -49,7 +49,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
 
 [global_group]
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwg0tx5somvvx"]
+[gd_scene load_steps=25 format=3 uid="uid://dwg0tx5somvvx"]
 
+[ext_resource type="Script" uid="uid://dj52ir2qy6mle" path="res://SCRIPTS/Character/b_01.gd" id="1_r8d8n"]
 [ext_resource type="Texture2D" uid="uid://b5mhckp0nytp8" path="res://ASSETS/Character/B01.png" id="1_saea1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_housq"]
@@ -170,8 +171,9 @@ size = Vector2(31, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 visibility_layer = 65
-z_index = 7
+z_index = 10
 collision_mask = 17
+script = ExtResource("1_r8d8n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4.76837e-07, 5)

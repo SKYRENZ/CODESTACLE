@@ -823,7 +823,6 @@ metadata/_edit_lock_ = true
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_xsifm")]
 visibility_layer = 8
-z_index = 10
 position = Vector2(31, 772)
 
 [node name="Runi" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_4cj71")]

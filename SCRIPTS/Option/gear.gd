@@ -10,7 +10,11 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	# Obtain a reference to the player node
-	player = get_tree().get_nodes_in_group("player")[0]
+	player = get_tree().get_nodes_in_group("player")
+	if player.size() > 0:
+		player =player[0]
+	else:
+		print("ERROR: No player found in group 'player'")
 
 	# Obtain a reference to the timer manager
 	timer_manager = get_node_or_null("/root/FloorTimerManager")
@@ -57,3 +61,57 @@ func _on_resume_pressed() -> void:
 
 	print("Game Resumed, Timer Resumed, Gear Menu Closed!")  
   
+
+
+func _on_quit_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
+	var option_instance = get_tree().root.get_node_or_null("OptionInstance")
+	if option_instance:
+		option_instance.queue_free()
+		print("Option scene removed!")
+
+	get_tree().change_scene_to_file("res://SCENES/Main/quit_confirmation.tscn")
+
+
+func _on_floor_pressed() -> void:
+	AudioPlayer.play_FX(transition_fx, -12.0)
+	var option_instance = get_tree().root.get_node_or_null("OptionInstance")
+	if option_instance:
+		option_instance.queue_free()
+		print("Option scene removed!")
+
+	get_tree().change_scene_to_file("res://SCENES/Main/stage_select.tscn")
+
+
+func _on_restart_pressed() -> void:
+	# Play transition sound effect
+	AudioPlayer.play_FX(transition_fx, -12.0)
+
+	# Remove any existing option scene
+	var option_instance = get_tree().root.get_node_or_null("OptionInstance")
+	if option_instance:
+		option_instance.queue_free()
+		print("Option scene removed!")
+
+	# Reset the timer
+	if timer_manager:
+		# Stop the timer if it's running
+		timer_manager.stop_timer()
+		
+		# Clear recorded times
+		timer_manager.floor_times = {}
+		
+		# Save the cleared times
+		timer_manager.save_times()
+		
+		# Ensure timer is not paused
+		timer_manager.set_timer_paused(false)
+		
+		# Restart timer for the first floor (or any desired floor)
+		timer_manager.start_timer(0)
+
+	# Reload the current scene to restart the game
+	get_tree().reload_current_scene()
+
+	# Print confirmation message
+	print("Game restarted!")

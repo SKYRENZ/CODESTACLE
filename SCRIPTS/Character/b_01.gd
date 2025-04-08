@@ -3,40 +3,25 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ladder_ray_cast: RayCast2D = $LadderRayCast
 @onready var spawn_point: Marker2D = null
-@onready var camera = $Camera2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const CLIMB_SPEED = 200.0
-const OFFSET_DELAY = 0.0
 const MOVEMENT_THRESHOLD = 10  
-const CENTER_DELAY = 0.42
-const CAMERA_FOLLOW_SPEED = 0.8
 const MOVEMENT_SPAM_THRESHOLD = 200
 const SPAM_COOLDOWN = 0.8
-const PANNING_DELAY = 0.8
 
 var is_on_ladder = false
 var movement_locked = false
 var facing_direction = 1
 
-# NEW variables to store door info & HUD
+# Door/HUD info
 var doors = []
 var max_distance = 0.0
 var floor_controller = null
 
-# Camera movement variables
-var camera_offset = Vector2(200, 0)
-var target_offset = Vector2.ZERO
-var direction_change_timer = 1.0
-var last_direction = 0
-var camera_stop = 0.0
-var camera_delay_timer = 0.5
-
 var last_lateral_speed = 0.0
 var spam_timer = 0.0
-var panning_locked = false
-var panning_delay_timer = 1.0
 
 func _ready():
 	print("Player script is running")
@@ -49,9 +34,6 @@ func _ready():
 		print("Floor controller found:", floor_controller.name)
 	else:
 		print("Error: Floor controller not found!")
-
-	camera.position_smoothing_enabled = false
-	camera.position_smoothing_speed = 0.0
 
 func _physics_process(delta: float) -> void:
 	if movement_locked:
@@ -77,7 +59,6 @@ func _physics_process(delta: float) -> void:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
 
-
 func apply_gravity():
 	print("Gravity reapplied to player!")
 	velocity.y = 400
@@ -89,29 +70,64 @@ func set_movement_locked(locked: bool) -> void:
 		animated_sprite_2d.play("default")
 
 func _movement(delta):
+	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_ladder:
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.play("jumping")
 		print("Jumping animation triggered")
 
+	# Get input direction
 	var direction := Input.get_axis("left", "right")
 	var lateral_speed = abs(velocity.x)
 
+	# Update spam timer
 	if lateral_speed > MOVEMENT_SPAM_THRESHOLD:
 		spam_timer += delta
-		if spam_timer > SPAM_COOLDOWN:
-			panning_locked = false
 	else:
 		spam_timer = 0.0
-		panning_locked = false
 
-	if not panning_locked:
-		if direction:
-			velocity.x = direction * SPEED
-			animated_sprite_2d.play("walking")
+	# Apply horizontal movement
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, 20)
+
+	# Handle animation logic
+	if is_on_floor():
+		# Reset to default animation when on the floor
+		if animated_sprite_2d.animation == "jumping" or animated_sprite_2d.animation == "falling":
+			animated_sprite_2d.play("default")  # Reset to the default animation once landed
+		elif direction:
+			animated_sprite_2d.play("walking")  # Play walking if moving
 		else:
-			velocity.x = move_toward(velocity.x, 0, 20)
-			animated_sprite_2d.play("default")
+			animated_sprite_2d.play("default")  # Play default if standing still
+	else:
+		# Handle jump and fall animations while in the air
+		if velocity.y < 0:  # Going up
+			if animated_sprite_2d.animation != "jumping":
+				animated_sprite_2d.play("jumping")
+		elif velocity.y > 0:  # Falling down
+			if animated_sprite_2d.animation != "falling":
+				animated_sprite_2d.play("falling")
+			# Ensure frame 0 or 1 is playing while airborne
+			if animated_sprite_2d.frame >= 2:
+				animated_sprite_2d.frame = 0
+
+func _wait_for(duration: float) -> void:
+	var start_time = Time.get_ticks_msec()
+	while Time.get_ticks_msec() - start_time < duration * 1000:
+		await get_tree().process_frame
+
+func _handle_falling_animation():
+	if is_on_floor() and animated_sprite_2d.animation == "falling":
+		animated_sprite_2d.frame = 2
+		_wait_for(0.2)  # Wait for a short duration
+		animated_sprite_2d.play("default")  # Reset to default animation after landing
+
+func _physics_process_async():
+	while true:
+		await get_tree().process_frame
+		_handle_falling_animation()
 
 func _ladder_climb():
 	var climb_direction := Input.get_axis("up", "down")
@@ -151,43 +167,3 @@ func _on_checkpoint_reached(checkpoint: Area2D):
 		print("Checkpoint reached! New spawn point set at:", spawn_point.global_position)
 	else:
 		print("Error: Checkpoint missing 'Point'!")
-
-func _process(delta: float):
-	var direction = sign(velocity.x)
-
-	if abs(velocity.x) < MOVEMENT_THRESHOLD:
-		direction_change_timer = 0
-	else:
-		if direction != 0 and direction != last_direction:
-			direction_change_timer = 0  
-		else:
-			direction_change_timer += delta  
-
-	last_direction = direction  
-
-	if direction != last_direction and direction != 0 and not panning_locked:
-		camera_stop = 0  
-		target_offset = Vector2.ZERO  
-
-	if velocity.x == 0:
-		camera_stop += delta
-		if camera_stop >= CENTER_DELAY:
-			target_offset = Vector2.ZERO  
-	else:
-		camera_stop = 0  
-
-	if direction_change_timer >= OFFSET_DELAY:
-		if direction > 0 and not panning_locked:
-			target_offset = camera_offset
-		elif direction < 0 and not panning_locked:
-			target_offset = -camera_offset
-
-	if panning_delay_timer > 0:
-		panning_delay_timer -= delta  
-		return  
-
-	if not panning_locked:
-		camera.offset = lerp(camera.offset, target_offset, CAMERA_FOLLOW_SPEED * delta)
-
-	if direction != last_direction and direction != 0:
-		panning_delay_timer = PANNING_DELAY  

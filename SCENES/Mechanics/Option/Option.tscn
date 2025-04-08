@@ -71,13 +71,41 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -117.5
-offset_top = 96.0
+offset_top = 58.0
 offset_right = 117.5
-offset_bottom = 176.0
+offset_bottom = 138.0
 grow_horizontal = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_pbrnv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_26f7s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_144yl")
+
+[node name="Restart" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 160.0
+offset_right = 100.0
+offset_bottom = 220.0
+grow_horizontal = 2
+text = "RESTART
+"
+
+[node name="Floor" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -119.0
+offset_right = 110.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FLOOR"
 
 [node name="Save" type="Button" parent="ColorRect"]
 custom_minimum_size = Vector2(33, 12)
@@ -88,9 +116,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -103.0
-offset_top = -161.0
+offset_top = -31.0
 offset_right = 103.0
-offset_bottom = -81.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_jg8ty")
@@ -105,15 +133,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -120.0
-offset_top = -40.0
+offset_top = 70.0
 offset_right = 120.0
-offset_bottom = 40.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_i0gq4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bv77j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aa0nc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_dk8l8")
+
+[node name="Quit" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -183.0
+offset_right = 110.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "QUIT"
 
 [node name="Exit" type="Button" parent="ColorRect"]
 layout_mode = 1
@@ -123,9 +166,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -103.0
-offset_top = -283.0
+offset_top = -103.0
 offset_right = 103.0
-offset_bottom = -203.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_6txsl")
@@ -133,5 +176,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_n87ot")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ddwwi")
 
 [connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ColorRect/Floor" to="." method="_on_floor_pressed"]
 [connection signal="pressed" from="ColorRect/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ColorRect/Exit" to="." method="_on_Exit_pressed"]

@@ -167,6 +167,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7e5"]
+custom_solver_bias = 0.307
 size = Vector2(31, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
@@ -186,6 +187,7 @@ frame_progress = 0.356103
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 8)
 shape = SubResource("RectangleShape2D_qm7e5")
+one_way_collision_margin = 0.0
 
 [node name="LadderRayCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, -60)

@@ -11,7 +11,9 @@ var excluded_scenes = [
 	"res://SCENES/Main/Login.tscn",
 	"res://SCENES/Main/stage_select.tscn",
 	"res://SCENES/FLOOR/Tutorial/Tutorial.tscn",
-	"res://SCENES/Main/main_menu.tscn"
+	"res://SCENES/Main/main_menu.tscn",
+	"res://SCENES/Mechanics/Option/Option.tscn",
+	"res://SCENES/Mechanics/Option/GearHUD.tscn"
 ]
 
 func _ready():

@@ -9,6 +9,7 @@ var quiz_data = []     # Will be populated from QuizDataManager
 var current_question = 0
 var score = 0
 var quiz_completed = false
+var buttons_locked = false
 
 # UI References
 var question_label: Label
@@ -142,6 +143,8 @@ func resize_quiz() -> void:
 
 # Displays the current question and its options
 func display_question() -> void:
+	buttons_locked = false  # Unlock the buttons
+	
 	if current_question < quiz_data.size():
 		var question_data = quiz_data[current_question]
 		
@@ -157,9 +160,11 @@ func display_question() -> void:
 
 # Handle option selection
 func _on_option_pressed(option_index: int) -> void:
-	if quiz_completed:
+	if quiz_completed or buttons_locked:
 		return
-		
+	
+	buttons_locked = true  # Lock the buttons
+	
 	var current_data = quiz_data[current_question]
 	
 	# Check if answer is correct
@@ -172,11 +177,11 @@ func _on_option_pressed(option_index: int) -> void:
 		option_buttons[option_index].modulate = Color(1, 0, 0)  # Red for incorrect
 		option_buttons[current_data["correct_answer"]].modulate = Color(0, 1, 0)  # Show correct answer
 	
-	# Wait a moment before moving to next question
+	# Wait a moment before moving to the next question
 	await get_tree().create_timer(1.0).timeout
 	reset_button_colors()
 	
-	# Move to next question
+	# Move to the next question
 	current_question += 1
 	if current_question < quiz_data.size():
 		display_question()

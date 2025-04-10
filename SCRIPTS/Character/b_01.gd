@@ -15,9 +15,12 @@ var is_on_ladder = false
 var movement_locked = false
 var facing_direction = 1
 
-# Door/HUD info
+#progress bar
 var doors = []
 var max_distance = 0.0
+var progress_bar = null
+
+
 var floor_controller = null
 
 var last_lateral_speed = 0.0
@@ -34,6 +37,12 @@ func _ready():
 		print("Floor controller found:", floor_controller.name)
 	else:
 		print("Error: Floor controller not found!")
+
+	# Find the progress bar instance
+	progress_bar = get_tree().get_nodes_in_group("progress_bar")[0] if get_tree().has_group("progress_bar") else null
+	if not progress_bar:
+		print("Error: Progress bar not found!")
+
 
 func _physics_process(delta: float) -> void:
 	if movement_locked:
@@ -58,6 +67,13 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
+
+	#Progress Bar function
+	if doors.size() > 0 and progress_bar:
+		var current_distance = global_position.distance_to(doors[0].global_position)
+		var progress = 1.0 - (current_distance / max_distance)
+		progress_bar.update_progress(progress)
+
 
 func apply_gravity():
 	print("Gravity reapplied to player!")

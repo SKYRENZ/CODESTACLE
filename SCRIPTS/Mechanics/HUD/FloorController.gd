@@ -8,8 +8,7 @@ var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
 const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objectives.tscn")
 const GearScene = preload("res://SCENES/Mechanics/Option/GearHUD.tscn")
-const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progress bar.tscn")
-
+const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progressBar.tscn")
 const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn")  # ✅ SceneIntro preload
 
 var timer_ui_instance = null
@@ -22,6 +21,7 @@ var doors = []
 func _ready():
 	print("[Floor %d] Loading..." % floor_number)
 
+#sceneintro function
 	if floor_number == 1:  # ✅ SceneIntro only for Floor 1
 		print("[Floor 1] Playing SceneIntro...")
 		scene_intro_instance = SceneIntro.instantiate()

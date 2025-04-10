@@ -926,6 +926,7 @@ quiz_scene = ExtResource("10_ics1b")
 floor_number = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/Runiquiz"]
+visible = false
 position = Vector2(1625, 411.5)
 shape = SubResource("RectangleShape2D_bp7c7")
 

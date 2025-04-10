@@ -7,7 +7,7 @@ extends Node2D
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
 const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objectives.tscn")
-const GearScene = preload("res://SCENES/Mechanics/Option/GearHud.tscn")
+const GearScene = preload("res://SCENES/Mechanics/Option/GearHUD.tscn")
 const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progress bar.tscn")
 
 const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn")  # ✅ SceneIntro preload

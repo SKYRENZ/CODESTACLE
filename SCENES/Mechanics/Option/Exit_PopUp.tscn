@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://n0s8yhho22uy"]
+
+[ext_resource type="Script" uid="uid://bf32x7jx5uauh" path="res://SCRIPTS/Option/exit_pop_up.gd" id="1_8bysx"]
+[ext_resource type="Theme" uid="uid://c4q63lu5mxi8a" path="res://ASSETS/BUTTONS/quit_confirmation_yes.tres" id="1_yvgmy"]
+[ext_resource type="Texture2D" uid="uid://cdj4uoo7s2wwt" path="res://ASSETS/BUTTONS/Are_You_Sure.png" id="2_r5gcr"]
+[ext_resource type="Theme" uid="uid://ds324jywu26yr" path="res://ASSETS/BUTTONS/quit_confirmation_no.tres" id="4_7mutl"]
+
+[node name="ExitPopUp" type="CanvasLayer"]
+script = ExtResource("1_8bysx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72549, 0.478431, 0.219608, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+custom_minimum_size = Vector2(46, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -198.5
+offset_right = 408.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r5gcr")
+
+[node name="Yes" type="Button" parent="ColorRect/TextureRect2"]
+custom_minimum_size = Vector2(29, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.5
+offset_top = 141.5
+offset_right = -73.5
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("1_yvgmy")
+
+[node name="No" type="Button" parent="ColorRect/TextureRect2"]
+custom_minimum_size = Vector2(23, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 142.5
+offset_right = 286.0
+offset_bottom = 239.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("4_7mutl")
+
+[connection signal="pressed" from="ColorRect/TextureRect2/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ColorRect/TextureRect2/No" to="." method="_on_no_pressed"]

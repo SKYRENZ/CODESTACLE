@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxb3modnbf7pu" path="res://ASSETS/Character/Runi the all knowing-Sheet.png" id="1_kr4la"]
 [ext_resource type="Script" uid="uid://dacortjt1ly0r" path="res://SCRIPTS/Character/runi.gd" id="1_v3dvr"]
-[ext_resource type="Script" uid="uid://c5dgisrpjlul" path="res://SCRIPTS/Character/interaction_labelRuni.gd" id="3_cslrd"]
+[ext_resource type="Script" path="res://SCRIPTS/Character/interaction_labelRuni.gd" id="3_cslrd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h78op"]
 atlas = ExtResource("1_kr4la")

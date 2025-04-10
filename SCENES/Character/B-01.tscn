@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwg0tx5somvvx"]
+[gd_scene load_steps=26 format=3 uid="uid://dwg0tx5somvvx"]
 
 [ext_resource type="Script" uid="uid://dj52ir2qy6mle" path="res://SCRIPTS/Character/b_01.gd" id="1_r8d8n"]
 [ext_resource type="Texture2D" uid="uid://b5mhckp0nytp8" path="res://ASSETS/Character/B01.png" id="1_saea1"]
@@ -31,13 +31,17 @@ region = Rect2(80, 0, 40, 40)
 atlas = ExtResource("1_saea1")
 region = Rect2(120, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p87of"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8d8n"]
 atlas = ExtResource("1_saea1")
-region = Rect2(560, 0, 40, 40)
+region = Rect2(720, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8wjx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2s1o"]
 atlas = ExtResource("1_saea1")
-region = Rect2(600, 0, 40, 40)
+region = Rect2(760, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uto4p"]
+atlas = ExtResource("1_saea1")
+region = Rect2(640, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_laj5r"]
 atlas = ExtResource("1_saea1")
@@ -118,12 +122,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p87of")
+"texture": SubResource("AtlasTexture_r8d8n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8wjx")
+"texture": SubResource("AtlasTexture_h2s1o")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uto4p")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.01,
 "texture": SubResource("AtlasTexture_laj5r")
 }, {
 "duration": 1.0,
@@ -171,7 +183,7 @@ size = Vector2(31, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 visibility_layer = 65
-z_index = 10
+z_index = 7
 collision_mask = 17
 script = ExtResource("1_r8d8n")
 
@@ -179,9 +191,8 @@ script = ExtResource("1_r8d8n")
 position = Vector2(-4.76837e-07, 5)
 scale = Vector2(1.4025, 1.4025)
 sprite_frames = SubResource("SpriteFrames_23urm")
-animation = &"walking"
+animation = &"jumping"
 autoplay = "default"
-frame_progress = 0.356103
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 8)
@@ -193,7 +204,6 @@ collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.75, 1.75)
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 3.0

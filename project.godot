@@ -32,6 +32,8 @@ VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 FloorData="*res://SCRIPTS/Mechanics/floor_data.gd"
 Transition="*res://SCENES/Transitions/Transition.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+FirestoreManager="*res://SAVES/firestore_manager.gd"
+UserDataManager="*res://SAVES/UserDataManager.gd"
 
 [dialogue_manager]
 

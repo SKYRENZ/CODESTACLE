@@ -24,12 +24,17 @@ func _ready():
 	else:
 		printerr("FloorController not found!")
 		return
-	update_hud_text()
+
+	_on_objective_updated(
+		ObjectiveManager.current_read,
+		ObjectiveManager.total_signage,
+		ObjectiveManager.current_npcs_interacted,
+		ObjectiveManager.total_npcs
+	)
 
 func set_total_objectives_count(signage: int, npcs: int): # CHANGED NAME
 	signage_count = signage
 	npc_count = npcs
-	update_hud_text()
 
 # This function receives the signal
 func _on_objective_updated(signage_current: int, signage_total: int, npc_current: int, npc_total: int):

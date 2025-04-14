@@ -82,8 +82,10 @@ func apply_gravity():
 func set_movement_locked(locked: bool) -> void:
 	movement_locked = locked
 	if locked:
-		velocity = Vector2.ZERO
+		velocity = Vector2.ZERO  # Stop movement when locking
 		animated_sprite_2d.play("default")
+	else:
+		print("Movement unlocked")  # Debugging to confirm unlocking
 
 func _movement(delta):
 	# Jumping

@@ -433,22 +433,20 @@ texture = ExtResource("4_tpv1e")
 15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:10/0 = 0
 5:10/0/z_index = 2
-5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -2.13204, -3.55339, -8)
+5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:10/0 = 0
 6:10/0/z_index = 2
-6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.12041, -8, 8, 8, 8, 8, 5.88848)
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:10/0 = 0
 7:10/0/z_index = 2
-7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.9199, -8, 8, -4.91707, 8)
 10:10/0 = 0
 10:10/0/z_index = 2
-10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 5.95225, 4.04365, 8, 8, 8)
 11:10/0 = 0
 11:10/0/z_index = 2
-11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.93534, 8, -1.97845, 8, 8, -8, 8)
+11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:10/0 = 0
 12:10/0/z_index = 2
-12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -1.97845, 2.33816, -8)
+12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
 14:10/0/z_index = 2
 14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -974,7 +972,7 @@ position = Vector2(1909, 1000)
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("1_xsifm")]
 visibility_layer = 8
-position = Vector2(1045, 766)
+position = Vector2(2021, 589)
 
 [node name="Runi" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_4cj71")]
 position = Vector2(603, 627)

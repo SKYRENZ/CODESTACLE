@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://b5btesvhc6epn"]
+[gd_scene load_steps=32 format=4 uid="uid://b5btesvhc6epn"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_gcja0"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
+[ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_ics1b"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_tpv1e"]
 [ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="5_cu62q"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="6_bp7c7"]
@@ -910,7 +911,11 @@ floor_number = 3
 signage_count = 4
 npc_count = 1
 
+[node name="Slums Parallax" parent="." instance=ExtResource("2_ics1b")]
+position = Vector2(-9, 2)
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -925,6 +930,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = -10.0
 offset_top = 2.0

@@ -47,6 +47,7 @@ animations = [{
 }]
 
 [node name="arrow sign" type="Node2D"]
+z_index = 7
 position = Vector2(1, -3)
 script = ExtResource("1_w4eo2")
 

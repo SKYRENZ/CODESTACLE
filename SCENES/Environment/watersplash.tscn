@@ -133,20 +133,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mb4y"]
-size = Vector2(54.4192, 69.7485)
+size = Vector2(40.6227, 69.7485)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 position = Vector2(19.5, -19.5)
 scale = Vector2(1.30469, 1.30469)
 sprite_frames = SubResource("SpriteFrames_4vce8")
-frame_progress = 0.715167
+frame_progress = 0.495805
 speed_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_7mb4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.2994, 12.2635)
+position = Vector2(0.766465, 12.2635)
 shape = SubResource("RectangleShape2D_7mb4y")
 
 [node name="Timer" type="Timer" parent="Area2D"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgo57eltcotu0"]
+[gd_scene load_steps=13 format=3 uid="uid://bgo57eltcotu0"]
 
+[ext_resource type="Script" uid="uid://ttw2uea1gwkh" path="res://SCRIPTS/Environment/warning_sign.gd" id="1_t8hsd"]
 [ext_resource type="Texture2D" uid="uid://n1x3t0qvusdq" path="res://ASSETS/Environment/Signage/WarningSign01-Sheet-export.png" id="1_wxlom"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8hsd"]
@@ -75,6 +76,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 z_index = 7
+script = ExtResource("1_t8hsd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 7

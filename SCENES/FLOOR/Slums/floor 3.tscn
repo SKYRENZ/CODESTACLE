@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=4 uid="uid://b5btesvhc6epn"]
+[gd_scene load_steps=31 format=4 uid="uid://b5btesvhc6epn"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_gcja0"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_xsifm"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_tpv1e"]
+[ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="5_cu62q"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="6_bp7c7"]
 [ext_resource type="Resource" uid="uid://dpoxlewle5b0s" path="res://DIALOGUE/FLOOR 3.dialogue" id="6_ei3xk"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="6_gcja0"]
@@ -930,6 +931,32 @@ offset_bottom = 1022.0
 color = Color(0, 0.133333, 0.133333, 1)
 metadata/_edit_lock_ = true
 
+[node name="coins" type="Node" parent="TextureRect/ColorRect"]
+
+[node name="coins" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(603, 545)
+
+[node name="coins2" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(963, 798)
+
+[node name="coins3" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(1317, 637)
+
+[node name="coins4" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(1485, 922)
+
+[node name="coins5" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(2572, 724)
+
+[node name="coins6" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(1964, 605)
+
+[node name="coins7" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(1488, 505)
+
+[node name="coins8" parent="TextureRect/ColorRect/coins" instance=ExtResource("5_cu62q")]
+position = Vector2(2719, 567)
+
 [node name="Arrow sign" type="Node" parent="TextureRect/ColorRect"]
 
 [node name="UpArrow" parent="TextureRect/ColorRect/Arrow sign" instance=ExtResource("14_rnrk6")]
@@ -939,7 +966,7 @@ position = Vector2(2553, 888)
 position = Vector2(1502, 761)
 
 [node name="warning sign" parent="TextureRect/ColorRect/Arrow sign" instance=ExtResource("17_bp7c7")]
-position = Vector2(1909, 987)
+position = Vector2(1909, 1000)
 
 [node name="Characters" type="Node" parent="TextureRect/ColorRect"]
 
@@ -948,18 +975,18 @@ visibility_layer = 8
 position = Vector2(2002, 915)
 
 [node name="Runi" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_4cj71")]
-position = Vector2(323, 775)
+position = Vector2(603, 627)
 
 [node name="Signage" type="Node" parent="TextureRect/ColorRect"]
 
 [node name="SlumsSign1" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
-position = Vector2(751.5, -81)
+position = Vector2(1161.5, 745)
 
 [node name="SlumsSign2" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
-position = Vector2(1123.5, -78)
+position = Vector2(2265.5, 921)
 
 [node name="SlumsSign3" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
-position = Vector2(1335.5, -65)
+position = Vector2(1486.5, 601)
 
 [node name="SlumsSign4" parent="TextureRect/ColorRect/Signage" instance=ExtResource("6_bp7c7")]
 position = Vector2(1490.5, -42)
@@ -997,7 +1024,7 @@ script = ExtResource("6_rnrk6")
 dialogue_resource = ExtResource("6_ei3xk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/RuniStart"]
-position = Vector2(323, 769)
+position = Vector2(603, 621)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage1" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
@@ -1007,7 +1034,7 @@ script = ExtResource("8_ei3xk")
 dialogue_resource = ExtResource("6_ei3xk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage1"]
-position = Vector2(749.5, -92)
+position = Vector2(1159.5, 734)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage2" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
@@ -1018,7 +1045,7 @@ dialogue_resource = ExtResource("6_ei3xk")
 dialogue_start = "signage2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage2"]
-position = Vector2(1121.45, -88.424)
+position = Vector2(2263.45, 910.576)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage3" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
@@ -1029,7 +1056,7 @@ dialogue_resource = ExtResource("6_ei3xk")
 dialogue_start = "signage3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/ColorRect/dialogue/signage3"]
-position = Vector2(1333.5, -73)
+position = Vector2(1484.5, 593)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="signage4" type="Area2D" parent="TextureRect/ColorRect/dialogue"]
@@ -1067,8 +1094,8 @@ floor_number = 3
 position = Vector2(87.2727, -330.667)
 shape = SubResource("RectangleShape2D_ics1b")
 
-[node name="Slums door" parent="." instance=ExtResource("15_rnrk6")]
-position = Vector2(1997, -83)
+[node name="Slums door" parent="TextureRect/ColorRect" instance=ExtResource("15_rnrk6")]
+position = Vector2(2006, -85)
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("16_6dim4")]
-position = Vector2(1911, 882)
+[node name="watersplash" parent="TextureRect/ColorRect" instance=ExtResource("16_6dim4")]
+position = Vector2(1920, 880)

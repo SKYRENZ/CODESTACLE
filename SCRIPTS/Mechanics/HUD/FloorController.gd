@@ -4,13 +4,15 @@ extends Node2D
 @export var signage_count: int = 0
 @export var npc_count: int = 0
 
+
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
 const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objectives.tscn")
-const GearScene = preload("res://SCENES/Mechanics/Option/GearHUD.tscn")
-const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progressBar.tscn")
+const GearScene = preload("res://SCENES/Mechanics/Option/GearHud.tscn")
+const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/progress bar.tscn")
+const CoinCountScene = preload("res://SCENES/Mechanics/HUD/CoinCount.tscn")
 const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn")  # ✅ SceneIntro preload
-
+var Coin_Count = null
 var timer_ui_instance = null
 var objectives_instance = null
 var GearScene_instance = null
@@ -42,7 +44,7 @@ func _on_intro_finished():
 
 	timer_ui_instance = timer_ui_scene.instantiate()
 	add_child(timer_ui_instance)
-
+	add_Coint_Count()
 	add_gear_hud()
 	add_objectives_hud()
 	add_progress_bar_hud()  
@@ -53,8 +55,18 @@ func _on_intro_finished():
 	doors = get_tree().get_nodes_in_group("door")
 	print("Doors found:", doors.size())
 
+func add_Coint_Count():
+	Coin_Count = CoinCountScene.instantiate()
+	add_child(Coin_Count)
 
+	# Get the CoinManager node
+	var coin_manager = get_node_or_null("/root/CoinManager")
+	if coin_manager == null:
+		printerr("CoinManager not found!")
+		return
 
+	# Connect the coin_count_updated signal to the Coin_Count script
+	coin_manager.coin_count_updated.connect(Coin_Count.update_coin_count)
 func add_gear_hud():
 	GearScene_instance = GearScene.instantiate()
 	add_child(GearScene_instance)

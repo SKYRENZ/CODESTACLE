@@ -809,6 +809,7 @@ size = Vector2(20, 28.6061)
 script = ExtResource("1_x28vg")
 floor_number = 2
 signage_count = 3
+npc_count = 1
 
 [node name="Slums Parallax" parent="." instance=ExtResource("2_in7sh")]
 

@@ -203,7 +203,8 @@ target_position = Vector2(0, -60)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.75, 1.75)
+zoom = Vector2(1.95, 1.95)
+process_callback = 0
 position_smoothing_speed = 3.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 3.0

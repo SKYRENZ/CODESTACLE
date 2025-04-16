@@ -153,7 +153,7 @@ func display_question() -> void:
 		show_final_score()
 
 # Handle option selection
-ffunc _on_option_pressed(option_index: int) -> void:
+func _on_option_pressed(option_index: int) -> void:
 	if quiz_completed or buttons_locked:
 		return
 	

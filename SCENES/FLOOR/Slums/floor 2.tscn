@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=4 uid="uid://dmju10nxwgyr5"]
+[gd_scene load_steps=24 format=4 uid="uid://dmju10nxwgyr5"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_x28vg"]
+[ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_4dfna"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_ljcqr"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="6_0edr3"]
@@ -796,6 +797,7 @@ floor_number = 2
 signage_count = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -807,9 +809,9 @@ grow_vertical = 2
 size_flags_vertical = 4
 texture = SubResource("CanvasTexture_jhtpj")
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.00392157
@@ -820,7 +822,6 @@ offset_right = 1923.0
 offset_bottom = 1090.0
 color = Color(0, 0.133333, 0.133333, 1)
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Characters" type="Node" parent="TextureRect/ColorRect"]
 
@@ -943,3 +944,6 @@ shape = SubResource("RectangleShape2D_x28vg")
 
 [node name="Slums door" parent="." instance=ExtResource("14_3xoiw")]
 position = Vector2(1813, 673)
+
+[node name="SlumsBg" parent="." instance=ExtResource("2_4dfna")]
+position = Vector2(1, 0)

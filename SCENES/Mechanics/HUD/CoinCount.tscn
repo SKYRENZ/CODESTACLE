@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://t2dxx8lvyvso"]
+
+[ext_resource type="Script" uid="uid://dtd45vjgmete5" path="res://SCRIPTS/Mechanics/HUD/coin_count.gd" id="1_7m7vn"]
+[ext_resource type="Texture2D" uid="uid://bhuwixgjuae71" path="res://ASSETS/Environment/coins/Coin1.png" id="1_tm2ts"]
+[ext_resource type="FontFile" uid="uid://0t7st6bras4i" path="res://ASSETS/FONT/Fontnilolo-Regular.ttf" id="3_7m7vn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_02lqs"]
+font = ExtResource("3_7m7vn")
+font_size = 39
+font_color = Color(0, 1, 0.498039, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7m7vn")
+
+[node name="Coin1" type="Sprite2D" parent="."]
+position = Vector2(62, 239)
+scale = Vector2(0.232813, 0.232813)
+texture = ExtResource("1_tm2ts")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 207.0
+offset_right = 202.0
+offset_bottom = 258.0
+text = "="
+label_settings = SubResource("LabelSettings_02lqs")

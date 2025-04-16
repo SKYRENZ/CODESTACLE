@@ -139,7 +139,7 @@ size = Vector2(40.6227, 69.7485)
 position = Vector2(19.5, -19.5)
 scale = Vector2(1.30469, 1.30469)
 sprite_frames = SubResource("SpriteFrames_4vce8")
-frame_progress = 0.495805
+frame_progress = 0.224758
 speed_scale = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]

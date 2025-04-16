@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://k16acst0ppd1"]
+
+[ext_resource type="Script" uid="uid://1k2ogqvibxf3" path="res://SCRIPTS/Environment/arrow.gd" id="1_kg4li"]
+[ext_resource type="Texture2D" uid="uid://t2nb1st803h" path="res://ASSETS/Environment/Signage/arrow.png" id="1_uglav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg4li"]
+atlas = ExtResource("1_uglav")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1nbt"]
+atlas = ExtResource("1_uglav")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1haf4"]
+atlas = ExtResource("1_uglav")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ib6g"]
+atlas = ExtResource("1_uglav")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoisl"]
+atlas = ExtResource("1_uglav")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p61kx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg4li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1nbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1haf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ib6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoisl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="arrow sign" type="Node2D"]
+position = Vector2(1, -3)
+script = ExtResource("1_kg4li")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(0.284668, 0.284668)
+sprite_frames = SubResource("SpriteFrames_p61kx")
+frame_progress = 0.391843
+flip_v = true

@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgo57eltcotu0"]
+
+[ext_resource type="Texture2D" uid="uid://n1x3t0qvusdq" path="res://ASSETS/Environment/Signage/WarningSign01-Sheet-export.png" id="1_wxlom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8hsd"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(0, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iavru"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(224, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8bgm"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(448, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw0md"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(672, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeg86"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(896, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e0n2"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(1120, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye0vt"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(1344, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s0n6"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(1568, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0v4w"]
+atlas = ExtResource("1_wxlom")
+region = Rect2(1792, 0, 224, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xantn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8hsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iavru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8bgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw0md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeg86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e0n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye0vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s0n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0v4w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+z_index = 7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 7
+position = Vector2(3, -3)
+scale = Vector2(0.321429, 0.321429)
+sprite_frames = SubResource("SpriteFrames_xantn")
+frame_progress = 0.856773

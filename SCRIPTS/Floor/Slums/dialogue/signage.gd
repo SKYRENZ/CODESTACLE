@@ -53,6 +53,8 @@ func _on_dialogue_ended(resource: DialogueResource):
 		print("Signage: Player not found or set_movement_locked method missing")
 	if is_in_group("signage_conversation") and not has_been_read:
 		print("Signage: Incrementing signage read")
+	else:
+		print("Signage: Already read or not in signage_conversation")  # Debugging
 		ObjectiveManager.increment_signage_read()
 		has_been_read = true
 	AudioPlayer.stop_DIA()

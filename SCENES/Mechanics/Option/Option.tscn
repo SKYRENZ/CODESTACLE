@@ -1,58 +1,79 @@
-[gd_scene load_steps=17 format=3 uid="uid://deyfbrvvgqcud"]
+[gd_scene load_steps=21 format=3 uid="uid://deyfbrvvgqcud"]
 
 [ext_resource type="Script" uid="uid://ddfgixwj24yej" path="res://SCRIPTS/Option/gear.gd" id="1_k5r2w"]
-[ext_resource type="Texture2D" uid="uid://bjud3kjmj0p8s" path="res://ASSETS/BUTTONS/Option/Hud_buttons_slums.png" id="2_q8k63"]
-[ext_resource type="Texture2D" uid="uid://cm7tvtwa47tgd" path="res://ASSETS/BUTTONS/Option/Buttons.png" id="3_q8k63"]
+[ext_resource type="Texture2D" uid="uid://cu86oddoux1r2" path="res://ASSETS/BUTTONS/Option/Option Button Final.png" id="2_ni4d7"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbrnv"]
-texture = ExtResource("2_q8k63")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arwc1"]
+texture = ExtResource("2_ni4d7")
 region_rect = Rect2(65, 1, 48, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26f7s"]
-texture = ExtResource("3_q8k63")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jss73"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 1, 48, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llowl"]
+texture = ExtResource("2_ni4d7")
 region_rect = Rect2(1, 1, 48, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ni4d7"]
-texture = ExtResource("3_q8k63")
-region_rect = Rect2(1, 1, 48, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(65, 16, 49, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cymwm"]
-texture = ExtResource("3_q8k63")
-region_rect = Rect2(1, 15, 48, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 16, 49, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qb3e"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(1, 16, 49, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyvet"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(65, 32, 40, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bble"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 32, 40, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unhog"]
-texture = ExtResource("3_q8k63")
-region_rect = Rect2(1, 36, 40, 12)
-
-[sub_resource type="Theme" id="Theme_i0gq4"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(1, 32, 40, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bv77j"]
-texture = ExtResource("2_q8k63")
-region_rect = Rect2(65, 27, 52, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(65, 48, 46, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa0nc"]
-texture = ExtResource("2_q8k63")
-region_rect = Rect2(129, 27, 52, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 48, 46, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dk8l8"]
-texture = ExtResource("3_q8k63")
-region_rect = Rect2(1, 50, 46, 12)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5r2w"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(1, 48, 46, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8k63"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(65, 64, 33, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkpx6"]
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 64, 33, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2gjm"]
-texture = ExtResource("3_q8k63")
+texture = ExtResource("2_ni4d7")
 region_rect = Rect2(1, 64, 33, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6txsl"]
-texture = ExtResource("2_q8k63")
-region_rect = Rect2(65, 40, 31, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(65, 80, 31, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87ot"]
-texture = ExtResource("2_q8k63")
-region_rect = Rect2(129, 40, 31, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(129, 80, 31, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddwwi"]
-texture = ExtResource("3_q8k63")
-region_rect = Rect2(1, 78, 31, 12)
+texture = ExtResource("2_ni4d7")
+region_rect = Rect2(1, 80, 31, 12)
 
 [node name="Setting" type="CanvasLayer"]
 script = ExtResource("1_k5r2w")
@@ -66,96 +87,105 @@ grow_vertical = 2
 color = Color(0.317647, 0.290196, 0.2, 0.192157)
 
 [node name="Resume" type="Button" parent="ColorRect"]
-custom_minimum_size = Vector2(33, 12)
+custom_minimum_size = Vector2(48, 12)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -117.5
-offset_top = 78.0
-offset_right = 117.5
-offset_bottom = 158.0
+offset_left = -142.0
+offset_top = 93.0
+offset_right = 146.0
+offset_bottom = 165.0
 grow_horizontal = 2
-theme_override_styles/hover = SubResource("StyleBoxTexture_pbrnv")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_26f7s")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ni4d7")
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_arwc1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jss73")
+theme_override_styles/normal = SubResource("StyleBoxTexture_llowl")
 
 [node name="Restart" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(49, 12)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -198.0
-offset_right = 117.5
-offset_bottom = -118.0
+offset_left = -147.0
+offset_top = 174.0
+offset_right = 147.0
+offset_bottom = 246.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_cymwm")
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ni4d7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cymwm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0qb3e")
 
 [node name="Floor" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(40, 12)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -113.0
-offset_right = 117.5
-offset_bottom = -33.0
+offset_left = -120.0
+offset_top = 334.0
+offset_right = 120.0
+offset_bottom = 406.0
 grow_horizontal = 2
-grow_vertical = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_iyvet")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7bble")
 theme_override_styles/normal = SubResource("StyleBoxTexture_unhog")
 
 [node name="Option" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(46, 12)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -26.0
-offset_right = 120.0
-offset_bottom = 54.0
+offset_left = -138.0
+offset_top = -107.0
+offset_right = 138.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_i0gq4")
+focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_bv77j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aa0nc")
-theme_override_styles/normal = SubResource("StyleBoxTexture_dk8l8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k5r2w")
 
 [node name="Quit" type="Button" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -117.5
-offset_top = -297.0
-offset_right = 117.5
-offset_bottom = -217.0
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 57.0
+offset_right = 106.0
+offset_bottom = 129.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_q8k63")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vkpx6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j2gjm")
 
 [node name="Exit" type="Button" parent="ColorRect"]
+custom_minimum_size = Vector2(31, 12)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -117.5
-offset_top = -213.0
-offset_right = 117.5
-offset_bottom = -133.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 137.0
+offset_right = 93.0
+offset_bottom = 209.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_6txsl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n87ot")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ddwwi")

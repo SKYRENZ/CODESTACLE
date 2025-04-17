@@ -54,7 +54,7 @@ texture = ExtResource("1_ccb8f")
 centered = false
 
 [node name="House" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(884, 0)
+motion_mirroring = Vector2(880.28, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/House"]
 position = Vector2(-7, 561)

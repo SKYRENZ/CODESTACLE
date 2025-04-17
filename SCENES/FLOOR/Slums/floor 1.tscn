@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="5_b4bnl"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="6_sqq24"]
 [ext_resource type="Resource" uid="uid://ceat0mu86avrh" path="res://DIALOGUE/FLOOR 1.dialogue" id="6_uou1l"]
-[ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="10_ydj8t"]
-[ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="11_47281"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/RightArrow.tscn" id="10_ydj8t"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/coins.tscn" id="11_47281"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="11_t2o2f"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="13_b4bnl"]
@@ -876,6 +876,7 @@ collision_layer = 32
 script = ExtResource("6_sqq24")
 dialogue_resource = ExtResource("6_uou1l")
 dialogue_start = "signage2"
+use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 2"]
 position = Vector2(1463.5, 732)

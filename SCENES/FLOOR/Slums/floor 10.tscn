@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_mr0hd"]
 [ext_resource type="PackedScene" uid="uid://c0lnlunk78q1m" path="res://SCENES/Character/Rodtang.tscn" id="3_u1p6f"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="10_dcw44"]
-[ext_resource type="Script" path="res://SCRIPTS/Mechanics/tagilid.gd" id="10_u1p6f"]
+[ext_resource type="Script" uid="uid://bhkr2cp82ucl2" path="res://SCRIPTS/Mechanics/tagilid.gd" id="10_u1p6f"]
 [ext_resource type="Resource" uid="uid://d1hscory8fl3q" path="res://DIALOGUE/FLOOR 10.dialogue" id="12_7t16n"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="13_60y8k"]
 [ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="14_0q36c"]

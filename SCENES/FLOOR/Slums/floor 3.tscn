@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4cj71"]
 [ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_ics1b"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_tpv1e"]
-[ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="5_cu62q"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/coins.tscn" id="5_cu62q"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="6_bp7c7"]
 [ext_resource type="Resource" uid="uid://dpoxlewle5b0s" path="res://DIALOGUE/FLOOR 3.dialogue" id="6_ei3xk"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="6_gcja0"]
@@ -13,12 +13,12 @@
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="8_ei3xk"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="9_tpv1e"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="10_ics1b"]
-[ext_resource type="PackedScene" uid="uid://k16acst0ppd1" path="res://SCENES/Environment/downArrow.tscn" id="13_tpv1e"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/downArrow.tscn" id="13_tpv1e"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="14_bp7c7"]
-[ext_resource type="PackedScene" uid="uid://dv4fsx0ntj7kr" path="res://SCENES/Environment/UpArrow.tscn" id="14_rnrk6"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/UpArrow.tscn" id="14_rnrk6"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_rnrk6"]
-[ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="16_6dim4"]
-[ext_resource type="PackedScene" uid="uid://bgo57eltcotu0" path="res://SCENES/Environment/warning sign.tscn" id="17_bp7c7"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/watersplash.tscn" id="16_6dim4"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/warning sign.tscn" id="17_bp7c7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ics1b"]
 size = Vector2(20, 28.6061)
@@ -925,7 +925,6 @@ floor_number = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Quiz and door/show result"]
 position = Vector2(-0.000263214, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ics1b")
 
 [node name="Slums door" parent="Slums Parallax/Quiz and door" instance=ExtResource("15_rnrk6")]

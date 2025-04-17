@@ -11,7 +11,7 @@ func _ready():
 
 	# Initialize dialogue player
 	dia_player = AudioStreamPlayer.new()
-	dia_player.bus = "Dialogue"  # Set this to the correct bus name
+	dia_player.bus = "SFX"  # Set this to the correct bus name
 	add_child(dia_player)
 
 func _play_music(music: AudioStream, volume = 0.0):

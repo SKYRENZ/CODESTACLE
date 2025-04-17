@@ -4,6 +4,9 @@ signal interaction_available(interactable)
 signal interaction_unavailable(interactable)
 
 var current_interactable = null
+var is_audio_playing = false  # To track the audio state
+
+@export var dia_start: AudioStream = preload("res://BGM/dialouge.mp3")  # Audio file
 
 func _ready():
 	# Connect to input processing for the global interaction key
@@ -30,7 +33,15 @@ func unregister_interactable(interactable):
 		current_interactable = null
 		emit_signal("interaction_unavailable", interactable)
 
+# This function is called when dialogue starts
+func start_dialogue_audio():
+	if !is_audio_playing:
+		AudioPlayer.play_DIA(dia_start, -12.0)
+		is_audio_playing = true  # Set flag that audio is playing
+
+# This function is called when the dialogue ends
 func _on_dialogue_ended(_resource: DialogueResource):
-	# Reset interactable after dialogue ends
-	if current_interactable != null:
-		register_interactable(current_interactable)
+	# Stop the audio when dialogue ends
+	if is_audio_playing:
+		AudioPlayer.stop_DIA()
+		is_audio_playing = false  # Reset the audio flag

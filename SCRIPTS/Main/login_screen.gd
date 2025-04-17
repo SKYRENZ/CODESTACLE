@@ -21,7 +21,8 @@ func _ready() -> void:
 			saved_data.email,
 			saved_data.uid,
 			saved_data.username,
-			saved_data.id_token
+			saved_data.id_token,
+			{}  # Empty progress for now
 		)
 
 		call_deferred("go_to_main_menu")
@@ -97,10 +98,10 @@ func on_login_succeeded(auth_data: Dictionary) -> void:
 		return
 
 	# ✅ Save to Firestore
-	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token)
+	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token, {})
 
 	# ✅ Save locally
-	UserDataManager.save_user_data_locally(user_email, user_id, user_name, id_token)
+	UserDataManager.save_user_data_locally(user_email, user_id, user_name, id_token, {})
 
 	# ✅ Notify user
 	var notification_label = get_node_or_null("NotificationLabel")

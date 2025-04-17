@@ -475,7 +475,7 @@ tile_set = SubResource("TileSet_308n2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="b-01" parent="." instance=ExtResource("4_f1omh")]
-position = Vector2(-777, 181)
+position = Vector2(-763, 152)
 disable_mode = 2
 collision_layer = 17
 

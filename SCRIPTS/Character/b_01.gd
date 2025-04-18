@@ -15,34 +15,38 @@ var is_on_ladder = false
 var movement_locked = false
 var facing_direction = 1
 
-#progress bar
+# Progress bar
 var doors = []
 var max_distance = 0.0
 var progress_bar = null
 
-
 var floor_controller = null
-
 var last_lateral_speed = 0.0
 var spam_timer = 0.0
 
 func _ready():
 	print("Player script is running")
+
+	# Add to player group if needed
 	if not is_in_group("player"):
 		add_to_group("player")
 
+	# Setup floor controller reference
 	floor_controller = get_tree().get_current_scene()
-
 	if floor_controller:
 		print("Floor controller found:", floor_controller.name)
 	else:
 		print("Error: Floor controller not found!")
 
 	# Find the progress bar instance
-	progress_bar = get_tree().get_nodes_in_group("progress_bar")[0] if get_tree().has_group("progress_bar") else null
-	if not progress_bar:
+	if get_tree().has_group("progress_bar"):
+		var bars = get_tree().get_nodes_in_group("progress_bar")
+		if bars.size() > 0:
+			progress_bar = bars[0]
+		else:
+			print("Error: Progress bar group is empty!")
+	else:
 		print("Error: Progress bar not found!")
-
 
 func _physics_process(delta: float) -> void:
 	if movement_locked:
@@ -68,12 +72,11 @@ func _physics_process(delta: float) -> void:
 		facing_direction = sign(velocity.x)
 	animated_sprite_2d.flip_h = facing_direction < 0
 
-	#Progress Bar function
+	# Progress Bar update
 	if doors.size() > 0 and progress_bar:
 		var current_distance = global_position.distance_to(doors[0].global_position)
 		var progress = 1.0 - (current_distance / max_distance)
 		progress_bar.update_progress(progress)
-
 
 func apply_gravity():
 	print("Gravity reapplied to player!")
@@ -112,22 +115,19 @@ func _movement(delta):
 
 	# Handle animation logic
 	if is_on_floor():
-		# Reset to default animation when on the floor
 		if animated_sprite_2d.animation == "jumping" or animated_sprite_2d.animation == "falling":
-			animated_sprite_2d.play("default")  # Reset to the default animation once landed
+			animated_sprite_2d.play("default")
 		elif direction:
-			animated_sprite_2d.play("walking")  # Play walking if moving
+			animated_sprite_2d.play("walking")
 		else:
-			animated_sprite_2d.play("default")  # Play default if standing still
+			animated_sprite_2d.play("default")
 	else:
-		# Handle jump and fall animations while in the air
-		if velocity.y < 0:  # Going up
+		if velocity.y < 0:
 			if animated_sprite_2d.animation != "jumping":
 				animated_sprite_2d.play("jumping")
-		elif velocity.y > 0:  # Falling down
+		elif velocity.y > 0:
 			if animated_sprite_2d.animation != "falling":
 				animated_sprite_2d.play("falling")
-			# Ensure frame 0 or 1 is playing while airborne
 			if animated_sprite_2d.frame >= 2:
 				animated_sprite_2d.frame = 0
 
@@ -139,8 +139,8 @@ func _wait_for(duration: float) -> void:
 func _handle_falling_animation():
 	if is_on_floor() and animated_sprite_2d.animation == "falling":
 		animated_sprite_2d.frame = 2
-		_wait_for(0.2)  # Wait for a short duration
-		animated_sprite_2d.play("default")  # Reset to default animation after landing
+		_wait_for(0.2)
+		animated_sprite_2d.play("default")
 
 func _physics_process_async():
 	while true:
@@ -184,4 +184,4 @@ func _on_checkpoint_reached(checkpoint: Area2D):
 		spawn_point = checkpoint.get_node("Spawnpoint")
 		print("Checkpoint reached! New spawn point set at:", spawn_point.global_position)
 	else:
-		print("Error: Checkpoint missing 'Point'!")
+		print("Error: Checkpoint missing 'Spawnpoint'!")

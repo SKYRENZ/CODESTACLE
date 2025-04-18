@@ -204,7 +204,7 @@ one_way_collision_margin = 0.0
 target_position = Vector2(0, -60)
 collision_mask = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2DPlayer" type="Camera2D" parent="."]
 zoom = Vector2(1.95, 1.95)
 process_callback = 0
 position_smoothing_speed = 3.0

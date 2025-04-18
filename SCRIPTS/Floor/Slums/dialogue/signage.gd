@@ -2,23 +2,36 @@ extends Area2D
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "signage1"
-@export var dia_start: AudioStream = preload("res://BGM/dialouge.mp3")  # Preload your dialogue audio
-@export var use_letterbox: bool = true  # Toggle to enable/disable letterbox for this signage
+@export var dia_start: AudioStream = preload("res://BGM/dialouge.mp3")
+@export var use_letterbox: bool = true
+
+@export var pan_distance: float = 500.0  # Distance for panning
+@export var pan_speed: float = 200.0  # Speed for panning (units per second)
+
+# Enum definition for camera panning directions
+enum PanningDirection { NONE, UP, DOWN, LEFT, RIGHT }
+
+@export var pan_direction: PanningDirection = PanningDirection.RIGHT
 
 var dialogue_active = false
 var has_been_read = false
 
+var camera: Camera2D
+
 func _ready():
-	# Ensure the dialogue_resource is unique for this node
 	if dialogue_resource != null:
 		dialogue_resource = dialogue_resource.duplicate()
+
 	add_to_group("signage_conversation")
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
 
-	# Connect to DialogueManager signals
 	DialogueManager.dialogue_started.connect(Callable(self, "_on_dialogue_started"))
 	DialogueManager.dialogue_ended.connect(Callable(self, "_on_dialogue_ended"))
+
+	camera = get_node_or_null("/root/Camera2D")
+	if camera == null:
+		print("ERROR: Camera2D node not found!")
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and not dialogue_active:
@@ -32,26 +45,26 @@ func _on_body_exited(body):
 func trigger_dialogue():
 	if dialogue_resource != null and not dialogue_active:
 		if use_letterbox:
-			# Start the letterbox animation if enabled
-			var letterbox = get_node("/root/LetterBox")  # Correct way to access it
+			var letterbox = get_node("/root/LetterBox")
 			if letterbox:
-				letterbox.dialogue_resource = dialogue_resource  # Pass dialogue resource
-				letterbox.dialogue_start = dialogue_start  # Pass dialogue start
-				letterbox.dia_start = dia_start  # Pass audio stream
-				letterbox.should_show_dialogue = true  # Set flag to show dialogue after hide animation
-				letterbox.play_letterbox_in()  # Start the letterbox animation
+				letterbox.dialogue_resource = dialogue_resource
+				letterbox.dialogue_start = dialogue_start
+				letterbox.dia_start = dia_start
+				letterbox.should_show_dialogue = true
+				letterbox.pan_distance = pan_distance
+				letterbox.pan_speed = pan_speed  # Use pan_speed instead of duration
+				letterbox.pan_direction = get_pan_direction_string(pan_direction)
+				letterbox.play_letterbox_in()
 			else:
-				print("LetterBox node not found.")
+				print("ERROR: LetterBox node not found.")
 		else:
-			# If letterbox is not used, show the dialogue immediately
 			show_dialogue_and_play_audio()
 
 		dialogue_active = true
 	else:
-		print("Error: dialogue_resource is not assigned or dialogue already active!")
+		print("ERROR: dialogue_resource is not assigned or dialogue already active!")
 
 func show_dialogue_and_play_audio():
-	# Show the dialogue and play audio immediately without letterbox
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	AudioPlayer.play_DIA(dia_start, -12.0)
 
@@ -64,7 +77,6 @@ func _on_dialogue_ended(resource: DialogueResource):
 	if resource != dialogue_resource:
 		return
 
-	# Unlock player movement
 	var player = get_tree().get_first_node_in_group("player")
 	if player and player.has_method("set_movement_locked"):
 		print("Signage: Unlocking player movement")
@@ -79,13 +91,29 @@ func _on_dialogue_ended(resource: DialogueResource):
 	else:
 		print("Signage: Already read or not in signage_conversation")
 
-	AudioPlayer.stop_DIA()  # Stop the audio when dialogue ends
+	AudioPlayer.stop_DIA()
 	dialogue_active = false
 
-	# Hide letterbox if enabled
 	if use_letterbox:
-		var letterbox = get_node("/root/LetterBox")  # Correct node path checking
+		var letterbox = get_node("/root/LetterBox")
 		if letterbox:
 			letterbox.play_letterbox_out()
 		else:
-			print("LetterBox node not found.")
+			print("ERROR: LetterBox node not found.")
+
+# Converts enum to string for use in LetterBox
+func get_pan_direction_string(direction: PanningDirection) -> String:
+	match direction:
+		PanningDirection.NONE:
+			return ""
+		PanningDirection.UP:
+			return "up"
+		PanningDirection.DOWN:
+			return "down"
+		PanningDirection.LEFT:
+			return "left"
+		PanningDirection.RIGHT:
+			return "right"
+		_:
+			print("ERROR: Invalid panning direction!")
+			return ""

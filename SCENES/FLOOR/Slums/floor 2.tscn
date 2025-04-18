@@ -5,19 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4fvln"]
 [ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_in7sh"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_ljcqr"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/coins.tscn" id="4_x28vg"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/warning sign.tscn" id="5_mtqkf"]
+[ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="4_x28vg"]
+[ext_resource type="PackedScene" uid="uid://bgo57eltcotu0" path="res://SCENES/Environment/warning sign.tscn" id="5_mtqkf"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="6_0edr3"]
 [ext_resource type="Resource" uid="uid://c1bktnx0kxfmv" path="res://DIALOGUE/FLOOR 2.dialogue" id="6_vi21l"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/watersplash.tscn" id="7_36jqm"]
+[ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="7_36jqm"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="8_0edr3"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="10_0edr3"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="14_3xoiw"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="14_x28vg"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/RightArrow.tscn" id="15_x28vg"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/UpArrow.tscn" id="16_36jqm"]
+[ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="15_x28vg"]
+[ext_resource type="PackedScene" uid="uid://dv4fsx0ntj7kr" path="res://SCENES/Environment/UpArrow.tscn" id="16_36jqm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d0fv"]
 texture = ExtResource("3_ljcqr")
@@ -936,6 +936,8 @@ position = Vector2(521, -830)
 collision_layer = 32
 script = ExtResource("8_0edr3")
 dialogue_resource = ExtResource("6_vi21l")
+use_letterbox = false
+pan_speed = 400.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage1"]
 position = Vector2(951.5, 1364)
@@ -947,6 +949,7 @@ collision_layer = 32
 script = ExtResource("8_0edr3")
 dialogue_resource = ExtResource("6_vi21l")
 dialogue_start = "signage2"
+use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage2"]
 position = Vector2(5.0083, 1.95532)
@@ -958,6 +961,7 @@ collision_layer = 32
 script = ExtResource("8_0edr3")
 dialogue_resource = ExtResource("6_vi21l")
 dialogue_start = "signage3"
+use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage3"]
 position = Vector2(3758.5, 714)

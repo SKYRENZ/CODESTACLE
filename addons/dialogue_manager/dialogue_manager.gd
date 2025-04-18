@@ -451,9 +451,6 @@ func _start_balloon(balloon: Node, resource: DialogueResource, title: String, ex
 	else:
 		assert(false, DMConstants.translate(&"runtime.dialogue_balloon_missing_start_method"))
 
-	dialogue_started.emit(resource)
-	bridge_dialogue_started.emit(resource)
-
 
 # Get the path to the example balloon
 func _get_example_balloon_path() -> String:

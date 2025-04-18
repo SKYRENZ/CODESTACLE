@@ -7,6 +7,7 @@ extends Area2D
 
 @export var pan_distance: float = 500.0  # Distance for panning
 @export var pan_speed: float = 200.0  # Speed for panning (units per second)
+@export var pan_pause_duration: float = 1.0  # ✅ Pause duration after panning
 
 # Enum definition for camera panning directions
 enum PanningDirection { NONE, UP, DOWN, LEFT, RIGHT }
@@ -52,8 +53,9 @@ func trigger_dialogue():
 				letterbox.dia_start = dia_start
 				letterbox.should_show_dialogue = true
 				letterbox.pan_distance = pan_distance
-				letterbox.pan_speed = pan_speed  # Use pan_speed instead of duration
+				letterbox.pan_speed = pan_speed
 				letterbox.pan_direction = get_pan_direction_string(pan_direction)
+				letterbox.pan_pause_duration = pan_pause_duration  # ✅ Include pause duration
 				letterbox.play_letterbox_in()
 			else:
 				print("ERROR: LetterBox node not found.")

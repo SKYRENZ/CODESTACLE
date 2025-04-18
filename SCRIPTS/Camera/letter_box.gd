@@ -7,7 +7,8 @@ extends CanvasLayer
 
 @export var pan_direction: String = "right"
 @export var pan_distance: float = 500.0
-@export var pan_speed: float = 200.0  # <-- NEW: Use speed instead of duration
+@export var pan_speed: float = 200.0
+@export var pan_pause_duration: float = 1.0  # ✅ NEW: Pause after panning
 
 enum State { IDLE, SHOWING, HIDING }
 var state: int = State.IDLE
@@ -110,7 +111,7 @@ func _cutscene_camera_pan():
 			play_letterbox_out()
 			return
 
-	var pan_duration = pan_distance / pan_speed  # <-- DYNAMIC DURATION
+	var pan_duration = pan_distance / pan_speed
 
 	active_tween = create_tween()
 	active_tween.tween_property(current_camera, "global_position", end_pos, pan_duration)\
@@ -121,6 +122,9 @@ func _cutscene_camera_pan():
 
 	if not is_instance_valid(current_camera) or restarting:
 		return
+
+	# ✅ PAUSE before panning back
+	await get_tree().create_timer(pan_pause_duration).timeout
 
 	_pan_back_to_player(current_camera)
 
@@ -141,7 +145,7 @@ func _pan_back_to_player(current_camera):
 	print("I will go back")
 	var target_pos = player.global_position
 	var return_distance = current_camera.global_position.distance_to(target_pos)
-	var return_duration = return_distance / pan_speed  # <-- DYNAMIC RETURN
+	var return_duration = return_distance / pan_speed
 
 	if active_tween and active_tween.is_running():
 		active_tween.kill()

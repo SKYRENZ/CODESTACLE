@@ -863,7 +863,8 @@ shape = SubResource("RectangleShape2D_3jsy4")
 collision_layer = 32
 script = ExtResource("6_sqq24")
 dialogue_resource = ExtResource("6_uou1l")
-pan_distance = 300.0
+pan_distance = 200.0
+pan_pause_duration = 2.0
 pan_direction = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=26 format=4 uid="uid://kgetvwqx48vl"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="10_ydj8t"]
 [ext_resource type="PackedScene" uid="uid://cqkhfatm000eo" path="res://SCENES/Environment/coins.tscn" id="11_47281"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="11_t2o2f"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="12_u7e8m"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="13_b4bnl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="15_b4bnl"]
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
@@ -930,9 +929,6 @@ position = Vector2(2430, 608)
 [node name="RuniQuiz" type="Area2D" parent="Slums Parallax/quiz and door"]
 collision_layer = 32
 script = ExtResource("11_t2o2f")
-dialogue_resource = ExtResource("6_uou1l")
-quiz_scene = ExtResource("12_u7e8m")
-floor_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/quiz and door/RuniQuiz"]
 position = Vector2(2329, 311)

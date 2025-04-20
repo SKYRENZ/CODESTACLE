@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://35ato6hwmvfv"]
+
+[ext_resource type="Script" uid="uid://bfevv0w4jasdh" path="res://Trap.gd" id="1_sv138"]
+[ext_resource type="Texture2D" uid="uid://doo56n7o0mtpl" path="res://SCRIPTS/Mechanics/deaths/spikee.png" id="2_nf7rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd23t"]
+atlas = ExtResource("2_nf7rp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qwrl"]
+atlas = ExtResource("2_nf7rp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3qia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd23t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qwrl")
+}],
+"loop": true,
+"name": &"trap_loop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr60m"]
+size = Vector2(20, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rmyx"]
+size = Vector2(34, 33)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sv138")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(87, 22)
+sprite_frames = SubResource("SpriteFrames_j3qia")
+animation = &"trap_loop"
+frame_progress = 0.408622
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2(15, -13)
+shape = SubResource("RectangleShape2D_hr60m")
+
+[node name="HitZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
+position = Vector2(87, 23)
+shape = SubResource("RectangleShape2D_3rmyx")

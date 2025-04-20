@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="13_jkvfs"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="13_w3c67"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="14_a5nq2"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="17_05yig"]
+[ext_resource type="PackedScene" uid="uid://dpajkiy4fm8bv" path="res://LeverPuzzle.tscn" id="14_p5l8l"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -1084,7 +1084,7 @@ position = Vector2(172, 776)
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_s4vnj")]
 visibility_layer = 8
 z_index = 4
-position = Vector2(43, 765)
+position = Vector2(812, 652)
 
 [node name="map tile" type="Node" parent="TextureRect/ColorRect"]
 
@@ -1241,10 +1241,10 @@ position = Vector2(1766, 529)
 position = Vector2(0, 4)
 collision_layer = 32
 script = ExtResource("13_w3c67")
-dialogue_resource = ExtResource("8_ga5lk")
-quiz_scene = ExtResource("17_05yig")
-floor_number = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Runiquiz"]
 position = Vector2(1595, 316)
 shape = SubResource("RectangleShape2D_4d2vg")
+
+[node name="InvisibleWall" parent="." instance=ExtResource("14_p5l8l")]
+position = Vector2(693, 205)

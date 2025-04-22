@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://1h5vq30pmrvq"]
+[gd_scene load_steps=63 format=4 uid="uid://1h5vq30pmrvq"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_j1m7x"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
@@ -10,14 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="7_5x88h"]
 [ext_resource type="Script" uid="uid://qgy6colrrt2h" path="res://SCRIPTS/Floor/Slums/floor 6/lava.gd" id="8_tdjog"]
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
-[ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
+[ext_resource type="Script" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="11_eih0j"]
 [ext_resource type="Resource" uid="uid://clgy2ml5pyygy" path="res://DIALOGUE/FLOOR 8.dialogue" id="12_udhfs"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="13_s4gq6"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="15_epylf"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="16_0f4ds"]
-[ext_resource type="Resource" uid="uid://dg7wql3vrfwmm" path="res://DIALOGUE/FLOOR 7.dialogue" id="16_2b6pb"]
-[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="17_86qcg"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="17_udhfs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5x88h"]
@@ -1002,9 +1000,6 @@ position = Vector2(1195, 395)
 position = Vector2(-58, -31)
 collision_layer = 32
 script = ExtResource("15_epylf")
-dialogue_resource = ExtResource("16_2b6pb")
-quiz_scene = ExtResource("17_86qcg")
-floor_number = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Runiquiz"]
 position = Vector2(1740, 370)

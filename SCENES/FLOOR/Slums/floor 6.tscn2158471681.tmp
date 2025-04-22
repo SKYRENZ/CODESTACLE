@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://s806p33u3mwf"]
+[gd_scene load_steps=58 format=4 uid="uid://s806p33u3mwf"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_ache6"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="1_aoavd"]
@@ -11,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="11_pmssi"]
 [ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="12_ma1xv"]
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="13_jkvfs"]
-[ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://Trap.tscn" id="14_mv7af"]
+[ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="14_wrffn"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="14_xwx4o"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_pmssi"]
+[ext_resource type="Script" uid="uid://2dertmq55f3k" path="res://SCENES/FLOOR/Slums/spike.gd" id="15_ste03"]
+[ext_resource type="Texture2D" uid="uid://doo56n7o0mtpl" path="res://SCRIPTS/Mechanics/deaths/spikee.png" id="16_wrffn"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jhtpj"]
 
@@ -1050,6 +1052,53 @@ size = Vector2(20, 640)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipmy3"]
 size = Vector2(20, 28.6061)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_doa1m"]
+atlas = ExtResource("16_wrffn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hmdp"]
+atlas = ExtResource("16_wrffn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yqkc"]
+atlas = ExtResource("16_wrffn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwffa"]
+atlas = ExtResource("16_wrffn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_doa1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doa1m")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hmdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yqkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwffa")
+}],
+"loop": false,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lr82"]
+size = Vector2(38, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyyho"]
+size = Vector2(29, 43)
+
 [node name="Floor6" type="Node2D"]
 script = ExtResource("1_ache6")
 floor_number = 6
@@ -1070,10 +1119,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect"]
 layout_mode = 0
-offset_left = -17.0
-offset_top = -1.0
-offset_right = 1946.0
-offset_bottom = 1085.0
+offset_left = 30.0
+offset_top = -4.0
+offset_right = 1952.0
+offset_bottom = 1082.0
 color = Color(0, 0.133333, 0.133333, 1)
 
 [node name="Characters" type="Node" parent="TextureRect/ColorRect"]
@@ -1083,7 +1132,7 @@ position = Vector2(172, 776)
 
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_s4vnj")]
 visibility_layer = 8
-position = Vector2(600, 257)
+position = Vector2(21, 769)
 
 [node name="map tile" type="Node" parent="TextureRect/ColorRect"]
 
@@ -1198,13 +1247,15 @@ dialogue_resource = ExtResource("8_ste03")
 dialogue_start = "signage5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/signage 5"]
-position = Vector2(614, 437)
+position = Vector2(713, 248)
 shape = SubResource("RectangleShape2D_wrffn")
 
 [node name="Runiquiz" type="Area2D" parent="Dialogues"]
 position = Vector2(0, 4)
 collision_layer = 32
 script = ExtResource("10_mv7af")
+dialogue_resource = ExtResource("8_ste03")
+quiz_scene = ExtResource("14_wrffn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogues/Runiquiz"]
 position = Vector2(899, -40)
@@ -1225,7 +1276,7 @@ position = Vector2(863, 437)
 position = Vector2(786, 438)
 
 [node name="SlumsSign5" parent="Signage" instance=ExtResource("11_pmssi")]
-position = Vector2(614, 436)
+position = Vector2(712, 249)
 
 [node name="show result" type="Area2D" parent="."]
 z_index = 1
@@ -1237,11 +1288,27 @@ floor_number = 6
 results_panel_path = "uid://ccdye2d02ld6m"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="show result"]
-position = Vector2(4.36362, -0.48485)
+position = Vector2(3.87877, -1.45454)
 shape = SubResource("RectangleShape2D_ipmy3")
 
 [node name="Slums door" parent="." instance=ExtResource("15_pmssi")]
-position = Vector2(1219, 247)
+position = Vector2(1186, 204)
 
-[node name="Node2D" parent="." instance=ExtResource("14_mv7af")]
-position = Vector2(672, 248)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("15_ste03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(643, 452.5)
+scale = Vector2(1.28125, 1.21875)
+sprite_frames = SubResource("SpriteFrames_doa1m")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(644, 449.5)
+shape = SubResource("RectangleShape2D_4lr82")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(708, 445)
+shape = SubResource("RectangleShape2D_qyyho")

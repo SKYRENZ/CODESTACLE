@@ -74,7 +74,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="warning sign" type="Node2D"]
 z_index = 7
 script = ExtResource("1_t8hsd")
 

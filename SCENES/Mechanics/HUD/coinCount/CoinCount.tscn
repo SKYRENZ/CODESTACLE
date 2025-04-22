@@ -13,8 +13,8 @@ font_color = Color(0, 1, 0.498039, 1)
 script = ExtResource("1_7m7vn")
 
 [node name="Coin1" type="Sprite2D" parent="."]
-position = Vector2(62, 239)
-scale = Vector2(0.232813, 0.232813)
+position = Vector2(74, 241)
+scale = Vector2(0.211719, 0.211719)
 texture = ExtResource("1_tm2ts")
 
 [node name="Label" type="Label" parent="."]

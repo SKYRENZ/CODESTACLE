@@ -10,6 +10,7 @@ var current_question = 0
 var score = 0
 var quiz_completed = false
 
+
 # UI References
 var question_label: Label
 var option_buttons = []

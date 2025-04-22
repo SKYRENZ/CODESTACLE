@@ -248,7 +248,7 @@ texture = ExtResource("4_tpv1e")
 [sub_resource type="TileSet" id="TileSet_sklqe"]
 sources/0 = SubResource("TileSetAtlasSource_7d0fv")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnj27"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ics1b"]
 texture = ExtResource("4_tpv1e")
 0:2/0 = 0
 0:2/0/z_index = 2
@@ -571,7 +571,7 @@ texture = ExtResource("4_tpv1e")
 
 [sub_resource type="TileSet" id="TileSet_xworu"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_nnj27")
+sources/0 = SubResource("TileSetAtlasSource_ics1b")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2ib0"]
 texture = ExtResource("4_tpv1e")
@@ -794,7 +794,7 @@ texture = ExtResource("4_tpv1e")
 [sub_resource type="TileSet" id="TileSet_71bnu"]
 sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnrk6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4th4"]
 texture = ExtResource("6_gcja0")
 0:0/0 = 0
 1:0/0 = 0
@@ -898,7 +898,7 @@ texture = ExtResource("6_gcja0")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_rnrk6")
+sources/0 = SubResource("TileSetAtlasSource_v4th4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atb3i"]
 size = Vector2(48, 60.5)
@@ -925,7 +925,6 @@ floor_number = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Quiz and door/show result"]
 position = Vector2(-0.000263214, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ics1b")
 
 [node name="Slums door" parent="Slums Parallax/Quiz and door" instance=ExtResource("15_rnrk6")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://3xhgyskghd3h"]
+[gd_scene load_steps=28 format=4 uid="uid://nw8d368jpwo8"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_x28vg"]

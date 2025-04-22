@@ -9,6 +9,7 @@ var quiz_data = []     # Will be populated from QuizDataManager
 var current_question = 0
 var score = 0
 var quiz_completed = false
+var buttons_locked
 
 
 # UI References

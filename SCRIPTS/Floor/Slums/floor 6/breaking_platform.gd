@@ -5,7 +5,6 @@ extends StaticBody2D
 @onready var area = $Area2D
 
 func _ready():
-	animation.play("idle")  # Start with idle animation
 	animation.stop()
 	area.body_entered.connect(_on_Area2D_body_entered)
 

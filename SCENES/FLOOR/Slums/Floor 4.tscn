@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="15_qctpn"]
 [ext_resource type="PackedScene" uid="uid://bgo57eltcotu0" path="res://SCENES/Environment/warning sign.tscn" id="16_23lam"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="16_hurys"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/breaking_platform.tscn" id="17_aqcr8"]
+[ext_resource type="PackedScene" uid="uid://npmxpkt0x3sq" path="res://SCENES/Environment/breaking_platform.tscn" id="17_aqcr8"]
 [ext_resource type="PackedScene" uid="uid://k16acst0ppd1" path="res://SCENES/Environment/downArrow.tscn" id="17_tlpyf"]
 [ext_resource type="Texture2D" uid="uid://kvy8inyxvv2x" path="res://ASSETS/TILESETS/slums_slanttiles.png" id="18_23lam"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="19_5jyn1"]
@@ -184,7 +184,7 @@ size = Vector2(57.5, 32.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jyn1"]
 size = Vector2(58, 34)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d0fv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqcr8"]
 texture = ExtResource("5_id6c6")
 0:2/0 = 0
 0:2/0/z_index = 3
@@ -404,9 +404,9 @@ texture = ExtResource("5_id6c6")
 10:15/0/z_index = 3
 
 [sub_resource type="TileSet" id="TileSet_sklqe"]
-sources/0 = SubResource("TileSetAtlasSource_7d0fv")
+sources/0 = SubResource("TileSetAtlasSource_aqcr8")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2ib0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7euw7"]
 texture = ExtResource("5_id6c6")
 0:2/0 = 0
 0:2/0/z_index = 1
@@ -625,9 +625,9 @@ texture = ExtResource("5_id6c6")
 10:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_71bnu"]
-sources/0 = SubResource("TileSetAtlasSource_r2ib0")
+sources/0 = SubResource("TileSetAtlasSource_7euw7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jyn1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i50bj"]
 texture = ExtResource("18_23lam")
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(7, 5)
@@ -687,9 +687,9 @@ texture = ExtResource("18_23lam")
 
 [sub_resource type="TileSet" id="TileSet_osfug"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_5jyn1")
+sources/1 = SubResource("TileSetAtlasSource_i50bj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23lam"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6tlq"]
 texture = ExtResource("5_id6c6")
 0:2/0 = 0
 0:2/0/z_index = 2
@@ -1012,9 +1012,9 @@ texture = ExtResource("5_id6c6")
 
 [sub_resource type="TileSet" id="TileSet_5jyn1"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_23lam")
+sources/0 = SubResource("TileSetAtlasSource_k6tlq")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkafs"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imp6b"]
 texture = ExtResource("19_5jyn1")
 0:0/0 = 0
 1:0/0 = 0
@@ -1118,7 +1118,7 @@ texture = ExtResource("19_5jyn1")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_hkafs")
+sources/0 = SubResource("TileSetAtlasSource_imp6b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id6c6"]
 size = Vector2(48, 55.25)

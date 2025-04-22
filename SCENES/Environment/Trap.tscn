@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://35ato6hwmvfv"]
+[gd_scene load_steps=7 format=3 uid="uid://35ato6hwmvfv"]
 
-[ext_resource type="Script" uid="uid://bfevv0w4jasdh" path="res://Trap.gd" id="1_sv138"]
+[ext_resource type="Script" uid="uid://bfevv0w4jasdh" path="res://SCRIPTS/Environment/Trap.gd" id="1_sv138"]
 [ext_resource type="Texture2D" uid="uid://doo56n7o0mtpl" path="res://SCRIPTS/Mechanics/deaths/spikee.png" id="2_nf7rp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd23t"]
@@ -25,29 +25,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr60m"]
-size = Vector2(20, 78)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rmyx"]
-size = Vector2(34, 33)
+size = Vector2(30, 30.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="trap" type="Node2D"]
 script = ExtResource("1_sv138")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(87, 22)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_j3qia")
 animation = &"trap_loop"
-frame_progress = 0.408622
-
-[node name="TriggerArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-position = Vector2(15, -13)
-shape = SubResource("RectangleShape2D_hr60m")
+frame_progress = 0.421035
+speed_scale = 0.5
 
 [node name="HitZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone"]
-position = Vector2(87, 23)
+position = Vector2(0, -1.25)
 shape = SubResource("RectangleShape2D_3rmyx")

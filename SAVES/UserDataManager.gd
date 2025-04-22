@@ -39,20 +39,27 @@ func load_local_user_data() -> Dictionary:
 		print("ℹ️ No local user data found.")
 	return {}
 
-# Reset user data to empty structure
+# Reset user data to empty structure, but keep other user information intact
 func reset_user_data() -> void:
-	var default_save_data = {
-		"email": "",
-		"uid": "",
-		"username": "",
-		"id_token": "",
-		"progress": {}
-	}
-
-	var file = FileAccess.open(local_storage_path, FileAccess.WRITE)
-	if file:
-		file.store_string(JSON.stringify(default_save_data, "\t"))
-		file.close()
-		print("✅ User data reset.")
+	# Check if save file exists
+	if FileAccess.file_exists(local_storage_path):
+		var file = FileAccess.open(local_storage_path, FileAccess.READ_WRITE)
+		var json_instance = JSON.new()  # Create an instance of the JSON class
+		var save_data = json_instance.parse(file.get_as_text())
+		if save_data == OK:
+			var user_data = json_instance.get_data()
+			# Reset progress but keep email, uid, username, id_token intact
+			user_data["progress"] = {}  # Reset progress only
+			# Save the updated data back to the file
+			file.seek(0)
+			file.store_string(json_instance.print(user_data, "\t"))
+			file.close()
+			print("✅ User data reset, progress wiped.")
+		else:
+			print("❌ Failed to parse the save file!")
 	else:
-		print("❌ Could not reset user data.")
+		print("❌ Save file not found!")
+
+# Retrieve the latest user data (for use in FirestoreManager)
+func get_latest_user_data() -> Dictionary:
+	return load_local_user_data()

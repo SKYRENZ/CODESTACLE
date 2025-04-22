@@ -83,6 +83,13 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 		)
 		print("✅ Floor data saved to user profile locally.")
 
+		# ✅ Set the Firebase ID token before calling save
+		FirestoreManager.set_id_token(user_data.get("id_token", ""))
+
+		# 🔍 Debug log: show progress JSON
+		print("🔍 Saving user data to Firestore with progress:\n", user_data["progress"])
+		print("🧪 Final progress JSON:\n", JSON.stringify(user_data["progress"], "\t"))
+
 		# ✅ Save to Firestore
 		FirestoreManager.save_user_data_to_firestore(
 			user_data.get("email", ""),

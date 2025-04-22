@@ -4,6 +4,8 @@ signal results_closed
 
 var timer_manager = null
 var quiz_data_manager = null
+var progress_tracker = null  # optional if you use one
+var door_controller = null
 
 @onready var background_dim: ColorRect = $DimBackground  
 @onready var panel: Panel = $"ColorRect/Panel"
@@ -15,16 +17,14 @@ var quiz_data_manager = null
 @onready var npcs_label: Label = $"ColorRect/NPC/NPC Score"
 @onready var coins_label: Label = $"ColorRect/Coins/Gathered Coins"
 
-var door_controller = null
-
 func _ready():
 	timer_manager = get_node_or_null("/root/FloorTimerManager")
 	quiz_data_manager = get_node_or_null("/root/QuizDataManager")
+	progress_tracker = get_node_or_null("/root/ProgressTracker")  # optional
+	continue_button.connect("pressed", Callable(self, "_on_continue_pressed"))
 
 	panel.visible = false
 	background_dim.visible = false  
-
-	continue_button.connect("pressed", Callable(self, "_on_continue_pressed"))
 
 func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 	door_controller = controller
@@ -36,23 +36,67 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 	var score_percent = quiz_score
 	score_label.text = str(score_percent) + "%" if score_percent > 0 else "No Quiz Data Available"
 
+	var elapsed_time = 0.0
 	if timer_manager and timer_manager.current_floor == floor_number:
-		var elapsed_time = timer_manager.stop_timer()
+		elapsed_time = timer_manager.stop_timer()
 		time_label.text = timer_manager.format_time(elapsed_time)
 	else:
 		time_label.text = "Not available"
 
 	var player_data = get_node_or_null("/root/PlayerData")
+	var signs = 0
+	var npcs = 0
+	var coins = 0
+
 	if player_data:
-		print("[DEBUG] Fetching Signs Read:", player_data.get_signs_read())  
-		print("[DEBUG] Fetching NPCs Engaged:", player_data.get_npcs_engaged())  
-		
-		signs_label.text = str(player_data.get_signs_read() * 50)  
-		npcs_label.text = str(player_data.get_npcs_engaged() * 60)  
+		signs = player_data.get_signs_read()
+		npcs = player_data.get_npcs_engaged()
+		if player_data.has_method("get_coins_collected"):
+			coins = player_data.get_coins_collected()
+
+		signs_label.text = str(signs * 50)
+		npcs_label.text = str(npcs * 60)
+		coins_label.text = str(coins)
+
+	# ✅ Save floor progress to UserDataManager (local)
+	var floor_key = "floor_" + str(floor_number)
+	var floor_data = {
+		"time": elapsed_time,
+		"quiz_score": quiz_score,
+		"signages": signs,
+		"npcs": npcs,
+		"coins": coins
+	}
+
+	var user_data = UserDataManager.load_local_user_data()
+	if typeof(user_data) == TYPE_DICTIONARY:
+		if not user_data.has("progress"):
+			user_data["progress"] = {}
+		user_data["progress"][floor_key] = floor_data
+
+		UserDataManager.save_user_data_locally(
+			user_data.get("email", ""),
+			user_data.get("uid", ""),
+			user_data.get("username", ""),
+			user_data.get("id_token", ""),
+			user_data["progress"]
+		)
+		print("✅ Floor data saved to user profile locally.")
+
+		# ✅ Save to Firestore
+		FirestoreManager.save_user_data_to_firestore(
+			user_data.get("email", ""),
+			user_data.get("uid", ""),
+			user_data.get("username", ""),
+			user_data.get("id_token", ""),
+			user_data["progress"]
+		)
+		print("✅ Floor data saved to Firestore.")
+	else:
+		print("❌ Failed to load user data, progress not saved.")
 
 	panel.visible = true
 	background_dim.visible = true
-
 	get_tree().paused = true  
 
 	var player = get_tree().get_nodes_in_group("player")

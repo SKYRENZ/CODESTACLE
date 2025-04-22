@@ -800,6 +800,9 @@ size = Vector2(20, 28.6061)
 
 [node name="Floor2" type="Node2D"]
 script = ExtResource("1_7k0cc")
+floor_number = 1
+signage_count = 3
+npc_count = 1
 
 [node name="Slums Parallax" parent="." instance=ExtResource("2_ydj8t")]
 metadata/_edit_lock_ = true

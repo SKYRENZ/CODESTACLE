@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_l3kwt"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 465, 715, 0, 0, 0, 0, 635, 717)
+"points": PackedVector2Array(0, 0, 0, 0, 463, 715, 0, 0, 0, 0, 633, 717)
 }
 point_count = 2
 
@@ -51,6 +51,7 @@ _data = {
 }
 
 [node name="diagonalplat" type="Path2D"]
+position = Vector2(-520, -720)
 curve = SubResource("Curve2D_l3kwt")
 script = ExtResource("1_ssgpg")
 
@@ -73,7 +74,7 @@ scale = Vector2(0.819493, 1.02144)
 texture = ExtResource("2_t6u6t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(59.043, 3.30563)
+position = Vector2(56.0785, 6.34074)
 rotation = 3.13508
 shape = SubResource("RectangleShape2D_5x88h")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://1h5vq30pmrvq"]
+[gd_scene load_steps=62 format=4 uid="uid://1h5vq30pmrvq"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_j1m7x"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_wxlvv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="9_tdjog"]
 [ext_resource type="Script" uid="uid://dyo7nydlxokt5" path="res://SCRIPTS/Mechanics/deaths/toxiic.gd" id="10_qyilj"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="11_eih0j"]
+[ext_resource type="PackedScene" uid="uid://bdu71mcp6an2b" path="res://SCENES/Environment/acid.tscn" id="11_udhfs"]
 [ext_resource type="Resource" uid="uid://clgy2ml5pyygy" path="res://DIALOGUE/FLOOR 8.dialogue" id="12_udhfs"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="13_s4gq6"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="15_epylf"]
@@ -601,21 +602,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01es4"]
 size = Vector2(1125, 39)
 
-[sub_resource type="GDScript" id="GDScript_qyilj"]
-script/source = "extends Area2D
-
-func _ready():
-	body_entered.connect(_on_body_entered)
-
-func _on_body_entered(body):
-	if body.is_in_group(\"player\"):
-		print(\"🔥 Player fell into toxic lava!\")
-		get_tree().reload_current_scene()  # Restart the game
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
-size = Vector2(744, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b6pb"]
 size = Vector2(49, 65)
 
@@ -892,17 +878,7 @@ texture = ExtResource("9_tdjog")
 position = Vector2(595.5, 1151.5)
 shape = SubResource("RectangleShape2D_01es4")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = SubResource("GDScript_qyilj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1576, 719)
-shape = SubResource("RectangleShape2D_6nwro")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1581, 735)
-scale = Vector2(1.14058, 1)
-texture = ExtResource("9_tdjog")
+[node name="acid" parent="." instance=ExtResource("11_udhfs")]
 
 [node name="Dialogues" type="Node" parent="."]
 

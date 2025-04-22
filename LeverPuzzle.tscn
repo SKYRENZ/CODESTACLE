@@ -8,7 +8,7 @@
 size = Vector2(38, 240)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5i1"]
-size = Vector2(44, 204.5)
+size = Vector2(44, 109.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pm8nv"]
 atlas = ExtResource("2_5wk4t")
@@ -45,21 +45,24 @@ script = ExtResource("1_ox5i1")
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="WallCollider" type="CollisionShape2D" parent="Wall"]
-position = Vector2(287, 492)
+position = Vector2(76, -96)
 shape = SubResource("RectangleShape2D_2qbgm")
 
 [node name="LeverArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeverArea"]
-position = Vector2(211, 493.25)
+position = Vector2(0, -47.25)
 shape = SubResource("RectangleShape2D_ox5i1")
 
 [node name="BlockingSprite" type="Sprite2D" parent="LeverArea"]
-position = Vector2(337, 501)
+position = Vector2(126, -102)
 scale = Vector2(1.38579, 3.18879)
 texture = ExtResource("2_vxhgv")
 
 [node name="LeverSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(212, 583)
+position = Vector2(1, -5)
 sprite_frames = SubResource("SpriteFrames_ygqly")
 animation = &"on"
+frame = 2
+frame_progress = 1.0
+speed_scale = 0.3

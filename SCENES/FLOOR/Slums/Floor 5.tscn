@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="21_diorx"]
 [ext_resource type="PackedScene" uid="uid://vd1ttx8ga2nv" path="res://SCENES/Mechanics/moving_platVertical.tscn" id="22_q25r6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy1f3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebodr"]
 texture = ExtResource("5_um17i")
 0:2/0 = 0
 0:2/0/z_index = 2
@@ -348,9 +348,9 @@ texture = ExtResource("5_um17i")
 
 [sub_resource type="TileSet" id="TileSet_r3iwn"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_qy1f3")
+sources/0 = SubResource("TileSetAtlasSource_ebodr")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w332r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3cpf"]
 texture = ExtResource("9_g6c34")
 0:0/0 = 0
 1:0/0 = 0
@@ -454,7 +454,7 @@ texture = ExtResource("9_g6c34")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_w332r")
+sources/0 = SubResource("TileSetAtlasSource_d3cpf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nia05"]
 size = Vector2(48, 55.25)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdu71mcp6an2b"]
+
+[ext_resource type="Texture2D" uid="uid://dn5wdamdrr2ob" path="res://ASSETS/TILESETS/toxic.png" id="1_nqc56"]
+
+[sub_resource type="GDScript" id="GDScript_qyilj"]
+script/source = "extends Area2D
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		print(\"🔥 Player fell into toxic lava!\")
+		get_tree().reload_current_scene()  # Restart the game
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
+size = Vector2(354, 54)
+
+[node name="acid" type="Area2D"]
+script = SubResource("GDScript_qyilj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_6nwro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.499992, 8.5)
+scale = Vector2(0.583067, 1.12245)
+texture = ExtResource("1_nqc56")

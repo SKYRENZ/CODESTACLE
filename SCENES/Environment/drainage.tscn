@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw3ab1ev7x8yq"]
+[gd_scene load_steps=10 format=3 uid="uid://buelhonuf0y52"]
 
 [ext_resource type="Texture2D" uid="uid://csauv6cusycxk" path="res://ASSETS/Environment/drainage animation-Sheet.png" id="1_tnokx"]
-[ext_resource type="Script" uid="uid://1x0m54j6w6o1" path="res://SCRIPTS/Environment/drainage.gd" id="2_apojc"]
+[ext_resource type="Script" path="res://SCRIPTS/Environment/drainage.gd" id="2_apojc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apojc"]
 atlas = ExtResource("1_tnokx")
@@ -53,7 +53,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="drainage" type="AnimatedSprite2D"]
 z_index = 7
 position = Vector2(0.999998, 50)
 scale = Vector2(0.163953, 0.163953)

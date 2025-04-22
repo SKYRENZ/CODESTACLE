@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bog1f8kdn1ei8" path="res://DIALOGUE/FLOOR 4.dialogue" id="7_tje4y"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="8_5yg62"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="9_osfug"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/drainage.tscn" id="12_osfug"]
+[ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="12_osfug"]
 [ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="13_5yg62"]
 [ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="13_hkafs"]
 [ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="13_hurys"]

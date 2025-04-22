@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://vd1ttx8ga2nv"]
+
+[ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="1_gbain"]
+[ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="2_10r31"]
+
+[sub_resource type="Curve2D" id="Curve2D_tdjog"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1316, 436, 0, 0, 0, 0, 1317, 662)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ald7m"]
+size = Vector2(32.8716, 90.915)
+
+[sub_resource type="Animation" id="Animation_314vw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ache6"]
+resource_name = "baba"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.9787]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mv7af"]
+_data = {
+&"RESET": SubResource("Animation_314vw"),
+&"baba": SubResource("Animation_ache6")
+}
+
+[node name="platvertical" type="Path2D"]
+position = Vector2(-1319, -434)
+curve = SubResource("Curve2D_tdjog")
+script = ExtResource("1_gbain")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1316, 436)
+rotation = 1.56637
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(1316, 436)
+rotation = 1.56637
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(80.9196, 18.3582)
+rotation = -1.57925
+texture = ExtResource("2_10r31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(1.12829, -28.9953)
+shape = SubResource("RectangleShape2D_ald7m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mv7af")
+}

@@ -35,7 +35,7 @@ script = ExtResource("1_sv138")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_j3qia")
 animation = &"trap_loop"
-frame_progress = 0.421035
+frame_progress = 0.276103
 speed_scale = 0.5
 
 [node name="HitZone" type="Area2D" parent="."]

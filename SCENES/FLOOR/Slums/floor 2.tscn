@@ -806,6 +806,7 @@ size = Vector2(20, 759)
 size = Vector2(20, 28.6061)
 
 [node name="Floor2" type="Node2D"]
+position = Vector2(2, 0)
 script = ExtResource("1_x28vg")
 floor_number = 2
 signage_count = 3

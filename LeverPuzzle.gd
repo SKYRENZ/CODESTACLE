@@ -1,69 +1,84 @@
 extends Node2D
 
-@onready var wall_collider = $Wall/WallCollider
-@onready var input_box = $CommandBox/Panel/InputBox
-@onready var command_ui = $CommandBox
-@onready var lever_area = $LeverArea
-@onready var lever_sprite = $LeverSprite
+@onready var wall_collider = $Wall/WallCollider  # The collider that blocks the player
+@onready var lever_area = $LeverArea  # The area where the player needs to interact
+@onready var lever_sprite = $LeverSprite  # Lever sprite to show if it's "on" or "off"
+@onready var blocking_sprite = $LeverArea/BlockingSprite  # Sprite2D that visually blocks the player
 
-var command_required := "true"
+var command_box_scene: PackedScene = preload("res://CommandBox.tscn")
+var command_box_instance = null
+
+var command_required := "false;"
 var player_in_range := false
 var is_command_active := false
 var has_been_solved := false
 var current_player = null
 
 func _ready():
+	# Make sure the wall collider is enabled initially
 	wall_collider.disabled = false
-	command_ui.visible = false
-
-	if input_box and not input_box.text_submitted.is_connected(_on_text_submitted):
-		input_box.text_submitted.connect(_on_text_submitted)
 
 	if lever_area:
-		lever_area.body_entered.connect(_on_body_entered)
-		lever_area.body_exited.connect(_on_body_exited)
+		lever_area.body_entered.connect(_on_body_entered)  # Player enters range
+		lever_area.body_exited.connect(_on_body_exited)  # Player exits range
 
 func _process(_delta):
+	# Show the command UI when the player is in range and presses "interact"
 	if player_in_range and not is_command_active and not has_been_solved:
 		if Input.is_action_just_pressed("interact"):
 			_show_command_ui()
 
 func _on_body_entered(body):
+	# Detect when the player enters the interaction range
 	if body.is_in_group("player"):
 		player_in_range = true
 		current_player = body
+		print("Player entered the lever area.")
 
 func _on_body_exited(body):
+	# Detect when the player leaves the interaction range
 	if body.is_in_group("player"):
 		player_in_range = false
 		current_player = null
+		print("Player exited the lever area.")
 
 func _show_command_ui():
+	# Show the command UI if it's not active and the puzzle hasn't been solved yet
+	if is_command_active or has_been_solved:
+		return
+
 	is_command_active = true
-	command_ui.visible = true
-	input_box.text = ""
-	input_box.grab_focus()
+	command_box_instance = command_box_scene.instantiate()
+
+	get_tree().current_scene.add_child(command_box_instance)  # Adds it to the current scene
+	command_box_instance.position = Vector2(200, 100)  # Position the command box on the screen
+
+	command_box_instance.required_command = command_required
+	command_box_instance.correct_command_entered.connect(_on_correct_command)  # When the command is correct
+	command_box_instance.wrong_command_entered.connect(_on_wrong_command)  # When the command is wrong
+	command_box_instance.open()
 
 	if current_player:
-		current_player.set_movement_locked(true)
+		current_player.set_movement_locked(true)  # Prevent the player from moving while UI is active
 
-func _on_text_submitted(command: String):
-	command = command.strip_edges().to_lower()
-	print("📝 Submitted command:", command)
+func _on_correct_command():
+	print("✅ Correct command! Wall collider disabled.")
+	has_been_solved = true
+	wall_collider.set_deferred("disabled", true)  # Disable the wall collider to let the player pass
 
-	if command == command_required:
-		print("✅ Correct command! Wall collider disabled.")
-		has_been_solved = true
-		wall_collider.set_deferred("disabled", true)
-		if lever_sprite:
-			lever_sprite.play("on")
-	else:
-		print("❌ Incorrect command.")
+	if lever_sprite:
+		lever_sprite.play("on")  # Play the "on" animation for the lever sprite
+	
+	if blocking_sprite:
+		blocking_sprite.queue_free()  # Remove the blocking sprite from the scene (the wall disappears)
 
-	# Close command UI
-	command_ui.visible = false
+	_close_command_ui()
+
+func _on_wrong_command():
+	print("❌ Incorrect command.")
+	_close_command_ui()
+
+func _close_command_ui():
 	is_command_active = false
-
-	# Resume player movement
 	if current_player:
-		current_player.set_movement_locked(false)
+		current_player.set_movement_locked(false)  # Re-enable movement for the player

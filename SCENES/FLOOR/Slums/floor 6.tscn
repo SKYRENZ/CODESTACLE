@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="11_pmssi"]
 [ext_resource type="Script" uid="uid://bd7cs4sj32mjd" path="res://SCRIPTS/Floor/Slums/floor 6/breaking_platform.gd" id="12_ma1xv"]
 [ext_resource type="Texture2D" uid="uid://6pmltylq1ok8" path="res://ASSETS/TILESETS/breaak.png" id="13_jkvfs"]
-[ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://Trap.tscn" id="14_mv7af"]
+[ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://SCENES/Environment/Trap.tscn" id="14_mv7af"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="14_xwx4o"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_pmssi"]
 

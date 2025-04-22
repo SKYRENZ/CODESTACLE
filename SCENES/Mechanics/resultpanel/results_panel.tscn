@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccdye2d02ld6m"]
+[gd_scene load_steps=13 format=3 uid="uid://ccdye2d02ld6m"]
 
 [ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
+[ext_resource type="Texture2D" uid="uid://8lfvcpnhm2s8" path="res://SCRIPTS/Mechanics/Collectibles/0-export.png" id="2_oo0cb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkbqg"]
 line_spacing = 5.0
@@ -36,6 +37,8 @@ font_color = Color(0.921569, 0.862745, 0.356863, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_w730j"]
 font_size = 21
 font_color = Color(0.999056, 1, 0.0694165, 1)
+outline_size = 4
+outline_color = Color(1, 1, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_k2l0e"]
 font_size = 22
@@ -229,8 +232,42 @@ offset_right = 253.0
 offset_bottom = 26.0
 label_settings = SubResource("LabelSettings_7vdw5")
 
+[node name="Total" type="Label" parent="ColorRect"]
+z_index = 10
+offset_left = 234.0
+offset_top = 421.0
+offset_right = 388.0
+offset_bottom = 451.0
+text = "Total Score:"
+label_settings = SubResource("LabelSettings_w730j")
+
+[node name="total Score" type="Label" parent="ColorRect/Total"]
+layout_mode = 0
+offset_left = 141.0
+offset_right = 181.0
+offset_bottom = 31.0
+label_settings = SubResource("LabelSettings_occai")
+
 [node name="DimBackground" type="ColorRect" parent="."]
 offset_right = 1307.0
 offset_bottom = 1149.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.5)
+
+[node name="Star1" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(849, 561)
+scale = Vector2(0.320438, 0.284771)
+texture = ExtResource("2_oo0cb")
+
+[node name="Star2" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(914, 562)
+scale = Vector2(0.320438, 0.284771)
+texture = ExtResource("2_oo0cb")
+
+[node name="Star3" type="Sprite2D" parent="."]
+z_index = 11
+position = Vector2(979, 562)
+scale = Vector2(0.320438, 0.284771)
+texture = ExtResource("2_oo0cb")

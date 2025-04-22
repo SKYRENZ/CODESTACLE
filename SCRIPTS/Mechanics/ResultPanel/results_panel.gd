@@ -6,6 +6,7 @@ var timer_manager = null
 var quiz_data_manager = null
 var progress_tracker = null  # optional if you use one
 var door_controller = null
+var objective_manager = null  # Reference to ObjectiveManager
 
 @onready var background_dim: ColorRect = $DimBackground  
 @onready var panel: Panel = $"ColorRect/Panel"
@@ -16,13 +17,22 @@ var door_controller = null
 @onready var signs_label: Label = $"ColorRect/Sign/Sign Score"
 @onready var npcs_label: Label = $"ColorRect/NPC/NPC Score"
 @onready var coins_label: Label = $"ColorRect/Coins/Gathered Coins"
+@onready var total_score_label: Label = $"ColorRect/Total/total Score"  # Updated path for total score label
+@onready var star1: Sprite2D = $Star1  # Updated to Sprite2D
+@onready var star2: Sprite2D = $Star2  # Updated to Sprite2D
+@onready var star3: Sprite2D = $Star3  # Updated to Sprite2D
+
+var player_data = null  # To store the reference to PlayerData
 
 func _ready():
 	timer_manager = get_node_or_null("/root/FloorTimerManager")
 	quiz_data_manager = get_node_or_null("/root/QuizDataManager")
 	progress_tracker = get_node_or_null("/root/ProgressTracker")  # optional
+	objective_manager = get_node_or_null("/root/ObjectiveManager")  # Fetch ObjectiveManager
 	continue_button.connect("pressed", Callable(self, "_on_continue_pressed"))
-
+	
+	player_data = get_node_or_null("/root/PlayerData")  # Fetch the PlayerData node
+	
 	panel.visible = false
 	background_dim.visible = false  
 
@@ -43,64 +53,55 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 	else:
 		time_label.text = "Not available"
 
-	var player_data = get_node_or_null("/root/PlayerData")
+	# Fetch and display player data (signs, NPCs, and coins)
 	var signs = 0
 	var npcs = 0
 	var coins = 0
 
+	if objective_manager:
+		signs = objective_manager.current_read
+		npcs = objective_manager.current_npcs_interacted
+
 	if player_data:
-		signs = player_data.get_signs_read()
-		npcs = player_data.get_npcs_engaged()
-		if player_data.has_method("get_coins_collected"):
-			coins = player_data.get_coins_collected()
+		coins = player_data.get_coins_collected()
 
-		signs_label.text = str(signs * 50)
-		npcs_label.text = str(npcs * 60)
-		coins_label.text = str(coins)
+	# Calculate points
+	var sign_points = signs * 40
+	var npc_points = npcs * 40
+	var coin_points = coins * 5
 
-	# ✅ Save floor progress to UserDataManager (local)
-	var floor_key = "floor_" + str(floor_number)
-	var floor_data = {
-		"time": elapsed_time,
-		"quiz_score": quiz_score,
-		"signages": signs,
-		"npcs": npcs,
-		"coins": coins
-	}
+	# Calculate quiz points (50 points for 100%, scaled down for lower percentages)
+	var quiz_points = int((score_percent / 100.0) * 50)
 
-	var user_data = UserDataManager.load_local_user_data()
-	if typeof(user_data) == TYPE_DICTIONARY:
-		if not user_data.has("progress"):
-			user_data["progress"] = {}
-		user_data["progress"][floor_key] = floor_data
-
-		UserDataManager.save_user_data_locally(
-			user_data.get("email", ""),
-			user_data.get("uid", ""),
-			user_data.get("username", ""),
-			user_data.get("id_token", ""),
-			user_data["progress"]
-		)
-		print("✅ Floor data saved to user profile locally.")
-
-		# ✅ Set the Firebase ID token before calling save
-		FirestoreManager.set_id_token(user_data.get("id_token", ""))
-
-		# 🔍 Debug log: show progress JSON
-		print("🔍 Saving user data to Firestore with progress:\n", user_data["progress"])
-		print("🧪 Final progress JSON:\n", JSON.stringify(user_data["progress"], "\t"))
-
-		# ✅ Save to Firestore
-		FirestoreManager.save_user_data_to_firestore(
-			user_data.get("email", ""),
-			user_data.get("uid", ""),
-			user_data.get("username", ""),
-			user_data.get("id_token", ""),
-			user_data["progress"]
-		)
-		print("✅ Floor data saved to Firestore.")
+	# Calculate time points
+	var time_points = 0
+	if elapsed_time < 30:
+		time_points = 80
 	else:
-		print("❌ Failed to load user data, progress not saved.")
+		time_points = 50
+
+	# Calculate total score
+	var total_score = sign_points + npc_points + coin_points + quiz_points + time_points
+
+	# Update UI labels with the player data
+	signs_label.text = "%d" % sign_points
+	npcs_label.text = "%d" % npc_points
+	coins_label.text = "%d" % coin_points
+	total_score_label.text = "%d" % total_score  # Update total score label
+
+	# Determine star rating (adjusted for testing)
+	var stars = 0
+	if total_score >= 300:
+		stars = 3
+	elif total_score >= 200:
+		stars = 2
+	else:
+		stars = 1
+
+	# Update star visibility
+	star1.visible = stars >= 1
+	star2.visible = stars >= 2
+	star3.visible = stars >= 3
 
 	panel.visible = true
 	background_dim.visible = true

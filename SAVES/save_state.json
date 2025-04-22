@@ -7,20 +7,20 @@
 			"npcs": 0.0,
 			"quiz_score": 50.0,
 			"signages": 0.0,
-			"time": 25.970999956131
+			"time": 69.0729999542236
 		},
 		"floor_2": {
-			"coins": 0.0,
-			"npcs": 0.0,
-			"quiz_score": 66.0,
-			"signages": 0.0,
-			"time": 45.5350000858307
-		},
-		"floor_3": {
 			"coins": 0,
 			"npcs": 0,
-			"quiz_score": 50,
+			"quiz_score": 66,
 			"signages": 0,
+			"time": 43.0770001411438
+		},
+		"floor_3": {
+			"coins": 0.0,
+			"npcs": 0.0,
+			"quiz_score": 50.0,
+			"signages": 0.0,
 			"time": 64.9170000553131
 		}
 	},

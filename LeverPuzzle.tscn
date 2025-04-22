@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpajkiy4fm8bv"]
+[gd_scene load_steps=10 format=3 uid="uid://dpajkiy4fm8bv"]
 
 [ext_resource type="Script" uid="uid://cwf6kane55wvv" path="res://LeverPuzzle.gd" id="1_ox5i1"]
 [ext_resource type="Texture2D" uid="uid://dn7aaqag2lrnt" path="res://Lever Dirt-Sheet.png" id="2_5wk4t"]
+[ext_resource type="Texture2D" uid="uid://dgkoaujeqp6ss" path="res://Sprite-0002.png" id="2_vxhgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qbgm"]
 size = Vector2(38, 240)
@@ -53,39 +54,10 @@ shape = SubResource("RectangleShape2D_2qbgm")
 position = Vector2(211, 493.25)
 shape = SubResource("RectangleShape2D_ox5i1")
 
-[node name="CommandBox" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 276.0
-offset_top = 108.0
-offset_right = 932.0
-offset_bottom = 479.0
-
-[node name="Panel" type="Panel" parent="CommandBox"]
-layout_mode = 0
-offset_left = -160.0
-offset_top = 302.0
-offset_right = 107.0
-offset_bottom = 472.0
-
-[node name="Label" type="Label" parent="CommandBox/Panel"]
-layout_mode = 0
-offset_left = -17.0
-offset_top = 72.0
-offset_right = 186.0
-offset_bottom = 169.0
-text = "Visible = "
-horizontal_alignment = 1
-
-[node name="InputBox" type="LineEdit" parent="CommandBox/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.041
-anchor_bottom = 0.042
-offset_left = 121.0
-offset_top = 70.0
-offset_right = 178.615
-offset_bottom = 93.86
+[node name="BlockingSprite" type="Sprite2D" parent="LeverArea"]
+position = Vector2(337, 501)
+scale = Vector2(1.38579, 3.18879)
+texture = ExtResource("2_vxhgv")
 
 [node name="LeverSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 583)

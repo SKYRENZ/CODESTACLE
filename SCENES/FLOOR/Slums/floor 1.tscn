@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://kgetvwqx48vl"]
+[gd_scene load_steps=29 format=4 uid="uid://kgetvwqx48vl"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_7k0cc"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_ttjng"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://6id3tq4fxjwe" path="res://ASSETS/Environment/HOUSE/slumshouse and poster.png" id="15_ttjng"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_ydj8t"]
 [ext_resource type="PackedScene" uid="uid://cw3ab1ev7x8yq" path="res://SCENES/Environment/drainage.tscn" id="17_47281"]
+[ext_resource type="PackedScene" uid="uid://dpajkiy4fm8bv" path="res://LeverPuzzle.tscn" id="18_b4bnl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttjng"]
 texture = ExtResource("4_47281")
@@ -972,3 +973,6 @@ position = Vector2(1261, 828)
 
 [node name="AnimatedSprite2D3" parent="drainage" instance=ExtResource("17_47281")]
 position = Vector2(2243, 727)
+
+[node name="LeverPuzzle" parent="." instance=ExtResource("18_b4bnl")]
+position = Vector2(548, 142)

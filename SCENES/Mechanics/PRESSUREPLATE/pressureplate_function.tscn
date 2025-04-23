@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0dofnk5yabu1"]
+
+[ext_resource type="Texture2D" uid="uid://cgwss4e250hq6" path="res://ASSETS/Environment/WALL/DIRTWALL_animation-Sheet.png" id="1_pbfse"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_llq0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thvqj"]
+size = Vector2(86, 376.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfse"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(192, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipf0q"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(0, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_676l1"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(48, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8prs4"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(96, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llq0u"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(144, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thvqj"]
+atlas = ExtResource("1_pbfse")
+region = Rect2(192, 0, 48, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwyxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfse")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipf0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_676l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8prs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llq0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thvqj")
+}],
+"loop": true,
+"name": &"wallanimation",
+"speed": 6.0
+}]
+
+[node name="DIRTWALL" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_llq0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(317, 147.75)
+shape = SubResource("RectangleShape2D_thvqj")
+
+[node name="DIRTWALL" type="AnimatedSprite2D" parent="."]
+position = Vector2(318, 148)
+scale = Vector2(1.89583, 1.89583)
+sprite_frames = SubResource("SpriteFrames_dwyxm")
+animation = &"wallanimation"

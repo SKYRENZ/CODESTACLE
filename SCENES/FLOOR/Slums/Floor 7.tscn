@@ -1247,4 +1247,4 @@ position = Vector2(1595, 316)
 shape = SubResource("RectangleShape2D_4d2vg")
 
 [node name="LeverPuzzle" parent="." instance=ExtResource("14_p5l8l")]
-position = Vector2(689, 206)
+position = Vector2(702, 209)

@@ -149,10 +149,14 @@ func _on_continue_pressed():
 	print("Continue button pressed!")
 	get_tree().paused = false
 
-	if door_controller and door_controller.has_method("transition_to_next_floor"):
-		door_controller.transition_to_next_floor()
+	if door_controller:
+		if door_controller.has_method("transition_to_next_floor"):
+			print("Transitioning to the next floor...")
+			door_controller.transition_to_next_floor()
+		else:
+			print("Door controller does not have 'transition_to_next_floor' method!")
 	else:
-		print("Door controller reference not valid!")
+		print("Door controller reference is null!")
 
 	panel.visible = false
 	background_dim.visible = false  

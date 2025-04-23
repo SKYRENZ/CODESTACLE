@@ -5,9 +5,23 @@
 		"floor_1": {
 			"coins": 6,
 			"npcs": 1,
-			"quiz_score": 50,
+			"quiz_score": 25,
 			"signages": 3,
-			"time": 22.9660000801086
+			"time": 33.6389999389648
+		},
+		"floor_2": {
+			"coins": 1.0,
+			"npcs": 0.0,
+			"quiz_score": 0.0,
+			"signages": 0.0,
+			"time": 1.80799984931946
+		},
+		"floor_7": {
+			"coins": 0.0,
+			"npcs": 0.0,
+			"quiz_score": 0.0,
+			"signages": 0.0,
+			"time": 0.753000020980835
 		}
 	},
 	"uid": "M36H4uzxN0eiZVvsUD1ekbOaHvx1",

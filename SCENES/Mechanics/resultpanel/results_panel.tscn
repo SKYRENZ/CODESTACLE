@@ -1,54 +1,72 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccdye2d02ld6m"]
+[gd_scene load_steps=17 format=3 uid="uid://ccdye2d02ld6m"]
 
 [ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_xkbqg"]
 [ext_resource type="Texture2D" uid="uid://8lfvcpnhm2s8" path="res://SCRIPTS/Mechanics/Collectibles/0-export.png" id="2_oo0cb"]
+[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="2_spxw3"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_xkbqg"]
-line_spacing = 5.0
-font_size = 49
-font_color = Color(0.992157, 0.807843, 0.666667, 1)
-shadow_size = 3
-shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_vruv7"]
+font = ExtResource("2_spxw3")
+font_size = 43
+font_color = Color(0.290196, 0.129412, 0.0470588, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_oo0cb"]
-font_size = 35
-font_color = Color(0.921569, 0.862745, 0.356863, 1)
-shadow_size = 3
-shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_nwl3r"]
+font = ExtResource("2_spxw3")
+font_size = 38
+font_color = Color(0.894118, 0.317647, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ehua"]
 font_size = 30
-font_color = Color(0.956863, 0.513726, 0.490196, 1)
+font_color = Color(0.305882, 0.305882, 0.305882, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_spxw3"]
+font = ExtResource("2_spxw3")
 font_size = 35
-font_color = Color(0.92075, 0.864399, 0.356492, 1)
-shadow_size = 3
-shadow_color = Color(0.956863, 0.513726, 0.490196, 1)
+font_color = Color(0.894118, 0.317647, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h5g7m"]
 font_size = 30
-font_color = Color(0.956863, 0.513726, 0.490196, 1)
+font_color = Color(0.305882, 0.305882, 0.305882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spxw3"]
+bg_color = Color(0.965686, 0.816518, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.960784, 0.584314, 0.337255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n63n0"]
+font = ExtResource("2_spxw3")
+font_size = 43
+font_color = Color(0.94902, 0.352941, 0.141176, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1rut"]
-font_size = 32
-font_color = Color(0.921569, 0.862745, 0.356863, 1)
+font = ExtResource("2_spxw3")
+font_size = 39
+font_color = Color(0.94902, 0.352941, 0.141176, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w730j"]
+font = ExtResource("2_spxw3")
 font_size = 21
-font_color = Color(0.999056, 1, 0.0694165, 1)
 outline_size = 4
 outline_color = Color(1, 1, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_k2l0e"]
 font_size = 22
-font_color = Color(1, 1, 0.0705882, 1)
+font_color = Color(0.305882, 0.305882, 0.305882, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_occai"]
 font_size = 22
-font_color = Color(1, 1, 0.0705882, 1)
+font_color = Color(0.305882, 0.305882, 0.305882, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vdw5"]
+font_size = 22
+font_color = Color(0.305882, 0.305882, 0.305882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8c4po"]
+font = ExtResource("2_spxw3")
+font_size = 28
+font_color = Color(0.94902, 0.352941, 0.141176, 1)
 
 [node name="Control" type="CanvasLayer"]
 script = ExtResource("1_xkbqg")
@@ -66,24 +84,27 @@ offset_right = 497.0
 offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.262727, 0.181329, 0.108937, 1)
+color = Color(0.960784, 0.584314, 0.337255, 1)
 
 [node name="Panel" type="Panel" parent="ColorRect"]
-modulate = Color(0.6, 0.72549, 0.596078, 1)
-self_modulate = Color(0.6, 0.72549, 0.596078, 1)
-z_index = 5
+layout_mode = 0
+offset_left = 243.0
+offset_top = 205.0
+offset_right = 283.0
+offset_bottom = 245.0
+scale = Vector2(9.91517, 8.36899)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -430.0
-offset_top = -266.5
-offset_right = 420.0
-offset_bottom = 268.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_right = 0.045
+anchor_bottom = 0.07
+offset_left = -22.5916
+offset_top = -21.8664
+offset_right = 325.448
+offset_bottom = 183.304
+scale = Vector2(0.246254, 0.302459)
+color = Color(0.968627, 0.784314, 0.639216, 1)
 
 [node name="Floor complete label" type="Label" parent="ColorRect"]
 z_index = 5
@@ -91,14 +112,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -220.5
-offset_top = 43.0
-offset_right = 220.5
-offset_bottom = 184.0
+offset_left = -210.0
+offset_top = 72.0
+offset_right = 231.0
+offset_bottom = 213.0
 grow_horizontal = 2
 text = "FLOOR COMPLETE!
 "
-label_settings = SubResource("LabelSettings_xkbqg")
+label_settings = SubResource("LabelSettings_vruv7")
 horizontal_alignment = 1
 
 [node name="quiz score" type="Label" parent="ColorRect"]
@@ -108,16 +129,16 @@ offset_left = 46.0
 offset_top = 121.0
 offset_right = 287.0
 offset_bottom = 194.0
-text = "Quiz Score:"
-label_settings = SubResource("LabelSettings_oo0cb")
+text = "QUIZ SCORE:"
+label_settings = SubResource("LabelSettings_nwl3r")
 
 [node name="quiz percentage" type="Label" parent="ColorRect/quiz score"]
 z_index = 5
 layout_mode = 0
-offset_left = 197.0
-offset_top = 4.0
-offset_right = 554.0
-offset_bottom = 69.0
+offset_left = 271.0
+offset_top = -7.0
+offset_right = 628.0
+offset_bottom = 58.0
 label_settings = SubResource("LabelSettings_5ehua")
 
 [node name="floor time" type="Label" parent="ColorRect"]
@@ -131,16 +152,16 @@ offset_top = -101.5
 offset_right = 234.0
 offset_bottom = -52.5
 grow_vertical = 2
-text = "Floor Time:"
+text = "FLOOR TIME:"
 label_settings = SubResource("LabelSettings_spxw3")
 
 [node name="floor time timestamp" type="Label" parent="ColorRect/floor time"]
 z_index = 5
 layout_mode = 0
-offset_left = 198.5
-offset_top = 7.5
-offset_right = 561.5
-offset_bottom = 65.5
+offset_left = 271.0
+offset_top = -10.0
+offset_right = 634.0
+offset_bottom = 48.0
 label_settings = SubResource("LabelSettings_h5g7m")
 
 [node name="Button" type="Button" parent="ColorRect"]
@@ -150,6 +171,7 @@ offset_left = 331.0
 offset_top = 469.0
 offset_right = 545.0
 offset_bottom = 517.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_spxw3")
 
 [node name="Continue" type="Label" parent="ColorRect/Button"]
 z_index = 1
@@ -159,93 +181,94 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -21.0
-offset_right = 60.0
-offset_bottom = 27.0
+offset_left = -93.0
+offset_top = -18.0
+offset_right = 90.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Continue"
-label_settings = SubResource("LabelSettings_s1rut")
+label_settings = SubResource("LabelSettings_n63n0")
 
 [node name="Points" type="Label" parent="ColorRect"]
 z_index = 10
 layout_mode = 0
-offset_left = 51.0
-offset_top = 245.0
-offset_right = 156.0
-offset_bottom = 290.0
-text = "Points:"
+offset_left = 46.0
+offset_top = 232.0
+offset_right = 178.0
+offset_bottom = 277.0
+text = "POINTS:"
 label_settings = SubResource("LabelSettings_s1rut")
 
 [node name="NPC" type="Label" parent="ColorRect"]
 z_index = 10
 layout_mode = 0
 offset_left = 132.0
-offset_top = 343.0
-offset_right = 332.0
-offset_bottom = 373.0
-text = "Engaged with NPCs:"
+offset_top = 319.0
+offset_right = 362.0
+offset_bottom = 349.0
+text = "ENGAGED WITH NPCS:"
 label_settings = SubResource("LabelSettings_w730j")
 
 [node name="NPC Score" type="Label" parent="ColorRect/NPC"]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 1.0
-offset_right = 253.0
-offset_bottom = 32.0
+offset_left = 270.0
+offset_top = -7.0
+offset_right = 331.0
+offset_bottom = 24.0
 label_settings = SubResource("LabelSettings_k2l0e")
 
 [node name="Sign" type="Label" parent="ColorRect"]
 z_index = 10
 layout_mode = 0
-offset_left = 131.0
-offset_top = 305.0
-offset_right = 248.0
-offset_bottom = 328.0
-text = "Reading a Sign:"
+offset_left = 132.0
+offset_top = 289.0
+offset_right = 312.0
+offset_bottom = 312.0
+text = "READING A SIGN:"
 label_settings = SubResource("LabelSettings_w730j")
 
 [node name="Sign Score" type="Label" parent="ColorRect/Sign"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = -1.0
-offset_right = 210.0
-offset_bottom = 30.0
+offset_left = 270.0
+offset_top = -12.0
+offset_right = 357.0
+offset_bottom = 19.0
 label_settings = SubResource("LabelSettings_occai")
 
 [node name="Coins" type="Label" parent="ColorRect"]
 z_index = 10
 layout_mode = 0
-offset_left = 131.0
-offset_top = 378.0
-offset_right = 293.0
-offset_bottom = 408.0
-text = "Gathered Coins:"
+offset_left = 132.0
+offset_top = 351.0
+offset_right = 330.0
+offset_bottom = 381.0
+text = "GATHERED COINS:"
 label_settings = SubResource("LabelSettings_w730j")
 
 [node name="Gathered Coins" type="Label" parent="ColorRect/Coins"]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 3.0
-offset_right = 253.0
-offset_bottom = 26.0
+offset_left = 270.0
+offset_right = 344.0
+offset_bottom = 31.0
 label_settings = SubResource("LabelSettings_7vdw5")
 
 [node name="Total" type="Label" parent="ColorRect"]
 z_index = 10
-offset_left = 234.0
+layout_mode = 0
+offset_left = 218.0
 offset_top = 421.0
-offset_right = 388.0
+offset_right = 382.0
 offset_bottom = 451.0
 text = "Total Score:"
-label_settings = SubResource("LabelSettings_w730j")
+label_settings = SubResource("LabelSettings_8c4po")
 
 [node name="total Score" type="Label" parent="ColorRect/Total"]
 layout_mode = 0
-offset_left = 141.0
-offset_right = 181.0
-offset_bottom = 31.0
+offset_left = 184.0
+offset_top = -5.0
+offset_right = 258.0
+offset_bottom = 26.0
 label_settings = SubResource("LabelSettings_occai")
 
 [node name="DimBackground" type="ColorRect" parent="."]
@@ -256,18 +279,18 @@ color = Color(0, 0, 0, 0.5)
 
 [node name="Star1" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(849, 561)
-scale = Vector2(0.320438, 0.284771)
+position = Vector2(550, 124)
+scale = Vector2(-0.729119, 0.616339)
 texture = ExtResource("2_oo0cb")
 
 [node name="Star2" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(914, 562)
-scale = Vector2(0.320438, 0.284771)
+position = Vector2(699, 88)
+scale = Vector2(-0.729119, 0.616339)
 texture = ExtResource("2_oo0cb")
 
 [node name="Star3" type="Sprite2D" parent="."]
 z_index = 11
-position = Vector2(979, 562)
-scale = Vector2(0.320438, 0.284771)
+position = Vector2(849, 124)
+scale = Vector2(-0.729119, 0.616339)
 texture = ExtResource("2_oo0cb")

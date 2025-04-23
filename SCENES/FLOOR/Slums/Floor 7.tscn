@@ -1084,7 +1084,7 @@ position = Vector2(172, 776)
 [node name="B-01" parent="TextureRect/ColorRect/Characters" instance=ExtResource("2_s4vnj")]
 visibility_layer = 8
 z_index = 4
-position = Vector2(43, 765)
+position = Vector2(1750, 562)
 
 [node name="map tile" type="Node" parent="TextureRect/ColorRect"]
 

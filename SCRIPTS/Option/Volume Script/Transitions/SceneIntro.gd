@@ -2,9 +2,10 @@ extends CanvasLayer
 
 signal intro_finished  
 
-@export var display_time: float = 5.0  
+@export var display_time: float = 3.0  
 
 @onready var label = $Label
+@onready var sub_label = $SubLabel  # Reference to the new label
 @onready var dim_screen = $ColorRect
 
 func _ready():
@@ -13,26 +14,30 @@ func _ready():
 	# Disable player movement
 	disable_player_movement(true)
 
-	# Set the text to Baybayin characters
-	label.text = "ᜃᜑᜒᜍᜉᜈ᜔"  
+	# Set the text for the main label and sub-label
+	label.text = "ᜃᜑᜒᜍᜉᜈ᜔"  # Baybayin characters
+	sub_label.text = "The Slums"  # New text
 
 	# Ensure the intro is visible at the start
 	label.modulate.a = 0
+	sub_label.modulate.a = 0  # Start with sub-label hidden
 	dim_screen.modulate.a = 0.5  
 
-	var tween = create_tween()  
+	# Create a single tween for both fade-in and fade-out
+	var tween = create_tween()
 
-	# Fade in text
-	tween.tween_property(label, "modulate:a", 1.0, 2.0)
-	tween.tween_property(dim_screen, "modulate:a", 0.5, 2.0)
+	# Fade in text and dim screen
+	tween.tween_property(label, "modulate:a", 1.0, 3.0)  # Fade in over 3 seconds
+	tween.tween_property(sub_label, "modulate:a", 1.0, 3.0)  # Fade in over 3 seconds
+	tween.tween_property(dim_screen, "modulate:a", 0.5, 3.0)  # Fade in dim screen over 3 seconds
 
 	# Wait for display time
 	await get_tree().create_timer(display_time).timeout
 
-	# Fade out
-	tween = create_tween()  
-	tween.tween_property(label, "modulate:a", 0.0, 2.0)
-	tween.tween_property(dim_screen, "modulate:a", 0.0, 2.0)
+	# Fade out text and dim screen
+	tween.tween_property(label, "modulate:a", 0.0, 3.0)  # Fade out over 3 seconds
+	tween.tween_property(sub_label, "modulate:a", 0.0, 3.0)  # Fade out over 3 seconds
+	tween.tween_property(dim_screen, "modulate:a", 0.0, 3.0)  # Fade out dim screen over 3 seconds
 
 	# Wait for fade-out to finish, then allow movement again
 	await tween.finished

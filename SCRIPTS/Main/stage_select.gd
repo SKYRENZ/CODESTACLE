@@ -1,16 +1,35 @@
 extends Control
 
 @onready var transition_fx = preload("res://BGM/button.mp3")
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:		
-	pass # Replace with function body.
+var floor_buttons := {}
 
+func _ready() -> void:
+	# Load progress from local save
+	var user_data = UserDataManager.load_local_user_data()
+	var progress = user_data.get("progress", {})
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	# Find and store all floor buttons
+	for i in range(1, 11):
+		var button_name = "Floor %d" % i
+		var button_node = get_node_or_null(button_name)
+		if button_node:
+			var floor_key = "floor_%d" % i
+			floor_buttons[floor_key] = button_node
 
+			# Unlock logic
+			if i == 1 or progress.has("floor_%d" % (i - 1)):
+				_unlock_button(floor_key)
+			else:
+				_lock_button(floor_key)
 
-func _on_button_pressed() -> void:
-	AudioPlayer.play_FX(transition_fx, -12.0)
-	get_tree().change_scene_to_file("res://SCENES/FLOOR/Tutorial/Tutorial.tscn")
+func _unlock_button(floor_name: String) -> void:
+	if floor_buttons.has(floor_name):
+		var button = floor_buttons[floor_name]
+		button.disabled = false
+		button.modulate = Color.WHITE
+
+func _lock_button(floor_name: String) -> void:
+	if floor_buttons.has(floor_name):
+		var button = floor_buttons[floor_name]
+		button.disabled = true
+		button.modulate = Color.GRAY

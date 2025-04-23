@@ -15,16 +15,16 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwro"]
-size = Vector2(354, 54)
+size = Vector2(394, 54)
 
 [node name="acid" type="Area2D"]
 script = SubResource("GDScript_qyilj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(19, 1)
 shape = SubResource("RectangleShape2D_6nwro")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.499992, 8.5)
-scale = Vector2(0.583067, 1.12245)
+position = Vector2(16.5, 8.5)
+scale = Vector2(0.63738, 1.12245)
 texture = ExtResource("1_nqc56")

@@ -56,7 +56,7 @@ curve = SubResource("Curve2D_l3kwt")
 script = ExtResource("1_ssgpg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(465, 715)
+position = Vector2(463, 715)
 rotation = 0.0117642
 loop = false
 

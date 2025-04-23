@@ -63,3 +63,10 @@ func reset_user_data() -> void:
 # Retrieve the latest user data (for use in FirestoreManager)
 func get_latest_user_data() -> Dictionary:
 	return load_local_user_data()
+
+# Set the ID token and save it to local user data
+func set_id_token(token: String) -> void:
+	var data = load_local_user_data()
+	data["id_token"] = token  # Update the stored token
+	save_user_data_locally(data["email"], data["uid"], data["username"], token, data["progress"])
+	print("🔐 ID Token set and saved locally.")

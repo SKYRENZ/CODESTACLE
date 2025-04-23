@@ -3,14 +3,21 @@ extends Node
 signal user_data_saved
 signal user_data_save_failed
 
-var Firestore = preload("res://addons/godot-firebase/firestore/firestore.gd")
 var project_id = "codestacle-cd97a"  # Replace with your actual Firebase project ID
 var id_token = ""  # Store the ID token for authentication
 
 @onready var http_request = HTTPRequest.new()
 
 # Save full user data including progress to Firestore
-func save_user_data_to_firestore(email: String, user_id: String, username: String, id_token: String, progress: Dictionary) -> void:
+func save_user_data_to_firestore(email: String, user_id: String, username: String, id_token_param: String, progress: Dictionary) -> void:
+	# Ensure the ID token is valid
+	if id_token_param == "":
+		print("❌ ID token is empty or invalid!")
+		emit_signal("user_data_save_failed")
+		return
+	
+	id_token = id_token_param  # Set the ID token
+
 	var data = {
 		"email": email,
 		"user_id": user_id,
@@ -35,11 +42,6 @@ func save_user_data_to_firestore(email: String, user_id: String, username: Strin
 	# HTTP Request to Firestore
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed.bind("save"))
-
-	if id_token == "":
-		print("❌ ID token missing. Please authenticate.")
-		emit_signal("user_data_save_failed")
-		return
 
 	var headers = ["Content-Type: application/json", "Authorization: Bearer " + id_token]
 	var body = JSON.stringify(firestore_data)

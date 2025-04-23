@@ -17,10 +17,10 @@ var objective_manager = null  # Reference to ObjectiveManager
 @onready var signs_label: Label = $"ColorRect/Sign/Sign Score"
 @onready var npcs_label: Label = $"ColorRect/NPC/NPC Score"
 @onready var coins_label: Label = $"ColorRect/Coins/Gathered Coins"
-@onready var total_score_label: Label = $"ColorRect/Total/total Score"  # Updated path for total score label
-@onready var star1: Sprite2D = $Star1  # Updated to Sprite2D
-@onready var star2: Sprite2D = $Star2  # Updated to Sprite2D
-@onready var star3: Sprite2D = $Star3  # Updated to Sprite2D
+@onready var total_score_label: Label = $"ColorRect/Total/total Score"
+@onready var star1: Sprite2D = $Star1
+@onready var star2: Sprite2D = $Star2
+@onready var star3: Sprite2D = $Star3
 
 var player_data = null  # To store the reference to PlayerData
 
@@ -30,7 +30,6 @@ func _ready():
 	progress_tracker = get_node_or_null("/root/ProgressTracker")  # optional
 	objective_manager = get_node_or_null("/root/ObjectiveManager")  # Fetch ObjectiveManager
 	continue_button.connect("pressed", Callable(self, "_on_continue_pressed"))
-	
 	player_data = get_node_or_null("/root/PlayerData")  # Fetch the PlayerData node
 	
 	panel.visible = false
@@ -63,14 +62,14 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 		npcs = objective_manager.current_npcs_interacted
 
 	if player_data:
-		coins = player_data.get_coins_collected()
+		coins = player_data.get_coins_collected()  # Get total coins collected
 
 	# Calculate points
 	var sign_points = signs * 40
 	var npc_points = npcs * 40
 	var coin_points = coins * 5
 
-	# Calculate quiz points (50 points for 100%, scaled down for lower percentages)
+	# Calculate quiz points
 	var quiz_points = int((score_percent / 100.0) * 50)
 
 	# Calculate time points
@@ -83,13 +82,13 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 	# Calculate total score
 	var total_score = sign_points + npc_points + coin_points + quiz_points + time_points
 
-	# Update UI labels with the player data
+	# Update UI labels
 	signs_label.text = "%d" % sign_points
 	npcs_label.text = "%d" % npc_points
 	coins_label.text = "%d" % coin_points
-	total_score_label.text = "%d" % total_score  # Update total score label
+	total_score_label.text = "%d" % total_score
 
-	# Determine star rating (adjusted for testing)
+	# Determine star rating
 	var stars = 0
 	if total_score >= 300:
 		stars = 3
@@ -102,6 +101,35 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 	star1.visible = stars >= 1
 	star2.visible = stars >= 2
 	star3.visible = stars >= 3
+
+	# ✅ Save to UserDataManager and FirestoreManager
+	if player_data:
+		var current_user = UserDataManager.get_latest_user_data()
+		var uid = current_user.get("uid", "")
+		var email = current_user.get("email", "")
+		var username = current_user.get("username", "")
+		var id_token = current_user.get("id_token", "")
+
+		# Save this floor's progress
+		var floor_key = "floor_" + str(floor_number)
+		var floor_progress = {
+			"time": elapsed_time,
+			"quiz_score": score_percent,
+			"npcs": npcs,
+			"signages": signs,
+			"coins": coins
+		}
+
+		# Merge with existing progress
+		var progress = current_user.get("progress", {})
+		progress[floor_key] = floor_progress
+
+		# Save locally
+		UserDataManager.save_user_data_locally(email, uid, username, id_token, progress)
+
+		# ✅ Save to Firestore with correct signature
+		FirestoreManager.set_id_token(id_token)
+		FirestoreManager.save_user_data_to_firestore(email, uid, username, id_token, progress)
 
 	panel.visible = true
 	background_dim.visible = true

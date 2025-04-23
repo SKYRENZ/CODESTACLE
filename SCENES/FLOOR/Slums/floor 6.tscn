@@ -18,11 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="14_pmssi"]
 [ext_resource type="PackedScene" uid="uid://dpajkiy4fm8bv" path="res://LeverPuzzle.tscn" id="14_wrffn"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="14_xwx4o"]
-[ext_resource type="PackedScene" uid="uid://vd1ttx8ga2nv" path="res://SCENES/Mechanics/moving_platVertical.tscn" id="15_ipmy3"]
+[ext_resource type="PackedScene" uid="uid://bw88iqlsxlrhu" path="res://SCENES/Environment/moving_platVertical.tscn" id="15_ipmy3"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="15_pmssi"]
 [ext_resource type="PackedScene" uid="uid://bgo57eltcotu0" path="res://SCENES/Environment/warning sign.tscn" id="15_ste03"]
 [ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="16_wrffn"]
-[ext_resource type="PackedScene" uid="uid://bljcdmm1328qr" path="res://SCENES/Mechanics/moving_platDiagonal.tscn" id="20_2ota6"]
+[ext_resource type="PackedScene" uid="uid://djalsqsbdxfvp" path="res://SCENES/Environment/moving_platDiagonal.tscn" id="20_2ota6"]
 [ext_resource type="PackedScene" uid="uid://n6ydqjb0wrjx" path="res://SCENES/Environment/QuizSign.tscn" id="24_bus6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bus6a"]

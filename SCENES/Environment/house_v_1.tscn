@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bojnatmk5pejq"]
+
+[ext_resource type="Texture2D" uid="uid://bsbiciev1oqqh" path="res://ASSETS/Environment/HOUSE/slumshouse001.png" id="1_x6o7f"]
+
+[node name="houseV1" type="Sprite2D"]
+position = Vector2(-7.81319, -6)
+scale = Vector2(0.103297, 0.103297)
+texture = ExtResource("1_x6o7f")

@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="19_g6c34"]
 [ext_resource type="PackedScene" uid="uid://ce8wxacd02sd1" path="res://SCENES/Environment/lamp.tscn" id="20_w332r"]
 [ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="21_diorx"]
-[ext_resource type="PackedScene" uid="uid://vd1ttx8ga2nv" path="res://SCENES/Mechanics/moving_platVertical.tscn" id="22_q25r6"]
+[ext_resource type="PackedScene" uid="uid://bw88iqlsxlrhu" path="res://SCENES/Environment/moving_platVertical.tscn" id="22_q25r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebodr"]
 texture = ExtResource("5_um17i")

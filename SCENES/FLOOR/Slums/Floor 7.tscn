@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_w3c67"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="4_q3rqw"]
 [ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://SCENES/Environment/Trap.tscn" id="6_ga5lk"]
-[ext_resource type="PackedScene" uid="uid://vd1ttx8ga2nv" path="res://SCENES/Mechanics/moving_platVertical.tscn" id="6_urqvv"]
+[ext_resource type="PackedScene" uid="uid://bw88iqlsxlrhu" path="res://SCENES/Environment/moving_platVertical.tscn" id="6_urqvv"]
 [ext_resource type="PackedScene" uid="uid://ce8wxacd02sd1" path="res://SCENES/Environment/lamp.tscn" id="7_3lqge"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="7_mfgd0"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="7_vp7op"]
 [ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="8_ek0ly"]
 [ext_resource type="Resource" uid="uid://dg7wql3vrfwmm" path="res://DIALOGUE/FLOOR 7.dialogue" id="8_ga5lk"]
-[ext_resource type="PackedScene" uid="uid://bljcdmm1328qr" path="res://SCENES/Mechanics/moving_platDiagonal.tscn" id="8_m4nqy"]
+[ext_resource type="PackedScene" uid="uid://djalsqsbdxfvp" path="res://SCENES/Environment/moving_platDiagonal.tscn" id="8_m4nqy"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="9_p5l8l"]
 [ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="10_m4nqy"]
 [ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="12_4c0km"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://npmxpkt0x3sq" path="res://SCENES/Environment/breaking_platform.tscn" id="21_s2h7p"]
 [ext_resource type="PackedScene" uid="uid://n6ydqjb0wrjx" path="res://SCENES/Environment/QuizSign.tscn" id="24_3ox4c"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3c67"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ox4c"]
 texture = ExtResource("4_q3rqw")
 0:2/0 = 0
 0:2/0/z_index = 2
@@ -351,9 +351,9 @@ texture = ExtResource("4_q3rqw")
 
 [sub_resource type="TileSet" id="TileSet_4c0km"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_w3c67")
+sources/0 = SubResource("TileSetAtlasSource_3ox4c")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ek0ly"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1orvn"]
 texture = ExtResource("7_mfgd0")
 0:0/0 = 0
 1:0/0 = 0
@@ -457,7 +457,7 @@ texture = ExtResource("7_mfgd0")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_ek0ly")
+sources/0 = SubResource("TileSetAtlasSource_1orvn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eydab"]
 size = Vector2(49, 65)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6id3tq4fxjwe"
-path="res://.godot/imported/slumshouse and poster.png-125233992fd71de2af1cbc0efcc45ec5.ctex"
+uid="uid://byn22f2uawjj4"
+path="res://.godot/imported/slumshouse002.png-2f6f64f68249e74a5fffd27287fb145b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Environment/HOUSE/slumshouse and poster.png"
-dest_files=["res://.godot/imported/slumshouse and poster.png-125233992fd71de2af1cbc0efcc45ec5.ctex"]
+source_file="res://ASSETS/Environment/HOUSE/slumshouse002.png"
+dest_files=["res://.godot/imported/slumshouse002.png-2f6f64f68249e74a5fffd27287fb145b.ctex"]
 
 [params]
 

@@ -484,7 +484,7 @@ position = Vector2(439, -123)
 
 [node name="B-01" parent="Slums Parallax/Characters" instance=ExtResource("2_s4vnj")]
 visibility_layer = 8
-position = Vector2(753, 653)
+position = Vector2(27.7521, 743.604)
 
 [node name="trap" type="Node" parent="Slums Parallax"]
 

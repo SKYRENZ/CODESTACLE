@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bixeqop5o4thp"]
+
+[ext_resource type="Texture2D" uid="uid://b73lkucbfo5ca" path="res://SCENES/Parallax BG/Asset/Dirt/Parallax_1_Dirt.png" id="1_8x65c"]
+[ext_resource type="Texture2D" uid="uid://ciei1sifvp0c5" path="res://SCENES/Parallax BG/Asset/Dirt/background2.png" id="2_fnman"]
+[ext_resource type="Texture2D" uid="uid://ufnlofcxgtow" path="res://SCENES/Parallax BG/Asset/Dirt/background3.png" id="3_u2bcc"]
+[ext_resource type="Texture2D" uid="uid://d35vqgljoitxf" path="res://SCENES/Parallax BG/Asset/Dirt/background4.png" id="4_tivca"]
+
+[node name="DirtParallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Dirt Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2344.38, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Dirt Background"]
+position = Vector2(-3, -13)
+scale = Vector2(2.29688, 2.29688)
+texture = ExtResource("1_8x65c")
+centered = false
+
+[node name="Dirt Mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(2231.99, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Dirt Mountain"]
+position = Vector2(2, 3)
+scale = Vector2(2.17882, 2.17882)
+texture = ExtResource("2_fnman")
+centered = false
+
+[node name="Column" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2251, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Column"]
+position = Vector2(1127, 626)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_u2bcc")
+
+[node name="Column 2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Column 2"]
+position = Vector2(1026, 577)
+scale = Vector2(2, 2)
+texture = ExtResource("4_tivca")

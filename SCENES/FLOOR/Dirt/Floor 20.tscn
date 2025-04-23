@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bnvwgevd6beu7"]
+[gd_scene load_steps=22 format=4 uid="uid://bc4bktujupv0h"]
 
 [ext_resource type="Texture2D" uid="uid://b5hmdvx3afr4u" path="res://ASSETS/TILESETS/dirttile-Sheet.png" id="1_8jdra"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_iud74"]

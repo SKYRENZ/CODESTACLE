@@ -31,10 +31,10 @@ ObjectiveManager="*res://SCRIPTS/Mechanics/HUD/Objectives/ObjectiveManager.gd"
 VolumeManager="*res://SCRIPTS/Option/Volume Script/VolumeManager.gd"
 FloorData="*res://SCRIPTS/Mechanics/floor_data.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-FirestoreManager="*res://SAVES/firestore_manager.gd"
-UserDataManager="*res://SAVES/UserDataManager.gd"
+FirestoreManager="*res://SAVES/Saveauto/firestore_manager.gd"
+UserDataManager="*res://SAVES/Saveauto/UserDataManager.gd"
 CoinManager="*res://SCRIPTS/Mechanics/Collectibles/CoinManager.gd"
-BackupSave="*res://backup_save.gd"
+BackupSave="*res://SAVES/Saveauto/backup_save.gd"
 
 [dialogue_manager]
 

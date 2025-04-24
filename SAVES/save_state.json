@@ -1,22 +1,9 @@
 {
-	"email": "lonoza2912@gmail.com",
-	"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjkwOTg1NzhjNDg4MWRjMDVlYmYxOWExNWJhMjJkOGZkMWFiMzRjOGEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSm9zaHVhIExvbm96YSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMTXEyYkwzY0ZrRndxa2ZIX1ZBX2tpT0tHVWFzdzhUQ1J1MXNKMWllbGdUVy1VWUE9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY29kZXN0YWNsZS1jZDk3YSIsImF1ZCI6ImNvZGVzdGFjbGUtY2Q5N2EiLCJhdXRoX3RpbWUiOjE3NDU0OTU1NDYsInVzZXJfaWQiOiJNMzZINHV6eE4wZWlaVnZzVUQxZWtiT2FIdngxIiwic3ViIjoiTTM2SDR1enhOMGVpWlZ2c1VEMWVrYk9hSHZ4MSIsImlhdCI6MTc0NTQ5NTU0NiwiZXhwIjoxNzQ1NDk5MTQ2LCJlbWFpbCI6Imxvbm96YTI5MTJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMTA5NTAzMzExNDcyNjc1MjQ3NjEiXSwiZW1haWwiOlsibG9ub3phMjkxMkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.laIuNb_PQqF7ruYVO9VyhzBFqBZuw6bH0-PNGqJEWxe0b5p0zldI1ci9_o2ZpDr_rYEzaarewmLUO6HRc_mztmeZ2QEXWoSVQcyYfAeXH92lhkBEE2RGgi4c5J1pk7NetfO4-YEMt29VzZhO79TmIS2Htl0rxFi4jCd57R-aVR_recwv4LrqD4EAb429q8WUrb_sXxR4PG2PXNZVz-hvNdX-mGWMJ4wfXM-96Fd2PZA6TYShlUMc2tBaV2MdDr4FskE9e1Gh-hQg0us_x0QHlLUCbKOoQY_rKAXUmF5ieNifuLY3LENjuaAjz2dOtBAjAQvr_oYzZqIlO9_zbYUHQw",
+	"email": "",
+	"id_token": "",
 	"progress": {
-		"floor_1": {
-			"coins": 6.0,
-			"npcs": 1.0,
-			"quiz_score": 75.0,
-			"signages": 3.0,
-			"time": 25.6349999904633
-		},
-		"floor_2": {
-			"coins": 9.0,
-			"npcs": 1.0,
-			"quiz_score": 100.0,
-			"signages": 3.0,
-			"time": 47.4609999656677
-		}
+
 	},
-	"uid": "M36H4uzxN0eiZVvsUD1ekbOaHvx1",
-	"username": "lonoza2912"
+	"uid": "",
+	"username": ""
 }

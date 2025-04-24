@@ -134,6 +134,9 @@ func on_login_succeeded(auth_data: Dictionary) -> void:
 		print("✅ Loaded progress from backup.")
 	else:
 		print("ℹ️ No progress found in backup, using default progress.")
+		# Create a new backup save for new users
+		BackupSave.create_backup_save(user_email, user_id, user_name, id_token, progress)
+		print("🔒 New user: Created backup save.")
 
 	# ✅ Save to Firestore
 	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token, progress)

@@ -114,24 +114,41 @@ func on_login_succeeded(auth_data: Dictionary) -> void:
 
 	var user_id = auth_data.get("localid", "")
 	var user_email = auth_data.get("email", "")
-	var user_name = user_email.split("@")[0]
 	var id_token = auth_data.get("idtoken", "")
 
 	print("🔑 User ID:", user_id)
 	print("🛡️ ID Token:", id_token)
 
-	var progress = {}
 	var backup_data = BackupSave.load_backup(user_id)
+	var username = ""
+	var progress = {}
+
+	if backup_data.has("username"):
+		username = backup_data["username"]
 	if backup_data.has("progress"):
 		progress = backup_data["progress"]
-		print("✅ Loaded progress from backup.")
-	else:
-		print("ℹ️ No progress found in backup, using default progress.")
-		BackupSave.create_backup_save(user_email, user_id, user_name, id_token, progress)
-		print("🔒 New user: Created backup save.")
 
-	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token, progress)
-	UserDataManager.save_user_data_locally(user_email, user_id, user_name, id_token, progress)
+	if username == "":
+		print("🧩 No username found, redirecting to username creation scene...")
+
+		var username_creation_scene = preload("res://SCENES/Main/User_Creation.tscn").instantiate()
+		get_tree().current_scene.add_child(username_creation_scene)
+
+		username_creation_scene.email = user_email
+		username_creation_scene.uid = user_id
+		username_creation_scene.id_token = id_token
+		username_creation_scene.progress = progress
+
+		var notification_label = get_node_or_null("NotificationLabel")
+		if notification_label:
+			notification_label.text = "👤 Please create a username to continue."
+
+		return
+
+	# ✅ Save everything if username exists
+	FirestoreManager.save_user_data_to_firestore(user_email, user_id, username, id_token, progress)
+	UserDataManager.save_user_data_locally(user_email, user_id, username, id_token, progress)
+	BackupSave.create_backup_save(user_email, user_id, username, id_token, progress)
 
 	var notification_label = get_node_or_null("NotificationLabel")
 	if notification_label:

@@ -10,7 +10,7 @@ func _ready() -> void:
 
 	# Manually connect the 'confirmed' signal of the dialog to the handler function
 	logout_confirmation_dialog.connect("confirmed", Callable(self, "_on_LogoutConfirmationDialog_confirmed"))
-	logout_confirmation_dialog.connect("popup_hide", Callable(self, "_on_LogoutConfirmationDialog_hidden"))
+	logout_confirmation_dialog.connect("popup_closed", Callable(self, "_on_LogoutConfirmationDialog_hidden"))  
 
 func _process(_delta: float) -> void:
 	pass
@@ -50,7 +50,8 @@ func _on_logout_button_pressed() -> void:
 
 # Resets the flag when the dialog is hidden (either confirmed or closed)
 func _on_LogoutConfirmationDialog_hidden() -> void:
-	is_dialog_open = false
+	is_dialog_open = false  # Reset the flag here
+	print("Dialog closed, flag reset to false")
 
 # Called when the user confirms logout
 func _on_LogoutConfirmationDialog_confirmed() -> void:

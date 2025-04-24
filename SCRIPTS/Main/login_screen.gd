@@ -11,20 +11,52 @@ func _ready() -> void:
 	Firebase.Auth.login_failed.connect(on_login_failed)
 
 	# 🟡 Auto-login if valid local save exists
-	var saved_data = UserDataManager.load_local_user_data()
+	var saved_data = UserDataManager.get_latest_user_data()
 	if saved_data.has("email") and saved_data.has("id_token") and saved_data.has("uid") \
 		and saved_data.email != "" and saved_data.id_token != "" and saved_data.uid != "":
-		
+
 		print("🔐 Auto-login using saved user data:", saved_data)
 
+		# Load backup if it exists
+		var backup_data = BackupSave.load_backup(saved_data["uid"])
+		print("🔑 Loaded backup data:", backup_data)
+
+		# Initialize progress (use backup data if available, otherwise use default progress)
+		var progress = {}
+		if backup_data.has("progress"):
+			progress = backup_data["progress"]
+			print("✅ Loaded progress from backup.")
+		else:
+			print("ℹ️ No progress found in backup, using default progress.")
+
+		# Save user data to Firestore and locally
 		FirestoreManager.save_user_data_to_firestore(
 			saved_data.email,
 			saved_data.uid,
 			saved_data.username,
 			saved_data.id_token,
-			{}  # Empty progress for now
+			progress  # Save merged progress
 		)
 
+		# Also save locally
+		UserDataManager.save_user_data_locally(
+			saved_data.email,
+			saved_data.uid,
+			saved_data.username,
+			saved_data.id_token,
+			progress
+		)
+
+		# Check if a backup needs to be created or updated
+		BackupSave.create_backup_save(
+			saved_data["email"],
+			saved_data["uid"],
+			saved_data["username"],
+			saved_data["id_token"],
+			progress
+		)
+
+		# Proceed to main menu
 		call_deferred("go_to_main_menu")
 	else:
 		print("✅ Login screen loaded.")
@@ -92,16 +124,22 @@ func on_login_succeeded(auth_data: Dictionary) -> void:
 	print("🔑 User ID:", user_id)
 	print("🛡️ ID Token:", id_token)
 
-	# Check if ID token is still missing
-	if id_token == "":
-		print("❌ ID token is missing. Please authenticate the user first.")
-		return
+	# Initialize progress (default to empty if no backup exists)
+	var progress = {}
+
+	# Try loading backup if it exists
+	var backup_data = BackupSave.load_backup(user_id)
+	if backup_data.has("progress"):
+		progress = backup_data["progress"]
+		print("✅ Loaded progress from backup.")
+	else:
+		print("ℹ️ No progress found in backup, using default progress.")
 
 	# ✅ Save to Firestore
-	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token, {})
+	FirestoreManager.save_user_data_to_firestore(user_email, user_id, user_name, id_token, progress)
 
 	# ✅ Save locally
-	UserDataManager.save_user_data_locally(user_email, user_id, user_name, id_token, {})
+	UserDataManager.save_user_data_locally(user_email, user_id, user_name, id_token, progress)
 
 	# ✅ Notify user
 	var notification_label = get_node_or_null("NotificationLabel")

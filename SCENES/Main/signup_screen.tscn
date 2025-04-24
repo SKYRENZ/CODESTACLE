@@ -204,20 +204,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("14_tb5js")
 theme_override_font_sizes/font_size = 22
 
-[node name="Username Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
-layout_mode = 2
-
-[node name="Username" type="Label" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Username Container"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("14_tb5js")
-theme_override_font_sizes/font_size = 16
-text = "Username:"
-
-[node name="Username Edit" type="LineEdit" parent="NinePatchRect/Container/Signup Container/User and Pass Container/Username Container"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("14_tb5js")
-theme_override_font_sizes/font_size = 22
-
 [node name="Password Container" type="VBoxContainer" parent="NinePatchRect/Container/Signup Container/User and Pass Container"]
 layout_mode = 2
 theme_override_constants/separation = 0

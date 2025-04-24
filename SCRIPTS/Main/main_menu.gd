@@ -8,9 +8,12 @@ var is_dialog_open = false  # Flag to track if the dialog is open
 func _ready() -> void:
 	MenuMusic.play_menu_music()
 
-	# Manually connect the 'confirmed' signal of the dialog to the handler function
-	logout_confirmation_dialog.connect("confirmed", Callable(self, "_on_LogoutConfirmationDialog_confirmed"))
-	logout_confirmation_dialog.connect("popup_closed", Callable(self, "_on_LogoutConfirmationDialog_hidden"))  
+	# Connect signals only if not already connected
+	if not logout_confirmation_dialog.is_connected("confirmed", Callable(self, "_on_LogoutConfirmationDialog_confirmed")):
+		logout_confirmation_dialog.connect("confirmed", Callable(self, "_on_LogoutConfirmationDialog_confirmed"))
+
+	if not logout_confirmation_dialog.is_connected("canceled", Callable(self, "_on_logout_confirmation_dialog_canceled")):
+		logout_confirmation_dialog.connect("canceled", Callable(self, "_on_logout_confirmation_dialog_canceled"))
 
 func _process(_delta: float) -> void:
 	pass
@@ -48,11 +51,6 @@ func _on_logout_button_pressed() -> void:
 	else:
 		print("Logout confirmation dialog is already open.")
 
-# Resets the flag when the dialog is hidden (either confirmed or closed)
-func _on_LogoutConfirmationDialog_hidden() -> void:
-	is_dialog_open = false  # Reset the flag here
-	print("Dialog closed, flag reset to false")
-
 # Called when the user confirms logout
 func _on_LogoutConfirmationDialog_confirmed() -> void:
 	print("Logout confirmation confirmed")
@@ -72,8 +70,9 @@ func _on_LogoutConfirmationDialog_confirmed() -> void:
 	else:
 		print("Could not open save file for verification.")
 
-	# Hide the dialog after confirmation
+	# Hide the dialog and reset flag
 	logout_confirmation_dialog.hide()
+	is_dialog_open = false
 
 	# Delay scene change to allow the save to complete
 	await get_tree().create_timer(0.5).timeout
@@ -87,13 +86,16 @@ func _on_LogoutConfirmationDialog_confirmed() -> void:
 	# Change to login scene after logout
 	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")
 
+# Called when the user cancels the logout
+func _on_logout_confirmation_dialog_canceled() -> void:
+	is_dialog_open = false
+	print("Logout canceled.")
+	logout_confirmation_dialog.hide()
 
 # Function to reset all user data
 func reset_all_user_data() -> void:
-	# File path for the save state file
 	var save_file_path = "res://SAVES/save_state.json"
 
-	# Prepare a clean slate of user data
 	var empty_data = {
 		"email": "",
 		"id_token": "",
@@ -102,10 +104,8 @@ func reset_all_user_data() -> void:
 		"username": ""
 	}
 
-	# Open the file for writing (will overwrite with empty data)
 	var file = FileAccess.open(save_file_path, FileAccess.WRITE)
 	if file:
-		# Overwrite the file with empty data
 		file.store_string(JSON.stringify(empty_data, "\t"))
 		file.close()
 		print("✅ User data has been reset and saved to: " + save_file_path)

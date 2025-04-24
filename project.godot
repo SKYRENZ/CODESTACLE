@@ -34,6 +34,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 FirestoreManager="*res://SAVES/firestore_manager.gd"
 UserDataManager="*res://SAVES/UserDataManager.gd"
 CoinManager="*res://SCRIPTS/Mechanics/Collectibles/CoinManager.gd"
+BackupSave="*res://backup_save.gd"
 
 [dialogue_manager]
 

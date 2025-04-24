@@ -10,6 +10,7 @@ func _ready() -> void:
 
 	# Manually connect the 'confirmed' signal of the dialog to the handler function
 	logout_confirmation_dialog.connect("confirmed", Callable(self, "_on_LogoutConfirmationDialog_confirmed"))
+	logout_confirmation_dialog.connect("popup_hide", Callable(self, "_on_LogoutConfirmationDialog_hidden"))
 
 func _process(_delta: float) -> void:
 	pass
@@ -37,34 +38,75 @@ func _on_option_button_pressed() -> void:
 	else:
 		print("Option scene is already displayed!")
 
+# Trigger the logout confirmation dialog
 func _on_logout_button_pressed() -> void:
-	# Check if dialog is already open
 	if not is_dialog_open:
 		AudioPlayer.play_FX(transition_fx, -12.0)
 		print("Showing logout confirmation dialog...")
 		logout_confirmation_dialog.popup_centered()
-		is_dialog_open = true  # Set flag to indicate dialog is open
+		is_dialog_open = true
 	else:
 		print("Logout confirmation dialog is already open.")
 
-# This method is triggered when the user confirms the logout from the dialog
+# Resets the flag when the dialog is hidden (either confirmed or closed)
+func _on_LogoutConfirmationDialog_hidden() -> void:
+	is_dialog_open = false
+
+# Called when the user confirms logout
 func _on_LogoutConfirmationDialog_confirmed() -> void:
 	print("Logout confirmation confirmed")
 
-	# Reset the user data by calling the reset function
-	UserDataManager.reset_user_data()  # Should work now
+	# Start logout process (skip backup creation during logout)
+	BackupSave.start_logout_process()
 
-	# Optionally, you can print the file contents to confirm it's wiped
+	# Reset all user data
+	reset_all_user_data()
+
+	# Optional file check for debug
 	var file_check = FileAccess.open("res://SAVES/save_state.json", FileAccess.READ)
 	if file_check:
-		print("Wiped Save File Contents: ", file_check.get_as_text())
+		var file_content = file_check.get_as_text()
+		print("Wiped Save File Contents: ", file_content)
 		file_check.close()
+	else:
+		print("Could not open save file for verification.")
 
 	# Hide the dialog after confirmation
 	logout_confirmation_dialog.hide()
 
 	# Delay scene change to allow the save to complete
-	await get_tree().create_timer(0.5).timeout  # Await for timer timeout
+	await get_tree().create_timer(0.5).timeout
+
+	# Log out from Firebase
+	Firebase.Auth.logout()
+
+	# End logout process (enable backup saving again)
+	BackupSave.end_logout_process()
 
 	# Change to login scene after logout
 	get_tree().change_scene_to_file("res://SCENES/Main/Login.tscn")
+
+
+# Function to reset all user data
+func reset_all_user_data() -> void:
+	# File path for the save state file
+	var save_file_path = "res://SAVES/save_state.json"
+
+	# Prepare a clean slate of user data
+	var empty_data = {
+		"email": "",
+		"id_token": "",
+		"progress": {},
+		"uid": "",
+		"username": ""
+	}
+
+	# Open the file for writing (will overwrite with empty data)
+	var file = FileAccess.open(save_file_path, FileAccess.WRITE)
+	if file:
+		# Overwrite the file with empty data
+		file.store_string(JSON.stringify(empty_data, "\t"))
+		file.close()
+		print("✅ User data has been reset and saved to: " + save_file_path)
+	else:
+		print("❌ Failed to open save file for resetting user data.")

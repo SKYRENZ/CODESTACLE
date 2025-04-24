@@ -14,14 +14,19 @@ func save_user_data_locally(email: String, user_id: String, username: String, id
 	}
 
 	var dir = DirAccess.open("res://SAVES/")
-	if not dir.dir_exists("SAVES"):
-		dir.make_dir("SAVES")
+	if not dir or not dir.dir_exists("res://SAVES/"):
+		DirAccess.make_dir_absolute("res://SAVES/")
 
-	var file = FileAccess.open(local_storage_path, FileAccess.WRITE)
+	var file = FileAccess.open(local_storage_path, FileAccess.WRITE_READ)
 	if file:
-		file.store_string(JSON.stringify(json_data, "\t"))
+		file.truncate()  # ✅ Prevent corruption by clearing file first
+		var json_string = JSON.stringify(json_data, "\t")
+		file.store_string(json_string)
 		file.close()
 		print("✅ User data saved locally.")
+
+		# Use BackupSave autoload to store a backup file
+		BackupSave.create_backup_save(email, user_id, username, id_token, progress)
 	else:
 		print("❌ Could not save user data locally.")
 
@@ -41,24 +46,43 @@ func load_local_user_data() -> Dictionary:
 
 # Reset user data to empty structure, but keep other user information intact
 func reset_user_data() -> void:
-	# Check if save file exists
+	# Declare the SAVE_DIR constant here if it's not defined globally
+	const SAVE_DIR := "res://SAVES/"
+
 	if FileAccess.file_exists(local_storage_path):
-		var file = FileAccess.open(local_storage_path, FileAccess.READ_WRITE)
-		var json_instance = JSON.new()  # Create an instance of the JSON class
-		var save_data = json_instance.parse(file.get_as_text())
-		if save_data == OK:
-			var user_data = json_instance.get_data()
-			# Reset progress but keep email, uid, username, id_token intact
-			user_data["progress"] = {}  # Reset progress only
-			# Save the updated data back to the file
-			file.seek(0)
-			file.store_string(json_instance.print(user_data, "\t"))
-			file.close()
-			print("✅ User data reset, progress wiped.")
+		var file = FileAccess.open(local_storage_path, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+
+		var data = JSON.parse_string(content)
+		if typeof(data) == TYPE_DICTIONARY:
+			data["progress"] = {}  # Wipe only the progress
+
+			var write_file = FileAccess.open(local_storage_path, FileAccess.WRITE)
+			if write_file:
+				write_file.store_string(JSON.stringify(data, "\t"))
+				write_file.close()
+				print("✅ User data reset, progress wiped.")
+				
+				# Check if backup exists for the user based on their UID
+				var backup_path = SAVE_DIR + "backup_" + data["uid"] + ".json"
+				if FileAccess.file_exists(backup_path):
+					print("ℹ️ Backup file already exists for user: " + data["uid"])
+					# Update the backup with the latest data (including the reset progress)
+					BackupSave.create_backup_save(data["email"], data["uid"], data["username"], data["id_token"], data["progress"])
+				else:
+					print("ℹ️ No existing backup file found, creating a new one.")
+					# Create a new backup file if it doesn't exist
+					BackupSave.create_backup_save(data["email"], data["uid"], data["username"], data["id_token"], data["progress"])
+
+			else:
+				print("❌ Could not reopen file for writing.")
 		else:
 			print("❌ Failed to parse the save file!")
 	else:
 		print("❌ Save file not found!")
+
+
 
 # Retrieve the latest user data (for use in FirestoreManager)
 func get_latest_user_data() -> Dictionary:
@@ -67,6 +91,6 @@ func get_latest_user_data() -> Dictionary:
 # Set the ID token and save it to local user data
 func set_id_token(token: String) -> void:
 	var data = load_local_user_data()
-	data["id_token"] = token  # Update the stored token
+	data["id_token"] = token
 	save_user_data_locally(data["email"], data["uid"], data["username"], token, data["progress"])
 	print("🔐 ID Token set and saved locally.")

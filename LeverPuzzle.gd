@@ -3,7 +3,7 @@ extends Node2D
 @onready var wall_collider = $Wall/WallCollider  # The collider that blocks the player
 @onready var lever_area = $LeverArea  # The area where the player needs to interact
 @onready var lever_sprite = $LeverSprite  # Lever sprite to show if it's "on" or "off"
-@onready var blocking_sprite = $LeverArea/BlockingSprite  # Sprite2D that visually blocks the player
+@onready var blocking_sprite = $LeverArea/BlockingSprite  # AnimatedSprite2D that visually blocks the player
 
 var command_box_scene: PackedScene = preload("res://CommandBox.tscn")
 var command_box_instance = null
@@ -70,9 +70,17 @@ func _on_correct_command():
 		lever_sprite.play("on")  # Play the "on" animation for the lever sprite
 	
 	if blocking_sprite:
-		blocking_sprite.queue_free()  # Remove the blocking sprite from the scene (the wall disappears)
+		print("Playing 'on' animation for BlockingSprite...")
+		blocking_sprite.play("on")  # Play the "on" animation for the blocking sprite
+		
+		# Connect the animation_finished signal to remove the node after the animation
+		blocking_sprite.animation_finished.connect(_on_blocking_sprite_animation_finished)
 
 	_close_command_ui()
+
+func _on_blocking_sprite_animation_finished():
+	print("BlockingSprite animation finished. Removing node.")
+	blocking_sprite.queue_free()  # Remove the blocking sprite from the scene
 
 func _on_wrong_command():
 	print("❌ Incorrect command.")

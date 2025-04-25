@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0sjswq6i3oyh"
-path="res://.godot/imported/Parallax_3.png-07437126b894a21327be541a16f25ce5.ctex"
+uid="uid://cu86oddoux1r2"
+path="res://.godot/imported/Option Button Final.png-b8dc4a93526580ca67aac170f63909b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SCENES/Parallax BG/Asset/Parallax_3.png"
-dest_files=["res://.godot/imported/Parallax_3.png-07437126b894a21327be541a16f25ce5.ctex"]
+source_file="res://ASSETS/BUTTONS/Option/Option Button Final.png"
+dest_files=["res://.godot/imported/Option Button Final.png-b8dc4a93526580ca67aac170f63909b2.ctex"]
 
 [params]
 

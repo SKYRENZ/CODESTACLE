@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://e82lbaitk600"]
 
-[ext_resource type="Texture2D" uid="uid://bosgr742ci717" path="res://SCENES/Parallax BG/Asset/Parallax_4.png" id="1_8e1fr"]
-[ext_resource type="Texture2D" uid="uid://c2ry5jw2l35ki" path="res://SCENES/Parallax BG/Asset/Parallax_1.png" id="1_bsbag"]
-[ext_resource type="Texture2D" uid="uid://ccofxu6snmc4q" path="res://SCENES/Parallax BG/Asset/Parallax_5.png" id="1_ccb8f"]
-[ext_resource type="Texture2D" uid="uid://ct6rqluyqtx1i" path="res://SCENES/Parallax BG/Asset/Parallax_2.png" id="2_24gqk"]
-[ext_resource type="Texture2D" uid="uid://0sjswq6i3oyh" path="res://SCENES/Parallax BG/Asset/Parallax_3.png" id="3_ty8dy"]
-[ext_resource type="Texture2D" uid="uid://chylj4g6vl1xg" path="res://SCENES/Parallax BG/Asset/Parallax_6.png" id="4_leo4w"]
+[ext_resource type="Texture2D" uid="uid://bosgr742ci717" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_4.png" id="1_8e1fr"]
+[ext_resource type="Texture2D" uid="uid://c2ry5jw2l35ki" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_1.png" id="1_bsbag"]
+[ext_resource type="Texture2D" uid="uid://ccofxu6snmc4q" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_5.png" id="1_ccb8f"]
+[ext_resource type="Texture2D" uid="uid://ct6rqluyqtx1i" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_2.png" id="2_24gqk"]
+[ext_resource type="Texture2D" uid="uid://0sjswq6i3oyh" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_3.png" id="3_ty8dy"]
+[ext_resource type="Texture2D" uid="uid://chylj4g6vl1xg" path="res://SCENES/Parallax BG/Asset/Slums/Parallax_6.png" id="4_leo4w"]
 
 [node name="Slums Parallax" type="Node2D"]
 z_index = 3
@@ -55,7 +55,7 @@ texture = ExtResource("1_ccb8f")
 centered = false
 
 [node name="House" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(884, 0)
+motion_mirroring = Vector2(880.28, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/House"]
 position = Vector2(-7, 561)

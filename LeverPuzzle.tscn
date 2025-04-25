@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpajkiy4fm8bv"]
+[gd_scene load_steps=10 format=3 uid="uid://dqmgdkx2nsmvq"]
 
-[ext_resource type="Script" uid="uid://cwf6kane55wvv" path="res://LeverPuzzle.gd" id="1_ox5i1"]
+[ext_resource type="Script" path="res://LeverPuzzle.gd" id="1_ox5i1"]
 [ext_resource type="Texture2D" uid="uid://dn7aaqag2lrnt" path="res://Lever Dirt-Sheet.png" id="2_5wk4t"]
 [ext_resource type="Texture2D" uid="uid://dgkoaujeqp6ss" path="res://Sprite-0002.png" id="2_vxhgv"]
 

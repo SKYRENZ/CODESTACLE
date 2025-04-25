@@ -5,24 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="2_g76te"]
 [ext_resource type="PackedScene" uid="uid://e82lbaitk600" path="res://SCENES/Parallax BG/slums_parallax.tscn" id="2_mxeyh"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="3_0ywbu"]
-[ext_resource type="PackedScene" uid="uid://c7o6ugvwthnpd" path="res://SCENES/Environment/house_v_2.tscn" id="6_22ogq"]
-[ext_resource type="PackedScene" uid="uid://bojnatmk5pejq" path="res://SCENES/Environment/house_v_1.tscn" id="7_aagob"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/house_v_2.tscn" id="6_22ogq"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/house_v_1.tscn" id="7_aagob"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="8_0ywbu"]
 [ext_resource type="Resource" uid="uid://ck1213lxvkyg1" path="res://DIALOGUE/FLOOR 9.dialogue" id="12_8xpl6"]
-[ext_resource type="PackedScene" uid="uid://ce8wxacd02sd1" path="res://SCENES/Environment/lamp.tscn" id="13_g76te"]
-[ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="14_0ywbu"]
-[ext_resource type="PackedScene" uid="uid://n6ydqjb0wrjx" path="res://SCENES/Environment/QuizSign.tscn" id="14_aa23p"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/lamp.tscn" id="13_g76te"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/drainage.tscn" id="14_0ywbu"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/QuizSign.tscn" id="14_aa23p"]
 [ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="14_fd00x"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="15_e0nyl"]
-[ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://SCENES/Environment/Trap.tscn" id="17_y3jaf"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/Trap.tscn" id="17_y3jaf"]
 [ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="18_0d2g4"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="19_c4adv"]
-[ext_resource type="PackedScene" uid="uid://bw88iqlsxlrhu" path="res://SCENES/Environment/moving_platVertical.tscn" id="19_e0nyl"]
-[ext_resource type="PackedScene" uid="uid://djalsqsbdxfvp" path="res://SCENES/Environment/moving_platDiagonal.tscn" id="20_31lvf"]
+[ext_resource type="PackedScene" uid="uid://gmf4ida653eu" path="res://SCENES/Environment/moving_platVertical.tscn" id="19_e0nyl"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/moving_platDiagonal.tscn" id="20_31lvf"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="20_jtk4n"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="21_4ba7s"]
-[ext_resource type="PackedScene" uid="uid://bdu71mcp6an2b" path="res://SCENES/Environment/acid.tscn" id="21_8xpl6"]
-[ext_resource type="PackedScene" uid="uid://npmxpkt0x3sq" path="res://SCENES/Environment/breaking_platform.tscn" id="22_br4dh"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/acid.tscn" id="21_8xpl6"]
+[ext_resource type="PackedScene" path="res://SCENES/Environment/breaking_platform.tscn" id="22_br4dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aa23p"]
 texture = ExtResource("3_0ywbu")
@@ -494,19 +494,16 @@ flip_h = true
 
 [node name="houseV2" parent="Slums Parallax/house" instance=ExtResource("7_aagob")]
 position = Vector2(1867, 232)
-scale = Vector2(0.103297, 0.103297)
 flip_h = true
 
 [node name="houseV3" parent="Slums Parallax/house" instance=ExtResource("7_aagob")]
 position = Vector2(1400, 377)
-scale = Vector2(0.103297, 0.103297)
 
 [node name="Sprite2D" parent="Slums Parallax/house" instance=ExtResource("6_22ogq")]
 position = Vector2(426, 646)
 
 [node name="houseV1" parent="Slums Parallax/house" instance=ExtResource("7_aagob")]
 position = Vector2(427.187, 713)
-scale = Vector2(0.103297, 0.103297)
 
 [node name="map tile" type="Node" parent="Slums Parallax"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw88iqlsxlrhu"]
+[gd_scene load_steps=8 format=3 uid="uid://gmf4ida653eu"]
 
 [ext_resource type="Script" uid="uid://bs5eboy6f1eqm" path="res://SCRIPTS/Floor/Slums/floor 6/platform.gd" id="1_gbain"]
 [ext_resource type="Texture2D" uid="uid://b3nxy6c4a4vdo" path="res://ASSETS/TILESETS/platform.png" id="2_10r31"]

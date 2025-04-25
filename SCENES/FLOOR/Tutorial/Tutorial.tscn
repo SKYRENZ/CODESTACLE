@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
 [ext_resource type="Resource" uid="uid://bgukcys5hqq1s" path="res://DIALOGUE/tutorial.dialogue" id="4_qa4xd"]
-[ext_resource type="PackedScene" uid="uid://cnxjcqlp8jm8v" path="res://SCENES/Berni.tscn" id="6_vg2gj"]
+[ext_resource type="PackedScene" path="res://SCENES/Berni.tscn" id="6_vg2gj"]
 [ext_resource type="PackedScene" uid="uid://c5er4em2ye5jm" path="res://SCENES/Mechanics/doors/flag(transitionflr).tscn" id="7_yny8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1k1d"]
@@ -342,6 +342,22 @@ tracks/0/keys = {
 "values": [Vector2(-419, 530)]
 }
 
+[sub_resource type="Animation" id="Animation_kwqaa"]
+resource_name = "go"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Berni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.566667, 0.933333, 1.2, 1.56667, 2.26667, 2.8, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(398, 407), Vector2(476, 390.88), Vector2(548, 376), Vector2(628.979, 362.241), Vector2(692.91, 351.379), Vector2(754, 341), Vector2(806, 368), Vector2(888, 353), Vector2(899, 344)]
+}
+
 [sub_resource type="Animation" id="Animation_qa4xd"]
 resource_name = "greetings"
 length = 2.0
@@ -372,22 +388,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-2, 415), Vector2(18, 434), Vector2(76.4745, 431.465), Vector2(128, 409), Vector2(164.186, 427.664), Vector2(222, 437), Vector2(255.974, 438.073), Vector2(313, 421), Vector2(317, 440)]
-}
-
-[sub_resource type="Animation" id="Animation_kwqaa"]
-resource_name = "go"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Berni:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.566667, 0.933333, 1.2, 1.56667, 2.26667, 2.8, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(398, 407), Vector2(476, 390.88), Vector2(548, 376), Vector2(628.979, 362.241), Vector2(692.91, 351.379), Vector2(754, 341), Vector2(806, 368), Vector2(888, 353), Vector2(899, 344)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28ntc"]

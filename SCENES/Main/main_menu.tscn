@@ -116,10 +116,14 @@ text = "Logout
 "
 
 [node name="LogoutConfirmationDialog" type="ConfirmationDialog" parent="."]
-title = "Are you sure you want to logout?"
+mode = 3
+title = "Logout confirm"
 initial_position = 2
+ok_button_text = "Logout"
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Option Button" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="Logout button" to="." method="_on_logout_button_pressed"]
+[connection signal="canceled" from="LogoutConfirmationDialog" to="." method="_on_logout_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="LogoutConfirmationDialog" to="." method="_on_logout_confirmation_dialog_confirmed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3peerjhjquo2"
-path="res://.godot/imported/Loading-Screen-Sheet.png-9a4a342c2d3cbf1f6c8f44439c496373.ctex"
+uid="uid://bt8e61ex7g68x"
+path="res://.godot/imported/anngas.png-387e942f75d10f63e8334695e4599132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Loading-Screen-Sheet.png"
-dest_files=["res://.godot/imported/Loading-Screen-Sheet.png-9a4a342c2d3cbf1f6c8f44439c496373.ctex"]
+source_file="res://anngas.png"
+dest_files=["res://.godot/imported/anngas.png-387e942f75d10f63e8334695e4599132.ctex"]
 
 [params]
 

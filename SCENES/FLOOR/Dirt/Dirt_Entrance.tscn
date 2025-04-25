@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=4 uid="uid://pf1udyw3ai58"]
+[gd_scene load_steps=19 format=4 uid="uid://pf1udyw3ai58"]
 
-[ext_resource type="Script" uid="uid://bfttcyqj178t0" path="res://SCRIPTS/Floor/Dirt/dirt_entrance.gd" id="1_4elvs"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_48kuv"]
 [ext_resource type="Texture2D" uid="uid://6j2uiqdax5n1" path="res://ASSETS/BUTTONS/minigooglesignin.png" id="3_kfggu"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_paeh3"]
@@ -10,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://g5ur05jrsv1c" path="res://SCENES/Mechanics/Validation.tscn" id="7_glyw7"]
 [ext_resource type="PackedScene" uid="uid://dp41a65qwa720" path="res://SCENES/Mechanics/collectible.tscn" id="7_r7m2h"]
 [ext_resource type="Resource" uid="uid://d032a503kmmy1" path="res://DIALOGUE/FLOOR 11.dialogue" id="10_glyw7"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/signage_3.gd" id="10_kfggu"]
-[ext_resource type="Script" path="res://SCRIPTS/Floor/Dirt/signage_2.gd" id="11_glyw7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3um0"]
 texture = ExtResource("2_48kuv")
@@ -357,7 +354,6 @@ size = Vector2(41, 20)
 size = Vector2(39, 20)
 
 [node name="Dirt_Entrance" type="Node2D" groups=["floor"]]
-script = ExtResource("1_4elvs")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -379,7 +375,7 @@ tile_set = SubResource("TileSet_j5yfb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_vgoss")]
 z_index = 5
-position = Vector2(100, 228)
+position = Vector2(1867, 241)
 
 [node name="Checkpoint" type="Area2D" parent="." groups=["checkpoint"]]
 position = Vector2(1313, 441)
@@ -402,16 +398,12 @@ position = Vector2(548.5, 411)
 shape = SubResource("RectangleShape2D_d4j6p")
 
 [node name="sign2" type="Area2D" parent="Dialogue"]
-script = ExtResource("11_glyw7")
-dialogue_resource = ExtResource("10_glyw7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/sign2"]
 position = Vector2(868.5, 411)
 shape = SubResource("RectangleShape2D_kfggu")
 
 [node name="sign3" type="Area2D" parent="Dialogue"]
-script = ExtResource("10_kfggu")
-dialogue_resource = ExtResource("10_glyw7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/sign3"]
 position = Vector2(1094, 410)

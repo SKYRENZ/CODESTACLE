@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cqotakj0fnnbe"]
+[gd_scene load_steps=34 format=4 uid="uid://cqotakj0fnnbe"]
 
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_t5ei8"]
 [ext_resource type="PackedScene" uid="uid://d1c3xq2skqnso" path="res://SCENES/Character/runi.tscn" id="2_4gso0"]
@@ -7,22 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://c0lnlunk78q1m" path="res://SCENES/Character/Rodtang.tscn" id="4_frwgu"]
 [ext_resource type="Texture2D" uid="uid://cpqb5qal0p7ph" path="res://ASSETS/TILESETS/slumstile-Sheet.png" id="5_um17i"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="6_diorx"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/breaking_platform.tscn" id="7_7eilr"]
+[ext_resource type="PackedScene" uid="uid://npmxpkt0x3sq" path="res://SCENES/Environment/breaking_platform.tscn" id="7_7eilr"]
 [ext_resource type="Script" uid="uid://blofis361k6rs" path="res://SCRIPTS/Floor/Slums/dialogue/RuniD1.gd" id="7_g6c34"]
 [ext_resource type="PackedScene" uid="uid://dv4fsx0ntj7kr" path="res://SCENES/Environment/UpArrow.tscn" id="7_qcpeh"]
 [ext_resource type="Resource" uid="uid://drwoa0bvlwwsd" path="res://DIALOGUE/FLOOR 5.dialogue" id="8_1hldk"]
 [ext_resource type="PackedScene" uid="uid://yxem5hyidngh" path="res://SCENES/Environment/watersplash.tscn" id="8_qy1f3"]
+[ext_resource type="PackedScene" uid="uid://bojnatmk5pejq" path="res://SCENES/Environment/house_v_1.tscn" id="9_2b55o"]
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="9_8cwim"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="9_g6c34"]
+[ext_resource type="PackedScene" uid="uid://c7o6ugvwthnpd" path="res://SCENES/Environment/house_v_2.tscn" id="10_oxva6"]
 [ext_resource type="PackedScene" uid="uid://k16acst0ppd1" path="res://SCENES/Environment/downArrow.tscn" id="13_ebodr"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/Trap.tscn" id="16_7eilr"]
+[ext_resource type="PackedScene" uid="uid://35ato6hwmvfv" path="res://SCENES/Environment/Trap.tscn" id="16_7eilr"]
 [ext_resource type="Script" uid="uid://b37mueqbuv75y" path="res://SCRIPTS/Floor/Slums/quiz/rodtang_quiz.gd" id="16_cvedv"]
 [ext_resource type="PackedScene" uid="uid://bxi2iq1srurk4" path="res://SCENES/Mechanics/Quiz Panel/RodtangQUIZ.tscn" id="17_jm1gl"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="18_a1r14"]
 [ext_resource type="PackedScene" uid="uid://bgo57eltcotu0" path="res://SCENES/Environment/warning sign.tscn" id="18_r3iwn"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="19_g6c34"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/lamp.tscn" id="20_w332r"]
-[ext_resource type="PackedScene" path="res://SCENES/Environment/drainage.tscn" id="21_diorx"]
+[ext_resource type="PackedScene" uid="uid://ce8wxacd02sd1" path="res://SCENES/Environment/lamp.tscn" id="20_w332r"]
+[ext_resource type="PackedScene" uid="uid://buelhonuf0y52" path="res://SCENES/Environment/drainage.tscn" id="21_diorx"]
 [ext_resource type="PackedScene" uid="uid://gmf4ida653eu" path="res://SCENES/Environment/moving_platVertical.tscn" id="22_q25r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebodr"]
@@ -477,11 +479,11 @@ metadata/_edit_lock_ = true
 [node name="Characters" type="Node" parent="Slums Parallax"]
 
 [node name="Runi" parent="Slums Parallax/Characters" instance=ExtResource("2_4gso0")]
-position = Vector2(407, -264)
+position = Vector2(503, 649)
 
 [node name="B-01" parent="Slums Parallax/Characters" instance=ExtResource("3_nia05")]
 visibility_layer = 8
-position = Vector2(2961, 399)
+position = Vector2(1530, 731)
 
 [node name="Rodtang" parent="Slums Parallax/Characters" instance=ExtResource("4_frwgu")]
 position = Vector2(4001, 136)
@@ -502,6 +504,43 @@ position = Vector2(1872, 476)
 
 [node name="arrow sign" parent="Slums Parallax/breaking platform" instance=ExtResource("7_qcpeh")]
 position = Vector2(1774, 760)
+
+[node name="verticalplat" parent="Slums Parallax/breaking platform" instance=ExtResource("22_q25r6")]
+position = Vector2(574, 81)
+
+[node name="house" type="Node" parent="Slums Parallax"]
+
+[node name="houseV1" parent="Slums Parallax/house" instance=ExtResource("9_2b55o")]
+position = Vector2(407.187, 632)
+
+[node name="houseV2" parent="Slums Parallax/house" instance=ExtResource("9_2b55o")]
+position = Vector2(1099, 632)
+flip_h = true
+
+[node name="houseV3" parent="Slums Parallax/house" instance=ExtResource("9_2b55o")]
+position = Vector2(1269, 121)
+
+[node name="houseV4" parent="Slums Parallax/house" instance=ExtResource("9_2b55o")]
+position = Vector2(1528, 231)
+flip_h = true
+
+[node name="Sprite2D" parent="Slums Parallax/house" instance=ExtResource("10_oxva6")]
+position = Vector2(259, 641)
+flip_h = true
+
+[node name="houseV5" parent="Slums Parallax/house" instance=ExtResource("9_2b55o")]
+position = Vector2(2240, 375)
+
+[node name="Sprite2D3" parent="Slums Parallax/house" instance=ExtResource("10_oxva6")]
+position = Vector2(2094, 385)
+flip_h = true
+
+[node name="Sprite2D4" parent="Slums Parallax/house" instance=ExtResource("10_oxva6")]
+z_index = -1
+position = Vector2(2241, 310)
+
+[node name="Sprite2D2" parent="Slums Parallax/house" instance=ExtResource("10_oxva6")]
+position = Vector2(1140, 129)
 
 [node name="watersplash" type="Node" parent="Slums Parallax"]
 
@@ -549,25 +588,25 @@ metadata/_edit_lock_ = true
 [node name="Signage" type="Node" parent="Slums Parallax"]
 
 [node name="SlumsSign1" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(621, -264)
+position = Vector2(1049.5, 649)
 
 [node name="SlumsSign2" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(269, -424)
+position = Vector2(1454.5, 745)
 
 [node name="SlumsSign3" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(721, -600)
+position = Vector2(1991.91, 392)
 
 [node name="SlumsSign4" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(964, -392)
+position = Vector2(2620, 488)
 
 [node name="SlumsSign5" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(929, -264)
+position = Vector2(2955.86, 409.294)
 
 [node name="SlumsSign6" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(1216, -391)
+position = Vector2(3282.54, 537.493)
 
 [node name="SlumsSign7" parent="Slums Parallax/Signage" instance=ExtResource("6_diorx")]
-position = Vector2(1343, -600)
+position = Vector2(3884, 553)
 
 [node name="warning sign" parent="Slums Parallax/Signage" instance=ExtResource("18_r3iwn")]
 position = Vector2(1253, 584)
@@ -584,7 +623,7 @@ script = ExtResource("7_g6c34")
 dialogue_resource = ExtResource("8_1hldk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/RuniStart"]
-position = Vector2(409, -273.375)
+position = Vector2(501, 645)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage1" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -594,7 +633,7 @@ script = ExtResource("9_8cwim")
 dialogue_resource = ExtResource("8_1hldk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage1"]
-position = Vector2(618, -271)
+position = Vector2(1047.5, 645)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage2" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -605,7 +644,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage2"]
-position = Vector2(268, -431)
+position = Vector2(1453.5, 738)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage3" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -616,7 +655,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage3"]
-position = Vector2(718, -608)
+position = Vector2(1989.91, 388)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage4" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -627,7 +666,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage4"]
-position = Vector2(961, -399)
+position = Vector2(2618, 484)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage5" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -638,7 +677,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage5"]
-position = Vector2(927, -266)
+position = Vector2(2953.86, 405.294)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage6" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -649,7 +688,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage6"]
-position = Vector2(1213, -398)
+position = Vector2(3280.54, 533.493)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="signage7" type="Area2D" parent="Slums Parallax/dialogue"]
@@ -660,7 +699,7 @@ dialogue_resource = ExtResource("8_1hldk")
 dialogue_start = "signage7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/dialogue/signage7"]
-position = Vector2(1341, -606)
+position = Vector2(3882, 549)
 shape = SubResource("RectangleShape2D_nia05")
 
 [node name="trap" type="Node" parent="Slums Parallax"]
@@ -722,15 +761,84 @@ position = Vector2(3166, 558)
 [node name="trap19" parent="Slums Parallax/trap" instance=ExtResource("16_7eilr")]
 position = Vector2(3202, 558)
 
-[node name="lamp" parent="Slums Parallax" instance=ExtResource("20_w332r")]
+[node name="lamp" type="Node" parent="Slums Parallax"]
+
+[node name="lamp" parent="Slums Parallax/lamp" instance=ExtResource("20_w332r")]
 position = Vector2(1412, 690)
 frame_progress = 0.829812
 
-[node name="drainage" parent="Slums Parallax" instance=ExtResource("21_diorx")]
-position = Vector2(1351, 569)
+[node name="lamp2" parent="Slums Parallax/lamp" instance=ExtResource("20_w332r")]
+position = Vector2(98, 595)
+frame_progress = 0.628024
 
-[node name="verticalplat" parent="Slums Parallax" instance=ExtResource("22_q25r6")]
-position = Vector2(574, 81)
+[node name="lamp3" parent="Slums Parallax/lamp" instance=ExtResource("20_w332r")]
+position = Vector2(2353, 340)
+frame_progress = 0.822392
+
+[node name="lamp4" parent="Slums Parallax/lamp" instance=ExtResource("20_w332r")]
+position = Vector2(2624, 435)
+frame_progress = 0.0855671
+
+[node name="drainage" type="Node" parent="Slums Parallax"]
+
+[node name="drainage" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(1351, 569)
+metadata/_edit_lock_ = true
+
+[node name="drainage2" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(525, 776)
+metadata/_edit_lock_ = true
+
+[node name="drainage3" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(71, 769)
+metadata/_edit_lock_ = true
+
+[node name="drainage4" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(1503, 365)
+metadata/_edit_lock_ = true
+
+[node name="drainage5" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(1303, 255)
+metadata/_edit_lock_ = true
+
+[node name="drainage6" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(2016, 513)
+metadata/_edit_lock_ = true
+
+[node name="drainage7" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(1828, 860)
+metadata/_edit_lock_ = true
+
+[node name="drainage8" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(2317, 516)
+metadata/_edit_lock_ = true
+
+[node name="drainage9" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(2968, 525)
+metadata/_edit_lock_ = true
+
+[node name="drainage10" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(3377, 435)
+metadata/_edit_lock_ = true
+
+[node name="drainage11" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(3898, 674)
+metadata/_edit_lock_ = true
+
+[node name="drainage12" parent="Slums Parallax/drainage" instance=ExtResource("21_diorx")]
+position = Vector2(4109, 470)
+metadata/_edit_lock_ = true
+
+[node name="trap2" type="Node" parent="Slums Parallax"]
+
+[node name="trap" parent="Slums Parallax/trap2" instance=ExtResource("16_7eilr")]
+position = Vector2(1587, 769)
+
+[node name="trap2" parent="Slums Parallax/trap2" instance=ExtResource("16_7eilr")]
+position = Vector2(1617, 769)
+
+[node name="trap3" parent="Slums Parallax/trap2" instance=ExtResource("16_7eilr")]
+position = Vector2(1647, 769)
 
 [node name="door and quiz" type="Node" parent="Slums Parallax"]
 

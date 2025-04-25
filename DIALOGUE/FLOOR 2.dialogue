@@ -1,24 +1,36 @@
  ~ Runistart
-runi:  "Welcome back, B-01! Now that you know what JavaScript is, let's learn where to put it! This floor is all about placement!"
-runi: "JavaScript code can be included in an HTML document in two main ways internally, using the <script> tag, or externally, by linking a .js file."
-- B-01: "Beep boop! <script> tags? External files? What's the difference?"
-Runi: "Great question! Internal JavaScript is placed directly within the HTML file, typically in the <head> or <body> section. External JavaScript lives in a separate file and is linked to the HTML."
+Runi: "Welcome back, B-01! Now that you know what JavaScript is, let's dive deeper into where and how you can place it in your HTML. This floor is all about mastering script placement!"
 => END
 
 ~ signage1
-"Internal JavaScript is useful for small scripts specific to a single page. Use <script> tags to enclose the Javascript."
+"JavaScript can be added to your HTML in two main ways:
+Internal = Directly inside your HTML file using the <script> tag.
+External = In a separate .js file, linked to your HTML with the src attribute in a <script> tag.
+
 => END
 
 ~ signage2
-"External JavaScript is best for larger projects or when you want to reuse the same code across multiple pages. It keeps your HTML cleaner and easier to maintain. Use src to link the file"
+"Internal JavaScript is best for small scripts that only affect a single page. Place your code between <script> and </script> tags, usually inside the <head> or <body> section."
 => END
 
 ~ signage3
-"Remember to close your <script> tags with </script>!"
+"External JavaScript is ideal for larger projects or when you want to reuse code across multiple pages. Save your code in a .js file and link it with <script src='yourfile.js'></script>. This keeps your HTML cleaner and easier to maintain."
+=> END
+
+~ signage4
+"Best Practice = Place your <script> tags just before the closing </body> tag. This ensures your page content loads before the JavaScript runs, preventing errors with elements that might not exist yet."
+=> END
+
+~ signage5
+"You can use multiple <script> tags in one HTML file. For example, you might have one internal script and several external scripts, or split your code into different files for better organization."
+=> END
+
+~ signage6
+"You can use multiple <script> tags in one HTML file. For example, you might have one internal script and several external scripts, or split your code into different files for better organization."
 => END
 
 ~ Runiquiz
-Runi: "Excellent! You've reached the end of Floor 2. Time for another quiz to see if you understand where JavaScript goes!"
+"Remember Always close your <script> tags with </script>. If you use the src attribute, the script tag should still be closed properly. Example - <script src='main.js'></script>"
 => END
 
 ~ Runiend

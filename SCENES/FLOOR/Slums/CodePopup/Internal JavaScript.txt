@@ -1,0 +1,13 @@
+Internal JavaScript Example:
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<script>
+	  console.log("Internal JavaScript running!");
+	</script>
+  </head>
+  <body>
+	<h1>Welcome!</h1>
+  </body>
+</html>

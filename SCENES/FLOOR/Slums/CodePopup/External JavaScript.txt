@@ -1,0 +1,12 @@
+External JavaScript Example:
+
+<!-- HTML file -->
+<!DOCTYPE html>
+<html>
+  <head>
+	<script src="app.js"></script>
+  </head>
+  <body>
+	<h1>External JavaScript Example</h1>
+  </body>
+</html>

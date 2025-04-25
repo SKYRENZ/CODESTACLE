@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://3xhgyskghd3h"]
+[gd_scene load_steps=31 format=4 uid="uid://3xhgyskghd3h"]
 
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="1_bhxfh"]
 [ext_resource type="Script" uid="uid://dh2j7tbs36w15" path="res://SCRIPTS/Mechanics/HUD/FloorController.gd" id="1_x28vg"]
@@ -13,10 +13,7 @@
 [ext_resource type="Script" uid="uid://brklyaxie18vt" path="res://SCRIPTS/Floor/Slums/dialogue/signage.gd" id="8_0edr3"]
 [ext_resource type="PackedScene" uid="uid://cc2ngrbblqd4i" path="res://SCENES/Mechanics/Quiz Panel/RuniQUIZ.tscn" id="9_03f5i"]
 [ext_resource type="Script" uid="uid://cyskma2n2y0b2" path="res://SCRIPTS/Floor/Slums/quiz/runi_quiz.gd" id="10_0edr3"]
-[ext_resource type="PackedScene" uid="uid://ce8wxacd02sd1" path="res://SCENES/Environment/lamp.tscn" id="11_hrjgw"]
 [ext_resource type="Script" uid="uid://dpclusu6jx1e0" path="res://SCRIPTS/Mechanics/ResultPanel/DoorController.gd" id="12_mtqkf"]
-[ext_resource type="PackedScene" uid="uid://bojnatmk5pejq" path="res://SCENES/Environment/house_v_1.tscn" id="12_vii2j"]
-[ext_resource type="PackedScene" uid="uid://c7o6ugvwthnpd" path="res://SCENES/Environment/house_v_2.tscn" id="13_5ek71"]
 [ext_resource type="PackedScene" uid="uid://d3xerrje8kwmk" path="res://SCENES/Mechanics/doors/Slum Door.tscn" id="14_3xoiw"]
 [ext_resource type="PackedScene" uid="uid://bbk4k3rjm4ix1" path="res://SCENES/Environment/slums_signage.tscn" id="14_x28vg"]
 [ext_resource type="PackedScene" uid="uid://bdretct3mlymd" path="res://SCENES/Environment/RightArrow.tscn" id="15_x28vg"]
@@ -583,7 +580,7 @@ texture = ExtResource("3_ljcqr")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nnj27")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ek71"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2ib0"]
 texture = ExtResource("3_ljcqr")
 0:2/0 = 0
 0:2/0/z_index = 1
@@ -802,7 +799,7 @@ texture = ExtResource("3_ljcqr")
 10:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_71bnu"]
-sources/0 = SubResource("TileSetAtlasSource_5ek71")
+sources/0 = SubResource("TileSetAtlasSource_r2ib0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atb3i"]
 size = Vector2(48, 60.5)
@@ -823,34 +820,22 @@ npc_count = 1
 [node name="Slums Parallax" parent="." instance=ExtResource("2_in7sh")]
 metadata/_edit_lock_ = true
 
-[node name="popupcode" type="Node" parent="Slums Parallax"]
-
-[node name="popupcode" type="Area2D" parent="Slums Parallax/popupcode"]
-position = Vector2(1487, 530)
+[node name="popupcode" type="Area2D" parent="Slums Parallax"]
+position = Vector2(1564.59, 500.727)
 scale = Vector2(1.8615, 1.8615)
 script = ExtResource("19_nqgjn")
 code_file_path = "res://SCENES/FLOOR/Slums/CodePopup/Internal JavaScript.txt"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/popupcode/popupcode"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/popupcode"]
 light_mask = 17
 position = Vector2(4.74622, -7.07413)
-shape = SubResource("RectangleShape2D_asmv6")
-
-[node name="popupcode2" type="Area2D" parent="Slums Parallax/popupcode"]
-position = Vector2(2084.65, 507.239)
-scale = Vector2(1.8615, 1.8615)
-script = ExtResource("19_nqgjn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/popupcode/popupcode2"]
-light_mask = 17
-position = Vector2(-12.1671, 6.31805)
 shape = SubResource("RectangleShape2D_asmv6")
 
 [node name="Characters" type="Node" parent="Slums Parallax"]
 
 [node name="B-01" parent="Slums Parallax/Characters" instance=ExtResource("1_bhxfh")]
 visibility_layer = 8
-position = Vector2(45, 771)
+position = Vector2(1219.81, 524.943)
 
 [node name="Runi" parent="Slums Parallax/Characters" instance=ExtResource("2_4fvln")]
 position = Vector2(589.907, 712.827)
@@ -887,6 +872,12 @@ position = Vector2(3212, 602)
 [node name="coins10" parent="Slums Parallax/coins" instance=ExtResource("4_x28vg")]
 position = Vector2(3670, 712)
 
+[node name="coins11" parent="Slums Parallax/coins" instance=ExtResource("4_x28vg")]
+position = Vector2(4248, 713)
+
+[node name="coins12" parent="Slums Parallax/coins" instance=ExtResource("4_x28vg")]
+position = Vector2(4990, 810)
+
 [node name="Signage" type="Node" parent="Slums Parallax"]
 
 [node name="SlumsSign1" parent="Slums Parallax/Signage" instance=ExtResource("14_x28vg")]
@@ -896,16 +887,7 @@ position = Vector2(775.152, 633.143)
 position = Vector2(1394, 537)
 
 [node name="SlumsSign3" parent="Slums Parallax/Signage" instance=ExtResource("14_x28vg")]
-position = Vector2(2005, 537)
-
-[node name="SlumsSign4" parent="Slums Parallax/Signage" instance=ExtResource("14_x28vg")]
-position = Vector2(2871, 554)
-
-[node name="SlumsSign5" parent="Slums Parallax/Signage" instance=ExtResource("14_x28vg")]
-position = Vector2(3420, 681)
-
-[node name="SlumsSign6" parent="Slums Parallax/Signage" instance=ExtResource("14_x28vg")]
-position = Vector2(4108, 681)
+position = Vector2(2860.58, 525.063)
 
 [node name="warning" parent="Slums Parallax/Signage" instance=ExtResource("5_mtqkf")]
 position = Vector2(2558, 434)
@@ -921,21 +903,6 @@ position = Vector2(2026, 914)
 
 [node name="arrow sign3" parent="Slums Parallax/Signage" instance=ExtResource("16_36jqm")]
 position = Vector2(1687, 818)
-
-[node name="lamp" parent="Slums Parallax/Signage" instance=ExtResource("11_hrjgw")]
-position = Vector2(213, 724)
-frame_progress = 0.672585
-
-[node name="house" type="Node" parent="Slums Parallax"]
-
-[node name="houseV1" parent="Slums Parallax/house" instance=ExtResource("12_vii2j")]
-z_index = 1
-position = Vector2(93.7036, 759.595)
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" parent="Slums Parallax/house" instance=ExtResource("13_5ek71")]
-position = Vector2(91.7038, 693.595)
-metadata/_edit_lock_ = true
 
 [node name="Map tile" type="Node" parent="Slums Parallax"]
 
@@ -1011,40 +978,7 @@ dialogue_resource = ExtResource("6_vi21l")
 dialogue_start = "signage3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage3"]
-position = Vector2(2001, 528)
-shape = SubResource("RectangleShape2D_atb3i")
-
-[node name="signage4" type="Area2D" parent="Slums Parallax/Dialogue"]
-position = Vector2(2861.68, 528.002)
-collision_layer = 32
-script = ExtResource("8_0edr3")
-dialogue_resource = ExtResource("6_vi21l")
-dialogue_start = "signage4 "
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage4"]
-position = Vector2(9.31738, 18.9985)
-shape = SubResource("RectangleShape2D_atb3i")
-
-[node name="signage5" type="Area2D" parent="Slums Parallax/Dialogue"]
-position = Vector2(3410, 656)
-collision_layer = 32
-script = ExtResource("8_0edr3")
-dialogue_resource = ExtResource("6_vi21l")
-dialogue_start = "signage5 "
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage5"]
-position = Vector2(9.31738, 18.9985)
-shape = SubResource("RectangleShape2D_atb3i")
-
-[node name="signage6" type="Area2D" parent="Slums Parallax/Dialogue"]
-position = Vector2(4098, 656)
-collision_layer = 32
-script = ExtResource("8_0edr3")
-dialogue_resource = ExtResource("6_vi21l")
-dialogue_start = "signage6"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogue/signage6"]
-position = Vector2(9.31738, 18.9985)
+position = Vector2(2889.01, 548.213)
 shape = SubResource("RectangleShape2D_atb3i")
 
 [node name="Runiquiz" type="Area2D" parent="Slums Parallax"]
@@ -1078,5 +1012,4 @@ shape = SubResource("RectangleShape2D_x28vg")
 [node name="quizsign" parent="." instance=ExtResource("19_asmv6")]
 position = Vector2(4648, 701)
 
-[connection signal="body_entered" from="Slums Parallax/popupcode/popupcode" to="Slums Parallax/popupcode/popupcode" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Slums Parallax/popupcode/popupcode2" to="Slums Parallax/popupcode/popupcode2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Slums Parallax/popupcode" to="Slums Parallax/popupcode" method="_on_Area2D_body_entered"]

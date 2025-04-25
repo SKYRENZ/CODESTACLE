@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ce8wxacd02sd1"]
 
 [ext_resource type="Texture2D" uid="uid://drbk10kcmslt" path="res://ASSETS/Environment/withlightanimation_lamp-Sheet.png" id="1_xflkd"]
-[ext_resource type="Script" uid="uid://di16o1v1bbaeu" path="res://SCRIPTS/Environment/lamp.gd" id="2_uk20a"]
+[ext_resource type="Script" path="res://SCRIPTS/Environment/lamp.gd" id="2_uk20a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk20a"]
 atlas = ExtResource("1_xflkd")

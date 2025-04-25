@@ -1,13 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://3hebfol673ga"]
+[gd_scene load_steps=11 format=4 uid="uid://3hebfol673ga"]
 
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_m5e11"]
-[ext_resource type="Script" uid="uid://c6778o0cfnycw" path="res://SCRIPTS/Floor/Tutorial/tutorial.gd" id="1_yny8n"]
 [ext_resource type="Script" uid="uid://baht0udwehdac" path="res://SCRIPTS/Floor/Tutorial/movement.gd" id="2_vg2gj"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_yvwxb"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
 [ext_resource type="PackedScene" uid="uid://dwg0tx5somvvx" path="res://SCENES/Character/B-01.tscn" id="4_f1omh"]
-[ext_resource type="Resource" uid="uid://bgukcys5hqq1s" path="res://DIALOGUE/tutorial.dialogue" id="4_qa4xd"]
-[ext_resource type="PackedScene" uid="uid://cnxjcqlp8jm8v" path="res://SCENES/Berni.tscn" id="6_vg2gj"]
 [ext_resource type="PackedScene" uid="uid://c5er4em2ye5jm" path="res://SCENES/Mechanics/doors/flag(transitionflr).tscn" id="7_yny8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1k1d"]
@@ -323,45 +320,7 @@ physics_layer_1/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_ejwnv")
 sources/1 = SubResource("TileSetAtlasSource_b8nch")
 
-[sub_resource type="Animation" id="Animation_28ntc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Berni:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-419, 530)]
-}
-
-[sub_resource type="Animation" id="Animation_qa4xd"]
-resource_name = "greetings"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Berni:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667, 1.03, 1.52, 1.73, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-419, 530), Vector2(-447, 336), Vector2(-530, 278), Vector2(-530, 278), Vector2(-585, 388), Vector2(-593, 398)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_28ntc"]
-_data = {
-&"RESET": SubResource("Animation_28ntc"),
-&"greetings": SubResource("Animation_qa4xd")
-}
-
 [node name="Tutorial" type="Node2D"]
-script = ExtResource("1_yny8n")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -376,15 +335,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_m5e11")
 
-[node name="Area2DMovement" type="Area2D" parent="." node_paths=PackedStringArray("mid_animation_player")]
+[node name="Area2DMovent" type="Area2D" parent="."]
 script = ExtResource("2_vg2gj")
-dialogue_resource = ExtResource("4_qa4xd")
-dialogue_start = "TT1"
-pan_speed = 100.0
-pan_pause_duration = 3.0
-mid_animation_player = NodePath("../AnimationPlayer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DMovement"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DMovent"]
 position = Vector2(-754, 192.5)
 shape = SubResource("RectangleShape2D_o1k1d")
 
@@ -411,11 +365,3 @@ position = Vector2(-1, 1)
 [node name="FLAG(TRANSITIONTOTS-FLR1))" parent="." instance=ExtResource("7_yny8n")]
 position = Vector2(718, 137)
 target_scene = "res://SCENES/FLOOR/Slums/floor 1.tscn"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_28ntc")
-}
-
-[node name="Berni" parent="AnimationPlayer" instance=ExtResource("6_vg2gj")]
-position = Vector2(-419, 530)

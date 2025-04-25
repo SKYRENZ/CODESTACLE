@@ -1,0 +1,126 @@
+[gd_scene load_steps=18 format=3 uid="uid://cnxjcqlp8jm8v"]
+
+[ext_resource type="Texture2D" uid="uid://c785qapm0ibk5" path="res://ASSETS/Character/Berni-Bot.png" id="1_5yiey"]
+[ext_resource type="Script" uid="uid://db3af6geygqio" path="res://SCRIPTS/Character/berni.gd" id="1_c7a4j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7a4j"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my7t8"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f34im"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(320, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5dca"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(360, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp0ld"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0fa0"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ourd"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(320, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evw7o"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(360, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q15i7"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1eq1"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edsld"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_altua"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiems"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(240, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elk76"]
+atlas = ExtResource("1_5yiey")
+region = Rect2(280, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfpee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7a4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my7t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f34im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5dca")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0fa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ourd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evw7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q15i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1eq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edsld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_altua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiems")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elk76")
+}],
+"loop": true,
+"name": &"warning",
+"speed": 5.0
+}]
+
+[node name="Berni" type="CharacterBody2D"]
+position = Vector2(267, 298)
+script = ExtResource("1_c7a4j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-222, -254)
+scale = Vector2(2.15, 2.15)
+sprite_frames = SubResource("SpriteFrames_nfpee")
+animation = &"warning"
+frame_progress = 0.447131

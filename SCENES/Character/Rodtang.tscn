@@ -54,4 +54,3 @@ position = Vector2(204, 204.068)
 scale = Vector2(0.108703, 0.108703)
 sprite_frames = SubResource("SpriteFrames_xqabn")
 animation = &"idle"
-frame_progress = 0.675148

@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://3hebfol673ga"]
+[gd_scene load_steps=20 format=4 uid="uid://3hebfol673ga"]
 
 [ext_resource type="Texture2D" uid="uid://bha3ftsnk5bqx" path="res://ASSETS/BACKGROUNDS/backgroun main_menu 3.png" id="1_m5e11"]
-[ext_resource type="Script" uid="uid://c6778o0cfnycw" path="res://SCRIPTS/Floor/Tutorial/tutorial.gd" id="1_yny8n"]
 [ext_resource type="Script" uid="uid://baht0udwehdac" path="res://SCRIPTS/Floor/Tutorial/movement.gd" id="2_vg2gj"]
 [ext_resource type="Texture2D" uid="uid://xjypvc7gnk38" path="res://ASSETS/TILESETS/tots1.png" id="2_yvwxb"]
 [ext_resource type="Texture2D" uid="uid://dnkbjlmqceem4" path="res://ASSETS/tots1-export.png" id="3_owoh4"]
@@ -12,6 +11,11 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1k1d"]
 size = Vector2(22, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjcep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa4xd"]
+size = Vector2(25, 29)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwnv"]
 texture = ExtResource("2_yvwxb")
@@ -354,14 +358,47 @@ tracks/0/keys = {
 "values": [Vector2(-419, 530), Vector2(-447, 336), Vector2(-530, 278), Vector2(-530, 278), Vector2(-585, 388), Vector2(-593, 398)]
 }
 
+[sub_resource type="Animation" id="Animation_bjcep"]
+resource_name = "ladder"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Berni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.23, 0.36, 0.47, 0.733333, 1.03, 1.56, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 415), Vector2(18, 434), Vector2(76.4745, 431.465), Vector2(128, 409), Vector2(164.186, 427.664), Vector2(222, 437), Vector2(255.974, 438.073), Vector2(313, 421), Vector2(317, 440)]
+}
+
+[sub_resource type="Animation" id="Animation_kwqaa"]
+resource_name = "go"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Berni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.366667, 0.633333, 1.06667, 1.36667, 2.03333, 2.8, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(398, 407), Vector2(476, 390.88), Vector2(548, 376), Vector2(628.979, 362.241), Vector2(692.91, 351.379), Vector2(754, 341), Vector2(806, 368), Vector2(888, 353), Vector2(899, 344)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28ntc"]
 _data = {
 &"RESET": SubResource("Animation_28ntc"),
-&"greetings": SubResource("Animation_qa4xd")
+&"go": SubResource("Animation_kwqaa"),
+&"greetings": SubResource("Animation_qa4xd"),
+&"ladder": SubResource("Animation_bjcep")
 }
 
 [node name="Tutorial" type="Node2D"]
-script = ExtResource("1_yny8n")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -380,13 +417,43 @@ texture = ExtResource("1_m5e11")
 script = ExtResource("2_vg2gj")
 dialogue_resource = ExtResource("4_qa4xd")
 dialogue_start = "TT1"
+pan_distance = 600.0
 pan_speed = 100.0
-pan_pause_duration = 3.0
+pan_pause_duration = 2.0
 mid_animation_player = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DMovement"]
 position = Vector2(-754, 192.5)
 shape = SubResource("RectangleShape2D_o1k1d")
+
+[node name="Area2DLadder" type="Area2D" parent="." node_paths=PackedStringArray("mid_animation_player")]
+script = ExtResource("2_vg2gj")
+dialogue_resource = ExtResource("4_qa4xd")
+dialogue_start = "Ladder"
+pan_distance = 200.0
+pan_speed = 50.0
+pan_pause_duration = 2.0
+pan_direction = 1
+mid_animation_player = NodePath("../AnimationPlayer")
+mid_animation_name = "ladder"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DLadder"]
+position = Vector2(138, 251)
+shape = SubResource("RectangleShape2D_bjcep")
+
+[node name="Area2DGo" type="Area2D" parent="." node_paths=PackedStringArray("mid_animation_player")]
+script = ExtResource("2_vg2gj")
+dialogue_resource = ExtResource("4_qa4xd")
+dialogue_start = "Welcome"
+pan_distance = 300.0
+pan_speed = 100.0
+pan_pause_duration = 1.5
+mid_animation_player = NodePath("../AnimationPlayer")
+mid_animation_name = "go"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DGo"]
+position = Vector2(492.5, 134.5)
+shape = SubResource("RectangleShape2D_qa4xd")
 
 [node name="Tots" type="TileMapLayer" parent="."]
 position = Vector2(-520, 280)
@@ -406,7 +473,7 @@ disable_mode = 2
 collision_layer = 17
 
 [node name="popup" type="Node2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(0, 5)
 
 [node name="FLAG(TRANSITIONTOTS-FLR1))" parent="." instance=ExtResource("7_yny8n")]
 position = Vector2(718, 137)

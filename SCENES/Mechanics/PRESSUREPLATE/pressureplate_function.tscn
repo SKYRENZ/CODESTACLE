@@ -64,15 +64,15 @@ animations = [{
 
 [node name="DIRTWALL" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="staticwall" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_llq0u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="collisionwall" type="CollisionShape2D" parent="staticwall"]
 z_index = 1
 position = Vector2(317, 147.75)
 shape = SubResource("RectangleShape2D_thvqj")
 
-[node name="DIRTWALL" type="AnimatedSprite2D" parent="."]
+[node name="DIRTWALLANI" type="AnimatedSprite2D" parent="."]
 position = Vector2(318, 148)
 scale = Vector2(1.89583, 1.89583)
 sprite_frames = SubResource("SpriteFrames_dwyxm")

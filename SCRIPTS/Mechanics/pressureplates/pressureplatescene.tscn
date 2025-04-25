@@ -1,0 +1,205 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqehvnav5q88x"]
+
+[ext_resource type="Script" uid="uid://t1okmq7h0k5g" path="res://SCRIPTS/Mechanics/pressureplates/pressureplatescene.gd" id="1_hragv"]
+[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="2_77ous"]
+[ext_resource type="Script" uid="uid://blxphtiqjs26y" path="res://SCRIPTS/Mechanics/pressureplates/pressureplate.gd" id="3_77ous"]
+[ext_resource type="Texture2D" uid="uid://lrqlprv324uq" path="res://ASSETS/Environment/PRESSUREPLATE/dirt_pressure_plate_keng-Sheet.png" id="3_hragv"]
+[ext_resource type="Texture2D" uid="uid://cgwss4e250hq6" path="res://ASSETS/Environment/WALL/DIRTWALL_animation-Sheet.png" id="4_77ous"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnast"]
+font = ExtResource("2_77ous")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77ous"]
+size = Vector2(56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fose4"]
+atlas = ExtResource("3_hragv")
+region = Rect2(0, 0, 23, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sehs7"]
+atlas = ExtResource("3_hragv")
+region = Rect2(23, 0, 23, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gibn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fose4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sehs7")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfse"]
+atlas = ExtResource("4_77ous")
+region = Rect2(192, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipf0q"]
+atlas = ExtResource("4_77ous")
+region = Rect2(0, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_676l1"]
+atlas = ExtResource("4_77ous")
+region = Rect2(48, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8prs4"]
+atlas = ExtResource("4_77ous")
+region = Rect2(96, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llq0u"]
+atlas = ExtResource("4_77ous")
+region = Rect2(144, 0, 48, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thvqj"]
+atlas = ExtResource("4_77ous")
+region = Rect2(192, 0, 48, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnast"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfse")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipf0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_676l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8prs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llq0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thvqj")
+}],
+"loop": true,
+"name": &"wallanimation",
+"speed": 6.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gibn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uudy"]
+size = Vector2(86, 376.5)
+
+[node name="PRESSUREPLATESCENE" type="Node2D"]
+script = ExtResource("1_hragv")
+
+[node name="question" type="Label" parent="."]
+z_index = 1
+offset_left = -92.0
+offset_top = 114.0
+offset_right = 99.0
+offset_bottom = 147.0
+label_settings = SubResource("LabelSettings_fnast")
+horizontal_alignment = 3
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pressureplate" type="Area2D" parent="."]
+position = Vector2(112, 256)
+script = ExtResource("3_77ous")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate"]
+position = Vector2(36, 11)
+shape = SubResource("RectangleShape2D_77ous")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pressureplate"]
+z_index = 1
+position = Vector2(37, 6)
+scale = Vector2(2.1413, 2.1413)
+sprite_frames = SubResource("SpriteFrames_gibn7")
+animation = &"idle"
+
+[node name="option1" type="Label" parent="pressureplate"]
+z_index = 2
+offset_left = 17.0
+offset_top = -48.0
+offset_right = 57.0
+offset_bottom = -25.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pressureplate2" type="Area2D" parent="."]
+position = Vector2(273, 255)
+script = ExtResource("3_77ous")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate2"]
+position = Vector2(36, 11)
+shape = SubResource("RectangleShape2D_77ous")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pressureplate2"]
+z_index = 1
+position = Vector2(37, 6)
+scale = Vector2(2.1413, 2.1413)
+sprite_frames = SubResource("SpriteFrames_gibn7")
+animation = &"idle"
+
+[node name="option2" type="Label" parent="pressureplate2"]
+z_index = 2
+offset_left = 17.0
+offset_top = -44.0
+offset_right = 57.0
+offset_bottom = -21.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pressureplate3" type="Area2D" parent="."]
+position = Vector2(427, 252)
+script = ExtResource("3_77ous")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate3"]
+position = Vector2(36, 11)
+shape = SubResource("RectangleShape2D_77ous")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pressureplate3"]
+z_index = 1
+position = Vector2(37, 6)
+scale = Vector2(2.1413, 2.1413)
+sprite_frames = SubResource("SpriteFrames_gibn7")
+animation = &"idle"
+
+[node name="option3" type="Label" parent="pressureplate3"]
+z_index = 2
+offset_left = 17.0
+offset_top = -45.0
+offset_right = 57.0
+offset_bottom = -22.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DIRTWALLANI" type="AnimatedSprite2D" parent="."]
+position = Vector2(619, 191)
+scale = Vector2(1.89583, 1.89583)
+sprite_frames = SubResource("SpriteFrames_fnast")
+animation = &"wallanimation"
+
+[node name="staticwall2" type="StaticBody2D" parent="DIRTWALLANI"]
+position = Vector2(-167.737, -78.0661)
+scale = Vector2(0.527473, 0.527473)
+physics_material_override = SubResource("PhysicsMaterial_gibn7")
+
+[node name="collisionwall" type="CollisionShape2D" parent="DIRTWALLANI/staticwall2"]
+z_index = 1
+position = Vector2(317, 147.75)
+shape = SubResource("RectangleShape2D_3uudy")

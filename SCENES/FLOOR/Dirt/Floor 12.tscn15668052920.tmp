@@ -635,4 +635,4 @@ position = Vector2(1705, 349)
 shape = SubResource("RectangleShape2D_qt0ti")
 
 [node name="PRESSUREPLATESCENE" parent="." instance=ExtResource("13_7ae38")]
-position = Vector2(-164, 154)
+position = Vector2(-159, 172)

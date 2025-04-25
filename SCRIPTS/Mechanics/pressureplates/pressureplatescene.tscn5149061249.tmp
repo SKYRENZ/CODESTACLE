@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqehvnav5q88x"]
+
+[ext_resource type="Script" uid="uid://t1okmq7h0k5g" path="res://SCRIPTS/Mechanics/pressureplates/pressureplatescene.gd" id="1_hragv"]
+[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="2_77ous"]
+[ext_resource type="PackedScene" uid="uid://d0dofnk5yabu1" path="res://SCENES/Mechanics/PRESSUREPLATE/pressureplate_function.tscn" id="3_gibn7"]
+[ext_resource type="PackedScene" uid="uid://dgatsr7yoslmf" path="res://SCRIPTS/Mechanics/pressureplates/pressureplate.tscn" id="4_3uudy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnast"]
+font = ExtResource("2_77ous")
+
+[node name="PRESSUREPLATESCENE" type="Node2D"]
+script = ExtResource("1_hragv")
+
+[node name="pressureplate" parent="." instance=ExtResource("4_3uudy")]
+position = Vector2(92, 247)
+answer = "A"
+
+[node name="option1" type="Label" parent="pressureplate"]
+offset_left = 36.0
+offset_top = -50.0
+offset_right = 76.0
+offset_bottom = -27.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pressureplate2" parent="." instance=ExtResource("4_3uudy")]
+position = Vector2(252, 243)
+answer = "B"
+
+[node name="option2" type="Label" parent="pressureplate2"]
+offset_left = 37.0
+offset_top = -48.0
+offset_right = 77.0
+offset_bottom = -25.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pressureplate3" parent="." instance=ExtResource("4_3uudy")]
+position = Vector2(407, 244)
+answer = "C"
+
+[node name="option3" type="Label" parent="pressureplate3"]
+offset_left = 35.0
+offset_top = -43.0
+offset_right = 75.0
+offset_bottom = -20.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DIRT WALL" parent="pressureplate3" instance=ExtResource("3_gibn7")]
+z_index = 1
+position = Vector2(-106, -201)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="question" type="Label" parent="CanvasLayer"]
+offset_left = 196.0
+offset_top = 102.0
+offset_right = 387.0
+offset_bottom = 135.0
+label_settings = SubResource("LabelSettings_fnast")
+horizontal_alignment = 1
+vertical_alignment = 1

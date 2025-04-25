@@ -812,7 +812,7 @@ metadata/_edit_lock_ = true
 [node name="B-01" parent="Slums Parallax/Characters" instance=ExtResource("2_ttjng")]
 visibility_layer = 8
 z_index = 5
-position = Vector2(2503, 577)
+position = Vector2(97, 764)
 
 [node name="Runi" parent="Slums Parallax/Characters" instance=ExtResource("3_ydj8t")]
 position = Vector2(587, 712)

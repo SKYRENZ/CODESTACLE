@@ -1,0 +1,382 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygjiqbl6aood"]
+
+[ext_resource type="Script" uid="uid://b6voyv07ak663" path="res://SCRIPTS/Mechanics/ResultPanel/results_panel.gd" id="1_n6nvk"]
+[ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="2_an2gi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mruqn"]
+font = ExtResource("2_an2gi")
+font_size = 87
+font_color = Color(0.290196, 0.129412, 0.0470588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xtqbn"]
+font = ExtResource("2_an2gi")
+font_size = 34
+font_color = Color(0.894118, 0.317647, 0.172549, 1)
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_n6nvk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = -340.0
+offset_right = 280.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.40068, 1.20315)
+color = Color(0.960784, 0.584314, 0.337255, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 205.0
+offset_right = 283.0
+offset_bottom = 245.0
+scale = Vector2(9.91517, 8.36899)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.045
+anchor_bottom = 0.07
+offset_left = -22.5916
+offset_top = -21.8664
+offset_right = 325.448
+offset_bottom = 183.304
+scale = Vector2(0.246254, 0.302459)
+color = Color(0.968627, 0.784314, 0.639216, 1)
+
+[node name="DimBackground" type="ColorRect" parent="."]
+offset_right = 1307.0
+offset_bottom = 1149.0
+scale = Vector2(1.04978, 0.797594)
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Leaderboards" type="Label" parent="."]
+z_index = 7
+offset_left = 286.0
+offset_top = 68.0
+offset_right = 1015.0
+offset_bottom = 156.0
+text = "LEADERBOARDS"
+label_settings = SubResource("LabelSettings_mruqn")
+
+[node name="Username" type="Label" parent="."]
+z_index = 7
+offset_left = 307.0
+offset_top = 191.0
+offset_right = 659.0
+offset_bottom = 255.0
+text = "USERNAME"
+label_settings = SubResource("LabelSettings_xtqbn")
+
+[node name="UN1" type="Label" parent="Username"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 40.0
+offset_right = 105.0
+offset_bottom = 63.0
+
+[node name="UN2" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 76.0
+offset_right = 105.0
+offset_bottom = 99.0
+
+[node name="UN3" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 107.0
+offset_right = 105.0
+offset_bottom = 130.0
+
+[node name="UN4" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 130.0
+offset_right = 105.0
+offset_bottom = 153.0
+
+[node name="UN5" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 165.0
+offset_right = 105.0
+offset_bottom = 188.0
+
+[node name="UN6" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 198.0
+offset_right = 105.0
+offset_bottom = 221.0
+
+[node name="UN7" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 241.0
+offset_right = 105.0
+offset_bottom = 264.0
+
+[node name="UN8" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 283.0
+offset_right = 105.0
+offset_bottom = 306.0
+
+[node name="UN9" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 322.0
+offset_right = 105.0
+offset_bottom = 345.0
+
+[node name="UN10" type="Label" parent="Username"]
+offset_left = 65.0
+offset_top = 383.0
+offset_right = 105.0
+offset_bottom = 406.0
+
+[node name="Floor" type="Label" parent="."]
+z_index = 7
+offset_left = 120.0
+offset_top = 191.0
+offset_right = 472.0
+offset_bottom = 255.0
+text = "FLOOR"
+label_settings = SubResource("LabelSettings_xtqbn")
+
+[node name="F1" type="Label" parent="Floor"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 40.0
+offset_right = 54.0
+offset_bottom = 63.0
+scale = Vector2(1.59583, 1.24239)
+text = "1"
+horizontal_alignment = 1
+
+[node name="F2" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 76.0
+offset_right = 54.0
+offset_bottom = 99.0
+scale = Vector2(1.59583, 1.24239)
+text = "2"
+horizontal_alignment = 1
+
+[node name="F3" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 107.0
+offset_right = 54.0
+offset_bottom = 130.0
+scale = Vector2(1.59583, 1.24239)
+text = "3"
+horizontal_alignment = 1
+
+[node name="F4" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 136.0
+offset_right = 54.0
+offset_bottom = 159.0
+scale = Vector2(1.59583, 1.24239)
+text = "4"
+horizontal_alignment = 1
+
+[node name="F5" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 164.0
+offset_right = 54.0
+offset_bottom = 187.0
+scale = Vector2(1.59583, 1.24239)
+text = "5"
+horizontal_alignment = 1
+
+[node name="F6" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 198.0
+offset_right = 54.0
+offset_bottom = 221.0
+scale = Vector2(1.59583, 1.24239)
+text = "6"
+horizontal_alignment = 1
+
+[node name="F7" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 241.0
+offset_right = 54.0
+offset_bottom = 290.0
+scale = Vector2(1.59583, 1.24239)
+text = "7
+"
+horizontal_alignment = 1
+
+[node name="F8" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 283.0
+offset_right = 54.0
+offset_bottom = 335.0
+scale = Vector2(1.59583, 1.24239)
+text = "8"
+horizontal_alignment = 1
+
+[node name="F9" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 322.0
+offset_right = 54.0
+offset_bottom = 371.0
+scale = Vector2(1.59583, 1.24239)
+text = "9"
+horizontal_alignment = 1
+
+[node name="F10" type="Label" parent="Floor"]
+offset_left = 14.0
+offset_top = 383.0
+offset_right = 54.0
+offset_bottom = 458.0
+scale = Vector2(1.59583, 1.24239)
+text = "10
+
+"
+horizontal_alignment = 1
+
+[node name="HighestScore" type="Label" parent="."]
+z_index = 7
+offset_left = 554.0
+offset_top = 191.0
+offset_right = 906.0
+offset_bottom = 255.0
+text = "HIGHEST SCORE"
+label_settings = SubResource("LabelSettings_xtqbn")
+
+[node name="HS1" type="Label" parent="HighestScore"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 40.0
+offset_right = 145.0
+offset_bottom = 63.0
+
+[node name="HS2" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 76.0
+offset_right = 145.0
+offset_bottom = 99.0
+
+[node name="HS3" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 107.0
+offset_right = 145.0
+offset_bottom = 130.0
+
+[node name="HS4" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 153.0
+offset_right = 145.0
+offset_bottom = 176.0
+
+[node name="HS5" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 153.0
+offset_right = 145.0
+offset_bottom = 176.0
+
+[node name="HS6" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 193.0
+offset_right = 145.0
+offset_bottom = 216.0
+
+[node name="HS7" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 241.0
+offset_right = 145.0
+offset_bottom = 264.0
+
+[node name="HS8" type="Label" parent="HighestScore"]
+offset_left = 105.0
+offset_top = 283.0
+offset_right = 145.0
+offset_bottom = 306.0
+
+[node name="HS9" type="Label" parent="HighestScore"]
+offset_left = 84.0
+offset_top = 322.0
+offset_right = 124.0
+offset_bottom = 345.0
+
+[node name="HS10" type="Label" parent="HighestScore"]
+offset_left = 71.0
+offset_top = 383.0
+offset_right = 111.0
+offset_bottom = 406.0
+
+[node name="ShortestTime" type="Label" parent="."]
+z_index = 7
+offset_left = 899.0
+offset_top = 191.0
+offset_right = 1251.0
+offset_bottom = 255.0
+text = "SHORTEST TIME"
+label_settings = SubResource("LabelSettings_xtqbn")
+
+[node name="ST1" type="Label" parent="ShortestTime"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 40.0
+offset_right = 156.0
+offset_bottom = 63.0
+
+[node name="ST2" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 76.0
+offset_right = 156.0
+offset_bottom = 99.0
+
+[node name="ST3" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 130.0
+offset_right = 156.0
+offset_bottom = 153.0
+
+[node name="ST4" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 165.0
+offset_right = 156.0
+offset_bottom = 188.0
+
+[node name="ST5" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 216.0
+offset_right = 156.0
+offset_bottom = 239.0
+
+[node name="ST6" type="Label" parent="ShortestTime"]
+offset_left = 131.0
+offset_top = 198.0
+offset_right = 171.0
+offset_bottom = 221.0
+
+[node name="ST7" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 264.0
+offset_right = 156.0
+offset_bottom = 287.0
+
+[node name="ST8" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 302.0
+offset_right = 156.0
+offset_bottom = 325.0
+
+[node name="ST9" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 325.0
+offset_right = 156.0
+offset_bottom = 348.0
+
+[node name="ST10" type="Label" parent="ShortestTime"]
+offset_left = 116.0
+offset_top = 383.0
+offset_right = 156.0
+offset_bottom = 406.0

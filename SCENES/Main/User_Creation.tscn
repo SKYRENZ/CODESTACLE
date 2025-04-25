@@ -1,0 +1,218 @@
+[gd_scene load_steps=21 format=3 uid="uid://defr6kn5vhv80"]
+
+[ext_resource type="Script" uid="uid://bup78u53nfgdp" path="res://SCRIPTS/Main/Stage Buttons/user_creation.gd" id="1_e331h"]
+[ext_resource type="Shader" uid="uid://krgfal645rv6" path="res://ASSETS/SHADERS/Sky.gdshader" id="2_skf1t"]
+[ext_resource type="Texture2D" uid="uid://bdj8wtfe7q8hc" path="res://ASSETS/BACKGROUNDS/Cloud-Static.png" id="3_ev8my"]
+[ext_resource type="Shader" uid="uid://bp4bk3el6wiby" path="res://ASSETS/SHADERS/Cloud-3.gdshader" id="4_oaw5x"]
+[ext_resource type="Texture2D" uid="uid://cmxoi2lqsnqmg" path="res://ASSETS/BACKGROUNDS/Cloud-3.png" id="5_dhwwh"]
+[ext_resource type="Shader" uid="uid://cf1g4u7i8nrso" path="res://ASSETS/SHADERS/Cloud-4.gdshader" id="6_ph33q"]
+[ext_resource type="Texture2D" uid="uid://ca7naa5pdlmx5" path="res://ASSETS/BACKGROUNDS/Cloud-4.png" id="7_xujc5"]
+[ext_resource type="Shader" uid="uid://da7vmnhpe1bff" path="res://ASSETS/SHADERS/Scroll-Mountain.gdshader" id="8_narhq"]
+[ext_resource type="Texture2D" uid="uid://dbx2lveh6gjf4" path="res://ASSETS/BACKGROUNDS/BG-Layer2.png" id="9_g3qo5"]
+[ext_resource type="Shader" uid="uid://dy72txl40dunx" path="res://ASSETS/SHADERS/Scroll-Tree.gdshader" id="10_k2kkn"]
+[ext_resource type="Texture2D" uid="uid://bmigxr4fjjecq" path="res://ASSETS/BACKGROUNDS/BG-Layer1.png" id="11_xqh8o"]
+[ext_resource type="Texture2D" uid="uid://cawrgv6al10ux" path="res://ASSETS/BACKGROUNDS/Road.png" id="12_snhag"]
+[ext_resource type="FontFile" uid="uid://bpif28kgj5k30" path="res://ASSETS/FONT/Silkscreen-Bold.ttf" id="13_bfxrs"]
+[ext_resource type="Texture2D" uid="uid://d3bab1putocb1" path="res://ASSETS/BACKGROUNDS/LoginCard.png" id="14_76g2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vej0"]
+shader = ExtResource("2_skf1t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrj5"]
+shader = ExtResource("4_oaw5x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3mlb"]
+shader = ExtResource("6_ph33q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w1xr"]
+shader = ExtResource("8_narhq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjgfe"]
+shader = ExtResource("10_k2kkn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7yn0"]
+shader = ExtResource("10_k2kkn")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e331h")
+
+[node name="Sky" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_0vej0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ev8my")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 3" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fjrj5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dhwwh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cloud 4" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a3mlb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xujc5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Mountain" type="TextureRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_1w1xr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_g3qo5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Trees" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tjgfe")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -3.0
+offset_right = 80.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_xqh8o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Road" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k7yn0")
+layout_mode = 0
+offset_top = 27.0
+offset_right = 1280.0
+offset_bottom = 747.0
+texture = ExtResource("12_snhag")
+expand_mode = 1
+
+[node name="Codestacle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -5.0
+offset_right = 785.0
+offset_bottom = 119.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.752941, 0.317647, 1)
+theme_override_colors/font_shadow_color = Color(0.105882, 0.2, 0.145098, 1)
+theme_override_fonts/font = ExtResource("13_bfxrs")
+theme_override_font_sizes/font_size = 90
+text = "codestacle"
+
+[node name="Container" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -216.0
+offset_right = -44.0
+offset_bottom = 263.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_76g2y")
+region_rect = Rect2(19, 21, 772, 1020)
+patch_margin_right = 6
+
+[node name="Username text container" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 47.0
+offset_right = 155.0
+offset_bottom = 327.0
+grow_horizontal = 2
+theme_override_constants/separation = 37
+alignment = 1
+
+[node name="Username" type="VBoxContainer" parent="Container/Username text container"]
+layout_mode = 2
+
+[node name="usernametxt" type="Label" parent="Container/Username text container/Username"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("13_bfxrs")
+theme_override_font_sizes/font_size = 45
+text = "username"
+
+[node name="Username input" type="VBoxContainer" parent="Container/Username text container"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Username Container" type="VBoxContainer" parent="Container/Username text container/Username input"]
+layout_mode = 2
+
+[node name="Username" type="Label" parent="Container/Username text container/Username input/Username Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("13_bfxrs")
+theme_override_font_sizes/font_size = 16
+text = "Input your Username
+"
+
+[node name="Username edit" type="LineEdit" parent="Container/Username text container/Username input/Username Container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_bfxrs")
+theme_override_font_sizes/font_size = 20
+
+[node name="Confirm Button" type="Button" parent="Container"]
+layout_mode = 2
+offset_left = 67.0
+offset_top = 367.0
+offset_right = 301.0
+offset_bottom = 423.0
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.601223, 0.601223, 0.601223, 1)
+theme_override_fonts/font = ExtResource("13_bfxrs")
+theme_override_font_sizes/font_size = 35
+text = "Confrim"
+flat = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Container/Confirm Button" to="." method="_on_confirm_button_pressed"]

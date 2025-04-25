@@ -375,7 +375,7 @@ tile_set = SubResource("TileSet_j5yfb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_vgoss")]
 z_index = 5
-position = Vector2(100, 228)
+position = Vector2(1867, 241)
 
 [node name="Checkpoint" type="Area2D" parent="." groups=["checkpoint"]]
 position = Vector2(1313, 441)

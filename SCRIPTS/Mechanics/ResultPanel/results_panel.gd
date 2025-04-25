@@ -117,11 +117,29 @@ func show_results(floor_number: int, quiz_score: int = -1, controller = null):
 			"quiz_score": score_percent,
 			"npcs": npcs,
 			"signages": signs,
-			"coins": coins
+			"coins": coins,
+			"overall_score": total_score  # Add overall_score for this floor
 		}
 
 		# Merge with existing progress
 		var progress = current_user.get("progress", {})
+		var existing_floor_progress = progress.get(floor_key, {})
+
+		# Check if the current time is better than the existing one (lower time)
+		if existing_floor_progress.has("time"):
+			if elapsed_time < existing_floor_progress["time"]:
+				floor_progress["time"] = elapsed_time  # Update time if it's better
+			else:
+				floor_progress["time"] = existing_floor_progress["time"]  # Keep the existing time
+
+		# Check if the current score is better than the existing one
+		if existing_floor_progress.has("overall_score"):
+			if total_score > existing_floor_progress["overall_score"]:
+				floor_progress["overall_score"] = total_score  # Update overall score if it's better
+			else:
+				floor_progress["overall_score"] = existing_floor_progress["overall_score"]  # Keep the existing score
+
+		# Save progress back to the overall progress
 		progress[floor_key] = floor_progress
 
 		# Save locally

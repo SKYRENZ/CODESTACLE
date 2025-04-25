@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw3gmf1rtg5nc"]
+
+[ext_resource type="Texture2D" uid="uid://bivlq4yxegtba" path="res://ASSETS/BUTTONS/Option/closebutton.png" id="1_6m3d7"]
+[ext_resource type="Script" uid="uid://clx1vqp8l85jl" path="res://SCENES/FLOOR/Slums/CodePopup/code_popup.gd" id="1_hysxo"]
+
+[node name="CodePopup" type="CanvasLayer"]
+script = ExtResource("1_hysxo")
+
+[node name="CodeDisplay" type="TextEdit" parent="."]
+offset_left = 275.0
+offset_top = 135.0
+offset_right = 1011.0
+offset_bottom = 549.0
+size_flags_horizontal = 4
+text = "<!DOCTYPE html>
+<html>
+<head>
+    <script src=\"first.js\"></script>
+</head>
+<body>
+    <h2>Multiple Scripts Example</h2>
+    <script>
+        alert('This is an internal script!');
+    </script>
+    <script src=\"second.js\"></script>
+</body>
+</html>"
+editable = false
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 625.0
+offset_top = 500.0
+offset_right = 695.0
+offset_bottom = 531.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Close"
+icon = ExtResource("1_6m3d7")
+flat = true

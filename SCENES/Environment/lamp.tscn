@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce8wxacd02sd1"]
+
+[ext_resource type="Texture2D" uid="uid://drbk10kcmslt" path="res://ASSETS/Environment/withlightanimation_lamp-Sheet.png" id="1_xflkd"]
+[ext_resource type="Script" path="res://SCRIPTS/Environment/lamp.gd" id="2_uk20a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk20a"]
+atlas = ExtResource("1_xflkd")
+region = Rect2(0, 0, 1200, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8gof"]
+atlas = ExtResource("1_xflkd")
+region = Rect2(1200, 0, 1200, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ymy"]
+atlas = ExtResource("1_xflkd")
+region = Rect2(2400, 0, 1200, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3hd6"]
+atlas = ExtResource("1_xflkd")
+region = Rect2(3600, 0, 1200, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1v1yg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk20a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8gof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ymy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3hd6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="lamp" type="AnimatedSprite2D"]
+position = Vector2(35.05, -24.375)
+scale = Vector2(0.15725, 0.15725)
+sprite_frames = SubResource("SpriteFrames_1v1yg")
+frame_progress = 0.199694
+script = ExtResource("2_uk20a")

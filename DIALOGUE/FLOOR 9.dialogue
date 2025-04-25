@@ -3,30 +3,27 @@ Runistart: "Welcome back, B-01! We've conquered var and let, and now it's time t
 
 => END
 ~ signage1
-Signage 1: "The const keyword is used to declare constants, which are variables whose values cannot be reassigned after they are initially set. It's a promise that the variable will always hold the same value."
-B-01: "Beep boop! A variable that can't vary? What's the use of that?"
-Runi: "Constants are useful for values that should never change, like mathematical constants (pi), configuration settings, or fixed IDs. They make your code safer and easier to reason about."
+"The const keyword is used to declare constants-variables whose values cannot be reassigned after they are set. This makes your code safer and easier to understand, especially for values that should never change, like mathematical constants or configuration settings."
 => END
+
 ~ signage2
-Sign 2: "Like let, const also has block scope. This means a const variable is only accessible within the block it was defined in."
-
-
+"Like let, const is block-scoped. This means a const variable is only accessible within the block, statement, or expression where it is defined. Attempting to access it outside that block will result in an error."
 => END
 
 ~ signage3
-Sign 3: "You must assign a value to a const variable when you declare it. You cannot declare a const variable without initializing it."
-
+"You must assign a value to a const variable at the moment you declare it. Declaring a const without an initial value will cause a SyntaxError."
 => END
 
 ~ signage4
-Sign 4: "Example: const PI = 3.14159; is a good use of const because PI never changes."
-
-
+"Attempting to reassign a const variable will result in a TypeError. Once a value is assigned, it cannot be changed or reassigned to a new value."
 => END
 
 ~ signage5
-Sign 5: "While you can't reassign a const variable, if the value is an object or array, you can still modify its properties or elements. The variable itself still points to the same object or array in memory."
+"If a const variable holds an object or array, you can still modify the contents (such as properties or elements), but you cannot reassign the variable to a new object or array. The binding is immutable, not the value itself."
+=> END
 
+~ signage6
+"Best practice: Use const by default for variables that should never change. This helps prevent accidental changes and makes your code more predictable. Use let only when you know the value will change."
 => END
 
 ~ Runiquiz

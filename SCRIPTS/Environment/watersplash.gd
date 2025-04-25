@@ -25,12 +25,9 @@ func _on_timer_timeout() -> void:
 	# Toggle the animation state every 3 seconds
 	if is_animation_playing:
 		animated_sprite_2d.stop()  # Stop the animation
-		print("Animation stopped")
 	else:
 		animated_sprite_2d.play("default")  # Start the animation
-		print("Animation started")
 	is_animation_playing = !is_animation_playing  # Toggle the state
-	print("Animation state toggled. Now playing:", is_animation_playing)
 
 func _on_body_entered(body):
 	# Debugging: Check if the collision is detected

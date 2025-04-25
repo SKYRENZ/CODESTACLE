@@ -86,14 +86,14 @@ var floor_quiz_data = {
 	],
 	2: [
 		{
-			"question": "What are the two main ways to include JavaScript in an HTML document?",
-			"options": [
-				"Using CSS and HTML",
-				"Using internal <script> tags and external .js files",
-				"Using variables and functions",
-				"Using HTML comments and metadata"
-			],
-			"correct_answer": 1  # 0-based index (second option)
+		"question": "What are the two main ways to include JavaScript in an HTML document?",
+		"options": [
+			"Using CSS and HTML",
+			"Using internal <script> tags and external .js files",
+			"Using variables and functions",
+			"Using HTML comments and metadata"
+		],
+		"correct_answer": 1  # 0-based index (second option)
 		},
 		{
 			"question": "When is internal JavaScript most useful?",
@@ -114,91 +114,221 @@ var floor_quiz_data = {
 				"They automatically fix coding errors"
 			],
 			"correct_answer": 1  # 0-based index (second option)
+		},
+		{
+			"question": "What HTML tag is used to embed JavaScript code directly within an HTML document?",
+			"options": [
+				"<js>",
+				"<script>",
+				"<javascript>",
+				"<embed>"
+			],
+			"correct_answer": 1  # 0-based index (second option)
+		},
+		{
+			"question": "Which attribute is used to link an external JavaScript file to an HTML document?",
+			"options": [
+				"href",
+				"src",
+				"link",
+				"url"
+			],
+			"correct_answer": 1  # 0-based index (second option)
+		},
+		{
+			"question": "Where is the <script> tag typically placed in an HTML document?",
+			"options": [
+				"Only in the <body> section",
+				"Only in the <head> section",
+				"Either in the <head> or <body> section",
+				"Only outside the <html> tag"
+			],
+			"correct_answer": 2  # 0-based index (third option)
+		},
+		{
+			"question": "When is it generally better to use an external JavaScript file?",
+			"options": [
+				"For very small scripts specific to one page",
+				"When you want to reuse the same code across multiple pages",
+				"When you don't have access to an external server",
+				"When you want to make your HTML file larger"
+			],
+			"correct_answer": 1  # 0-based index (second option)
+		},
+		{
+			"question": "What is a benefit of placing your <script> tags just before the closing </body> tag?",
+			"options": [
+				"It makes your code harder to read",
+				"It ensures all HTML elements have loaded before the script runs",
+				"It hides the script from the browser",
+				"It increases page load time"
+			],
+			"correct_answer": 1  # 0-based index (second option)
 		}
 	],
 	3: [
-		{
-			"question": "Which method is best suited for debugging and displaying messages in the browser's console?",
-			"options": [
-				"document.write()",
-				"alert()",
-				"innerHTML",
-				"console.log()"
-			],
-			"correct_answer": 3  # 0-based index (fourth option)
-		},
-		{
-			"question": "Which method is used to change the content of an HTML element?",
-			"options": [
-				"console.log()",
-				"alert()",
-				"innerHTML",
-				"document.write()"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "Which method displays a pop-up message in the browser?",
-			"options": [
-				"document.write()",
-				"innerHTML",
-				"console.log()",
-				"alert()"
-			],
-			"correct_answer": 3  # 0-based index (fourth option)
-		},
-		{
-			"question": "Which method is generally avoided in modern web development for writing directly to the HTML document?",
-			"options": [
-				"innerHTML",
-				"console.log()",
-				"document.write()",
-				"alert()"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		}
+			{
+				"question": "Which method is best suited for debugging and displaying messages in the browser's console?",
+				"options": [
+					"document.write()",
+					"alert()",
+					"innerHTML",
+					"console.log()"
+				],
+				"correct_answer": 3  # 0-based index (fourth option)
+			},
+			{
+				"question": "Which method is used to change the content of an HTML element?",
+				"options": [
+					"console.log()",
+					"alert()",
+					"innerHTML",
+					"document.write()"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "Which method displays a pop-up message in the browser?",
+				"options": [
+					"document.write()",
+					"innerHTML",
+					"console.log()",
+					"alert()"
+				],
+				"correct_answer": 3  # 0-based index (fourth option)
+			},
+			{
+				"question": "Which method is generally avoided in modern web development for writing directly to the HTML document?",
+				"options": [
+					"innerHTML",
+					"console.log()",
+					"document.write()",
+					"alert()"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What happens if you use `document.write()` after the page has fully loaded?",
+				"options": [
+					"It updates a specific element",
+					"It opens a new tab",
+					"It overwrites the entire HTML document",
+					"It logs a message in the console"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "Which output method is best for updating the score on a game web page in real-time?",
+				"options": [
+					"alert()",
+					"innerHTML",
+					"document.write()",
+					"console.log()"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Which method would you use to show a welcome message only to the developer, not the user?",
+				"options": [
+					"alert()",
+					"innerHTML",
+					"console.log()",
+					"document.write()"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "Which method interrupts the user and requires them to click \"OK\" before continuing?",
+				"options": [
+					"alert()",
+					"innerHTML",
+					"console.log()",
+					"document.write()"
+				],
+				"correct_answer": 0  # 0-based index (first option)
+			}
 	],
 	4: [
-		{
-			"question": "What is a JavaScript statement?",
-			"options": [
-				"A comment in the code",
-				"A command that the JavaScript interpreter executes",
-				"A variable declaration",
-				"A type of loop"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "What character is commonly used to end a JavaScript statement?",
-			"options": [
-				"Colon (:)",
-				"Comma (,)",
-				"Semicolon (;)",
-				"Period (.)"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What are curly braces {} used for in JavaScript?",
-			"options": [
-				"To define string literals",
-				"To group statements into code blocks",
-				"To declare variables",
-				"To write comments"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "Which of the following is the best practice for writing JavaScript statements?",
-			"options": [
-				"Putting as many statements as possible on one line",
-				"Always skipping the semicolon (;) at the end",
-				"Writing each statement on a new line for readability",
-				"Using comments instead of statements"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		}
+			{
+				"question": "What is a JavaScript statement?",
+				"options": [
+					"A comment in the code",
+					"A command the interpreter executes",
+					"A CSS style rule",
+					"A type of HTML tag"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What character typically ends a JavaScript statement?",
+				"options": [
+					":",
+					";",
+					",",
+					"}"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What is the purpose of curly braces `{}` in JavaScript?",
+				"options": [
+					"To define arrays",
+					"To group statements into code blocks",
+					"To write comments",
+					"To declare variables"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Which is the best practice for writing statements?",
+				"options": [
+					"Use one line for all statements",
+					"Add semicolons explicitly",
+					"Never use code blocks",
+					"Use `var` for all variables"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What happens if you omit semicolons in JavaScript?",
+				"options": [
+					"The code always fails",
+					"The engine auto-inserts them, but errors may occur",
+					"The code runs faster",
+					"Curly braces become optional"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Which code block is correctly formatted?",
+				"options": [
+					"`{let x=5; console.log(x)}`",
+					"`{ let x = 5; console.log(x); }`",
+					"`{ let x = 5 console.log(x) }`",
+					"`( let x = 5; console.log(x) )`"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Why should variables be declared at the start of their scope?",
+				"options": [
+					"To improve readability and avoid hoisting issues",
+					"To slow down execution",
+					"To make the code longer",
+					"To use fewer semicolons"
+				],
+				"correct_answer": 0  # 0-based index (first option)
+			},
+			{
+				"question": "Which statement declares a constant variable?",
+				"options": [
+					"`let x = 5;`",
+					"`var x = 5;`",
+					"`const x = 5;`",
+					"`x = 5;`"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			}
 	],
 	5: [
 		{
@@ -303,213 +433,311 @@ var floor_quiz_data = {
 		}
 	],
 	6: [
-		{
-			"question": "What is the purpose of comments in JavaScript code?",
-			"options": [
-				"To be executed by the JavaScript interpreter",
-				"To make the code run faster",
-				"To explain the code and make it more readable",
-				"To define variables"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "How do you start a single-line comment in JavaScript?",
-			"options": [
-				"/*",
-				"*/",
-				"//",
-				"--"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "How do you start a multi-line comment in JavaScript?",
-			"options": [
-				"//",
-				"/*",
-				"<!--",
-				"**"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "Which of the following is a good use of comments?",
-			"options": [
-				"To write the same code in multiple languages",
-				"To explain the *what* instead of the *why* of the code",
-				"To explain complex logic and provide helpful information for debugging",
-				"To impress other programmers"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What is 'commenting out' code?",
-			"options": [
-				"Deleting code permanently",
-				"Temporarily disabling code for testing or debugging",
-				"Turning code into a string",
-				"Encrypting code"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		}
+				{
+					"question": "What are comments used for in JavaScript code?",
+					"options": [
+						"To be executed by the JavaScript interpreter",
+						"To make the code easier for humans to read and understand",
+						"To define variables",
+						"To speed up code execution"
+					],
+					"correct_answer": 1  # 0-based index (second option)
+				},
+				{
+					"question": "How do you write a single-line comment in JavaScript?",
+					"options": [
+						"#",
+						"<!-- -->",
+						"//",
+						"/* */"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "Which of the following is the correct way to write a multi-line comment in JavaScript?",
+					"options": [
+						"// This is a multi-line comment //",
+						"<!-- This is a multi-line comment -->",
+						"/* This is a multi-line comment */",
+						"** This is a multi-line comment **"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "Why should you use comments in your code?",
+					"options": [
+						"To explain complex logic or the purpose of functions",
+						"To make the code run faster",
+						"To declare new variables",
+						"To execute alternative code"
+					],
+					"correct_answer": 0  # 0-based index (first option)
+				},
+				{
+					"question": "What does 'commenting out' code mean?",
+					"options": [
+						"Deleting code permanently",
+						"Temporarily disabling code for testing or debugging",
+						"Turning code into a string",
+						"Encrypting code"
+					],
+					"correct_answer": 1  # 0-based index (second option)
+				},
+				{
+					"question": "Which of the following statements about comments is true?",
+					"options": [
+						"Comments are executed by the JavaScript interpreter",
+						"Comments can help others understand your code",
+						"Comments should always explain what the code does, not why",
+						"Comments are required for every line of code"
+					],
+					"correct_answer": 1  # 0-based index (second option)
+				}
 	],
 	7: [
-		{
-			"question": "What is a variable in JavaScript?",
-			"options": [
-				"A comment in the code",
-				"A named storage location that can hold a value",
-				"A type of loop",
-				"A reserved keyword"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "Which keyword is used to declare a variable (in older JavaScript code)?",
-			"options": [
-				"let",
-				"const",
-				"var",
-				"variable"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "Which of the following is a valid variable name?",
-			"options": [
-				"123name",
-				"my-variable",
-				"myVariable",
-				"my Variable"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What is the assignment operator used for?",
-			"options": [
-				"To compare two values",
-				"To declare a variable",
-				"To assign a value to a variable",
-				"To perform arithmetic operations"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What is camelCase used for?",
-			"options": [
-				"To write comments",
-				"To name functions",
-				"To name multi-word variables in a readable way",
-				"To define strings"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		}
+				{
+					"question": "What is a variable in JavaScript?",
+					"options": [
+						"A comment in the code",
+						"A named storage location that can hold a value",
+						"A type of loop",
+						"A reserved keyword"
+					],
+					"correct_answer": 1  # 0-based index (second option)
+				},
+				{
+					"question": "Which keyword is used to declare a variable in older JavaScript code?",
+					"options": [
+						"let",
+						"const",
+						"var",
+						"variable"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "Which of the following is a valid variable name?",
+					"options": [
+						"123name",
+						"my-variable",
+						"myVariable",
+						"my Variable"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "What is the assignment operator used for?",
+					"options": [
+						"To compare two values",
+						"To declare a variable",
+						"To assign a value to a variable",
+						"To perform arithmetic operations"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "What is camelCase used for?",
+					"options": [
+						"To write comments",
+						"To name functions",
+						"To name multi-word variables in a readable way",
+						"To define strings"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "Which of the following is NOT a valid way to start a variable name in JavaScript?",
+					"options": [
+						"_myVar",
+						"$myVar",
+						"2myVar",
+						"myVar"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				},
+				{
+					"question": "What is the difference between `let` and `var` in modern JavaScript?",
+					"options": [
+						"`let` is used for constant values, `var` is not",
+						"`let` provides block scope, `var` provides function scope",
+						"`var` is only for numbers, `let` is for strings",
+						"There is no difference"
+					],
+					"correct_answer": 1  # 0-based index (second option)
+				},
+				{
+					"question": "Which variable declaration is preferred for values that should not change?",
+					"options": [
+						"var",
+						"let",
+						"const",
+						"variable"
+					],
+					"correct_answer": 2  # 0-based index (third option)
+				}
 	],
 	8: [
-		{
-			"question": "What kind of scope does the let keyword have in JavaScript?",
-			"options": [
-				"Global scope",
-				"Function scope",
-				"Block scope",
-				"No scope"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What happens if you try to redeclare a variable using let in the same scope?",
-			"options": [
-				"The value gets updated",
-				"An error occurs",
-				"The second declaration is ignored",
-				"The variable becomes undefined"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "Which of the following correctly declares a variable with let?",
-			"options": [
-				"let myVar = 5;",
-				"variable myVar = 5;",
-				"let: myVar = 5;",
-				"var myVar = 5;"
-			],
-			"correct_answer": 0  # 0-based index (first option)
-		},
-		{
-			"question": "What is a 'block' in JavaScript?",
-			"options": [
-				"A line of code",
-				"A sequence of code enclosed in curly braces {}",
-				"A comment",
-				"A reserved keyword"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "Which statement about let vs. var is true?",
-			"options": [
-				"var has block scope, while let has function scope",
-				"let has block scope, while var has function scope",
-				"Both let and var have block scope",
-				"Both let and var have global scope"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		}
-	],
+			{
+				"question": "Which version of JavaScript introduced the `let` keyword?",
+				"options": [
+					"ES3",
+					"ES5",
+					"ES6 (2015)",
+					"ES2020"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What kind of scope does a variable declared with `let` have?",
+				"options": [
+					"Global scope",
+					"Function scope",
+					"Block scope",
+					"No scope"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What happens if you try to access a `let` variable before it is declared?",
+				"options": [
+					"It returns `undefined`",
+					"It throws a ReferenceError",
+					"It returns `null`",
+					"It is automatically declared"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Can you redeclare a variable with `let` in the same block scope?",
+				"options": [
+					"Yes",
+					"No"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Which of the following is a correct way to declare a variable using `let`?",
+				"options": [
+					"let score = 100;",
+					"let: score = 100;",
+					"variable score = 100;",
+					"var score = 100;"
+				],
+				"correct_answer": 0  # 0-based index (first option)
+			},
+			{
+				"question": "What is a \"block\" in JavaScript?",
+				"options": [
+					"A single line of code",
+					"A sequence of code enclosed in curly braces `{}`",
+					"A comment",
+					"A reserved keyword"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "Which statement about `let` vs. `var` is true?",
+				"options": [
+					"`var` has block scope, `let` has function scope",
+					"Both `let` and `var` have block scope",
+					"`let` has block scope, `var` has function scope",
+					"Both are deprecated"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What is the \"temporal dead zone\" (TDZ) in the context of `let`?",
+				"options": [
+					"The time before a variable is assigned a value",
+					"The period between entering a block and the variable's declaration, when the variable cannot be accessed",
+					"The time after a variable is deleted",
+					"The scope of a global variable"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			}
+		],
 	9: [
-		{
-			"question": "What is the main purpose of the const keyword?",
-			"options": [
-				"To declare variables that can be reassigned",
-				"To declare variables that cannot be reassigned",
-				"To declare variables with global scope",
-				"To declare variables with function scope"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "When must you assign a value to a const variable?",
-			"options": [
-				"Before the program starts",
-				"Anytime before it's used",
-				"When you declare it",
-				"When the block ends"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What happens if you try to reassign a value to a const variable?",
-			"options": [
-				"The value is updated",
-				"An error occurs",
-				"The variable is deleted",
-				"The value is assigned a new type"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "What is the scope of a const variable?",
-			"options": [
-				"Global scope",
-				"Function scope",
-				"Block scope",
-				"No scope"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "If a const variable holds an object, can you modify the properties of that object?",
-			"options": [
-				"No, the object is completely immutable",
-				"Yes, you can modify the properties, but you can't reassign the variable to a different object",
-				"Yes, you can reassign and modify",
-				"Only if the object is not frozen"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		}
-	],
+			{
+				"question": "What is the main purpose of the `const` keyword in JavaScript?",
+				"options": [
+					"To declare variables that can be reassigned",
+					"To declare variables that cannot be reassigned",
+					"To declare variables with global scope",
+					"To declare variables with function scope"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "When must you assign a value to a `const` variable?",
+				"options": [
+					"Before the program starts",
+					"Anytime before it's used",
+					"When you declare it",
+					"When the block ends"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What happens if you try to reassign a value to a `const` variable?",
+				"options": [
+					"The value is updated",
+					"An error occurs",
+					"The variable is deleted",
+					"The value is assigned a new type"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What is the scope of a `const` variable?",
+				"options": [
+					"Global scope",
+					"Function scope",
+					"Block scope",
+					"No scope"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "If a `const` variable holds an object, can you modify the properties of that object?",
+				"options": [
+					"No, the object is completely immutable",
+					"Yes, you can modify the properties, but you can't reassign the variable to a different object",
+					"Yes, you can reassign and modify",
+					"Only if the object is not frozen"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What happens if you declare a `const` variable without assigning a value?",
+				"options": [
+					"It is set to `undefined`",
+					"It is hoisted to the top of the scope",
+					"A SyntaxError occurs",
+					"It is automatically assigned a default value"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "Which of the following is a correct way to declare a constant in JavaScript?",
+				"options": [
+					"`const PI = 3.14;`",
+					"`const PI; PI = 3.14;`",
+					"`constant PI = 3.14;`",
+					"`let PI = 3.14;`"
+				],
+				"correct_answer": 0  # 0-based index (first option)
+			},
+			{
+				"question": "Why is it considered best practice to use `const` by default?",
+				"options": [
+					"It makes code run faster",
+					"It prevents accidental reassignment of values that shouldn't change",
+					"It allows variables to be used before declaration",
+					"It creates global variables"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			}
+		],
 	10: [
 		{
 			"question": "How do you write a single-line comment in JavaScript?",

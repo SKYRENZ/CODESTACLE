@@ -1,28 +1,37 @@
 ~ Runistart
-Runistart:"Welcome back, B-01! Now, let's delve into the heart of JavaScript code: statements! These are the instructions that tell the computer what to do."
+Runistart:"Welcome, B-01, to the treasure chests of JavaScript: Variables! These are how we store information in our programs!"
 => END
 ~ signage1
-Signage 1:"In JavaScript, a statement is a command that the interpreter executes. A program is a sequence of statements."
-B-01:"Beep boop! Statements? So, how do I write them?"
-Runi:"A statement usually ends with a semicolon (;). Although JavaScript often automatically inserts semicolons, it's good practice to include them explicitly for clarity."
+"In JavaScript, a variable is a named storage location in the computer's memory that can hold a value. Think of it as a container for data like numbers, text, or even other variables."
 => END
 ~ signage2
-Sign 2:"A simple JavaScript statement:let x = 5;This declares a variablexand assigns it the value5."
+"Variables are declared using the var keyword (though let and const are preferred in modern JavaScript). 
+Example: var myName;"
 => END
 
 ~ signage3
-Sign 3:"Statements can be grouped together into code blocks using curly braces{}. Code blocks are often used in loops and conditional statements."
+"After declaring a variable, you can assign it a value using the assignment operator =. 
+Example:  myName = 'B-01'; You can also declare and assign in one step - var age = 5;"
 => END
 
 ~ signage4
-Sign 4:"Example of a code block:{ let y = 10; console.log(y); }"
+"Variable names must start with a letter, underscore (_), or dollar sign ($). They cannot start with a number. Names can contain letters, numbers, underscores, and dollar signs, and are case-sensitive."
 
 => END
 
 ~ signage5
-Sign 5:"Multiple statements can be written on one line, but it's generally better to keep them separate for readability.let a = 1; let b = 2;is valid but less readable than writing each statement on a new line."
-
+"Good naming conventions make your code easier to read and understand. Use camelCase for multi-word variable names (e.g., myVariableName)."
 => END
+
+~ signage6
+"Variables can store many types of data -  numbers, strings, arrays, objects, and even functions! 
+Example: var score = 100; var playerName = 'B-01';"
+=> END
+
+~ signage7
+"In modern JavaScript, prefer let for variables that change and const for variables that shouldn’t change. var is mostly for older code."
+=> END
+
 ~ Runiquiz
 Runiquiz:"Excellent work, B-01! You've reached the end of Floor 4. Now, it's time to test your understanding of JavaScript statements!"
 

@@ -84,7 +84,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4vtm"]
 size = Vector2(25, 28)
 
-[node name="Area2D" type="Area2D"]
+[node name="coins" type="Area2D"]
 z_index = 7
 script = ExtResource("1_xlw3t")
 

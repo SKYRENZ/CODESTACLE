@@ -1,23 +1,25 @@
  ~ Runistart
-Runi: "Welcome, B-01, to the world of JavaScript output! It's time to learn how to make our code talk back to us!"
+Runi: "Welcome, B-01, to the world of JavaScript output! It's time to learn how to make our code talk back to us!"
 => END
 
 ~ signage1
-"JavaScript provides several ways to display output - console.log(), document.write(), innerHTML, and alert()."
-- B-01: "Beep boop! Output? So, how do these methods differ?"
-Runi: "Excellent question! console.log() is primarily for debugging and displays messages in the browser's console. document.write() writes directly to the HTML document, but it's generally avoided for modern web development. innerHTML modifies the content of an HTML element, and alert() displays a pop-up message."
+"JavaScript provides several ways to display output = console.log(), document.write(), innerHTML, and alert()"
 => END
 
 ~ signage2
-"console.log('Hello, world!'); will display 'Hello, world!' in your browser's developer console."
+"console.log('Hello, world!'); will display 'Hello, world!' in your browser's developer console. This is great for debugging and checking values while you code."
 => END
 
 ~ signage3
-"document.getElementById('myElement').innerHTML = 'New text!'; will change the text inside the HTML element with the ID 'myElement'."
+"document.getElementById('myElement').innerHTML = 'New text!'; changes the text inside the HTML element with the ID 'myElement'. Use this to update content on your web page dynamically."
 => END
 
 ~ signage4
-"alert('This is an alert message!'); will display a pop-up box with the message 'This is an alert message!'."
+"alert('This is an alert message!'); shows a pop-up box with your message. Use alerts to get the user's attention or show important information."
+=> END
+
+~ signage5
+"document.write('Hello!'); writes directly to the HTML document. It's mostly used for quick tests or learning, but avoid it in modern web development because it can overwrite your whole page if used after loading."
 => END
 
 ~ Runiquiz

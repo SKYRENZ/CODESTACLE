@@ -3,25 +3,31 @@ Runi: "Welcome back, B-01! Now, let's delve into the heart of JavaScript coded s
 => END
 
 ~ signage1
-"In JavaScript, a statement is a command that the interpreter executes. A program is a sequence of statements."
-- B-01: "Beep boop! Statements? So, how do I write them?"
-Runi: "A statement usually ends with a semicolon (;). Although JavaScript often automatically inserts semicolons, it's good practice to include them explicitly for clarity."
+"In JavaScript, a statement is a command that the interpreter executes. A program is a sequence of statements.
+Example: let name = 'B-01';"
 => END
 
 ~ signage2
-"A simple JavaScript statement - let x = 5; This declares a variable x and assigns it the value 5."
+"Statements end with a semicolon (;). While optional in many cases, including them explicitly prevents errors and improves readability.
+Example: console.log('Hello!');"
 => END
 
 ~ signage3
-"Statements can be grouped together into code blocks using curly braces {}. Code blocks are often used in loops and conditional statements."
+"Code blocks group statements using curly braces {}. They’re used in loops, conditionals, and functions.
 => END
 
 ~ signage4
-"Example of a code block { let y = 10; console.log(y); }"
+"Multiple statements can be written on one line, but splitting them improves clarity.
+Avoid: let a = 1; let b = 2;
 => END
 
 ~ signage5
-"Multiple statements can be written on one line, but it's generally better to keep them separate for readability. let a = 1; let b = 2; is valid but less readable than writing each statement on a new line."
+"Variable declarations are statements that create variables. Use let, const, or var.
+Example: const PI = 3.14;"
+=> END
+
+~ signage6
+"Best Practice: Always declare variables at the start of their scope. Avoid placing code blocks randomly without a purpose (e.g., loops or conditionals)."
 => END
 
 ~ Runiquiz

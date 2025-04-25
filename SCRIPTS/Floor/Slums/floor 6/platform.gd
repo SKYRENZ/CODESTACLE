@@ -8,7 +8,7 @@ extends Path2D
 var direction = 1  # 1 = forward, -1 = backward
 
 func _ready():
-	animation.play("move")  # Automatically plays the animation at start
+	pass
 
 func _process(delta):
 	path_follow.progress_ratio += speed * delta * direction  

@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://buelhonuf0y52"]
+
+[ext_resource type="Texture2D" uid="uid://csauv6cusycxk" path="res://ASSETS/Environment/drainage animation-Sheet.png" id="1_tnokx"]
+[ext_resource type="Script" path="res://SCRIPTS/Environment/drainage.gd" id="2_apojc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apojc"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(0, 0, 1720, 2080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvno8"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(1720, 0, 1720, 2080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgca1"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(3440, 0, 1720, 2080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycx00"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(5160, 0, 1720, 2080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxuva"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(6880, 0, 1720, 2080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgeku"]
+atlas = ExtResource("1_tnokx")
+region = Rect2(8600, 0, 1720, 2080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncv4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apojc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvno8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgca1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycx00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxuva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgeku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="drainage" type="AnimatedSprite2D"]
+z_index = 7
+position = Vector2(0.999998, 50)
+scale = Vector2(0.163953, 0.163953)
+sprite_frames = SubResource("SpriteFrames_ncv4f")
+frame_progress = 0.331953
+speed_scale = 0.5
+script = ExtResource("2_apojc")

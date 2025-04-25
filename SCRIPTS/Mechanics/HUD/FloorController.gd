@@ -5,20 +5,25 @@ extends Node2D
 @export var npc_count: int = 0
 
 
-var timer_manager = null
+
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
 const ObjectivesScene = preload("res://SCENES/Mechanics/HUD/Objectives/Objectives.tscn")
 const GearScene = preload("res://SCENES/Mechanics/Option/GearHud.tscn")
 const ProgressBarScene = preload("res://SCENES/Mechanics/HUD/Progress Bar/ProgressBar.tscn")
-const CoinCountScene = preload("res://SCENES/Mechanics/HUD/CoinCount.tscn")
-const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn")  # ✅ SceneIntro preload
+const CoinCountScene = preload("res://SCENES/Mechanics/HUD/coinCount/CoinCount.tscn")
+const SceneIntro = preload("res://SCENES/Transitions/SceneIntro.tscn") 
+
+
+var timer_manager = null
 var Coin_Count = null
 var timer_ui_instance = null
 var objectives_instance = null
 var GearScene_instance = null
 var progress_bar_instance = null
 var scene_intro_instance = null
-var doors = []  
+var doors = []
+
+
 
 func _ready():
 	print("[Floor %d] Loading..." % floor_number)
@@ -32,6 +37,7 @@ func _ready():
 	else:
 		print("[Floor %d] Skipping SceneIntro, starting setup immediately." % floor_number)
 		_on_intro_finished()  # ✅ Skip SceneIntro for other floors
+
 
 func _on_intro_finished():
 	print("[Floor %d] SceneIntro finished. Starting game setup..." % floor_number)

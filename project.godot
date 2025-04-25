@@ -35,6 +35,7 @@ FirestoreManager="*res://SAVES/Saveauto/firestore_manager.gd"
 UserDataManager="*res://SAVES/Saveauto/UserDataManager.gd"
 CoinManager="*res://SCRIPTS/Mechanics/Collectibles/CoinManager.gd"
 BackupSave="*res://SAVES/Saveauto/backup_save.gd"
+LeaderboardManager="*res://leaderboard_manager.gd"
 
 [dialogue_manager]
 

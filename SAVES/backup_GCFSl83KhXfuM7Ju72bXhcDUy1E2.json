@@ -1,0 +1,24 @@
+{
+	"email": "lonoza.joshuabscs2022@gmail.com",
+	"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjkwOTg1NzhjNDg4MWRjMDVlYmYxOWExNWJhMjJkOGZkMWFiMzRjOGEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSm9zaHVhIExvbm96YSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLNm9fSm9sQU5UdHdYQ1hqVGVZU2Njc0RpMVRPMjBMUDdRTnFPc0piZmcwWkRKcFBnPXM5Ni1jIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2NvZGVzdGFjbGUtY2Q5N2EiLCJhdWQiOiJjb2Rlc3RhY2xlLWNkOTdhIiwiYXV0aF90aW1lIjoxNzQ1NjEzNzQ0LCJ1c2VyX2lkIjoiR0NGU2w4M0toWGZ1TTdKdTcyYlhoY0RVeTFFMiIsInN1YiI6IkdDRlNsODNLaFhmdU03SnU3MmJYaGNEVXkxRTIiLCJpYXQiOjE3NDU2MTM3NDQsImV4cCI6MTc0NTYxNzM0NCwiZW1haWwiOiJsb25vemEuam9zaHVhYnNjczIwMjJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMTE4NDkzNDYzMjMzMTM4MDkzNzAiXSwiZW1haWwiOlsibG9ub3phLmpvc2h1YWJzY3MyMDIyQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.A3sjbgdC4QN-BiWWmhDGJbaqj0_FPYuphSFR7tW0rfSx4SKHTEHZmi3k9QpvPjPtDzO6vAk7lJCQZ31oZoX4MfsrnvHNdQXUJymwS6HR593L3WUKA29TOIP3oZNPApuEFOz71qfmCseotEyiC2TQoTwxQsjq-EkGhfl_G3MWW36iSXNJ-uaVY37AA-bfzeIwfCqtFMID_cQEF4PrkrX_lxTQWnM2pFXTG_GH5MBiSWlZmlKwGlY08m5arZf8x3oA6ak-0U1gZwoJadaikgCnh2-cEnry12s3spe3eC7g2cBthlRT9-MdFdldLvldc89g3RoOJZgfDIfhIcCAUz_UXQ",
+	"progress": {
+		"floor_1": {
+			"coins": 6.0,
+			"npcs": 1.0,
+			"overall_score": 307.0,
+			"quiz_score": 75.0,
+			"signages": 3.0,
+			"time": 24.8989999294281
+		},
+		"floor_2": {
+			"coins": 9,
+			"npcs": 1,
+			"overall_score": 305,
+			"quiz_score": 100,
+			"signages": 3,
+			"time": 45.2829999923706
+		}
+	},
+	"uid": "GCFSl83KhXfuM7Ju72bXhcDUy1E2",
+	"username": "Banri123"
+}

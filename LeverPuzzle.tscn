@@ -1,0 +1,152 @@
+[gd_scene load_steps=22 format=3 uid="uid://vr17grnujc32"]
+
+[ext_resource type="Script" path="res://LeverPuzzle.gd" id="1_ox5i1"]
+[ext_resource type="Texture2D" path="res://Lever Dirt-Sheet.png" id="2_5wk4t"]
+[ext_resource type="Texture2D" path="res://slumswall-Sheet-Sheet.png" id="2_vxhgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qbgm"]
+size = Vector2(38, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5i1"]
+size = Vector2(44, 204.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ef2g"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(0, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwmkk"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(34, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2edx"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(68, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylr3e"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(102, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8jxr"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(136, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iegef"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(170, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68oan"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(204, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc7pk"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(238, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsr16"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(272, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aei7"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(306, 0, 34, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo2eh"]
+atlas = ExtResource("2_vxhgv")
+region = Rect2(340, 0, 34, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m11kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ef2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwmkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2edx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylr3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8jxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iegef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68oan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc7pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsr16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aei7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo2eh")
+}],
+"loop": false,
+"name": &"on",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm8nv"]
+atlas = ExtResource("2_5wk4t")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gkta"]
+atlas = ExtResource("2_5wk4t")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo467"]
+atlas = ExtResource("2_5wk4t")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygqly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm8nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gkta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo467")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="LeverPuzzle" type="Node2D"]
+script = ExtResource("1_ox5i1")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="WallCollider" type="CollisionShape2D" parent="Wall"]
+position = Vector2(287, 492)
+shape = SubResource("RectangleShape2D_2qbgm")
+
+[node name="LeverArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeverArea"]
+position = Vector2(211, 493.25)
+shape = SubResource("RectangleShape2D_ox5i1")
+
+[node name="BlockingSprite" type="AnimatedSprite2D" parent="LeverArea"]
+position = Vector2(287, 487)
+scale = Vector2(1, 1.2)
+sprite_frames = SubResource("SpriteFrames_m11kb")
+animation = &"on"
+speed_scale = 2.0
+
+[node name="LeverSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(212, 583)
+sprite_frames = SubResource("SpriteFrames_ygqly")
+animation = &"on"

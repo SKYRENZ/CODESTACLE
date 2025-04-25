@@ -4,6 +4,13 @@ extends Node2D
 @export var signage_count: int = 0
 @export var npc_count: int = 0
 
+@export var transition_scene = preload("res://SCENES/Transitions/Transition.tscn")  # Path to your Transition scene
+@export var included_scenes = [  # List of scenes where the transition should be shown
+	"res://SCENES/FLOOR/Slums/floor 2.tscn",
+	"res://SCENES/FLOOR/Floor3.tscn",
+	"res://SCENES/FLOOR/Floor4.tscn",
+	"res://SCENES/FLOOR/Floor5.tscn"
+]
 
 var timer_manager = null
 var timer_ui_scene = preload("res://SCENES/Mechanics/HUD/Timer/timer.tscn")
@@ -23,12 +30,54 @@ var doors = []
 func _ready():
 	print("[Floor %d] Loading..." % floor_number)
 
-#sceneintro function
+	# Automatically handle the transition based on the current scene
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	print("📂 Current Scene Path:", current_scene_path)
+
+	if current_scene_path in included_scenes:
+		print("✅ Transition required for this scene.")
+		show_transition()
+	else:
+		print("❌ Transition not required for this scene.")
+		handle_scene_intro()
+
+func show_transition():
+	print("[FloorController] Showing Transition...")
+	var transition_instance = transition_scene.instantiate()
+	add_child(transition_instance)  # Add the transition as a child of FloorController
+
+	# Access LoadingSprite1 and LoadingSprite2 and play their animations
+	var sprite1 = transition_instance.get_node("LoadingSprite1")
+	var sprite2 = transition_instance.get_node("LoadingSprite2")
+
+	if sprite1:
+		print("🎬 Playing loading1 animation on LoadingSprite1...")
+		sprite1.play("loading1")
+	else:
+		print("⚠ ERROR: LoadingSprite1 not found in Transition scene!")
+
+	if sprite2:
+		print("🎬 Playing loading2 animation on LoadingSprite2...")
+		sprite2.play("loading2")
+	else:
+		print("⚠ ERROR: LoadingSprite2 not found in Transition scene!")
+
+	# Connect the fade_out_finished signal to proceed after the transition
+	transition_instance.connect("fade_out_finished", Callable(self, "_on_transition_finished"))
+
+func _on_transition_finished():
+	print("[FloorController] Transition finished. Proceeding to SceneIntro...")
+	handle_scene_intro()
+
+func handle_scene_intro():
+	# SceneIntro logic
 	if floor_number == 1:  # ✅ SceneIntro only for Floor 1
 		print("[Floor 1] Playing SceneIntro...")
 		scene_intro_instance = SceneIntro.instantiate()
 		add_child(scene_intro_instance)
-		scene_intro_instance.intro_finished.connect(_on_intro_finished)
+
+		# Correctly connect the signal using Callable
+		scene_intro_instance.intro_finished.connect(Callable(self, "_on_intro_finished"))
 	else:
 		print("[Floor %d] Skipping SceneIntro, starting setup immediately." % floor_number)
 		_on_intro_finished()  # ✅ Skip SceneIntro for other floors
@@ -66,7 +115,8 @@ func add_Coint_Count():
 		return
 
 	# Connect the coin_count_updated signal to the Coin_Count script
-	coin_manager.coin_count_updated.connect(Coin_Count.update_coin_count)
+	coin_manager.coin_count_updated.connect(Callable(Coin_Count, "update_coin_count"))
+
 func add_gear_hud():
 	GearScene_instance = GearScene.instantiate()
 	add_child(GearScene_instance)

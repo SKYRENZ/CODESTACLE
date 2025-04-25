@@ -15,12 +15,14 @@ enum PanningDirection { NONE, UP, DOWN, LEFT, RIGHT }
 
 # Optional mid-animation
 @export var mid_animation_player: AnimationPlayer
-@export var mid_animation_name: String = "greetings"
+@export var mid_animation_name: String = "greetings"  # Default animation name (can be modified in Inspector)
 
 var dialogue_active = false
 var has_been_read = false
-
 var camera: Camera2D
+
+# Track whether the animation has been played
+var animation_played = false
 
 func _ready():
 	if dialogue_resource != null:
@@ -75,37 +77,32 @@ func trigger_dialogue():
 				else:
 					print("WARNING: No AnimationPlayer in LetterBox to wait for.")
 
-				# Now play your "greetings" animation
-				if mid_animation_player and mid_animation_player.has_animation(mid_animation_name):
-					print("Checking if 'greetings' animation exists...")
-					# Check if the animation is found
-					if mid_animation_player.is_playing():
-						print("Animation is already playing!")
-					else:
-						print("Starting 'greetings' animation...")
-						mid_animation_player.play(mid_animation_name)
-						print("Waiting for 'greetings' animation to finish...")
-						await mid_animation_player.animation_finished
-						print("'greetings' animation finished.")
-				else:
-					print("WARNING: Mid-animation not found or invalid.")
-
-				# ** Removed the dialogue trigger here **
-				# Now that both animations are done, start the dialogue
-				# print("Starting dialogue and playing audio...")
-				# DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
-				# AudioPlayer.play_DIA(dia_start, -12.0)
+				# Now play the assigned animation, but only once
+				play_assigned_animation()
 
 			else:
 				print("ERROR: LetterBox node not found.")
 		else:
 			print("Triggering dialogue directly without LetterBox.")
-			# Removed the dialogue trigger here as well
-			# show_dialogue_and_play_audio()
 
 		dialogue_active = true
 	else:
 		print("ERROR: dialogue_resource is not assigned or dialogue already active!")
+
+func play_assigned_animation():
+	# Only play the animation if it has not been played already
+	if !animation_played:
+		if mid_animation_player and mid_animation_player.has_animation(mid_animation_name):
+			print("Starting '%s' animation..." % mid_animation_name)
+			mid_animation_player.play(mid_animation_name)
+			animation_played = true  # Set the flag to true so it doesn't play again
+			print("Waiting for '%s' animation to finish..." % mid_animation_name)
+			await mid_animation_player.animation_finished
+			print("'%s' animation finished." % mid_animation_name)
+		else:
+			print("WARNING: '%s' animation not found." % mid_animation_name)
+	else:
+		print("'%s' animation has already been played." % mid_animation_name)
 
 func show_dialogue_and_play_audio():
 	print("Showing dialogue and playing audio directly...")
@@ -164,4 +161,3 @@ func get_pan_direction_string(direction: PanningDirection) -> String:
 		_:
 			print("ERROR: Invalid panning direction!")
 			return ""
-	

@@ -566,7 +566,7 @@ frame_progress = 0.591733
 [node name="lamp4" parent="Slums Parallax/lamp" instance=ExtResource("6_d138q")]
 z_index = 2
 position = Vector2(1139, 307)
-frame_progress = 0.0827793
+frame_progress = 0.186116
 flip_h = true
 
 [node name="lamp5" parent="Slums Parallax/lamp" instance=ExtResource("6_d138q")]
@@ -578,7 +578,7 @@ flip_h = true
 [node name="lamp6" parent="Slums Parallax/lamp" instance=ExtResource("6_d138q")]
 z_index = 1
 position = Vector2(3463, 627)
-frame_progress = 0.71491
+frame_progress = 0.818244
 flip_h = true
 
 [node name="acid" type="Node" parent="Slums Parallax"]

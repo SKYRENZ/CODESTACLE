@@ -657,56 +657,86 @@ var floor_quiz_data = {
 			}
 		],
 	9: [
-		{
-			"question": "What is the main purpose of the const keyword?",
-			"options": [
-				"To declare variables that can be reassigned",
-				"To declare variables that cannot be reassigned",
-				"To declare variables with global scope",
-				"To declare variables with function scope"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "When must you assign a value to a const variable?",
-			"options": [
-				"Before the program starts",
-				"Anytime before it's used",
-				"When you declare it",
-				"When the block ends"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "What happens if you try to reassign a value to a const variable?",
-			"options": [
-				"The value is updated",
-				"An error occurs",
-				"The variable is deleted",
-				"The value is assigned a new type"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		},
-		{
-			"question": "What is the scope of a const variable?",
-			"options": [
-				"Global scope",
-				"Function scope",
-				"Block scope",
-				"No scope"
-			],
-			"correct_answer": 2  # 0-based index (third option)
-		},
-		{
-			"question": "If a const variable holds an object, can you modify the properties of that object?",
-			"options": [
-				"No, the object is completely immutable",
-				"Yes, you can modify the properties, but you can't reassign the variable to a different object",
-				"Yes, you can reassign and modify",
-				"Only if the object is not frozen"
-			],
-			"correct_answer": 1  # 0-based index (second option)
-		}
+			{
+				"question": "What is the main purpose of the `const` keyword in JavaScript?",
+				"options": [
+					"To declare variables that can be reassigned",
+					"To declare variables that cannot be reassigned",
+					"To declare variables with global scope",
+					"To declare variables with function scope"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "When must you assign a value to a `const` variable?",
+				"options": [
+					"Before the program starts",
+					"Anytime before it's used",
+					"When you declare it",
+					"When the block ends"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "What happens if you try to reassign a value to a `const` variable?",
+				"options": [
+					"The value is updated",
+					"An error occurs",
+					"The variable is deleted",
+					"The value is assigned a new type"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What is the scope of a `const` variable?",
+				"options": [
+					"Global scope",
+					"Function scope",
+					"Block scope",
+					"No scope"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "If a `const` variable holds an object, can you modify the properties of that object?",
+				"options": [
+					"No, the object is completely immutable",
+					"Yes, you can modify the properties, but you can't reassign the variable to a different object",
+					"Yes, you can reassign and modify",
+					"Only if the object is not frozen"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			},
+			{
+				"question": "What happens if you declare a `const` variable without assigning a value?",
+				"options": [
+					"It is set to `undefined`",
+					"It is hoisted to the top of the scope",
+					"A SyntaxError occurs",
+					"It is automatically assigned a default value"
+				],
+				"correct_answer": 2  # 0-based index (third option)
+			},
+			{
+				"question": "Which of the following is a correct way to declare a constant in JavaScript?",
+				"options": [
+					"`const PI = 3.14;`",
+					"`const PI; PI = 3.14;`",
+					"`constant PI = 3.14;`",
+					"`let PI = 3.14;`"
+				],
+				"correct_answer": 0  # 0-based index (first option)
+			},
+			{
+				"question": "Why is it considered best practice to use `const` by default?",
+				"options": [
+					"It makes code run faster",
+					"It prevents accidental reassignment of values that shouldn't change",
+					"It allows variables to be used before declaration",
+					"It creates global variables"
+				],
+				"correct_answer": 1  # 0-based index (second option)
+			}
 		],
 	10: [
 		{

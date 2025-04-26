@@ -1,13 +1,15 @@
 # PRESSUREPLATESCENE.gd
 extends Node2D
 
+@export var wall_path: NodePath  # Allow selecting the wall node in the Inspector
+@onready var wall = null  # Reference to the selected wall node
+
 @onready var question_label = $question  # Label for the question
 @onready var option_labels = [
 	$pressureplate/option1,
 	$pressureplate2/option2,
 	$pressureplate3/option3
 ]  # Labels for the options
-@onready var wall = $DIRTWALLANI  # Reference to the dirt wall node
 
 # List of questions and answers
 var questions = [
@@ -29,15 +31,23 @@ var questions = [
 ]
 
 var current_question_index = 0  # Track the current question
+var wall_animation_playing = false  # Prevent multiple animations from playing at the same time
 
 func _ready():
 	print("Setting up signal connections...")
 	_load_question()
-	
+
+	# Dynamically get the wall node from the wall_path
+	if wall_path != null:
+		wall = get_node(wall_path)
+		print("Wall node selected: %s" % wall.name)
+	else:
+		print("⚠️ No wall node selected in the Inspector!")
+
 	# Connect pressure plate signals
-	$pressureplate.connect("plate_activated", Callable(self, "_on_plate_activated").bind("A"))
-	$pressureplate2.connect("plate_activated", Callable(self, "_on_plate_activated").bind("B"))
-	$pressureplate3.connect("plate_activated", Callable(self, "_on_plate_activated").bind("C"))
+	$pressureplate.connect("plate_activated", Callable(self, "_on_plate_activated"))
+	$pressureplate2.connect("plate_activated", Callable(self, "_on_plate_activated"))
+	$pressureplate3.connect("plate_activated", Callable(self, "_on_plate_activated"))
 	print("Signals connected successfully.")
 
 func _load_question():
@@ -64,19 +74,28 @@ func _on_plate_activated(answer):
 		_vibrate_player()
 
 func _remove_wall():
+	if wall_animation_playing:
+		print("Wall animation is already playing. Ignoring duplicate request.")
+		return  # Prevent multiple animations from playing at the same time
+
 	print("Removing wall...")
+	wall_animation_playing = true  # Mark the animation as playing
 
-	# Disable collision
-	if wall.has_node("staticwall2/collisionwall"):
-		var collision_shape = wall.get_node("staticwall2/collisionwall")
-		collision_shape.disabled = true  # Disable collision
-		print("Collision disabled.")
+	# Disable collision by modifying the collision layer and mask
+	if wall and wall.has_node("staticwall2"):
+		var static_body = wall.get_node("staticwall2")  # Reference to the StaticBody2D
+		if static_body:
+			static_body.collision_layer = 0  # Remove the object from all collision layers
+			static_body.collision_mask = 0  # Prevent the object from detecting collisions
+			print("Collision disabled for staticwall2.")
+		else:
+			print("⚠️ staticwall2 node found but is null.")
 	else:
-		print("CollisionShape2D not found in wall.")
+		print("⚠️ staticwall2 node not found in wall.")
 
-	# Play wall animation
-	if wall is AnimatedSprite2D:
-		print("DIRTWALLANI found. Playing 'wallanimation'...")
+	# Play wall animation once
+	if wall and wall.has_method("play"):  # Ensure the wall node has the play method
+		print("DIRTWALLANI2 found. Playing 'wallanimation'...")
 		wall.play("wallanimation")  # Play the wall animation
 		print("Wallanimation is playing.")
 		
@@ -91,11 +110,10 @@ func _remove_wall():
 		wall.play("stop")  # Play the stop animation
 		print("Wall animation stopped.")
 	else:
-		print("DIRTWALLANI is not an AnimatedSprite2D.")
+		print("⚠️ DIRTWALLANI2 does not have a 'play' method or is not an AnimatedSprite2D.")
 
-	# Hide the wall after the animation
-	wall.visible = false
-	print("Wall visibility set to false.")
+	wall_animation_playing = false  # Mark the animation as finished
+	print("Wall removal process completed.")
 
 func _vibrate_player():
 	print("Player vibrates!")

@@ -10,7 +10,7 @@
 font = ExtResource("2_77ous")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77ous"]
-size = Vector2(56, 46)
+size = Vector2(55, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fose4"]
 atlas = ExtResource("3_hragv")
@@ -89,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_thvqj")
 }],
-"loop": true,
+"loop": false,
 "name": &"wallanimation",
 "speed": 6.0
 }]
@@ -101,6 +101,7 @@ size = Vector2(86, 376.5)
 
 [node name="PRESSUREPLATESCENE" type="Node2D"]
 script = ExtResource("1_hragv")
+wall_path = NodePath("DIRTWALLANI2")
 
 [node name="question" type="Label" parent="."]
 z_index = 1
@@ -116,9 +117,10 @@ metadata/_edit_use_anchors_ = true
 [node name="pressureplate" type="Area2D" parent="."]
 position = Vector2(112, 256)
 script = ExtResource("3_77ous")
+answer = "A"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate"]
-position = Vector2(36, 11)
+position = Vector2(35.5, 19)
 shape = SubResource("RectangleShape2D_77ous")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pressureplate"]
@@ -141,6 +143,7 @@ metadata/_edit_use_anchors_ = true
 [node name="pressureplate2" type="Area2D" parent="."]
 position = Vector2(273, 255)
 script = ExtResource("3_77ous")
+answer = "B"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate2"]
 position = Vector2(36, 11)
@@ -166,6 +169,7 @@ metadata/_edit_use_anchors_ = true
 [node name="pressureplate3" type="Area2D" parent="."]
 position = Vector2(427, 252)
 script = ExtResource("3_77ous")
+answer = "C"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pressureplate3"]
 position = Vector2(36, 11)
@@ -188,18 +192,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="DIRTWALLANI" type="AnimatedSprite2D" parent="."]
+[node name="DIRTWALLANI2" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(619, 191)
 scale = Vector2(1.89583, 1.89583)
 sprite_frames = SubResource("SpriteFrames_fnast")
 animation = &"wallanimation"
 
-[node name="staticwall2" type="StaticBody2D" parent="DIRTWALLANI"]
+[node name="staticwall2" type="StaticBody2D" parent="DIRTWALLANI2"]
 position = Vector2(-167.737, -78.0661)
 scale = Vector2(0.527473, 0.527473)
 physics_material_override = SubResource("PhysicsMaterial_gibn7")
 
-[node name="collisionwall" type="CollisionShape2D" parent="DIRTWALLANI/staticwall2"]
+[node name="collisionwall" type="CollisionShape2D" parent="DIRTWALLANI2/staticwall2"]
 z_index = 1
 position = Vector2(317, 147.75)
 shape = SubResource("RectangleShape2D_3uudy")

@@ -110,7 +110,7 @@ grow_vertical = 2
 focus_mode = 0
 theme = ExtResource("7_80opd")
 
-[node name="Button" type="Button" parent="."]
+[node name="Logout button" type="Button" parent="."]
 custom_minimum_size = Vector2(46, 12)
 layout_mode = 0
 offset_left = 515.0
@@ -122,6 +122,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_80opd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hy6a3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pgfgy")
 
+[node name="LogoutConfirmationDialog" type="ConfirmationDialog" parent="."]
+mode = 2
+title = "LogoutConfirm"
+initial_position = 2
+size = Vector2i(244, 100)
+ok_button_text = "Logout"
+
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Option Button" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="Logout button" to="." method="_on_logout_button_pressed"]

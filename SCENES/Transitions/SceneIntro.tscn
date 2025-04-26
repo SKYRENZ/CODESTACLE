@@ -20,8 +20,8 @@ func _ready():
 	disable_player_movement(true)
 
 	# Set the text for the main label and sub-label
-	label.text = \"ᜀᜅ᜔ᜇᜓᜋᜒ\"  # Baybayin characters
-	sub_label.text = \"The Dirt\"  # New text
+	label.text = \"ᜃᜑᜒᜍᜉᜈ᜔\"  # Baybayin characters
+	sub_label.text = \"The Slums\"  # New text
 
 	# Ensure the intro is visible at the start
 	label.modulate.a = 0

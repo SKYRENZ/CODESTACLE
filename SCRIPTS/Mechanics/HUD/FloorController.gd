@@ -7,9 +7,15 @@ extends Node2D
 @export var transition_scene = preload("res://SCENES/Transitions/Transition.tscn")  # Path to your Transition scene
 @export var included_scenes = [  # List of scenes where the transition should be shown
 	"res://SCENES/FLOOR/Slums/floor 2.tscn",
-	"res://SCENES/FLOOR/Floor3.tscn",
-	"res://SCENES/FLOOR/Floor4.tscn",
-	"res://SCENES/FLOOR/Floor5.tscn"
+	"res://SCENES/FLOOR/Slums/floor 3.tscn",
+	"res://SCENES/FLOOR/Slums/floor 4.tscn",
+	"res://SCENES/FLOOR/Slums/floor 5.tscn",
+	"res://SCENES/FLOOR/Slums/floor 6.tscn",
+	"res://SCENES/FLOOR/Slums/floor 7.tscn",
+	"res://SCENES/FLOOR/Slums/floor 8.tscn",
+	"res://SCENES/FLOOR/Slums/floor 9.tscn",
+	"res://SCENES/FLOOR/Slums/floor 10.tscn"
+	
 ]
 
 

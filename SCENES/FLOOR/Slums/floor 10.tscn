@@ -501,7 +501,6 @@ position = Vector2(701.914, 678.804)
 collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 1"]
 position = Vector2(-5.91382, 5.19598)
@@ -513,7 +512,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage2 "
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 2"]
 position = Vector2(1.43677, -1.33853)
@@ -525,7 +523,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage3 "
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 3"]
 position = Vector2(3.6001, 7.75143)
@@ -537,7 +534,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage4"
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 4"]
 position = Vector2(-1.20435, -5.32925)
@@ -549,7 +545,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage5"
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 5"]
 position = Vector2(4.62769, 1.94199)
@@ -561,7 +556,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage6 "
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 6"]
 position = Vector2(-19.6797, 13.0906)
@@ -573,7 +567,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage7"
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 7"]
 position = Vector2(7.61035, 14.71)
@@ -585,7 +578,6 @@ collision_layer = 32
 script = ExtResource("5_dfkma")
 dialogue_resource = ExtResource("6_pq2qb")
 dialogue_start = "signage8"
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 8"]
 position = Vector2(-8.16553, 1.05859)

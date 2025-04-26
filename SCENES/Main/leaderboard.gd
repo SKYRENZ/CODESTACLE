@@ -53,3 +53,10 @@ func _on_leaderboard_success():
 
 func _on_leaderboard_fail():
 	print("⚠️ Failed to load leaderboard. Please check Firestore or network connection.")
+
+func _on_Exit_pressed() ->void:
+	queue_free()
+
+
+func _on_exit_pressed() -> void:
+	pass # Replace with function body.

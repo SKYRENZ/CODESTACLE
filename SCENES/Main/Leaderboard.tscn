@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cygjiqbl6aood"]
+[gd_scene load_steps=6 format=3 uid="uid://dfod7ekjw0jj6"]
 
 [ext_resource type="Script" uid="uid://bnlj23dxt3hqv" path="res://SCENES/Main/leaderboard.gd" id="1_qbd1e"]
 [ext_resource type="FontFile" uid="uid://c5f8eni2supkt" path="res://ASSETS/FONT/Minecraft.ttf" id="2_an2gi"]
+[ext_resource type="Texture2D" uid="uid://bivlq4yxegtba" path="res://ASSETS/BUTTONS/Option/closebutton.png" id="3_hgrnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mruqn"]
 font = ExtResource("2_an2gi")
@@ -416,3 +417,13 @@ offset_left = 116.0
 offset_top = 383.0
 offset_right = 156.0
 offset_bottom = 406.0
+
+[node name="Exit" type="Button" parent="."]
+z_index = 7
+offset_left = 69.0
+offset_top = 65.0
+offset_right = 90.0
+offset_bottom = 86.0
+icon = ExtResource("3_hgrnl")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

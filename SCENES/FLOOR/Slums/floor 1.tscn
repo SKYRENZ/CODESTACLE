@@ -863,8 +863,6 @@ shape = SubResource("RectangleShape2D_3jsy4")
 collision_layer = 32
 script = ExtResource("6_sqq24")
 dialogue_resource = ExtResource("6_uou1l")
-pan_distance = 200.0
-pan_direction = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 1"]
 z_index = 3
@@ -878,8 +876,6 @@ collision_layer = 32
 script = ExtResource("6_sqq24")
 dialogue_resource = ExtResource("6_uou1l")
 dialogue_start = "signage2"
-use_letterbox = false
-pan_direction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 2"]
 position = Vector2(1463.5, 732)
@@ -890,7 +886,6 @@ collision_layer = 32
 script = ExtResource("6_sqq24")
 dialogue_resource = ExtResource("6_uou1l")
 dialogue_start = "signage3"
-use_letterbox = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slums Parallax/Dialogues/signage 3"]
 position = Vector2(1865.5, 603)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://bbxet2oox25h0"]
 
-[ext_resource type="Script" uid="uid://di0laop2dhiaj" path="res://SCENES/Transitions/TransitionManager.gd" id="1_h07j4"]
+[ext_resource type="Script" path="res://SCENES/Transitions/TransitionManager.gd" id="1_h07j4"]
 [ext_resource type="Texture2D" uid="uid://3peerjhjquo2" path="res://Loading-Screen-Sheet.png" id="1_ldgwx"]
 [ext_resource type="Texture2D" uid="uid://b4j7xk72ri18o" path="res://HelperBot (1)-Sheet.png" id="2_h07j4"]
 

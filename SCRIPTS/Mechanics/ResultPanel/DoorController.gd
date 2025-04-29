@@ -78,7 +78,7 @@ func handle_floor_completion():
 	else:
 		printerr("Results panel scene not found: %s" % results_panel_path)
 		# Fall back to direct transition
-		transition_to_next_floor(null)
+		transition_to_next_floor()
 
 func _setup_results_panel(panel):
 	print("Setting up results panel...")
@@ -106,33 +106,14 @@ func _setup_results_panel(panel):
 func _on_continue_pressed(panel):
 	print("Continue button pressed!")
 
-	# Show transition scene before proceeding
-	show_transition(panel)
-
-func show_transition(panel):
-	print("🚪 Showing transition scene before starting the next floor...")
-
-	# Load the transition scene
-	var transition_scene_path = "res://SCENES/Transitions/Transition.tscn"  # Update this path if needed
-	if !ResourceLoader.exists(transition_scene_path):
-		printerr("❌ Transition scene not found: %s" % transition_scene_path)
-		transition_to_next_floor(panel)
-		return
-
-	var transition_scene = load(transition_scene_path)
-	var transition_instance = transition_scene.instantiate()
-	get_tree().root.add_child(transition_instance)
-
-	# Connect the fade_out_finished signal to proceed after the transition
-	if transition_instance.has_signal("fade_out_finished"):
-		transition_instance.fade_out_finished.connect(Callable(self, "_on_transition_finished").bind(panel))
-	else:
-		printerr("❌ Transition scene missing fade_out_finished signal!")
-		transition_to_next_floor(panel)
-
-func _on_transition_finished(panel):
-	print("🚪 Transition finished. Proceeding to next floor...")
-	transition_to_next_floor(panel)
+	# Unpause game
+	get_tree().paused = false
+	
+	# Transition to next floor
+	transition_to_next_floor()
+	
+	# Clean up panel
+	panel.queue_free()
 
 func get_player_score() -> int:
 	var player_data = get_node_or_null("/root/PlayerData")
@@ -141,19 +122,38 @@ func get_player_score() -> int:
 	print("Quiz score data not available")
 	return 0
 
-func transition_to_next_floor(panel):
+func transition_to_next_floor():
 	print("🚪 Transitioning to next floor: %s" % next_floor_path)
 
-	# Unpause game
+	# Get the Transition node
+	var transition = get_node_or_null("/root/Transition")
+	if transition and transition.has_method("fade_out"):
+		print("🔄 Fading out before changing scene...")
+		transition.fade_out()
+
+		# Ensure AnimationPlayer exists and wait for animation
+		var anim_player = transition.get_node_or_null("AnimationPlayer")
+		if anim_player:
+			print("⏳ Waiting for fade-out animation...")
+			await anim_player.animation_finished
+			print("✔ Fade-out animation finished!")
+		else:
+			print("⚠ No AnimationPlayer found in Transition.")
+
+	# Ensure game is unpaused
 	get_tree().paused = false
-	
-	# Clean up panel if it exists
-	if panel:
-		panel.queue_free()
 
 	# Change scene if path is valid
 	if next_floor_path != "" and ResourceLoader.exists(next_floor_path):
 		print("🛠 Changing scene to %s..." % next_floor_path)
 		get_tree().change_scene_to_file(next_floor_path)
+
+		# Wait a frame before fading in (only if tree exists)
+		if get_tree():
+			await get_tree().process_frame
+		
+		if transition and transition.has_method("fade_in"):
+			print("🎬 Fading in new scene...")
+			transition.fade_in()
 	else:
 		printerr("❌ ERROR: Cannot transition - Invalid or missing scene path")

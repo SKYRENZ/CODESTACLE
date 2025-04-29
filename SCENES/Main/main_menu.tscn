@@ -122,6 +122,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_80opd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hy6a3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pgfgy")
 
+[node name="LogoutConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Logout"
+ok_button_text = "Logout"
+dialog_text = "Would you like to logout?"
+
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Option Button" to="." method="_on_option_button_pressed"]

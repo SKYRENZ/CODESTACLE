@@ -2,22 +2,7 @@
 	"email": "",
 	"id_token": "",
 	"progress": {
-		"floor_1": {
-			"coins": 6,
-			"npcs": 0,
-			"overall_score": 225,
-			"quiz_score": 50,
-			"signages": 3,
-			"time": 33.8349997997284
-		},
-		"floor_2": {
-			"coins": 7.0,
-			"npcs": 1.0,
-			"overall_score": 390.0,
-			"quiz_score": 50.0,
-			"signages": 6.0,
-			"time": 233.500000238419
-		}
+
 	},
 	"uid": "",
 	"username": ""

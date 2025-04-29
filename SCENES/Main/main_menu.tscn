@@ -110,7 +110,7 @@ grow_vertical = 2
 focus_mode = 0
 theme = ExtResource("7_80opd")
 
-[node name="Button" type="Button" parent="."]
+[node name="Logout Button" type="Button" parent="."]
 custom_minimum_size = Vector2(46, 12)
 layout_mode = 0
 offset_left = 515.0
@@ -125,3 +125,4 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_pgfgy")
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Option Button" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="Logout Button" to="." method="_on_logout_button_pressed"]

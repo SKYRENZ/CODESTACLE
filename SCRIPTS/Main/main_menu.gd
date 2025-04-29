@@ -18,9 +18,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_Leaderboards_pressed() ->void:
-	get_tree().change_scene_to_file("res://SCENES/Main/Leaderboard.tscn")
-
 func _on_play_button_pressed() -> void:
 	AudioPlayer.play_FX(transition_fx, -12.0)
 	get_tree().change_scene_to_file("res://SCENES/Main/stage_select.tscn")

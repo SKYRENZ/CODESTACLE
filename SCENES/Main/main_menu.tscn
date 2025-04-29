@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4t0k034llkia"]
+[gd_scene load_steps=11 format=3 uid="uid://4t0k034llkia"]
 
 [ext_resource type="Script" uid="uid://d1dtt2rv70sdq" path="res://SCRIPTS/Main/main_menu.gd" id="1_25day"]
 [ext_resource type="Texture2D" uid="uid://blbu1nd4nmf6a" path="res://ASSETS/BACKGROUNDS/backgroun main_menu.png" id="1_34ebn"]
@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://3qiugl1iaq0w" path="res://ASSETS/BUTTONS/Main Menu Buttons/Quit_button.tres" id="6_5e1ex"]
 [ext_resource type="Theme" uid="uid://4ys534v78vtd" path="res://ASSETS/BUTTONS/Main Menu Buttons/Options_button.tres" id="7_80opd"]
 [ext_resource type="Texture2D" uid="uid://c3jq56v1qpgw4" path="res://ASSETS/BUTTONS/Main Menu Buttons/Logout Button Final.png" id="7_sbnqe"]
-[ext_resource type="Texture2D" uid="uid://cv0fecux5nltf" path="res://trophyy.png" id="8_80opd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80opd"]
 texture = ExtResource("7_sbnqe")
@@ -122,17 +121,6 @@ focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_80opd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hy6a3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pgfgy")
-
-[node name="Leaderboards" type="Button" parent="."]
-layout_mode = 0
-offset_left = -79.0
-offset_top = 588.0
-offset_right = 429.0
-offset_bottom = 1096.0
-scale = Vector2(0.255322, 0.255322)
-focus_mode = 0
-icon = ExtResource("8_80opd")
-flat = true
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
